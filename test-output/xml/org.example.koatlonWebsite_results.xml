@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="J:/3. automation testing/day39---Selenium full ui elements testing/Assignment2 Hint/Appolo-Tools/src/test/java/org/example/koatlonWebsite.java"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="1.845">
+    <properties></properties>
+
+
+
+            <testcase
+                name="makeAppointment"
+                time="0.035"
+                classname="org.example.TestCases.koatlonWebsite">
+            </testcase>
+            <testcase
+                name="loginWithValidCredentials"
+                time="1.810"
+                classname="org.example.TestCases.koatlonWebsite">
+            </testcase>
+</testsuite>

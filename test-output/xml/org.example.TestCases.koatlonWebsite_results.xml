@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="J:/3. automation testing/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/koatlonWebsite.java"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="2.521">
+    <properties></properties>
+
+
+
+            <testcase
+                name="checkUrlOfPage"
+                time="0.035"
+                classname="org.example.TestCases.koatlonWebsite">
+            </testcase>
+            <testcase
+                name="loginWithValidCredentials"
+                time="1.993"
+                classname="org.example.TestCases.koatlonWebsite">
+            </testcase>
+            <testcase
+                name="totalMoneySpentCalculation"
+                time="0.493"
+                classname="org.example.TestCases.koatlonWebsite">
+            </testcase>
+</testsuite>
