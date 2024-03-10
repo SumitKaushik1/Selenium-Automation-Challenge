@@ -4,24 +4,24 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="2.521">
+           time="4.958">
     <properties></properties>
 
 
 
             <testcase
-                name="checkUrlOfPage"
-                time="0.035"
+                name="loginWithValidCredentials"
+                time="4.618"
                 classname="org.example.TestCases.koatlonWebsite">
             </testcase>
             <testcase
-                name="loginWithValidCredentials"
-                time="1.993"
+                name="checkUrlOfPage"
+                time="0.039"
                 classname="org.example.TestCases.koatlonWebsite">
             </testcase>
             <testcase
                 name="totalMoneySpentCalculation"
-                time="0.493"
+                time="0.301"
                 classname="org.example.TestCases.koatlonWebsite">
             </testcase>
 </testsuite>
