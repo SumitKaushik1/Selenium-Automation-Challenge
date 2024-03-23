@@ -5,22 +5,21 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import java.text.DecimalFormat;
 import java.time.Duration;
-import java.util.Date;
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 /**
  * Unit test for simple App.
  */
-public class koatlonWebsite
+public class AppoloToolsChallengeOne
 {
 
 
@@ -82,7 +81,7 @@ public class koatlonWebsite
 
        String currentUrl=driver.getCurrentUrl();
        System.out.println(currentUrl);
-       Assert.assertTrue(currentUrl.equals("https://demo.applitools.com/app.html"));
+       assertThat(currentUrl.equals("https://demo.applitools.com/app.html"));
     }
 
 
