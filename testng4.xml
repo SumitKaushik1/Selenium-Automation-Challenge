@@ -1,23 +1,20 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" parallel="tests">
-    <test name="ChromeTest">
-        <parameter name="browser" value="chrome"/>
+<suite name="All Test Suite" parallel="classes" >
+    <test name="ChromeTestAndEdgeParralelTest">
+
         <classes>
-            <class name="org.example.TestCases.AppVWOChallengeFour">
+            <class name="org.example.TestCases.Four.AppVWOChallengeFour_One">
+                <methods>
+                    <include name="loginCrdentialsInValid1"/>
+                </methods>
+            </class>
+            <class name="org.example.TestCases.Four.AppVWOChallengeFour_Two">
                 <methods>
                     <include name="loginCrdentialsInValid1"/>
                 </methods>
             </class>
         </classes>
-    </test>
-    <test name="FirefoxTest">
-        <parameter name="browser" value="firefox"/>
-        <classes>
-            <class name="org.example.TestCases.AppVWOChallengeFour">
-                <methods>
-                    <include name="loginCrdentialsInValid1"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
+
+
+</test>
 </suite>

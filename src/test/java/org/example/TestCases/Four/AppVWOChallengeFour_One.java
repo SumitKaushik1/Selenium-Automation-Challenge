@@ -1,11 +1,11 @@
-package org.example.TestCases;
+package org.example.TestCases.Four;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -16,16 +16,16 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class AppVWOChallengeFour {
+public class AppVWOChallengeFour_One {
 
 
     WebDriver driver;
-    @Parameters("browser")
+
     @BeforeSuite
 
     public void navigateToTheURL(@Optional("chrome") String browser) {
 
-        if (browser.equalsIgnoreCase("chrome")) {
+
             System.setProperty("webdriver.chrome.driver","J:\\3. automation testing\\day39---Selenium full ui elements testing\\Assignment1 Answers\\chromedriver-win64\\chromedriver.exe");
 
             driver=new ChromeDriver();
@@ -34,16 +34,7 @@ public class AppVWOChallengeFour {
             driver.get("https://app.vwo.com/#/login");
             // String title=driver.getTitle();
             // Assert.assertEquals(title,"CURA Healthcare Service");
-        }
-        else if (browser.equalsIgnoreCase("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "J:\\3. automation testing\\day41--selenium -UI elements\\geckodriver.exe");
-            driver = new FirefoxDriver();
-            driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-            driver.get("https://app.vwo.com/#/login");
-            // String title=driver.getTitle();
-            // Assert.assertEquals(title,"CURA Healthcare Service");
-        }
+
 
 
 
