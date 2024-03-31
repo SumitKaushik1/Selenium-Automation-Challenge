@@ -1,17 +1,15 @@
-package org.example.TestCases.Four;
+package org.example.TestCases.FourOnetestNgclassLevelparallel;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -66,7 +64,7 @@ public class AppVWOChallengeFour_One {
 /*          JavascriptExecutor jse=(JavascriptExecutor)driver;
         System.out.println(jse.executeScript("document.querySelector(\"span[class='Fw(semi-bold) ng-binding']\").textContent").toString());*/
 
-        WebElement text = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='Fw(semi-bold) ng-binding']")));
+        WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='Fw(semi-bold) ng-binding']")));
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", text);
         System.out.println(text.getText());
