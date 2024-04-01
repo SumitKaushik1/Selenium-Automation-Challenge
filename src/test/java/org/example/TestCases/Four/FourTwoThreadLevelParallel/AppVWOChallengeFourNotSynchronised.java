@@ -1,4 +1,4 @@
-package org.example.TestCases.FourTwoThreadLevelParallel;
+package org.example.TestCases.Four.FourTwoThreadLevelParallel;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

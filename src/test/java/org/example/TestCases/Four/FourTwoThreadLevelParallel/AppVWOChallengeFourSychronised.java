@@ -1,4 +1,4 @@
-package org.example.TestCases.FourTwoThreadLevelParallel;
+package org.example.TestCases.Four.FourTwoThreadLevelParallel;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -14,11 +14,20 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class AppVWOChallengeFourSychronised {
-
+    private ThreadLocal<String> threadLocalDriverLocation;
+    private ThreadLocal<String> threadLocalDriverName;
     WebDriver driver;
+
+
+    public AppVWOChallengeFourSychronised(){
+        threadLocalDriverLocation=new ThreadLocal<>();
+        threadLocalDriverName=new ThreadLocal<>();
+
+    }
     @Test
     void testingWithThread() throws InterruptedException {
-   String a=null;
+
+      String a=null;
 
 
         // when synchronised key word is  used ->suppose jvm run one thread and blocked on wait and execute other thread on wait
@@ -32,6 +41,14 @@ public class AppVWOChallengeFourSychronised {
         */
 
         Thread t1 = new Thread(() -> {
+
+            //once the thradlocal object is made globally
+
+            //then we can use that to make varialbe donw belwo seperatly indepnecy local to particular theread
+            // method can use the same class data member
+            threadLocalDriverName.set("webdriver.chrome.driver");
+            threadLocalDriverLocation.set("J:\\3. automation testing\\day39---Selenium full ui elements testing\\Assignment1 Answers\\chromedriver-win64\\chromedriver.exe");
+
             navigateToTheURL1();
             try {
 
@@ -45,6 +62,14 @@ public class AppVWOChallengeFourSychronised {
 
 
         Thread t2 = new Thread(() -> {
+            //once the thradlocal object is made globally
+
+            //then we can use that to make varialbe donw belwo seperatly indepnecy local to particular theread
+            // method can use the same class data member
+            // method can use the same class data member
+            threadLocalDriverName.set("webdriver.edge.driver");
+            threadLocalDriverLocation.set("J:\\3. automation testing\\day41--selenium -UI elements\\msedgedriver.exe");
+
             navigateToTheURL2();
             try {
                 loginCrdentialsInValid2();
@@ -57,15 +82,17 @@ public class AppVWOChallengeFourSychronised {
         t2.start();
 
 
+        //main thread has to wait till the t1 thread has to complete
         t1.join();
+        //main thread has to wait til the t2 thread has to complete
         t2.join();
 
     }
 
     synchronized public void navigateToTheURL1() {
 
-
-        System.setProperty("webdriver.chrome.driver","J:\\3. automation testing\\day39---Selenium full ui elements testing\\Assignment1 Answers\\chromedriver-win64\\chromedriver.exe");
+        System.setProperty(threadLocalDriverName.get(), threadLocalDriverLocation.get());
+        //System.setProperty("webdriver.chrome.driver","J:\\3. automation testing\\day39---Selenium full ui elements testing\\Assignment1 Answers\\chromedriver-win64\\chromedriver.exe");
 
         driver=new ChromeDriver();
         driver.manage().window().maximize();
@@ -75,12 +102,9 @@ public class AppVWOChallengeFourSychronised {
         // Assert.assertEquals(title,"CURA Healthcare Service");
 
 
-
-
-
     }
 
-      public void loginCrdentialsInValid1() throws InterruptedException
+   synchronized    public void loginCrdentialsInValid1() throws InterruptedException
     {
         WebElement emailAddress= driver.findElement(By.xpath("//input[@id='login-username']"));
         emailAddress.sendKeys("akash@wuuvo.com");
@@ -113,9 +137,9 @@ public class AppVWOChallengeFourSychronised {
 
 
    synchronized public void navigateToTheURL2() {
+       System.setProperty(threadLocalDriverName.get(), threadLocalDriverLocation.get());
 
-
-        System.setProperty("webdriver.edgee.driver", "J:\\3. automation testing\\day41--selenium -UI elements\\msedgedriver.exe");
+     //   System.setProperty("webdriver.edgee.driver", "J:\\3. automation testing\\day41--selenium -UI elements\\msedgedriver.exe");
         driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));

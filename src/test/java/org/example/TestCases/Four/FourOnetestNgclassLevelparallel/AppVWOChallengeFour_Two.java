@@ -1,32 +1,32 @@
-package org.example.TestCases.FourOnetestNgclassLevelparallel;
+package org.example.TestCases.Four.FourOnetestNgclassLevelparallel;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class AppVWOChallengeFour_One {
+public class AppVWOChallengeFour_Two {
 
 
     WebDriver driver;
-
+    @Parameters("browser")
     @BeforeSuite
 
     public void navigateToTheURL(@Optional("chrome") String browser) {
 
 
-            System.setProperty("webdriver.chrome.driver","J:\\3. automation testing\\day39---Selenium full ui elements testing\\Assignment1 Answers\\chromedriver-win64\\chromedriver.exe");
-
-            driver=new ChromeDriver();
+            System.setProperty("webdriver.edgee.driver", "J:\\3. automation testing\\day41--selenium -UI elements\\msedgedriver.exe");
+            driver = new EdgeDriver();
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
             driver.get("https://app.vwo.com/#/login");
@@ -38,9 +38,6 @@ public class AppVWOChallengeFour_One {
 
 
     }
-
-
-
 
     @Test
     public void loginCrdentialsInValid1() throws InterruptedException
