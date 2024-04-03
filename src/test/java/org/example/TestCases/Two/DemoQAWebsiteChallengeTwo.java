@@ -1,4 +1,4 @@
-package org.example.TestCases;
+package org.example.TestCases.Two;
 
 import org.example.Utils.CalculateEarnedSpent;
 import org.openqa.selenium.*;

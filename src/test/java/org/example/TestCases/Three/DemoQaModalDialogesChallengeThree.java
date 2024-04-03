@@ -1,4 +1,4 @@
-package org.example.TestCases;
+package org.example.TestCases.Three;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;

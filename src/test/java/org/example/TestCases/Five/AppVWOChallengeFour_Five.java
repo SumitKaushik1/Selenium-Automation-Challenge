@@ -1,4 +1,4 @@
-package org.example.TestCases;
+package org.example.TestCases.Five;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
