@@ -1,32 +1,34 @@
 package org.example.TestCases.One.OnetestNgThreadLevelparallel;
 
 import org.example.Utils.CalculateEarnedSpent;
+import org.example.Utils.FullExcelMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.time.Duration;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class AppoloToolsChallengeSynchronised {
+public class AppoloToolsChallengeOneSynchronised {
    private ThreadLocal<String> threadLocalDriverLocation;
     private ThreadLocal<String> threadLocalDriverName;
     WebDriver driver;
 
 
-    public AppoloToolsChallengeSynchronised(){
+    public AppoloToolsChallengeOneSynchronised(){
         threadLocalDriverLocation=new ThreadLocal<>();
         threadLocalDriverName=new ThreadLocal<>();
 
     }
+
     @Test
     void testingWithThread() throws InterruptedException {
 
@@ -35,7 +37,7 @@ public class AppoloToolsChallengeSynchronised {
         // then jvm use this object to call all the methods which has @Test as the annotation like
         //appoloToolsChallengeSynchronised.testingWithThread() in background
        // so no need to this below
-        //  AppoloToolsChallengeSynchronised appoloToolsChallengeSynchronised=new AppoloToolsChallengeSynchronised();
+        //  AppoloToolsChallengeOneSynchronised appoloToolsChallengeSynchronised=new AppoloToolsChallengeOneSynchronised();
 
         String a=null;
 
@@ -73,6 +75,8 @@ public class AppoloToolsChallengeSynchronised {
 
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
 
         });
@@ -100,6 +104,8 @@ public class AppoloToolsChallengeSynchronised {
 
 
             } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         });
@@ -131,19 +137,32 @@ public class AppoloToolsChallengeSynchronised {
 
 
 
-   synchronized public void loginWithValidCredentials1() throws InterruptedException{
-        //anchor tag we use
-        //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
-        //  makeAppointmentButton.click();
-        WebElement userName=driver.findElement(By.xpath("//input[@id='username']"));
-        userName.sendKeys("Admin");
-        WebElement password =driver.findElement(By.xpath("//input[@id='password']"));
-        password.sendKeys("Password@123");
-        WebElement signButton=driver.findElement(By.xpath("//a[@id='log-in']"));
-        signButton.click();
+   synchronized public void loginWithValidCredentials1() throws InterruptedException, IOException {
+
+       FullExcelMethods fullExcelMethods = new FullExcelMethods("J:\\3. automation testing\\day41--selenium -UI elements\\AssignmentAnswers\\Appolo-Tools\\TataData.xlsx");
+
+       // String [][] sheetData=fullExcelMethods.getDataFromSheet("J:\\3. automation testing\\day41--selenium -UI elements\\AssignmentAnswers\\Appolo-Tools\\TataData.xlsx","TataData.xlsx");
+       //anchor tag we use
+       //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
+       //  makeAppointmentButton.click();
 
 
-    }
+       WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+      userName.clear();
+       userName.sendKeys(fullExcelMethods.getCellData("Login Data", 2, 1));
+       WebElement password =driver.findElement(By.xpath("//input[@id='password']"));
+       password.clear();
+       password.sendKeys(  fullExcelMethods.getCellData("Login Data", 2, 2));
+       WebElement signButton=driver.findElement(By.xpath("//a[@id='log-in']"));
+       signButton.click();
+
+
+
+   }
+
+
+
+
 
 
 
@@ -250,16 +269,47 @@ public class AppoloToolsChallengeSynchronised {
 
 
 
-    synchronized public void loginWithValidCredentials2() throws InterruptedException{
+    synchronized public void loginWithValidCredentials2() throws InterruptedException, IOException {
+
+        FullExcelMethods fullExcelMethods = new FullExcelMethods("J:\\3. automation testing\\day41--selenium -UI elements\\AssignmentAnswers\\Appolo-Tools\\TataData.xlsx");
         //anchor tag we use
         //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
         //  makeAppointmentButton.click();
-        WebElement userName=driver.findElement(By.xpath("//input[@id='username']"));
+
+       // getDataFromSheet(String workbookLocation, String workSheetName)
+
+      String[][] dataTable=  fullExcelMethods.getDataFromSheet("J:/3. automation testing/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/TataData.xlsx", "Login Data");
+   /*     for (String[] row : dataTable) {
+            for (String cell : row) {
+                System.out.print(cell + "\t");
+            }
+            System.out.println(); // Move to the next line after printing each row
+        }*/
+
+        for (String[] row : dataTable) {
+
+                WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+             // System.out.println("userNmae"+userName);
+                //userName.sendKeys("Admin");
+               userName.clear();
+                userName.sendKeys(row[1]);
+                WebElement password = driver.findElement(By.xpath("//input[@id='password']"));
+                  password.clear();
+               // password.sendKeys("Password@123");
+              password.sendKeys(row[2]);
+                WebElement signButton = driver.findElement(By.xpath("//a[@id='log-in']"));
+                signButton.click();
+
+        }
+
+
+        /*WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
         userName.sendKeys("Admin");
-        WebElement password =driver.findElement(By.xpath("//input[@id='password']"));
+        WebElement password = driver.findElement(By.xpath("//input[@id='password']"));
         password.sendKeys("Password@123");
-        WebElement signButton=driver.findElement(By.xpath("//a[@id='log-in']"));
-        signButton.click();
+        WebElement signButton = driver.findElement(By.xpath("//a[@id='log-in']"));
+        signButton.click();*/
+
 
 
     }

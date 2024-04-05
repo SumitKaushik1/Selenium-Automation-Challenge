@@ -157,7 +157,9 @@ public class FullExcelMethods {
 
 
         public String[][] getDataFromSheet(String workbookLocation, String workSheetName) throws IOException {
-            XSSFWorkbook workbook = new XSSFWorkbook(System.getProperty("user.dir") + "/" + workbookLocation);//it created the workbook for you
+            //XSSFWorkbook workbook = new XSSFWorkbook(System.getProperty("user.dir") + "/" + workbookLocation);//it created the workbook for you
+            XSSFWorkbook workbook = new XSSFWorkbook(workbookLocation);//it created the workbook for you
+
             XSSFSheet workSheet = workbook.getSheet(workSheetName);// it makes the sheet for you
 
             int noOfRows = workSheet.getLastRowNum() + 1;
@@ -173,7 +175,7 @@ public class FullExcelMethods {
             }
 
 //in the sheet it will use the for loop and it will return the data in the tabular form
-            workbook.close();
+         //   workbook.close();
             return dataTable;
         }
 

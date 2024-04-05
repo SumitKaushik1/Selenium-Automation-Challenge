@@ -1,5 +1,6 @@
 package org.example.TestCases.Four.FourTwoThreadLevelParallel;
 
+import org.example.Utils.FullExcelMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.time.Duration;
 
 public class AppVWOChallengeFourSychronised {
@@ -57,6 +59,8 @@ public class AppVWOChallengeFourSychronised {
 
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         });
 
@@ -73,7 +77,7 @@ public class AppVWOChallengeFourSychronised {
             navigateToTheURL2();
             try {
                 loginCrdentialsInValid2();
-            } catch (InterruptedException e) {
+            } catch (InterruptedException | IOException e) {
                 throw new RuntimeException(e);
             }
         });
@@ -104,9 +108,46 @@ public class AppVWOChallengeFourSychronised {
 
     }
 
-   synchronized    public void loginCrdentialsInValid1() throws InterruptedException
-    {
-        WebElement emailAddress= driver.findElement(By.xpath("//input[@id='login-username']"));
+   synchronized    public void loginCrdentialsInValid1() throws InterruptedException, IOException {
+
+
+        FullExcelMethods fullExcelMethods = new FullExcelMethods("J:\\3. automation testing\\day41--selenium -UI elements\\AssignmentAnswers\\Appolo-Tools\\Vwo.xlsx");
+
+
+        String[][] dataTable=  fullExcelMethods.getDataFromSheet("J:/3. automation testing/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/Vwo.xlsx", "Login Data");
+
+
+        for (String[] row : dataTable) {
+
+            WebElement emailAddress= driver.findElement(By.xpath("//input[@id='login-username']"));
+            emailAddress.clear();
+            emailAddress.sendKeys(row[1]);
+            WebElement password = driver.findElement(By.xpath("//input[@id='login-password']"));
+            password.clear();
+            password.sendKeys(row[2]);
+            WebElement signInButton = driver.findElement(By.xpath("//button[@id='js-login-btn']"));
+            signInButton.click();
+
+        }
+
+       WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(10));//in this we set the driver to wait maximum 10 seconds
+       // WebElement firstLine=driver.findElement(By.xpath("//span[@data-qa='lufexuloga']"));
+       //span[@class='Fw(semi-bold) ng-binding']
+
+
+
+       WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='Fw(semi-bold) ng-binding']")));
+
+       ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", text);
+       System.out.println(text.getText());
+       Assert.assertEquals(text.getText(),"dasda dasda");
+
+       System.out.println("loginCredentials1");
+
+
+
+
+       /* WebElement emailAddress= driver.findElement(By.xpath("//input[@id='login-username']"));
         emailAddress.sendKeys("akash@wuuvo.com");
         WebElement password = driver.findElement(By.xpath("//input[@id='login-password']"));
         password.sendKeys("Test@1234");
@@ -118,20 +159,13 @@ public class AppVWOChallengeFourSychronised {
 
 
 
-        //System.out.println(firstLine);
-        // Assert.assertEquals(firstLine.getText(),"dasda dasda","okay");
-        //System.out.println(firstLine.getText());
-
-/*          JavascriptExecutor jse=(JavascriptExecutor)driver;
-        System.out.println(jse.executeScript("document.querySelector(\"span[class='Fw(semi-bold) ng-binding']\").textContent").toString());*/
-
         WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='Fw(semi-bold) ng-binding']")));
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", text);
         System.out.println(text.getText());
         Assert.assertEquals(text.getText(),"dasda dasda");
 
-        System.out.println("loginCredentials1");
+        System.out.println("loginCredentials1");*/
     }
 
 
@@ -154,33 +188,40 @@ public class AppVWOChallengeFourSychronised {
     }
 
 
-    public void loginCrdentialsInValid2() throws InterruptedException
-    {
+    public void loginCrdentialsInValid2() throws InterruptedException, IOException {
+        FullExcelMethods fullExcelMethods = new FullExcelMethods("J:\\3. automation testing\\day41--selenium -UI elements\\AssignmentAnswers\\Appolo-Tools\\Vwo.xlsx");
 
-        WebElement emailAddress= driver.findElement(By.xpath("//input[@id='login-username']"));
-        emailAddress.sendKeys("akash@wuuvo.com");
-        WebElement password = driver.findElement(By.xpath("//input[@id='login-password']"));
-        password.sendKeys("Test@1234");
-        WebElement signInButton = driver.findElement(By.xpath("//button[@id='js-login-btn']"));
-        signInButton.click();
+
+        String[][] dataTable=  fullExcelMethods.getDataFromSheet("J:/3. automation testing/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/Vwo.xlsx", "Login Data");
+
+
+        for (String[] row : dataTable) {
+
+            WebElement emailAddress= driver.findElement(By.xpath("//input[@id='login-username']"));
+            emailAddress.clear();
+            emailAddress.sendKeys(row[1]);
+            WebElement password = driver.findElement(By.xpath("//input[@id='login-password']"));
+            password.clear();
+            password.sendKeys(row[2]);
+            WebElement signInButton = driver.findElement(By.xpath("//button[@id='js-login-btn']"));
+            signInButton.click();
+
+        }
+
         WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(10));//in this we set the driver to wait maximum 10 seconds
         // WebElement firstLine=driver.findElement(By.xpath("//span[@data-qa='lufexuloga']"));
         //span[@class='Fw(semi-bold) ng-binding']
 
 
 
-        //System.out.println(firstLine);
-        // Assert.assertEquals(firstLine.getText(),"dasda dasda","okay");
-        //System.out.println(firstLine.getText());
-
-/*          JavascriptExecutor jse=(JavascriptExecutor)driver;
-        System.out.println(jse.executeScript("document.querySelector(\"span[class='Fw(semi-bold) ng-binding']\").textContent").toString());*/
-
-        WebElement text = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='Fw(semi-bold) ng-binding']")));
+        WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='Fw(semi-bold) ng-binding']")));
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", text);
         System.out.println(text.getText());
         Assert.assertEquals(text.getText(),"dasda dasda");
+
+
+
 
         System.out.println("loginCredentials2");
 
