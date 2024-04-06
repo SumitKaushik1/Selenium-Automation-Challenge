@@ -9,9 +9,13 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.time.Duration;
 import java.util.List;
+import java.util.Properties;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -45,14 +49,24 @@ public class AppoloToolsChallenge_One
 
 
     @Test
-    public void loginWithValidCredentials() throws InterruptedException{
+    public void loginWithValidCredentials() throws InterruptedException, IOException {
+
+        FileReader reader=new FileReader("src/test/resources/config.properties");//it is the location of the properites
+        Properties p=new Properties();//it is the inbuilt java class
+        p.load(reader);//property file isto read the property file
+
+        System.out.println(p.getProperty("userName"));
+        System.out.println(p.getProperty("password"));
+
         //anchor tag we use
         //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
       //  makeAppointmentButton.click();
         WebElement userName=driver.findElement(By.xpath("//input[@id='username']"));
-        userName.sendKeys("Admin");
+        userName.sendKeys(p.getProperty("userName"));
+        //userName.sendKeys("Admin");
         WebElement password =driver.findElement(By.xpath("//input[@id='password']"));
-        password.sendKeys("Password@123");
+       password.sendKeys(p.getProperty("password"));
+        // password.sendKeys("Password@123");
         WebElement signButton=driver.findElement(By.xpath("//a[@id='log-in']"));
         signButton.click();
 

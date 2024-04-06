@@ -12,7 +12,11 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 public class AppVWOChallengeFour_One {
 
@@ -43,12 +47,21 @@ public class AppVWOChallengeFour_One {
 
 
     @Test
-    public void loginCrdentialsInValid1() throws InterruptedException
-    {
+    public void loginCrdentialsInValid1() throws InterruptedException, IOException {
+
+        FileReader reader=new FileReader("src/test/resources/config.properties");//it is the location of the properites
+        Properties p=new Properties();//it is the inbuilt java class
+        p.load(reader);//property file isto read the property file
+
+        System.out.println(p.getProperty("emailAddress"));
+        System.out.println(p.getProperty("password1"));
+
         WebElement emailAddress= driver.findElement(By.xpath("//input[@id='login-username']"));
-        emailAddress.sendKeys("akash@wuuvo.com");
+        emailAddress.sendKeys(p.getProperty("emailAddress"));
+        // emailAddress.sendKeys("akash@wuuvo.com");
         WebElement password = driver.findElement(By.xpath("//input[@id='login-password']"));
-        password.sendKeys("Test@1234");
+        password.sendKeys(p.getProperty("password1"));
+        //password.sendKeys("Test@1234");
         WebElement signInButton = driver.findElement(By.xpath("//button[@id='js-login-btn']"));
         signInButton.click();
         WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(10));//in this we set the driver to wait maximum 10 seconds
