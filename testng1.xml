@@ -1,2 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="J:/3. automation testing/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/One/One/testNgclassLevelparallel/AppoloToolsChallenge_One.java"><classes><class name="org.example.TestCases.One.One.testNgclassLevelparallel.AppoloToolsChallenge_One"><methods><include name="loginWithValidCredentials"/><include name="checkUrlOfPage"/><include name="verifyAppointmentConfirmation"/><include name="totalMoneySpentCalculation"/></methods></class></classes></test><test verbose="2" preserve-order="true" name="J:/3. automation testing/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/One/One/testNgclassLevelparallel/AppoloToolsChallenge_Two.java"><classes><class name="org.example.TestCases.One.One.testNgclassLevelparallel.AppoloToolsChallenge_Two"><methods><include name="loginWithValidCredentials"/><include name="checkUrlOfPage"/><include name="verifyAppointmentConfirmation"/><include name="totalMoneySpentCalculation"/></methods></class></classes></test></suite>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="J:/3. automation testing/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/One/One/testNgclassLevelparallelViaestngfile/AppoloToolsChallengeOneTest.java">
+        <classes>
+            <class name="org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile.AppoloToolsChallengeOneTest">
+                <methods>
+                    <include name="loginWithValidCredentials"/>
+                    <include name="checkUrlOfPage"/>
+                    <include name="verifyAppointmentConfirmation"/>
+                    <include name="totalMoneySpentCalculation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="J:/3. automation testing/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/One/One/testNgclassLevelparallelViaestngfile/AppoloToolsChallengeTwoTest.java">
+        <classes>
+            <class name="org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile.AppoloToolsChallengeTwoTest">
+                <methods>
+                    <include name="loginWithValidCredentials"/>
+                    <include name="checkUrlOfPage"/>
+                    <include name="verifyAppointmentConfirmation"/>
+                    <include name="totalMoneySpentCalculation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,6 +1,6 @@
 package org.example.TestCases.Four.FourTwoThreadLevelParallel;
 
-import org.example.Utils.FullExcelMethods;
+import org.Utils.FullExcelMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

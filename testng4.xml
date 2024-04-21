@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="J:/3. automation testing/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/Four/FourOnetestNgclassLevelparallel/AppVWOChallengeFour_One.java">
+        <classes>
+            <class name="org.example.TestCases.Four.FourOnetestNgclassLevelparallel.AppVWOChallengeFour_One">
+                <methods>
+                    <include name="loginCrdentialsInValid1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="J:/3. automation testing/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/Four/FourOnetestNgclassLevelparallel/AppVWOChallengeFour_Two.java">
+        <classes>
+            <class name="org.example.TestCases.Four.FourOnetestNgclassLevelparallel.AppVWOChallengeFour_Two">
+                <methods>
+                    <include name="loginCrdentialsInValid1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
