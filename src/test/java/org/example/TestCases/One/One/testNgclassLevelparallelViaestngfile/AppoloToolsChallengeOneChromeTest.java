@@ -1,6 +1,7 @@
 package org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile;
 
-import com.common.One.BaseTestChromeOne;
+import com.basttestcontrol.basetestcontrolone.BaseTestChrome;
+import com.threadLocal.ThreadLocalWebDriver;
 import org.Utils.CalculateEarnedSpent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -19,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Unit test for simple App.
  */
-public class AppoloToolsChallengeOneChromeTest extends BaseTestChromeOne
+public class AppoloToolsChallengeOneChromeTest extends BaseTestChrome
 {
 
 /*
@@ -63,13 +64,13 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestChromeOne
         //anchor tag we use
         //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
       //  makeAppointmentButton.click();
-        WebElement userName=driver.findElement(By.xpath("//input[@id='username']"));
+        WebElement userName= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='username']"));
         userName.sendKeys(p.getProperty("userName"));
         //userName.sendKeys("Admin");
-        WebElement password =driver.findElement(By.xpath("//input[@id='password']"));
+        WebElement password =ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='password']"));
        password.sendKeys(p.getProperty("password"));
         // password.sendKeys("Password@123");
-        WebElement signButton=driver.findElement(By.xpath("//a[@id='log-in']"));
+        WebElement signButton=ThreadLocalWebDriver.getDriver().findElement(By.xpath("//a[@id='log-in']"));
         signButton.click();
 
 
@@ -99,7 +100,7 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestChromeOne
         bookAppointmentButton.click();
 */
 
-       String currentUrl=driver.getCurrentUrl();
+       String currentUrl=ThreadLocalWebDriver.getDriver().getCurrentUrl();
        System.out.println(currentUrl);
       // assertThat(currentUrl.equals("https://demo.applitools.com/app.html"));
        Assert.assertTrue(currentUrl.equals("https://demo.applitools.com/app.html"));
@@ -136,7 +137,7 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestChromeOne
         String part2="]/td[";
         String part3="]";
         System.out.println();*/
-       List<WebElement> negativeSpans = driver.findElements(By.xpath("//table[@class='table table-padded']//span[contains(@class, 'text-danger') and contains(text(), '-')]"));
+       List<WebElement> negativeSpans =ThreadLocalWebDriver.getDriver().findElements(By.xpath("//table[@class='table table-padded']//span[contains(@class, 'text-danger') and contains(text(), '-')]"));
 
         // Iterate over the negative <span> elements and print their text content
         for (WebElement amountSpent : negativeSpans) {
@@ -148,7 +149,7 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestChromeOne
 /*        originalString.replaceAll("[^\\d.-]", "").trim(); // Removes all characters except digits, minus sign, and dot*/
        // System.out.println(CalculateEarnedSpent.showSpent());
 
-        List<WebElement> positiveSpans = driver.findElements(By.xpath("//table[@class='table table-padded']//span[contains(@class, 'text-success') and not(contains(text(), '-'))]"));
+        List<WebElement> positiveSpans = ThreadLocalWebDriver.getDriver().findElements(By.xpath("//table[@class='table table-padded']//span[contains(@class, 'text-success') and not(contains(text(), '-'))]"));
         // Iterate over the negative <span> elements and print their text content
         for (WebElement amountEarned : positiveSpans) {
             calculateEarnedSpent.amountEarned(Double.parseDouble(amountEarned.getText().replaceAll("USD", "").replaceAll("[^\\d.-]", "").trim()));

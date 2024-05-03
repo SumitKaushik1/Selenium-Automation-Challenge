@@ -1,11 +1,10 @@
 
-΅	java:S115	"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ώσ°ούÿÿÿÿ8Κª„…π1J$58733a87-1fbf-4334-a314-b683dabc997e
-	java:S115
-"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(π®ώ8Λª„…π1J$85ca8678-3215-466c-b0fc-1e4f12f14434
-}
-java:S1118":Add a private constructor to hide the implicit public one.(ο–ΫΨ8Ρª„…π1J$89a71989-ba68-4414-a99b-ba02b63a4a50
+΅	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ώσ°ούÿÿÿÿ8Κª„…π1J$58733a87-1fbf-4334-a314-b683dabc997e
+	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(π®ώ8Λª„…π1J$85ca8678-3215-466c-b0fc-1e4f12f14434
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(φίΌόόÿÿÿÿ8ΐ΄ς1
 
-java:S1124	"EReorder the modifiers to comply with the Java Language Specification.(ώσ°ούÿÿÿÿ8Χª„…π1J$d247dd9f-32cb-43ff-ad50-d85d65954b8e
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ώσ°ούÿÿÿÿ8Χª„…π1J$d247dd9f-32cb-43ff-ad50-d85d65954b8e
 
-java:S1124
-"EReorder the modifiers to comply with the Java Language Specification.(π®ώ8Ψª„…π1J$f2e2a6d5-f272-4bc7-968a-ac91e52b67a3
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(π®ώ8Ψª„…π1J$f2e2a6d5-f272-4bc7-968a-ac91e52b67a3
+g
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(φίΌόόÿÿÿÿ8ζΑ΄ς1

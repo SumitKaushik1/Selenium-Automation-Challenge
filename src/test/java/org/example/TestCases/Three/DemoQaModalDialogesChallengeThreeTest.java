@@ -1,6 +1,6 @@
 package org.example.TestCases.Three;
 
-import com.common.three.BaseTestChromerThree;
+import com.basetest.three.BaseTestChromerThree;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

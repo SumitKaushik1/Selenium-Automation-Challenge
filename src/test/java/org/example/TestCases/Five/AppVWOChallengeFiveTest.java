@@ -1,16 +1,12 @@
 package org.example.TestCases.Five;
 
-import com.common.Five.BaseTestChromeFive;
+import com.basetest.Five.BaseTestChromeFive;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
 import java.util.Set;
 
 public class AppVWOChallengeFiveTest extends BaseTestChromeFive {
