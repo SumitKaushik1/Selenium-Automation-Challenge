@@ -4,6 +4,7 @@ import com.threadLocal.ThreadLocalWebDriver;
 import driverpath.DriverPath;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import java.time.Duration;
@@ -30,7 +31,7 @@ public final  class DriverChromeOne {
     
 
 
-    @BeforeSuite
+
       public static void  setUpChrome(){
         //  System.setProperty("webdriver.chrome.driver","J:\\3. automation testing\\day41--selenium -UI elements\\AssignmentAnswers\\Appolo-Tools\\src\\test\\resources\\driver\\chromedriver.exe");
         if(Objects.isNull(driver)){

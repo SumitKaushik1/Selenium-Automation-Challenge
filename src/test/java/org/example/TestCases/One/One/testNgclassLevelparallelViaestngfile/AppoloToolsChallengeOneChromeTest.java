@@ -1,11 +1,13 @@
 package org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile;
 
+import com.basetest.One.DriverChromeOne;
 import com.basttestcontrol.basetestcontrolone.BaseTestChrome;
 import com.threadLocal.ThreadLocalWebDriver;
 import org.Utils.CalculateEarnedSpent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import java.io.FileReader;
@@ -22,6 +24,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class AppoloToolsChallengeOneChromeTest extends BaseTestChrome
 {
+
+
 
 /*
 
@@ -53,6 +57,8 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestChrome
 
     @Test(priority =0)
     public void loginWithValidCredentials() throws InterruptedException, IOException {
+
+        DriverChromeOne.setUpChrome();
 
         FileReader reader=new FileReader("src/test/resources/config.properties");//it is the location of the properites
         Properties p=new Properties();//it is the inbuilt java class
@@ -161,6 +167,9 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestChrome
         DecimalFormat df = new DecimalFormat("#.##");
 
         Assert.assertEquals(Double.parseDouble(df.format(calculateEarnedSpent.showEarned()+calculateEarnedSpent.showSpent())),1996.22);
+
+        DriverChromeOne.tearDown();
+
     }
 
 
@@ -171,6 +180,9 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestChrome
         driver.quit();
   }
 */
+
+
+
 
 
 }

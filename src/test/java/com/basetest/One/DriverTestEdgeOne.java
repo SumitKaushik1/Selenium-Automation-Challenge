@@ -1,11 +1,13 @@
 package com.basetest.One;
 
 import com.threadLocal.ThreadLocalWebDriver;
+import driverpath.DriverPath;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 import java.time.Duration;
 import java.util.Objects;
@@ -22,13 +24,14 @@ public final class DriverTestEdgeOne {
 
     }
 
+
+
     public static  void setupEdge() {
         if (Objects.isNull(driver)) {
             // System.setProperty("webDriver.edge.driver", DriverPath.edgePath());
-            System.setProperty("webdriver.edge.driver", "J:\\3. automation testing\\day41--selenium -UI elements\\msedgedriver.exe");
-            EdgeOptions edgeOptions=new EdgeOptions();
-            edgeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-            driver = new EdgeDriver(edgeOptions);
+            System.setProperty("webdriver.edge.driver", DriverPath.edgePath());
+
+            driver = new EdgeDriver();
             ThreadLocalWebDriver.setDriver(driver);
             ThreadLocalWebDriver.getDriver().manage().window().maximize();
             ThreadLocalWebDriver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -40,7 +43,8 @@ public final class DriverTestEdgeOne {
     }
 
 
-    
+
+
 
       public static void tearDownEdge() {
             if (Objects.nonNull(driver))

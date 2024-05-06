@@ -1,7 +1,0 @@
-
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìğúÿÿÿÿ
-`
-java:S2095"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(Ùê±ú
-E
-java:S1197"*Move the array designators [] to the type.(¡şÏÖøÿÿÿÿ
-E	java:S1063"+Replace this use of System.out by a logger.(Ìş¤†üÿÿÿÿ

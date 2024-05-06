@@ -32,6 +32,7 @@ public final class ThreadLocalWebDriver {
     public static void setDriver(WebDriver driver){
         webDriverThreadLocal.set(driver);
     }
+
     public static WebDriver getDriver(){
         return webDriverThreadLocal.get();
     }

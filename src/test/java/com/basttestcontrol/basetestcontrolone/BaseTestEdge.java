@@ -13,12 +13,11 @@ public class BaseTestEdge {
 
     }
 
-    @BeforeSuite
+
     public void  setUpEdge(){
         DriverTestEdgeOne.setupEdge();
     }
 
-    @AfterSuite
     public void tearDown(){
         DriverTestEdgeOne.tearDownEdge();
     }

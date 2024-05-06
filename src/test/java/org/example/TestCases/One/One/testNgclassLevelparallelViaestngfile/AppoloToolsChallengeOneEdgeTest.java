@@ -1,11 +1,14 @@
 package org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile;
 
+import com.basetest.One.DriverTestEdgeOne;
 import com.basttestcontrol.basetestcontrolone.BaseTestEdge;
 import com.threadLocal.ThreadLocalWebDriver;
 import org.Utils.CalculateEarnedSpent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,6 +17,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.DecimalFormat;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
 
@@ -40,9 +44,12 @@ public class AppoloToolsChallengeOneEdgeTest extends BaseTestEdge {
     }
 */
 
+
     @Test(priority=0)
     public void loginWithValidCredentials() throws InterruptedException, IOException {
 
+
+        DriverTestEdgeOne.setupEdge();
 
         FileReader reader=new FileReader("src/test/resources/config.properties");//it is the location of the properites
         Properties p=new Properties();//it is the inbuilt java class
@@ -54,16 +61,16 @@ public class AppoloToolsChallengeOneEdgeTest extends BaseTestEdge {
         //anchor tag we use
         //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
         //  makeAppointmentButton.click();
-      /*  WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(10));
+          WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(20));
         WebElement userName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='username']")));
-*/
 
-       // WebElement userName= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='username']"));
-        WebElement userName= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='username']"));
 
+        // WebElement userName= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='username']"));
+        //WebElement userName= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='username']"));
         userName.sendKeys(p.getProperty("userName"));
-       // userName.sendKeys("Admin");
-        WebElement password =ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='password']"));
+        // userName.sendKeys("Admin");
+        WebElement password =ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='password']"));//input[@id='password']
+
         password.sendKeys(p.getProperty("password"));
         // password.sendKeys("Password@123");
         WebElement signButton=ThreadLocalWebDriver.getDriver().findElement(By.xpath("//a[@id='log-in']"));
@@ -71,7 +78,6 @@ public class AppoloToolsChallengeOneEdgeTest extends BaseTestEdge {
 
 
     }
-
 
 
     @Test(priority=1)
@@ -157,6 +163,10 @@ public class AppoloToolsChallengeOneEdgeTest extends BaseTestEdge {
         DecimalFormat df = new DecimalFormat("#.##");
 
         Assert.assertEquals(Double.parseDouble(df.format(calculateEarnedSpent .showEarned()+calculateEarnedSpent.showSpent())),1996.22);
+
+
+        DriverTestEdgeOne.tearDownEdge();
+
     }
 
  /*   @AfterSuite
