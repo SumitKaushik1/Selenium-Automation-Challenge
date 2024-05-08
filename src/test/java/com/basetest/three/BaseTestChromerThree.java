@@ -9,28 +9,52 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import java.time.Duration;
+import java.util.Objects;
 
-public class BaseTestChromerThree {
+//no extend of this classs
+public  final class BaseTestChromerThree {
 
 
-   protected WebDriver driver;
+    //variable used only in thsi class
+    //static bz i wnat ot use hte static method
 
-    @BeforeSuite
-   protected  void setUpChrome(){
+   private static WebDriver driver;
 
-        System.setProperty("webdriver.chrome.driver", DriverPath.chromePath());
-        ChromeOptions chromoptions=new ChromeOptions();
-        chromoptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        driver=new ChromeDriver(chromoptions);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://demoqa.com/modal-dialogs");
+   //no object making of this ,object in this calss possible
+    //not outside the class
+    private BaseTestChromerThree(){
 
     }
 
-     @AfterSuite
-     protected void tearDown(){
-        driver.quit();
+
+   // only used by class name this mehtod
+   public static   void setUpChrome(){
+
+        if(Objects.isNull(driver)){
+            System.setProperty("webdriver.chrome.driver", DriverPath.chromePath());
+            ChromeOptions chromoptions=new ChromeOptions();
+            chromoptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+            driver=new ChromeDriver(chromoptions);
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.get("https://demoqa.com/modal-dialogs");
+        }
+
+
     }
+
+
+    //only used by class name this method
+       public static  void tearDownChrome(){
+
+        if(Objects.nonNull(driver))
+                 driver.quit();
+    }
+
+    public static WebDriver  getDriverChrome(){
+
+        return driver;
+    }
+
 
 }

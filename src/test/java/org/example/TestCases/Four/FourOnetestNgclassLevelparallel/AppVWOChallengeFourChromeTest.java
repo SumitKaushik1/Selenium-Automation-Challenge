@@ -1,20 +1,31 @@
 package org.example.TestCases.Four.FourOnetestNgclassLevelparallel;
 
 import com.basetest.Four.BaseTestChromeFour;
+import com.bast_test_control.four.BaseTestControlChromeFour;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
+import threadlocal.ThreadLocalWebDriver;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
-public class AppVWOChallengeFourChromeTest  extends BaseTestChromeFour {
+public class AppVWOChallengeFourChromeTest  extends BaseTestControlChromeFour {
+
+
+
+    //jvm call this constructory when the object is made
+    AppVWOChallengeFourChromeTest(){
+        super();
+        //here the parent class object is made by superkeyword bz
+    }
 
 
 /*
@@ -46,6 +57,7 @@ public class AppVWOChallengeFourChromeTest  extends BaseTestChromeFour {
     @Test(priority=0)
     public void loginCrdentialsInValid1() throws InterruptedException, IOException {
 
+        this.setUpControlChrome();
         FileReader reader=new FileReader("src/test/resources/config.properties");//it is the location of the properites
         Properties p=new Properties();//it is the inbuilt java class
         p.load(reader);//property file isto read the property file
@@ -53,15 +65,15 @@ public class AppVWOChallengeFourChromeTest  extends BaseTestChromeFour {
         System.out.println(p.getProperty("emailAddress"));
         System.out.println(p.getProperty("password1"));
 
-        WebElement emailAddress= driver.findElement(By.xpath("//input[@id='login-username']"));
+        WebElement emailAddress= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='login-username']"));
         emailAddress.sendKeys(p.getProperty("emailAddress"));
         // emailAddress.sendKeys("akash@wuuvo.com");
-        WebElement password = driver.findElement(By.xpath("//input[@id='login-password']"));
+        WebElement password = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='login-password']"));
         password.sendKeys(p.getProperty("password1"));
         //password.sendKeys("Test@1234");
-        WebElement signInButton = driver.findElement(By.xpath("//button[@id='js-login-btn']"));
+        WebElement signInButton = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//button[@id='js-login-btn']"));
         signInButton.click();
-        WebDriverWait wait =new WebDriverWait(driver, Duration.ofSeconds(10));//in this we set the driver to wait maximum 10 seconds
+        WebDriverWait wait =new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(10));//in this we set the driver to wait maximum 10 seconds
         // WebElement firstLine=driver.findElement(By.xpath("//span[@data-qa='lufexuloga']"));
         //span[@class='Fw(semi-bold) ng-binding']
 
@@ -76,9 +88,14 @@ public class AppVWOChallengeFourChromeTest  extends BaseTestChromeFour {
 
         WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='Fw(semi-bold) ng-binding']")));
 
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", text);
+        ((JavascriptExecutor) ThreadLocalWebDriver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", text);
         System.out.println(text.getText());
         Assert.assertEquals(text.getText(),"dasda dasda");
 
     }
+
+@AfterSuite
+    void closeAllResources(){
+        this.tearDownControlChrome();
+}
 }

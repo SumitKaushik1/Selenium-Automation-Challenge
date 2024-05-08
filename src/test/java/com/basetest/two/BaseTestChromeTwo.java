@@ -8,12 +8,24 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import java.time.Duration;
+import java.util.Objects;
 
-public class BaseTestChromeTwo {
+//no one extend this class
+public final class BaseTestChromeTwo {
 
-   protected WebDriver driver;
-    @BeforeSuite
-    protected  void setUp(){
+    //only variable  used within the class
+   private static WebDriver driver;
+    //static bz i wnat ot use hte static method
+
+   //non one make object of this class
+    //object only made in this class not outsdie the class
+   private BaseTestChromeTwo(){
+
+   }
+
+
+   //method call by class naem
+   public  static   void setUpChrome(){
 
       //  System.setProperty("webdriver.chrome.driver", DriverPath.chromePath());
         //  System.setProperty("webdriver.chrome.driver","J:\\3. automation testing\\day41--selenium -UI elements\\AssignmentAnswers\\Appolo-Tools\\src\\test\\resources\\driver\\chromedriver.exe");
@@ -28,8 +40,21 @@ public class BaseTestChromeTwo {
 
     }
 
-    @AfterSuite
-    protected void tearDown(){
+
+
+    //mehod call by class anme
+    public  static  void tearDownChrome(){
         driver.quit();
     }
+
+    //method call by classname
+    public static WebDriver getDriverChrome(){
+       if(Objects.nonNull(driver))
+           return driver;
+       else
+           return null;
+
+
+    }
+
 }

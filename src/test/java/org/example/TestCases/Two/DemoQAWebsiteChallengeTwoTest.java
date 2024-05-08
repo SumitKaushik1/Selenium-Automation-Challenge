@@ -1,6 +1,7 @@
 package org.example.TestCases.Two;
 
 import com.basetest.two.BaseTestChromeTwo;
+import com.bast_test_control.two.BaseTestControlChromeTwo;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,7 +12,15 @@ import java.time.Duration;
 
 
 
-public class DemoQAWebsiteChallengeTwoTest extends BaseTestChromeTwo {
+public class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeTwo {
+
+
+    //jvm make the DemoQAWebsiteChallengeTwoTest  object
+    DemoQAWebsiteChallengeTwoTest(){
+        super();
+        //i make the BaseTestControlChromeTwo  parente class object
+        //then only the object can be used below methods
+    }
 
 /*
     WebDriver driver;
@@ -41,15 +50,18 @@ public class DemoQAWebsiteChallengeTwoTest extends BaseTestChromeTwo {
     @Test(priority=0)
     void clickThirdEditButton() throws InterruptedException {
 
+        this.setUpControlChrome();
+
+
        /* WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='ReactTable -striped -highlight']//div[3]//div[1]//div[7]//div[1]//span[1]//*[name()='svg']//*[name()='path' and contains(@d,'M880 836H1')]")));
         element.click();*/
 
 
-        WebElement editButton = driver.findElement(By.xpath("//div[@class='ReactTable -striped -highlight']//div[3]//div[1]//div[7]//div[1]//span[1]//*[name()='svg']//*[name()='path' and contains(@d,'M880 836H1')]"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", editButton );
+        WebElement editButton = this.controlGetDriver().findElement(By.xpath("//div[@class='ReactTable -striped -highlight']//div[3]//div[1]//div[7]//div[1]//span[1]//*[name()='svg']//*[name()='path' and contains(@d,'M880 836H1')]"));
+        ((JavascriptExecutor) this.controlGetDriver()).executeScript("arguments[0].scrollIntoView(true);", editButton );
         editButton.click();
-        WebElement webElement=driver.findElement(By.xpath("//div[@id='registration-form-modal']"));
+        WebElement webElement=this.controlGetDriver().findElement(By.xpath("//div[@id='registration-form-modal']"));
         System.out.println(webElement.getText());
         Assert.assertTrue(webElement.getText().equals("Registration Form"));
 
@@ -73,14 +85,14 @@ public class DemoQAWebsiteChallengeTwoTest extends BaseTestChromeTwo {
     @Test(priority=1)
     void addDetails(){
 
-        WebElement element1=driver.findElement(By.xpath("//button[@id='submit']"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element1);//for this srolling is not required
+        WebElement element1=this.controlGetDriver().findElement(By.xpath("//button[@id='submit']"));
+        ((JavascriptExecutor) this.controlGetDriver()).executeScript("arguments[0].scrollIntoView(true);", element1);//for this srolling is not required
         element1.click();
 
        /* ChromeOptions options =new ChromeOptions();////it helps to make the page strategy to be normal compare to simple  chrome instance
 
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);*/
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(this.controlGetDriver(), Duration.ofSeconds(10));
         //xpath changes so you have ot paste again and again using the seelctorhub pro
         WebElement addDetailsButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='addNewRecordButton']")));
 
@@ -92,30 +104,33 @@ public class DemoQAWebsiteChallengeTwoTest extends BaseTestChromeTwo {
         actions.moveToElement(element).click().perform();*/
 
 
-        WebElement firstName=driver.findElement(By.xpath("//input[@id='firstName']"));
+        WebElement firstName=this.controlGetDriver().findElement(By.xpath("//input[@id='firstName']"));
         firstName.sendKeys("sumit");
-        WebElement lastName=driver.findElement(By.xpath("//input[@id='lastName']"));
+        WebElement lastName=this.controlGetDriver().findElement(By.xpath("//input[@id='lastName']"));
         lastName.sendKeys("kaushik");
-        WebElement email=driver.findElement(By.xpath("//input[@id='userEmail']"));
+        WebElement email=this.controlGetDriver().findElement(By.xpath("//input[@id='userEmail']"));
         email.sendKeys("pritam@gmail.com");
-        WebElement age=driver.findElement(By.xpath("//input[@id='age']"));
+        WebElement age=this.controlGetDriver().findElement(By.xpath("//input[@id='age']"));
         age.sendKeys("24");
-        WebElement salary=driver.findElement(By.xpath("//input[@id='salary']"));
+        WebElement salary=this.controlGetDriver().findElement(By.xpath("//input[@id='salary']"));
         salary.sendKeys("24000");
-        WebElement department=driver.findElement(By.xpath("//input[@id='department']"));
+        WebElement department=this.controlGetDriver().findElement(By.xpath("//input[@id='department']"));
         department.sendKeys("scient");
 
-        WebElement submitButton=driver.findElement(By.xpath(" //button[@id='submit']"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submitButton);
+        WebElement submitButton=this.controlGetDriver().findElement(By.xpath(" //button[@id='submit']"));
+        ((JavascriptExecutor)this.controlGetDriver()).executeScript("arguments[0].scrollIntoView(true);", submitButton);
 
         submitButton.click();
 
 
 
-        WebElement firstNameCheck =driver.findElement(By.xpath("//div[normalize-space()='sumit']"));
+        WebElement firstNameCheck =this.controlGetDriver().findElement(By.xpath("//div[normalize-space()='sumit']"));
 
         Assert.assertEquals(firstNameCheck.getText(),"sumit");
 
+
+
+        this.tearDownControlChrome();
     }
 
   /*  @AfterSuite

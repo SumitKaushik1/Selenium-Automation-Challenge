@@ -1,6 +1,7 @@
 package org.example.TestCases.Five;
 
 import com.basetest.Five.BaseTestChromeFive;
+import com.bast_test_control.five.BasetTestControlChromeFive;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -9,8 +10,14 @@ import org.testng.annotations.Test;
 
 import java.util.Set;
 
-public class AppVWOChallengeFiveTest extends BaseTestChromeFive {
+public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
 
+
+
+    //whne jvm make the object then it used this default construcitor
+    AppVWOChallengeFiveTest(){
+        super();//it will parent class object
+    }
 /*
 
     WebDriver driver;
@@ -42,27 +49,29 @@ public class AppVWOChallengeFiveTest extends BaseTestChromeFive {
     @Test(priority=0)
     public void mouseHoverButton() throws InterruptedException
     {
+        this.setUpControlChrome();
 
-        String parentHandle=driver.getWindowHandle();
+
+        String parentHandle=this.controlGetDriver().getWindowHandle();
         System.out.println(parentHandle);
 
 
 
         // Identify the element that triggers visibility
-        WebElement triggerElement = driver.findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
+        WebElement triggerElement =this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
 
         // Move mouse to the trigger element to make the hidden element visible
-        Actions actions = new Actions(driver);
+        Actions actions = new Actions(this.controlGetDriver());
         actions.moveToElement(triggerElement).perform();
 
         // Once the button is visible, identify the button element and click on it
-        WebElement buttonElement = driver.findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
+        WebElement buttonElement = this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
         buttonElement.click();
 
-        Set<String> windowHandle=driver.getWindowHandles();
+        Set<String> windowHandle=this.controlGetDriver().getWindowHandles();
         for(String handle:windowHandle){
-            driver.switchTo().window(handle);
-            if(driver.getPageSource().contains("Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta"))
+            this.controlGetDriver().switchTo().window(handle);
+            if(this.controlGetDriver().getPageSource().contains("Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta"))
                 Assert.assertTrue(true);
 
         }

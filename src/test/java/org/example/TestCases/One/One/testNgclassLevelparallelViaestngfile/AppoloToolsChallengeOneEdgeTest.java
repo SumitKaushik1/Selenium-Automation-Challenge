@@ -1,8 +1,8 @@
 package org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile;
 
-import com.basetest.One.DriverTestEdgeOne;
-import com.basttestcontrol.basetestcontrolone.BaseTestEdge;
-import com.threadLocal.ThreadLocalWebDriver;
+import com.bast_test_control.one.BaseTestControlEdgeOne;
+import org.testng.annotations.AfterSuite;
+import threadlocal.ThreadLocalWebDriver;
 import org.Utils.CalculateEarnedSpent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -23,8 +23,15 @@ import java.util.Properties;
 
 
 
-public class AppoloToolsChallengeOneEdgeTest extends BaseTestEdge {
+public class AppoloToolsChallengeOneEdgeTest extends BaseTestControlEdgeOne {
 
+
+    //ppoloToolsChallengeOneEdgeTest jvm makes its object
+    AppoloToolsChallengeOneEdgeTest(){
+        super();
+        //BaseTestControlEdgeOne object is made here
+        //then only we cna use hte object of hte parent below
+    }
 
    /* WebDriver driver;
 
@@ -49,7 +56,8 @@ public class AppoloToolsChallengeOneEdgeTest extends BaseTestEdge {
     public void loginWithValidCredentials() throws InterruptedException, IOException {
 
 
-        DriverTestEdgeOne.setupEdge();
+        this.setUpControlEdge();//note when you make the instsnce here the driver insteance reamin
+        //in memory till it is not removed while runnign of the program
 
         FileReader reader=new FileReader("src/test/resources/config.properties");//it is the location of the properites
         Properties p=new Properties();//it is the inbuilt java class
@@ -165,9 +173,17 @@ public class AppoloToolsChallengeOneEdgeTest extends BaseTestEdge {
         Assert.assertEquals(Double.parseDouble(df.format(calculateEarnedSpent .showEarned()+calculateEarnedSpent.showSpent())),1996.22);
 
 
-        DriverTestEdgeOne.tearDownEdge();
+    }
+
+    @AfterSuite
+    void closeAllResources(){
+
+        //at ht elast test driver instance is removerd from memory
+        this.tearDownControlEdge();
 
     }
+
+
 
  /*   @AfterSuite
     void tearDown(){
