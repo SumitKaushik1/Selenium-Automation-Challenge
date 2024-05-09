@@ -9,36 +9,14 @@ wsrc/test/java/org/example/TestCases/One/One/testNgclassLevelparallelViaestngfil
 usrc/test/java/org/example/TestCases/One/One/testNgclassLevelparallelViaestngfile/AppoloToolsChallengeOneEdgeTest.java,4\e\4e727954eadfda42c062893286ee211dd995a724
 ;
 testng2.xml,f\a\fada021beff47afd786d0413fc57f86fbb1c586c
-g
-7src/test/java/com/threadLocal/ThreadLocalWebDriver.java,6\3\6301c9cf00b2372dd16207fea422cdfc16ac1d4d
-v
-Fsrc/test/java/com/basttestcontrol/basetestcontrolone/BaseTestEdge.java,d\d\dd774c9325d28ad6381d759f99461005f2952931
-c
-3src/test/java/com/basetest/One/DriverChromeOne.java,1\c\1c1811b8f00b36fbf3bbbbdd32c136738fe03421
-e
-5src/test/java/com/basetest/One/DriverTestEdgeOne.java,5\8\586ab2959686bd49a59bf700b880851f81c0c923
 X
 (src/main/java/driverpath/DriverPath.java,1\f\1fac07fd5fdee2f81e4434387d3cf847f5c113a6
-x
-Hsrc/test/java/com/basttestcontrol/basetestcontrolone/BaseTestChrome.java,a\8\a82b0331e3a8869c3a6d8a3de85c294b070d8910
 P
  testngOneParallelClasslevel..xml,4\a\4ae4b95f76aaca48df0de7090d929100db5317fc
 z
 Jsrc/test/java/org/example/TestCases/Two/DemoQAWebsiteChallengeTwoTest.java,4\7\47ea77854962f77b363647c12ac74fa0ee832859
-|
-Lsrc/test/java/com/basttestcontrol/basetestcontrolone/one/BaseTestChrome.java,a\3\a368f1e4cbdc8d630725b06f3c294427d7cdd3fe
-z
-Jsrc/test/java/com/basttestcontrol/basetestcontrolone/one/BaseTestEdge.java,7\7\771b70e7821fc6f55e4cd57ae95faaf229b8fdd3
 e
 5src/test/java/com/basetest/two/BaseTestChromeTwo.java,1\d\1dab52287af42724cf27c75310da9c78aaf18b4e
-É
-Ssrc/test/java/com/basttestcontrol/basetestcontrolone/one/BaseTestControlChrome.java,e\6\e6952e93cb242067e957b6d60becb6a19cece1fa
-Å
-Qsrc/test/java/com/basttestcontrol/basetestcontrolone/one/BaseTestControlEdge.java,b\0\b01e9a97e14f901083ce85276a12cf606d669381
-p
-@src/test/java/com/bast_test_control/one/BaseTestControlEdge.java,e\b\eb3be9c01b3b57f8f8523eba50dc70fd98fa702a
-u
-Esrc/test/java/com/bast_test_control/two/BaseTestControlChromeOne.java,3\1\31a84ae3c469846db2f59065876b42f02d0be17e
 u
 Esrc/test/java/com/bast_test_control/one/BaseTestControlChromeOne.java,8\8\8843eb93a790eefc8c0b291461265117e45e5b47
 s
@@ -47,8 +25,6 @@ u
 Esrc/test/java/com/bast_test_control/two/BaseTestControlChromeTwo.java,8\6\8666b2fd82c913a8c39915080eac0aac43660675
 c
 3src/main/java/threadLocal/ThreadLocalWebDriver.java,3\f\3fcf666ba145f215986fe0a694bb0e3dfbad2456
-j
-:src/main/java/threadLocalpackage/ThreadLocalWebDriver.java,f\b\fbf8a4c217fdde294c36852b67cfc50e40409aba
 c
 3src/main/java/threadlocal/ThreadLocalWebDriver.java,b\c\bc642c261a14938debf91198b9f037ce551c239b
 °
@@ -57,8 +33,6 @@ qsrc/test/java/org/example/TestCases/One/OnetestNgThreadLevelparallel/AppoloTool
 Tsrc/test/java/org/example/TestCases/Three/DemoQaModalDialogesChallengeThreeTest.java,d\e\defa8fa917e39deaaecbc85732a0c59fe0d53d1f
 y
 Isrc/test/java/com/bast_test_control/three/BaseTestControlChromeThree.java,f\d\fdc734d072b1f2f7c05bb56760d7c40bac2cdd1d
-T
-$src/main/java/com/driver/Driver.java,a\9\a9f671fd1c4fac8ce04a5f1add3be5a0d1028e71
 a
 1src/main/java/org/Utils/CalculateEarnedSpent.java,4\1\41bb479667f35281a8c92518ec828bbb0318f174
 j
@@ -87,8 +61,5 @@ u
 Esrc/test/java/org/example/TestCases/Five/AppVWOChallengeFiveTest.java,8\2\826cfa146bc8e4013cf8aa6518fe0c92594989bf
 x
 Hsrc/test/java/com/bast_test_control/five/BasetTestControlChromeFive.java,c\7\c7aee76371ed6c8f4ec7f8cc417d964802629dbb
-:
-
-testng.xml,5\2\522a7a4e21649af06297e31a9e33f13bb4fd3022
 ;
 testng5.xml,c\8\c8e106477f5aaf476c8439a92957841a96c9ab9b

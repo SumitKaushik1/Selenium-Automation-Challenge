@@ -13,6 +13,8 @@ public final  class DriverPath {
     private static final  String EDGE_PATH;
     //final noonce can change the path
 
+    private static final String FIREFOX_PATH;
+
     //to avoid unneccory repetation of path
     private static final  String RESOURCE_PATH;
 
@@ -26,6 +28,8 @@ public final  class DriverPath {
         CHROME_PATH=RESOURCE_PATH+"chromedriver.exe";
 
         EDGE_PATH= RESOURCE_PATH+"msedgedriver.exe";
+
+        FIREFOX_PATH=RESOURCE_PATH+"geckodriver.exe";
     }
 
     public static String chromePath(){
@@ -35,4 +39,7 @@ public final  class DriverPath {
     public static String edgePath(){
         return EDGE_PATH;
     }
+
+
+    public static String fireFoxPath(){ return FIREFOX_PATH;}
 }
