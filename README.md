@@ -9,7 +9,8 @@ Calculate the Total Amount of Money Spent via Selenium Script
 - Verify total is 1996.22
 
 <br>
-Create a Framework and Use the Following
+
+ Create a Framework and Use the Following
 - Java ,Selenium ,TestNg,POM
 - Maven,AssertJ,POM
 - Thread Local Support -> Thread Safety
