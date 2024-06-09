@@ -7,3 +7,16 @@ Calculate the Total Amount of Money Spent via Selenium Script
 - Calculate the total amount spent this month
 - Create a util which will parse and check for spent vs earned
 - Verify total is 1996.22
+
+Create a Framework and Use the Following
+- Java ,Selenium ,TestNg,POM
+- Maven,AssertJ,POM
+- Thread Local Support -> Thread Safety
+- Allure Report
+- Excel Sheets for Test Data -> Data Provider
+- Read the username and password from properties
+- TestNg,@Test,Before and After Method.
+- Run Local on Selenoid Integration(Docker if possible)
+
+- 
+- 
