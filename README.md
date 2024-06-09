@@ -8,6 +8,7 @@ Calculate the Total Amount of Money Spent via Selenium Script
 - Create a util which will parse and check for spent vs earned
 - Verify total is 1996.22
 
+<br>
 Create a Framework and Use the Following
 - Java ,Selenium ,TestNg,POM
 - Maven,AssertJ,POM
@@ -18,5 +19,3 @@ Create a Framework and Use the Following
 - TestNg,@Test,Before and After Method.
 - Run Local on Selenoid Integration(Docker if possible)
 
-- 
-- 
