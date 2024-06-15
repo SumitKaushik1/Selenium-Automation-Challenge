@@ -20,3 +20,8 @@ Calculate the Total Amount of Money Spent via Selenium Script
 - TestNg,@Test,Before and After Method.
 - Run Local on Selenoid Integration(Docker if possible)
 
+## Automation Challenge 2:
+Web Tables verifications
+- Navigate to the Webtables - Page - https://demoqa.com/webtables
+- click on the 3rd edit button
+- click on the Add and Add a new Row and verify in table 
