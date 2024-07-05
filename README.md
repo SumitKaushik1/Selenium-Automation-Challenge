@@ -24,4 +24,8 @@ Calculate the Total Amount of Money Spent via Selenium Script
 Web Tables verifications
 - Navigate to the Webtables - Page - https://demoqa.com/webtables
 - click on the 3rd edit button
-- click on the Add and Add a new Row and verify in table 
+- click on the Add and Add a new Row and verify in table
+
+## Automation Challenge 3:
+- Verify  the content of the Model - Page - https://demoqa.com/modal-dialogs
+
