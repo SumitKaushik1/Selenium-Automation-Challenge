@@ -37,6 +37,7 @@ Web Tables verifications
  - Run them in 2 browsers side by side and check if you can run it parallel
    
 <br>
+
  Create a Framework and use the following 
  - Java ,Selenium,TestNg,POM
  - Maven ,AssertJ,POM
