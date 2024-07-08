@@ -49,3 +49,5 @@ Web Tables verifications
  - Cloud Grids
  -  SonarLint,Java > 8
  -  Run Local on Selenoid Integration(Docker if possible)
+   
+ ## Automation Challenge 5:
