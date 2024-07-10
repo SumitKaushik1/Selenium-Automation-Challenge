@@ -51,3 +51,7 @@ Web Tables verifications
  -  Run Local on Selenoid Integration(Docker if possible)
    
  ## Automation Challenge 5:
+  - iframe and Multi Window Problem with Heatmap
+    1. Open the link of Heatmap
+    2. With Action class click on the Link to open the variation
+    3. Verify that you are able to click on the Click map
