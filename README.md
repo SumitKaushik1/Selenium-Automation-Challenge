@@ -31,7 +31,7 @@ Web Tables verifications
 
 ## Automation Challenge 4:
  Login and Dashboard Page Automation in App.vwo.com and Run in two browsers parallel
- - Open the https:/app.vwo.com
+ - Open the https://app.vwo.com
  - Enter the username as 93npu2yyb0@esiix.com and Password as Wingify@123
  - Verify that you after log in dashbaord is visible with the wingify username on dashboard page
  - Run them in 2 browsers side by side and check if you can run it parallel
