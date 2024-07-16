@@ -53,7 +53,8 @@ Web Tables verifications
  ## Automation Challenge 5:
 
 - Open the https://app.vwo.com/#/test/ab/13/heatmaps/1?token=eyJhY2NvdW50X2lkIjo2NjY0MDAsImV4cGVyaW1lbnRfaWQiOjEzLCJjcmVhdGVkX29uIjoxNjcxMjA1MDUwLCJ0eXBlIjoiY2FtcGFpZ24iLCJ2ZXJzaW9uIjoxLCJoYXNoIjoiY2IwNzBiYTc5MDM1MDI2N2QxNTM5MTBhZDE1MGU1YTUiLCJzY29wZSI6IiIsImZybiI6ZmFsc2V9&isHttpsOnly=1
-  - iframe and Multi Window Problem with Heatmap
+
+- iframe and Multi Window Problem with Heatmap
     1. Open the link of Heatmap
     2. With Action class click on the Link to open the variation
     3. Verify that you are able to click on the Click map
