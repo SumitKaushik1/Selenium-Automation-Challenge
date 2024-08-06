@@ -9,6 +9,7 @@ Calculate the Total Amount of Money Spent via Selenium Script
 - Verify total is 1996.22
 
 <br>
+<br>
 
  Create a Framework and Use the Following
 - Java ,Selenium ,TestNg,POM
@@ -36,6 +37,7 @@ Web Tables verifications
  - Verify that you after log in dashbaord is visible with the wingify username on dashboard page
  - Run them in 2 browsers side by side and check if you can run it parallel
    
+<br>
 <br>
 
  Create a Framework and use the following 
