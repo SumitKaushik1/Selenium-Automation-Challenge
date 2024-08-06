@@ -21,7 +21,7 @@ public final  class DriverPath {
     static{
 
         //it is done to avoid unneccory repetation of path
-        RESOURCE_PATH=System.getProperty("user.dir")+"\\src\\test\\resources\\driver\\";
+        RESOURCE_PATH=System.getProperty("user.dir")+"\\src\\test\\resources\\drivers\\";
         //it is good practice to intialize the static variable in static initializer block
         //bydefault the user.dir point to the current directory
 

@@ -1,10 +1,12 @@
 package com.basetest.One;
 
+import propertesfilesread.PropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
 import driverpath.DriverPath;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Objects;
 
@@ -26,7 +28,7 @@ public final class BaseTestEdgeOne {
 
 //method used by clas name only
 
-    public static  void setUpEdge() {
+    public static  void setUpEdge() throws Exception {
         if (Objects.isNull(driver)) {
             // System.setProperty("webDriver.edge.driver", DriverPath.edgePath());
             System.setProperty("webdriver.edge.driver", DriverPath.edgePath());
@@ -42,7 +44,8 @@ public final class BaseTestEdgeOne {
             ThreadLocalWebDriver.setDriver(driver);
             ThreadLocalWebDriver.getDriver().manage().window().maximize();
             ThreadLocalWebDriver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-            ThreadLocalWebDriver.getDriver().get("https://demo.applitools.com/");
+           // ThreadLocalWebDriver.getDriver().get("https://demo.applitools.com/");
+            ThreadLocalWebDriver.getDriver().get(PropertyFileRead.readPropertyFile("urlOne"));
 
 
 

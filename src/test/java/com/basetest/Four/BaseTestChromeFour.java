@@ -3,10 +3,10 @@ package com.basetest.Four;
 import driverpath.DriverPath;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import propertesfilesread.PropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Objects;
 
@@ -20,7 +20,7 @@ public final  class BaseTestChromeFour {
 
 
 //it can be used by classname
-   public static   void setUpChrome(){
+   public static   void setUpChrome() throws Exception {
 
        if(Objects.isNull(driver)){
            System.setProperty("webdriver.chrome.driver", DriverPath.chromePath());
@@ -31,7 +31,8 @@ public final  class BaseTestChromeFour {
            ThreadLocalWebDriver.setDriver(driver);
            ThreadLocalWebDriver.getDriver().manage().window().maximize();
            ThreadLocalWebDriver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-           ThreadLocalWebDriver.getDriver().get("https://app.vwo.com/#/login");
+          // ThreadLocalWebDriver.getDriver().get("https://app.vwo.com/#/login");
+           ThreadLocalWebDriver.getDriver().get(PropertyFileRead.readPropertyFile("urlFour"));
        }
 
     }

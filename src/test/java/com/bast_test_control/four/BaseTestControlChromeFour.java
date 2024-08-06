@@ -2,6 +2,8 @@ package com.bast_test_control.four;
 
 import com.basetest.Four.BaseTestChromeFour;
 
+import java.io.IOException;
+
 public class BaseTestControlChromeFour {
 
 
@@ -12,7 +14,7 @@ public class BaseTestControlChromeFour {
     }
 
     //withing packeag adn its chile class acn use this
-    protected void setUpControlChrome(){
+    protected void setUpControlChrome() throws Exception {
         BaseTestChromeFour.setUpChrome();
     }
 

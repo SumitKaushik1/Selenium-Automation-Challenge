@@ -3,6 +3,8 @@ package com.bast_test_control.four;
 import com.basetest.Four.BaseTestChromeFour;
 import com.basetest.Four.BaseTestEdgeFour;
 
+import java.io.IOException;
+
 public class BaseTestControlEdgeFour {
 
 
@@ -12,7 +14,7 @@ public class BaseTestControlEdgeFour {
 
     }
 
-    protected void setUpControlEdge(){
+    protected void setUpControlEdge() throws Exception {
         BaseTestEdgeFour.setUpEdge();
     }
 

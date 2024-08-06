@@ -5,9 +5,9 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import propertesfilesread.PropertyFileRead;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Objects;
 
@@ -28,7 +28,7 @@ public  final class BaseTestChromerThree {
 
 
    // only used by class name this mehtod
-   public static   void setUpChrome(){
+   public static   void setUpChrome() throws Exception {
 
         if(Objects.isNull(driver)){
             System.setProperty("webdriver.chrome.driver", DriverPath.chromePath());
@@ -37,7 +37,8 @@ public  final class BaseTestChromerThree {
             driver=new ChromeDriver(chromoptions);
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-            driver.get("https://demoqa.com/modal-dialogs");
+            //driver.get("https://demoqa.com/modal-dialogs");
+            driver.get(PropertyFileRead.readPropertyFile("urlThree"));
         }
 
 

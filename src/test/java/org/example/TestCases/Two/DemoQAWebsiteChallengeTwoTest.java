@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.time.Duration;
 
 
@@ -48,7 +49,7 @@ public class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeTwo {
 
 
     @Test(priority=0)
-    void clickThirdEditButton() throws InterruptedException {
+    void clickThirdEditButton() throws Exception {
 
         this.setUpControlChrome();
 

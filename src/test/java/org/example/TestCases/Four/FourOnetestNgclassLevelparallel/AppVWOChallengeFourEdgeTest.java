@@ -46,11 +46,11 @@ public class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
     }*/
 
     @Test
-    public void loginCrdentialsInValid1() throws InterruptedException, IOException {
+    public void loginCrdentialsInValid1() throws Exception {
 
         this.setUpControlEdge();
 
-        FileReader reader=new FileReader("src/test/resources/config.properties");//it is the location of the properites
+        FileReader reader=new FileReader("src/test/resources/LoginCredentitals.properties");//it is the location of the properites
         Properties p=new Properties();//it is the inbuilt java class
         p.load(reader);//property file isto read the property file
 

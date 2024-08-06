@@ -8,6 +8,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class DemoQaModalDialogesChallengeThreeTest extends BaseTestControlChromeThree {
 
 
@@ -34,7 +36,7 @@ public class DemoQaModalDialogesChallengeThreeTest extends BaseTestControlChrome
 
 
     @Test(priority=0)
-    void clickOnLargeModalAndVerifyContent(){
+    void clickOnLargeModalAndVerifyContent() throws Exception {
 /*
 
 

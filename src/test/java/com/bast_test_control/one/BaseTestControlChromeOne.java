@@ -2,6 +2,8 @@ package com.bast_test_control.one;
 
 import com.basetest.One.BaseTestChromeOne;
 
+import java.io.IOException;
+
 public class BaseTestControlChromeOne {
 
     //only the child class can make object of it
@@ -16,7 +18,7 @@ public class BaseTestControlChromeOne {
     // we make this class
 
 
-    protected void setUpControlChrome(){
+    protected void setUpControlChrome() throws Exception {
         BaseTestChromeOne.setUpChrome();
     }
 

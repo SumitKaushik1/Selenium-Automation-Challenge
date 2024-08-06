@@ -1,10 +1,11 @@
 package com.basetest.One;
 
+import propertesfilesread.PropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
 import driverpath.DriverPath;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Objects;
 
@@ -32,7 +33,7 @@ public final  class BaseTestChromeOne {
 
 
 //method used by clas name only
-      public static void  setUpChrome(){
+      public static void  setUpChrome() throws Exception {
         //  System.setProperty("webdriver.chrome.driver","J:\\3. automation testing\\day41--selenium -UI elements\\AssignmentAnswers\\Appolo-Tools\\src\\test\\resources\\driver\\chromedriver.exe");
         if(Objects.isNull(ThreadLocalWebDriver.getDriver())){
             System.setProperty("webdriver.chrome.driver",DriverPath.chromePath());
@@ -50,7 +51,9 @@ public final  class BaseTestChromeOne {
             ThreadLocalWebDriver.setDriver(new ChromeDriver());
             ThreadLocalWebDriver.getDriver().manage().window().maximize();
             ThreadLocalWebDriver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-            ThreadLocalWebDriver.getDriver().get("https://demo.applitools.com/");
+           // ThreadLocalWebDriver.getDriver().get("https://demo.applitools.com/");
+
+            ThreadLocalWebDriver.getDriver().get(PropertyFileRead.readPropertyFile("urlOne"));
         }
 
     }

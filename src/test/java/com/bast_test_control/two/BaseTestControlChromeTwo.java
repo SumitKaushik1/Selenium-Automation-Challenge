@@ -3,6 +3,8 @@ package com.bast_test_control.two;
 import com.basetest.two.BaseTestChromeTwo;
 import org.openqa.selenium.WebDriver;
 
+import java.io.IOException;
+
 public class BaseTestControlChromeTwo {
 
     //only its child class can make its object
@@ -13,7 +15,7 @@ public class BaseTestControlChromeTwo {
 
     }
 
-   protected  void setUpControlChrome(){
+   protected  void setUpControlChrome() throws Exception {
         BaseTestChromeTwo.setUpChrome();
     }
 

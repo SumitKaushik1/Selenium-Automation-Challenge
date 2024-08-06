@@ -63,3 +63,5 @@ x
 Hsrc/test/java/com/bast_test_control/five/BasetTestControlChromeFive.java,c\7\c7aee76371ed6c8f4ec7f8cc417d964802629dbb
 ;
 testng5.xml,c\8\c8e106477f5aaf476c8439a92957841a96c9ab9b
+f
+6src/main/java/propertesfilesread/PropertyFileRead.java,9\2\92f8518ccd6eb1891fd6efba68ae2d088db44926

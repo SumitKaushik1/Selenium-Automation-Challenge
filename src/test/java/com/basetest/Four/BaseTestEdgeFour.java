@@ -3,9 +3,11 @@ package com.basetest.Four;
 import driverpath.DriverPath;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import propertesfilesread.PropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
 
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Objects;
 
@@ -18,7 +20,7 @@ public class BaseTestEdgeFour {
 
 
      //it can only be called by classnaem
-    public  static  void setUpEdge(){
+    public  static  void setUpEdge() throws Exception {
 
         if(Objects.isNull(driver)){
             System.setProperty("webdriver.edge.driver", DriverPath.edgePath());
@@ -30,7 +32,8 @@ public class BaseTestEdgeFour {
             ThreadLocalWebDriver.setDriver(driver);
             ThreadLocalWebDriver.getDriver().manage().window().maximize();
             ThreadLocalWebDriver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-            ThreadLocalWebDriver.getDriver().get("https://app.vwo.com/#/login");
+            //ThreadLocalWebDriver.getDriver().get("https://app.vwo.com/#/login");
+            ThreadLocalWebDriver.getDriver().get(PropertyFileRead.readPropertyFile("urlFour"));
         }
 
 

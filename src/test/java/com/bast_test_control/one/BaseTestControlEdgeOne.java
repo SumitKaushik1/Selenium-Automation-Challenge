@@ -3,6 +3,8 @@ package com.bast_test_control.one;
 
 import com.basetest.One.BaseTestEdgeOne;
 
+import java.io.IOException;
+
 //we have the ststic driver class for edge but just for controlling we are making this class
 public class BaseTestControlEdgeOne {
 
@@ -15,7 +17,7 @@ public class BaseTestControlEdgeOne {
     }
 
 
-    protected void  setUpControlEdge(){
+    protected void  setUpControlEdge() throws Exception {
         BaseTestEdgeOne.setUpEdge();
     }
 

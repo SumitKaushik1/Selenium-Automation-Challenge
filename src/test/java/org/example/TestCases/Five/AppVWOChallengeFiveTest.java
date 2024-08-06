@@ -8,6 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.util.Set;
 
 public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
@@ -47,8 +48,7 @@ public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
 
 
     @Test(priority=0)
-    public void mouseHoverButton() throws InterruptedException
-    {
+    public void mouseHoverButton() throws Exception {
         this.setUpControlChrome();
 
 

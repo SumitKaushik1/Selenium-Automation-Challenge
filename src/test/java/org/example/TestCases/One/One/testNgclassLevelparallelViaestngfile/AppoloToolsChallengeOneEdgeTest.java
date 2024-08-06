@@ -53,13 +53,13 @@ public class AppoloToolsChallengeOneEdgeTest extends BaseTestControlEdgeOne {
 
 
     @Test(priority=0)
-    public void loginWithValidCredentials() throws InterruptedException, IOException {
+    public void loginWithValidCredentials() throws Exception {
 
 
         this.setUpControlEdge();//note when you make the instsnce here the driver insteance reamin
         //in memory till it is not removed while runnign of the program
 
-        FileReader reader=new FileReader("src/test/resources/config.properties");//it is the location of the properites
+        FileReader reader=new FileReader("src/test/resources/configproperties/LoginCredentitals.properties");//it is the location of the properites
         Properties p=new Properties();//it is the inbuilt java class
         p.load(reader);//property file isto read the property file
 

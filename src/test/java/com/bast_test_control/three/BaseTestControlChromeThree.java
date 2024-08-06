@@ -3,6 +3,8 @@ package com.bast_test_control.three;
 import com.basetest.three.BaseTestChromerThree;
 import org.openqa.selenium.WebDriver;
 
+import java.io.IOException;
+
 public class BaseTestControlChromeThree {
 
 
@@ -14,7 +16,7 @@ public class BaseTestControlChromeThree {
 
     }
 
-    protected void  setUpControlChrome(){
+    protected void  setUpControlChrome() throws Exception {
         BaseTestChromerThree.setUpChrome();
 
     }
