@@ -1,9 +1,7 @@
 package com.bast_test_control.three;
 
-import com.basetest.three.BaseTestChromerThree;
+import com.basetest.three.BaseTestChromeThree;
 import org.openqa.selenium.WebDriver;
-
-import java.io.IOException;
 
 public class BaseTestControlChromeThree {
 
@@ -17,15 +15,15 @@ public class BaseTestControlChromeThree {
     }
 
     protected void  setUpControlChrome() throws Exception {
-        BaseTestChromerThree.setUpChrome();
+        BaseTestChromeThree.setUpChrome();
 
     }
     protected void tearDownControlChrome(){
-        BaseTestChromerThree.tearDownChrome();
+        BaseTestChromeThree.tearDownChrome();
     }
 
     protected WebDriver controlGetDriver(){
-       return  BaseTestChromerThree.getDriverChrome();
+       return  BaseTestChromeThree.getDriverChrome();
 
     }
 

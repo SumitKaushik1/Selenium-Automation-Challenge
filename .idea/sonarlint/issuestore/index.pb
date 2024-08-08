@@ -35,8 +35,6 @@ y
 Isrc/test/java/com/bast_test_control/three/BaseTestControlChromeThree.java,f\d\fdc734d072b1f2f7c05bb56760d7c40bac2cdd1d
 a
 1src/main/java/org/Utils/CalculateEarnedSpent.java,4\1\41bb479667f35281a8c92518ec828bbb0318f174
-j
-:src/test/java/com/basetest/three/BaseTestChromerThree.java,e\6\e6275d2b75e8b5cca916f2f69492c1b3151bc6b9
 e
 5src/test/java/com/basetest/One/BaseTestChromeOne.java,b\8\b8f82f2da40bc2271c56e115abb32eece1ca2204
 c
@@ -65,3 +63,18 @@ Hsrc/test/java/com/bast_test_control/five/BasetTestControlChromeFive.java,c\7\c
 testng5.xml,c\8\c8e106477f5aaf476c8439a92957841a96c9ab9b
 f
 6src/main/java/propertesfilesread/PropertyFileRead.java,9\2\92f8518ccd6eb1891fd6efba68ae2d088db44926
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+o
+?src/main/java/customExceptions/FileNotFoundRuntimeExcption.java,6\d\6dc91eb032a9cdd5efc83209ce37066175e417db
+k
+;src/main/java/customExceptions/KeyUrlNotFoundException.java,7\2\7210459e26d200fe2bc9eacf0dba0e03e4c56349
+i
+9src/test/java/com/basetest/three/BaseTestChromeThree.java,f\8\f83c3265a8fa8d443709094c831148f15bd02d62
+v
+Fsrc/main/java/propertesfilesread/LoginCredentialsPropertyFileRead.java,7\7\77ef1f6322841682392580f282ccdbc327f4c15f
+y
+Isrc/main/java/propertesfilesread/FrameoworksConstantPropertyFileRead.java,f\5\f5188d14e7e6b84303f2d9f980745771538c8b8a

@@ -1,12 +1,12 @@
 package com.basetest.One;
 
-import propertesfilesread.PropertyFileRead;
+import propertesfilesread.FrameoworksConstantPropertyFileRead;
+
 import threadlocal.ThreadLocalWebDriver;
 import driverpath.DriverPath;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
-import java.io.IOException;
 import java.time.Duration;
 import java.util.Objects;
 
@@ -22,13 +22,13 @@ public final class BaseTestEdgeOne {
 
     //nonone make the objecct of it
     //no object making of this ,object in this calss possible
-    private BaseTestEdgeOne(){
+    private BaseTestEdgeOne() {
 
     }
 
 //method used by clas name only
 
-    public static  void setUpEdge() throws Exception {
+    public static void setUpEdge() throws Exception {
         if (Objects.isNull(driver)) {
             // System.setProperty("webDriver.edge.driver", DriverPath.edgePath());
             System.setProperty("webdriver.edge.driver", DriverPath.edgePath());
@@ -44,29 +44,27 @@ public final class BaseTestEdgeOne {
             ThreadLocalWebDriver.setDriver(driver);
             ThreadLocalWebDriver.getDriver().manage().window().maximize();
             ThreadLocalWebDriver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-           // ThreadLocalWebDriver.getDriver().get("https://demo.applitools.com/");
-            ThreadLocalWebDriver.getDriver().get(PropertyFileRead.readPropertyFile("urlOne"));
+            // ThreadLocalWebDriver.getDriver().get("https://demo.applitools.com/");
 
+            //FramworkconstantFileRead class static  method is called when the value is required from its file to get we pass the key
+            ThreadLocalWebDriver.getDriver().get(FrameoworksConstantPropertyFileRead.readPropertyFile("urlOne"));
 
 
         }
     }
-
-
 
 
     //method used by clas name only
-      public static void tearDownEdge() {
-            if (Objects.nonNull(driver))
-                 driver.quit();//firstly driver is reooved so that browser beome close
-                //to save native memory
-                ThreadLocalWebDriver.unload();//thne threadlocal variable is removed which ic sholdering
-          //suppsoe thradlocal variable si only reomved that browser reamin open bz driver
-          // instaance still holding the refeence of browser
-
-
-        }
-
+    public static void tearDownEdge() {
+        if (Objects.nonNull(driver))
+            driver.quit();//firstly driver is reooved so that browser beome close
+        //to save native memory
+        ThreadLocalWebDriver.unload();//thne threadlocal variable is removed which ic sholdering
+        //suppsoe thradlocal variable si only reomved that browser reamin open bz driver
+        // instaance still holding the refeence of browser
 
 
     }
+
+
+}

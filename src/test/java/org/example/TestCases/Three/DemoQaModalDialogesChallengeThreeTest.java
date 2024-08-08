@@ -1,14 +1,11 @@
 package org.example.TestCases.Three;
 
-import com.basetest.three.BaseTestChromerThree;
 import com.bast_test_control.three.BaseTestControlChromeThree;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
-
-import java.io.IOException;
 
 public class DemoQaModalDialogesChallengeThreeTest extends BaseTestControlChromeThree {
 

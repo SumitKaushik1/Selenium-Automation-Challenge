@@ -3,6 +3,7 @@ package driverpath;
 //seperate class is made bz it will be used
 public final  class DriverPath {
 
+
     private DriverPath(){
         //it  make this private i donnt wnat the object of this class anywhere
     }

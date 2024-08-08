@@ -74,9 +74,13 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestControlChromeOne
        //note when you make the instsnce here the driver insteance reamin
         //in memory till it is not removed while runnign of the program
 
+        //LoginCredentialsPropertyFileRead class static  method is called when the value is required from its file to get we pass the key
         FileReader reader=new FileReader("src/test/resources/configproperties/LoginCredentitals.properties");//it is the location of the properites
         Properties p=new Properties();//it is the inbuilt java class
         p.load(reader);//property file isto read the property file
+
+
+
 
         System.out.println(p.getProperty("userName"));
         System.out.println(p.getProperty("password"));
