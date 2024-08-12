@@ -7,10 +7,6 @@ P
 wsrc/test/java/org/example/TestCases/One/One/testNgclassLevelparallelViaestngfile/AppoloToolsChallengeOneChromeTest.java,2\7\278ef944096ead4f2b4f67d6fbeefa71a1f68172
 ¥
 usrc/test/java/org/example/TestCases/One/One/testNgclassLevelparallelViaestngfile/AppoloToolsChallengeOneEdgeTest.java,4\e\4e727954eadfda42c062893286ee211dd995a724
-;
-testng2.xml,f\a\fada021beff47afd786d0413fc57f86fbb1c586c
-X
-(src/main/java/driverpath/DriverPath.java,1\f\1fac07fd5fdee2f81e4434387d3cf847f5c113a6
 P
  testngOneParallelClasslevel..xml,4\a\4ae4b95f76aaca48df0de7090d929100db5317fc
 z
@@ -39,8 +35,6 @@ e
 5src/test/java/com/basetest/One/BaseTestChromeOne.java,b\8\b8f82f2da40bc2271c56e115abb32eece1ca2204
 c
 3src/test/java/com/basetest/One/BaseTestEdgeOne.java,f\1\f1cd9808aaecd5ce97016411c0189d4f06c800e3
-;
-testng3.xml,e\5\e5174275ea3e94a27875617af906f628fd0b9000
 ›
 ksrc/test/java/org/example/TestCases/Four/FourOnetestNgclassLevelparallel/AppVWOChallengeFourChromeTest.java,9\1\91cd96fe7b225c8d67ecdaf7dddc3c7666a052f1
 w
@@ -59,10 +53,6 @@ u
 Esrc/test/java/org/example/TestCases/Five/AppVWOChallengeFiveTest.java,8\2\826cfa146bc8e4013cf8aa6518fe0c92594989bf
 x
 Hsrc/test/java/com/bast_test_control/five/BasetTestControlChromeFive.java,c\7\c7aee76371ed6c8f4ec7f8cc417d964802629dbb
-;
-testng5.xml,c\8\c8e106477f5aaf476c8439a92957841a96c9ab9b
-f
-6src/main/java/propertesfilesread/PropertyFileRead.java,9\2\92f8518ccd6eb1891fd6efba68ae2d088db44926
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 :
@@ -78,3 +68,9 @@ v
 Fsrc/main/java/propertesfilesread/LoginCredentialsPropertyFileRead.java,7\7\77ef1f6322841682392580f282ccdbc327f4c15f
 y
 Isrc/main/java/propertesfilesread/FrameoworksConstantPropertyFileRead.java,f\5\f5188d14e7e6b84303f2d9f980745771538c8b8a
+W
+'src/main/java/path/DriverFilesPath.java,4\5\4529a73823e696e3424a026a62f6cd17ef896291
+Ÿ
+osrc/test/java/org/example/TestCases/Four/FourTwoThreadLevelParallel/AppVWOChallengeFourNotSynchronisedTest.java,e\d\ed1684cad4a9f0e704178dd56bce7da088b517e1
+›
+ksrc/test/java/org/example/TestCases/Four/FourTwoThreadLevelParallel/AppVWOChallengeFourSychronisedTest.java,d\6\d6c64e7c0cbb8967ffe3b00b1cc1d0e674261f7b

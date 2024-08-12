@@ -1,6 +1,6 @@
 package com.basetest.two;
 
-import driverpath.DriverPath;
+import path.DriverFilesPath;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -28,7 +28,7 @@ public final class BaseTestChromeTwo {
     //method call by class naem
     public static void setUpChrome() throws Exception {
 
-        System.setProperty("webdriver.chrome.driver", DriverPath.chromePath());
+        System.setProperty("webdriver.chrome.driver", DriverFilesPath.chromePath());
         //  System.setProperty("webdriver.chrome.driver","J:\\3. automation testing\\day41--selenium -UI elements\\AssignmentAnswers\\Appolo-Tools\\src\\test\\resources\\driver\\chromedriver.exe");
         //System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\drivers\\chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();

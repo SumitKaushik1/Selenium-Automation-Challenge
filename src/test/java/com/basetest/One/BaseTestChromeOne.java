@@ -1,9 +1,9 @@
 package com.basetest.One;
 
+import path.DriverFilesPath;
 import propertesfilesread.FrameoworksConstantPropertyFileRead;
 
 import threadlocal.ThreadLocalWebDriver;
-import driverpath.DriverPath;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -32,7 +32,7 @@ public final  class BaseTestChromeOne {
     public static void setUpChrome() throws Exception {
         //  System.setProperty("webdriver.chrome.driver","J:\\3. automation testing\\day41--selenium -UI elements\\AssignmentAnswers\\Appolo-Tools\\src\\test\\resources\\driver\\chromedriver.exe");
         if (Objects.isNull(ThreadLocalWebDriver.getDriver())) {
-            System.setProperty("webdriver.chrome.driver", DriverPath.chromePath());
+            System.setProperty("webdriver.chrome.driver", DriverFilesPath.chromePath());
 
 
             //driver=new ChromeDriver();//ChromeDriver class from webdriver famework uses the upper location for the driver

@@ -2,6 +2,7 @@ package org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile;
 
 import com.bast_test_control.one.BaseTestControlChromeOne;
 import org.testng.annotations.AfterSuite;
+import propertesfilesread.LoginCredentialsPropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
 import org.Utils.CalculateEarnedSpent;
 import org.openqa.selenium.By;
@@ -75,24 +76,28 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestControlChromeOne
         //in memory till it is not removed while runnign of the program
 
         //LoginCredentialsPropertyFileRead class static  method is called when the value is required from its file to get we pass the key
-        FileReader reader=new FileReader("src/test/resources/configproperties/LoginCredentitals.properties");//it is the location of the properites
-        Properties p=new Properties();//it is the inbuilt java class
-        p.load(reader);//property file isto read the property file
+       // FileReader reader=new FileReader("src/test/resources/configproperties/LoginCredentitals.properties");//it is the location of the properites
+        //Properties p=new Properties();//it is the inbuilt java class
+        //p.load(reader);//property file isto read the property file
 
 
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile("userName"));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile("password"));
 
 
-        System.out.println(p.getProperty("userName"));
-        System.out.println(p.getProperty("password"));
+        //System.out.println(p.getProperty("userName"));
+       // System.out.println(p.getProperty("password"));
 
         //anchor tag we use
         //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
       //  makeAppointmentButton.click();
         WebElement userName= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='username']"));
-        userName.sendKeys(p.getProperty("userName"));
+        userName.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("userName"));
+       // userName.sendKeys(p.getProperty("userName"));
         //userName.sendKeys("Admin");
         WebElement password =ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='password']"));
-       password.sendKeys(p.getProperty("password"));
+      password.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("password"));
+      // password.sendKeys(p.getProperty("password"));
         // password.sendKeys("Password@123");
         WebElement signButton=ThreadLocalWebDriver.getDriver().findElement(By.xpath("//a[@id='log-in']"));
         signButton.click();

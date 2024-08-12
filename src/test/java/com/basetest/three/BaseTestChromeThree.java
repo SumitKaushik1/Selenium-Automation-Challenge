@@ -1,6 +1,6 @@
 package com.basetest.three;
 
-import driverpath.DriverPath;
+import path.DriverFilesPath;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,7 +31,7 @@ public  final class BaseTestChromeThree {
     public static void setUpChrome() throws Exception {
 
         if (Objects.isNull(driver)) {
-            System.setProperty("webdriver.chrome.driver", DriverPath.chromePath());
+            System.setProperty("webdriver.chrome.driver", DriverFilesPath.chromePath());
             // System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\drivers\\chromedriver.exe");
             ChromeOptions chromoptions = new ChromeOptions();
             chromoptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);

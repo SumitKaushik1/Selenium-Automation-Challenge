@@ -2,14 +2,23 @@ package org.example.TestCases.Five;
 
 import com.basetest.Five.BaseTestChromeFive;
 import com.bast_test_control.five.BasetTestControlChromeFive;
+import dev.failsafe.internal.util.Durations;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.Matchers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
 
 public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
 
@@ -52,32 +61,114 @@ public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
         this.setUpControlChrome();
 
 
-        String parentHandle=this.controlGetDriver().getWindowHandle();
-        System.out.println(parentHandle);
+       // String parentHandle=this.controlGetDriver().getWindowHandle();
+        //System.out.println(parentHandle);
 
+
+        WebDriverWait wait = new WebDriverWait(this.controlGetDriver(), Duration.ofSeconds(100));
+        wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));  // Adjust the number based on how many tabs should be open
 
 
         // Identify the element that triggers visibility
-        WebElement triggerElement =this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
+       // WebElement triggerElement =this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
+        //you can use this  trigger element if upper one doesnot work
+        // Identify the element that triggers visibility
+        WebElement triggerElement =this.controlGetDriver().findElement(By.xpath("//li[1]//div[2]//div[1]//div[3]"));
+
+
+
 
         // Move mouse to the trigger element to make the hidden element visible
         Actions actions = new Actions(this.controlGetDriver());
         actions.moveToElement(triggerElement).perform();
 
+
+
+
         // Once the button is visible, identify the button element and click on it
-        WebElement buttonElement = this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
+      //  WebElement buttonElement = this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
+        //you can use this button of other trigger element if upper one button donot work
+        WebElement buttonElement = this.controlGetDriver().findElement(By.xpath("//li[1]//div[2]//div[1]//div[3]"));
+
         buttonElement.click();
 
-        Set<String> windowHandle=this.controlGetDriver().getWindowHandles();
-        for(String handle:windowHandle){
-            this.controlGetDriver().switchTo().window(handle);
-            if(this.controlGetDriver().getPageSource().contains("Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta"))
-                Assert.assertTrue(true);
+      //  this.controlGetDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+
+        // Wait for the number of windows to be equal to the expected number
+
+        //it is global wait
+        wait.until(ExpectedConditions.numberOfWindowsToBe(2));  // Adjust the number based on how many tabs should be open
+       // here is waiting for 2 tabs must be opened
+
+        // Get all window handles
+        Set<String> allWindows = this.controlGetDriver().getWindowHandles();
+
+
+        boolean titleFound = false;
+        // Wait for each tab to load completely by checking the title
+        for (String window : allWindows) {
+
+            this.controlGetDriver().switchTo().window(window);
+
+            // Use WebDriverWait to wait until the page title is present
+            new WebDriverWait(this.controlGetDriver(), Duration.ofSeconds(100)).until(ExpectedConditions.titleIs(this.controlGetDriver().getTitle()));
+
+            System.out.println(this.controlGetDriver().getTitle());
+            wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));  // Adjust the number based on how many tabs should be open
+
+            String actualTitleString=this.controlGetDriver().getTitle();
+
+           // Assert.assertEquals(this.controlGetDriver().getTitle(),"Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta");
+            if(actualTitleString.equals("Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta"))
+            {
+
+
+                //assertion inside the if  block is not applicable
+                titleFound = true;
+
+                // no assertion is applied bz
+                // System.out.println("inside if conditions ");
+               // Assert.assertEquals(this.controlGetDriver().getTitle(),"Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta");
+
+                //System.out.println(this.controlGetDriver().getTitle());
+
+                //MatcherAssert.assertThat("Page title is not as expected", actualTitleString, Matchers.equalTo("Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta"));
+              // Assert.assertEquals(actualTitleString,"Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta","title of the page is visible ");
+
+                //System.out.println("Assertion completed successfully.");
+               break;
+            }
 
         }
 
+        //lot tabs opened then switch to each  tab and check the page source contain this or not
+        //Set<String> windowHandle=this.controlGetDriver().getWindowHandles();
 
-        Assert.assertFalse(true);
+      /*  for(String handle:windowHandle){
+            this.controlGetDriver().switchTo().window(handle);
+           // System.out.println(this.controlGetDriver().getPageSource().);
+            if(this.controlGetDriver().getPageSource().contains("Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta"))
+                Assert.assertTrue(true);
+
+
+
+        }*/
+
+
+
+       // Fail the test if the title was not found
+        if (!titleFound) {
+            Assert.fail("Title of the page was not found.");
+        }
 
     }
+
+    @AfterSuite
+    void closeAllResources() {
+        this.tearDownControlChrome();
+
+    }
+
+
 }

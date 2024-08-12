@@ -1,6 +1,6 @@
 package com.basetest.Four;
 
-import driverpath.DriverPath;
+import path.DriverFilesPath;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -16,20 +16,20 @@ public final  class BaseTestChromeFour {
 
     //only this class can use this variable
     //staatic bz i want ot use in the ststic method
-    private static WebDriver driver;
+    //private static WebDriver driver;
 
 
     //it can be used by classname
     public static void setUpChrome() throws Exception {
 
-        if (Objects.isNull(driver)) {
-            System.setProperty("webdriver.chrome.driver", DriverPath.chromePath());
+        if (Objects.isNull(ThreadLocalWebDriver.getDriver())) {
+            System.setProperty("webdriver.chrome.driver", DriverFilesPath.chromePath());
             // System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\drivers\\chromedriver.exe");
-            driver = new ChromeDriver();
+            //driver = new ChromeDriver();
             //which ever thread useing this method that thread imopliclaty will have its own threadlocal variable
             //so the thread local variable is made static even it is static the when thrad comes to it
             //it will make its own threadlocal variblae ,static only give the feature to call by classname
-            ThreadLocalWebDriver.setDriver(driver);
+            ThreadLocalWebDriver.setDriver(new ChromeDriver());
             ThreadLocalWebDriver.getDriver().manage().window().maximize();
             ThreadLocalWebDriver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
             // ThreadLocalWebDriver.getDriver().get("https://app.vwo.com/#/login");
@@ -45,8 +45,8 @@ public final  class BaseTestChromeFour {
     public static void tearDown() {
 
         //it will first close the browser by removing hte driver instsnce
-        if (Objects.nonNull(driver))
-            driver.quit();
+        if (Objects.nonNull(ThreadLocalWebDriver.getDriver()))
+            ThreadLocalWebDriver.getDriver().quit();
         //then we will remove the thread local variable which is holding the refernce of driver
         ThreadLocalWebDriver.unload();
 

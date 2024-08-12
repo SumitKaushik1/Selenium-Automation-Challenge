@@ -2,10 +2,10 @@ package propertesfilesread;
 
 import customExceptions.FileNotFoundRuntimeExcption;
 import customExceptions.KeyUrlNotFoundException;
+import path.DriverFilesPath;
 
-import java.io.FileInputStream;
 
-
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -41,10 +41,24 @@ public class FrameoworksConstantPropertyFileRead {
         //static bliock is used for the early initialization
         try {
             //take file
-            FileInputStream fileInputStream = new FileInputStream("src/test/resources/configproperties/FrameworkConstantURLs.properties");
-           // Properties properties = new Properties()
+            //FileInputStream fileInputStream = new FileInputStream("src/test/resources/configproperties/FrameworkConstantURLs.properties")
+           //notw the  .property file  is the text file  so fileinputStream(specilaly for bianry file but can be used for text file also)
+            // is not needed you can use FileReader  for text file
+            // note-> text file(characters) data is standard either utf8 or ascii so any tool know this so
+            //binary data text file of these characters can be opened by any tool like extension .txt,.properties
+            //so fileReader is  enough for that
+            //but binary file does not follow any standard it is specific its binary data is pure raw bytes
+            //it can be opened by specific tool and all it is random bytes not specific it is used for the
+            //extension like .audio,.png and all ,fileinputstream is used to read these types of files
+
+            // text file and binary file store data in bytes only but for text file standard used but binary file
+            // no standard
+            // Properties properties = new Properties()
+
+            // PROPERTIES.load(fileInputStream)
            //load the file
-            PROPERTIES.load(fileInputStream);
+            FileReader fileReader=new FileReader(DriverFilesPath.frameworkConstantsFilePath());
+            PROPERTIES.load(fileReader);
 
 
             // Set<Map.Entry<String,String>>p=properties.entrySet();//it will retun set(no dublicay ) of maps entry ie it is the set of each key-value pair ie mapentry
@@ -54,7 +68,14 @@ public class FrameoworksConstantPropertyFileRead {
              //   CONFIGMAP.put(String.valueOf(entry.getKey()),String.valueOf(entry.getValue())
             //
 
+            PROPERTIES.forEach((key,value)-> System.out.println("key "+String.valueOf(key)+"value "+String.valueOf(value)));
 
+
+
+            //properteis  class has  foreachloop which  takes functional interface as the argument
+            //that functional interface has one method unimplemented ,by supplying the method implementation directly
+            // inside implemented class will be formed which implement the functional interfaace nwo that functional interface
+            //implemented class method down below
             PROPERTIES.forEach((key, value) -> CONFIGMAP.put(String.valueOf(key), String.valueOf(value)));
             //her we put the each key-value or entry of .property file in the hashmap
 
@@ -73,6 +94,7 @@ public class FrameoworksConstantPropertyFileRead {
           // Properties properties = new Properties()
            //properties.load(fileInputStream)
 
+        // passed key to this  method is null or there is on  key in the existing map
            if(Objects.isNull(key)||Objects.isNull(CONFIGMAP.get(key)))
                throw new KeyUrlNotFoundException("property name "+key+" not found ,please check config properties");
           //directly use the class variable scope within class

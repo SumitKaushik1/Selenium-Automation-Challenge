@@ -140,7 +140,7 @@ public class AppVWOChallengeFourSychronisedTest {
 
        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", text);
        System.out.println(text.getText());
-       Assert.assertEquals(text.getText(),"dasda dasda");
+       Assert.assertEquals(text.getText(),"akash");
 
        System.out.println("loginCredentials1");
 

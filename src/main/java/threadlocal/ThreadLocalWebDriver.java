@@ -57,7 +57,7 @@ public final class ThreadLocalWebDriver {
 //)
    // static ThreadLocal<WebDriver> webDriverThreadLocal=ThreadLocal.withInitial(
          //   lambda expresion
-              //  System.setProperty("webdriver.gecko.driver", DriverPath.fireFoxPath
+              //  System.setProperty("webdriver.gecko.driver", DriverFilesPath.fireFoxPath
            //     return new FirefoxDriver()
            //
     //)
