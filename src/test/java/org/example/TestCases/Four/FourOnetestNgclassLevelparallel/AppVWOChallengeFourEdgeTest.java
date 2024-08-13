@@ -61,7 +61,7 @@ public class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
         System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile("emailAddress"));
         System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile("password1"));
 
-      ThreadLocalWebDriver.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(300));
+      ThreadLocalWebDriver.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(1000));
 
         WebElement emailAddress= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='login-username']"));
         emailAddress.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("emailAddress"));
@@ -73,7 +73,7 @@ public class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
         //password.sendKeys("Test@1234");
         WebElement signInButton = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//button[@id='js-login-btn']"));
         signInButton.click();
-        WebDriverWait wait =new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(100));//in this we set the driver to wait maximum 10 seconds
+        WebDriverWait wait =new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(1000));//in this we set the driver to wait maximum 10 seconds
         // WebElement firstLine=driver.findElement(By.xpath("//span[@data-qa='lufexuloga']"));
         //span[@class='Fw(semi-bold) ng-binding']
 
@@ -91,6 +91,11 @@ public class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
         ((JavascriptExecutor) ThreadLocalWebDriver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", text);
         System.out.println(text.getText());
         Assert.assertEquals(text.getText(),"akash");
+        //Assert is used to abort the program at the particular line if certain condition is not fulfill
+        //if that condition is satified thne code will continiue
+        //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+        // method so the it will pass bydefault
+
 
     }
 

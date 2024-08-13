@@ -192,6 +192,10 @@ public class AppoloToolsChallengeOneSynchronisedTest {
         System.out.println(currentUrl);
         //assertThat(currentUrl.equals("https://demo.applitools.com/app.html"));
       Assert.assertTrue(currentUrl.equals("https://demo.applitools.com/app.html"));
+      //Assert is used to abort the program at the particular line if certain condition is not fulfill
+      //if that condition is satified thne code will continiue
+      //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+      // method so the it will pass bydefault
     }
 
 
@@ -249,7 +253,11 @@ public class AppoloToolsChallengeOneSynchronisedTest {
         DecimalFormat df = new DecimalFormat("#.##");
 
         Assert.assertEquals(Double.parseDouble(df.format(calculateEarnedSpent.showEarned()+calculateEarnedSpent.showSpent())),1996.22);
-    }
+       //Assert is used to abort the program at the particular line if certain condition is not fulfill
+       //if that condition is satified thne code will continiue
+       //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+       // method so the it will pass bydefault
+   }
 
 
 
@@ -343,6 +351,10 @@ public class AppoloToolsChallengeOneSynchronisedTest {
         System.out.println(currentUrl);
        // assertThat(currentUrl.equals("https://demo.applitools.com/app.html"));
         Assert.assertTrue(currentUrl.equals("https://demo.applitools.com/app.html"));
+       //Assert is used to abort the program at the particular line if certain condition is not fulfill
+       //if that condition is satified thne code will continiue
+       //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+       // method so the it will pass bydefault
     }
 
 
@@ -400,7 +412,12 @@ public class AppoloToolsChallengeOneSynchronisedTest {
         DecimalFormat df = new DecimalFormat("#.##");
 
         Assert.assertEquals(Double.parseDouble(df.format(calculateEarnedSpent .showEarned()+calculateEarnedSpent.showSpent())),1996.22);
-    }
+       //Assert is used to abort the program at the particular line if certain condition is not fulfill
+       //if that condition is satified thne code will continiue
+       //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+       // method so the it will pass bydefault
+
+   }
 
 
 

@@ -1,6 +1,7 @@
 package org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile;
 
 import com.bast_test_control.one.BaseTestControlChromeOne;
+import customExceptions.KeyUrlNotFoundException;
 import org.testng.annotations.AfterSuite;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
@@ -72,44 +73,57 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestControlChromeOne
 
         this.setUpControlChrome();
 
-       //note when you make the instsnce here the driver insteance reamin
-        //in memory till it is not removed while runnign of the program
-
-        //LoginCredentialsPropertyFileRead class static  method is called when the value is required from its file to get we pass the key
-       // FileReader reader=new FileReader("src/test/resources/configproperties/LoginCredentitals.properties");//it is the location of the properites
-        //Properties p=new Properties();//it is the inbuilt java class
-        //p.load(reader);//property file isto read the property file
-
-
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile("userName"));
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile("password"));
-
-
-        //System.out.println(p.getProperty("userName"));
-       // System.out.println(p.getProperty("password"));
-
-        //anchor tag we use
-        //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
-      //  makeAppointmentButton.click();
-        WebElement userName= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='username']"));
-        userName.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("userName"));
-       // userName.sendKeys(p.getProperty("userName"));
-        //userName.sendKeys("Admin");
-        WebElement password =ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='password']"));
-      password.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("password"));
-      // password.sendKeys(p.getProperty("password"));
-        // password.sendKeys("Password@123");
-        WebElement signButton=ThreadLocalWebDriver.getDriver().findElement(By.xpath("//a[@id='log-in']"));
-        signButton.click();
-
-
+        Assert.assertEquals(ThreadLocalWebDriver.getDriver().getCurrentUrl(),"https://demo.applitools.com/");
+        //Assert is used to abort the program at the particular line if certain condition is not fulfill
+        //if that condition is satified thne code will continiue
+        //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+        // method so the it will pass bydefault
     }
 
 
 
    @Test(priority =1)
-    public void checkUrlOfPage() throws InterruptedException{
-       /* Select facilityDropdown = new Select(driver.findElement(By.xpath("//select[@id='combo_facility']")));
+    public void checkUrlOfPage() throws InterruptedException, KeyUrlNotFoundException {
+
+
+       //note when you make the instsnce here the driver insteance reamin
+       //in memory till it is not removed while runnign of the program
+
+       //LoginCredentialsPropertyFileRead class static  method is called when the value is required from its file to get we pass the key
+       // FileReader reader=new FileReader("src/test/resources/configproperties/LoginCredentitals.properties");//it is the location of the properites
+       //Properties p=new Properties();//it is the inbuilt java class
+       //p.load(reader);//property file isto read the property file
+
+
+       System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile("userName"));
+       System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile("password"));
+
+
+       //System.out.println(p.getProperty("userName"));
+       // System.out.println(p.getProperty("password"));
+
+       //anchor tag we use
+       //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
+       //  makeAppointmentButton.click();
+       WebElement userName= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='username']"));
+       userName.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("userName"));
+       // userName.sendKeys(p.getProperty("userName"));
+       //userName.sendKeys("Admin");
+       WebElement password =ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='password']"));
+       password.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("password"));
+       // password.sendKeys(p.getProperty("password"));
+       // password.sendKeys("Password@123");
+       WebElement signButton=ThreadLocalWebDriver.getDriver().findElement(By.xpath("//a[@id='log-in']"));
+       signButton.click();
+
+
+
+
+
+
+
+
+        /* Select facilityDropdown = new Select(driver.findElement(By.xpath("//select[@id='combo_facility']")));
         facilityDropdown.selectByVisibleText("Seoul CURA Healthcare Center");
 
         WebElement medicalRadioButton = driver.findElement(By.xpath("//input[@value='Medicaid']"));
@@ -132,7 +146,13 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestControlChromeOne
        String currentUrl=ThreadLocalWebDriver.getDriver().getCurrentUrl();
        System.out.println(currentUrl);
       // assertThat(currentUrl.equals("https://demo.applitools.com/app.html"));
-       Assert.assertTrue(currentUrl.equals("https://demo.applitools.com/app.html"));
+
+
+       Assert.assertEquals(currentUrl, "https://demo.applitools.com/app.html");
+       //Assert is used to abort the program at the particular line if certain condition is not fulfill
+       //if that condition is satified thne code will continiue
+       //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+       // method so the it will pass bydefault
     }
 
 
@@ -190,7 +210,10 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestControlChromeOne
         DecimalFormat df = new DecimalFormat("#.##");
 
         Assert.assertEquals(Double.parseDouble(df.format(calculateEarnedSpent.showEarned()+calculateEarnedSpent.showSpent())),1996.22);
-
+        //Assert is used to abort the program at the particular line if certain condition is not fulfill
+        //if that condition is satified thne code will continiue
+        //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+        // method so the it will pass bydefault
         //at ht elast test driver instance is removerd from memory
 
 

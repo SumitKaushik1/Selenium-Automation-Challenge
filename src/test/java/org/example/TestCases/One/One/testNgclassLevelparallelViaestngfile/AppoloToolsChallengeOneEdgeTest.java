@@ -1,6 +1,7 @@
 package org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile;
 
 import com.bast_test_control.one.BaseTestControlEdgeOne;
+import customExceptions.KeyUrlNotFoundException;
 import org.testng.annotations.AfterSuite;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
@@ -58,14 +59,26 @@ public class AppoloToolsChallengeOneEdgeTest extends BaseTestControlEdgeOne {
 
 
         this.setUpControlEdge();//note when you make the instsnce here the driver insteance reamin
+
+        Assert.assertEquals(ThreadLocalWebDriver.getDriver().getCurrentUrl(),"https://demo.applitools.com/");
+        //Assert is used to abort the program at the particular line if certain condition is not fulfill
+        //if that condition is satified thne code will continiue
+        //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+        // method so the it will pass bydefault
+
+    }
+
+
+    @Test(priority=1)
+    public void checkUrlOfPage() throws InterruptedException, KeyUrlNotFoundException {
         //in memory till it is not removed while runnign of the program
 
         //FileReader reader=new FileReader("src/test/resources/configproperties/LoginCredentitals.properties");//it is the location of the properites
-       // Properties p=new Properties();//it is the inbuilt java class
+        // Properties p=new Properties();//it is the inbuilt java class
         //p.load(reader);//property file isto read the property file
 
         //System.out.println(p.getProperty("userName"));
-       // System.out.println(p.getProperty("password"));
+        // System.out.println(p.getProperty("password"));
 
 
 
@@ -75,29 +88,26 @@ public class AppoloToolsChallengeOneEdgeTest extends BaseTestControlEdgeOne {
         //anchor tag we use
         //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
         //  makeAppointmentButton.click();
-          WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(20));
         WebElement userName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='username']")));
 
 
         // WebElement userName= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='username']"));
         //WebElement userName= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='username']"));
         userName.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("userName"));
-       // userName.sendKeys(p.getProperty("userName"));
+        // userName.sendKeys(p.getProperty("userName"));
         // userName.sendKeys("Admin");
         WebElement password =ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='password']"));//input[@id='password']
 
         password.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("password"));
-       // password.sendKeys(p.getProperty("password"));
+        // password.sendKeys(p.getProperty("password"));
         // password.sendKeys("Password@123");
         WebElement signButton=ThreadLocalWebDriver.getDriver().findElement(By.xpath("//a[@id='log-in']"));
         signButton.click();
 
 
-    }
 
 
-    @Test(priority=1)
-    public void checkUrlOfPage() throws InterruptedException{
        /* Select facilityDropdown = new Select(driver.findElement(By.xpath("//select[@id='combo_facility']")));
         facilityDropdown.selectByVisibleText("Seoul CURA Healthcare Center");
 
@@ -121,7 +131,11 @@ public class AppoloToolsChallengeOneEdgeTest extends BaseTestControlEdgeOne {
         String currentUrl=ThreadLocalWebDriver.getDriver().getCurrentUrl();
         System.out.println(currentUrl);
        // assertThat(currentUrl.equals("https://demo.applitools.com/app.html"));
-        Assert.assertTrue(currentUrl.equals("https://demo.applitools.com/app.html"));
+        Assert.assertEquals(currentUrl, "https://demo.applitools.com/app.html");
+        //Assert is used to abort the program at the particular line if certain condition is not fulfill
+        //if that condition is satified thne code will continiue
+        //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+        // method so the it will pass bydefault
     }
 
 
@@ -179,7 +193,9 @@ public class AppoloToolsChallengeOneEdgeTest extends BaseTestControlEdgeOne {
         DecimalFormat df = new DecimalFormat("#.##");
 
         Assert.assertEquals(Double.parseDouble(df.format(calculateEarnedSpent .showEarned()+calculateEarnedSpent.showSpent())),1996.22);
-
+        //Assert is used to abort the program at the particular line if certain condition is not fulfill
+        //if that condition is satified thne code will continiue
+        //note bydefault if  there is no error in the method so the it will pass bydefault
 
     }
 

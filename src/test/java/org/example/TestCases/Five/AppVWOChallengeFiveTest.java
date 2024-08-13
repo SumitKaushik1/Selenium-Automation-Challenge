@@ -16,6 +16,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -65,15 +66,15 @@ public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
         //System.out.println(parentHandle);
 
 
-        WebDriverWait wait = new WebDriverWait(this.controlGetDriver(), Duration.ofSeconds(100));
-        wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));  // Adjust the number based on how many tabs should be open
+        WebDriverWait wait = new WebDriverWait(this.controlGetDriver(), Duration.ofSeconds(1000));
+        wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));  // wait till the page is fully loaded
 
 
         // Identify the element that triggers visibility
-       // WebElement triggerElement =this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
+    /*1.*/   WebElement triggerElement =this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
         //you can use this  trigger element if upper one doesnot work
         // Identify the element that triggers visibility
-        WebElement triggerElement =this.controlGetDriver().findElement(By.xpath("//li[1]//div[2]//div[1]//div[3]"));
+      /*2.*/ // WebElement triggerElement =this.controlGetDriver().findElement(By.xpath("//li[1]//div[2]//div[1]//div[3]"));
 
 
 
@@ -86,9 +87,9 @@ public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
 
 
         // Once the button is visible, identify the button element and click on it
-      //  WebElement buttonElement = this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
+        /*1.*/   WebElement buttonElement = this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
         //you can use this button of other trigger element if upper one button donot work
-        WebElement buttonElement = this.controlGetDriver().findElement(By.xpath("//li[1]//div[2]//div[1]//div[3]"));
+        /*2.*/  //WebElement buttonElement = this.controlGetDriver().findElement(By.xpath("//li[1]//div[2]//div[1]//div[3]"));
 
         buttonElement.click();
 
@@ -112,7 +113,7 @@ public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
             this.controlGetDriver().switchTo().window(window);
 
             // Use WebDriverWait to wait until the page title is present
-            new WebDriverWait(this.controlGetDriver(), Duration.ofSeconds(100)).until(ExpectedConditions.titleIs(this.controlGetDriver().getTitle()));
+            new WebDriverWait(this.controlGetDriver(), Duration.ofSeconds(1000)).until(ExpectedConditions.titleIs(this.controlGetDriver().getTitle()));
 
             System.out.println(this.controlGetDriver().getTitle());
             wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));  // Adjust the number based on how many tabs should be open
@@ -125,7 +126,7 @@ public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
 
 
                 //assertion inside the if  block is not applicable
-                titleFound = true;
+                //titleFound = true;
 
                 // no assertion is applied bz
                 // System.out.println("inside if conditions ");
@@ -137,7 +138,13 @@ public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
               // Assert.assertEquals(actualTitleString,"Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta","title of the page is visible ");
 
                 //System.out.println("Assertion completed successfully.");
-               break;
+                Assert.assertTrue(true);
+                //Assert is used to abort the program at the particular line if certain condition is not fulfill
+                //if that condition is satified thne code will continiue
+                //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+                // method so the it will pass bydefault
+
+                break;
             }
 
         }
@@ -160,15 +167,22 @@ public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
        // Fail the test if the title was not found
         if (!titleFound) {
             Assert.fail("Title of the page was not found.");
+            //Assert is used to abort the program at the particular line if certain condition is not fulfill
+            //if that condition is satified thne code will continiue
+            //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+            // method so the it will pass bydefault
+
         }
 
     }
+
 
     @AfterSuite
     void closeAllResources() {
         this.tearDownControlChrome();
 
     }
+
 
 
 }

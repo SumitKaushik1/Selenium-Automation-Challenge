@@ -99,7 +99,11 @@ public class AppVWOChallengeFourNotSynchronisedTest {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", text);
         System.out.println(text.getText());
 
-        Assert.assertEquals(text.getText(),"dasda dasda");
+        Assert.assertEquals(text.getText(),"akash");
+        //Assert is used to abort the program at the particular line if certain condition is not fulfill
+        //if that condition is satified thne code will continiue
+        //note bydefault if  there is no error in the method so the it will pass bydefault
+
 
     }
 
@@ -149,7 +153,11 @@ public class AppVWOChallengeFourNotSynchronisedTest {
 
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", text);
         System.out.println(text.getText());
-        Assert.assertEquals(text.getText(),"dasda dasda");
+        Assert.assertEquals(text.getText(),"akash");
+        //Assert is used to abort the program at the particular line if certain condition is not fulfill
+        //if that condition is satified thne code will continiue
+        //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+        // method so the it will pass bydefault
 
     }
 

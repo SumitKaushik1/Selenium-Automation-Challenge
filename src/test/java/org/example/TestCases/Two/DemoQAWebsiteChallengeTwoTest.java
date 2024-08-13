@@ -6,6 +6,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -64,8 +65,11 @@ public class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeTwo {
         editButton.click();
         WebElement webElement=this.controlGetDriver().findElement(By.xpath("//div[@id='registration-form-modal']"));
         System.out.println(webElement.getText());
-        Assert.assertTrue(webElement.getText().equals("Registration Form"));
-
+        Assert.assertEquals(webElement.getText(), "Registration Form");
+        //Assert is used to abort the program at the particular line if certain condition is not fulfill
+        //if that condition is satified thne code will continiue
+        //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+        // method so the it will pass bydefault
 
 
 /*
@@ -128,16 +132,19 @@ public class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeTwo {
         WebElement firstNameCheck =this.controlGetDriver().findElement(By.xpath("//div[normalize-space()='sumit']"));
 
         Assert.assertEquals(firstNameCheck.getText(),"sumit");
+        //Assert is used to abort the program at the particular line if certain condition is not fulfill
+        //if that condition is satified thne code will continiue
+        //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+        // method so the it will pass bydefault
 
 
 
-        this.tearDownControlChrome();
     }
 
-  /*  @AfterSuite
+    @AfterSuite
     void tearDown(){
-        driver.quit();
+        this.tearDownControlChrome();
         //clear native memory
-    }*/
+    }
 
 }
