@@ -2,6 +2,7 @@ package org.example.TestCases.Two;
 
 import com.basetest.two.BaseTestChromeTwo;
 import com.bast_test_control.two.BaseTestControlChromeTwo;
+import org.assertj.core.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -65,7 +66,30 @@ public class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeTwo {
         editButton.click();
         WebElement webElement=this.controlGetDriver().findElement(By.xpath("//div[@id='registration-form-modal']"));
         System.out.println(webElement.getText());
-        Assert.assertEquals(webElement.getText(), "Registration Form");
+
+
+
+
+
+
+        //Testng liberary--> //Testng liberary needs many statements to for checking different condtion
+        //Assert.assertEquals(webElement.getText(), "Registration Form");
+        //Assert is used to abort the program at the particular line if certain condition is not fulfill
+        //if that condition is satified thne code will continiue
+        //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+        // method so the it will pass bydefault
+
+
+
+
+//or
+        //AsertJ liberary
+        //assertJ liberary allow the chaining of the assertion  which is easy
+        //as() is used to give message on assertion fail for the method comming after it
+        // this can take any type of object -> String ,map,locadate or anything
+        //webelment is taken check webelemnt exist then text is prited as output(if web element not exist then
+        // as() is printed then then that  output is converted to  string then  is matched TO "registration" txt
+        Assertions.assertThat(webElement).as("no text").extracting( WebElement:: getText).toString().contains("Registration Form");
         //Assert is used to abort the program at the particular line if certain condition is not fulfill
         //if that condition is satified thne code will continiue
         //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
@@ -129,15 +153,31 @@ public class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeTwo {
 
 
 
-        WebElement firstNameCheck =this.controlGetDriver().findElement(By.xpath("//div[normalize-space()='sumit']"));
+        WebElement firstNameCheckWebElement =this.controlGetDriver().findElement(By.xpath("//div[normalize-space()='sumit']"));
 
-        Assert.assertEquals(firstNameCheck.getText(),"sumit");
+
+
+        //Testng liberary--> //Testng liberary needs many statements to for checking different condition
+       // Assert.assertEquals(firstNameCheckWebElement.getText(),"sumit");
         //Assert is used to abort the program at the particular line if certain condition is not fulfill
-        //if that condition is satified thne code will continiue
+        //if that condition is satisfied then code will continiue
         //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
         // method so the it will pass bydefault
 
 
+
+        //or
+        //AsertJ liberary
+        //assertJ liberary allow the chaining of the assertion  which is easy
+        //as() is used to give message on assertion fail for the method comming after it
+        // this can take any type of object -> String ,map,locadate or anything
+        //webelment is taken check webelemnt exist then text is prited as output(if web element not exist then
+        // as() is printed then then that  output  is converted to  string is matchedot "sumit" txt
+        Assertions.assertThat(firstNameCheckWebElement).as("no text").extracting(WebElement :: getText).toString().equals("sumit");
+        //Assert is used to abort the program at the particular line if certain condition is not fulfill
+        //if that condition is satified thne code will continiue
+        //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+        // method so the it will pass bydefault
 
     }
 

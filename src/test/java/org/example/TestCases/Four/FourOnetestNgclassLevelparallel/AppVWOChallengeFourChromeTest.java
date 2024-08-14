@@ -2,6 +2,7 @@ package org.example.TestCases.Four.FourOnetestNgclassLevelparallel;
 
 import com.basetest.Four.BaseTestChromeFour;
 import com.bast_test_control.four.BaseTestControlChromeFour;
+import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -78,7 +79,7 @@ public class AppVWOChallengeFourChromeTest  extends BaseTestControlChromeFour {
         //password.sendKeys("Test@1234");
         WebElement signInButton = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//button[@id='js-login-btn']"));
         signInButton.click();
-        WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(100));//in this we set the driver to wait maximum 10 seconds
+        WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(1000));//in this we set the driver to wait maximum 10 seconds
         // WebElement firstLine=driver.findElement(By.xpath("//span[@data-qa='lufexuloga']"));
         //span[@class='Fw(semi-bold) ng-binding']
 
@@ -95,11 +96,27 @@ public class AppVWOChallengeFourChromeTest  extends BaseTestControlChromeFour {
 
         ((JavascriptExecutor) ThreadLocalWebDriver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", text);
         System.out.println(text.getText());
-        Assert.assertEquals(text.getText(), "akash");
+
+        //Testng liberary--> //Testng liberary needs many statements to for checking different condition
+        //Assert.assertEquals(text.getText(), "akash");
         //Assert is used to abort the program at the particular line if certain condition is not fulfill
         //if that condition is satified thne code will continiue
         //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
         // method so the it will pass bydefault
+
+        //or
+        //AsertJ liberary
+        //assertJ liberary allow the chaining of the assertion  which is easy
+        //as() is used to give message on assertion fail for the method comming after it
+        // this can take any type of object -> String ,map,locadate or anything
+        //webelment is taken check webelemnt exist then text is prited as output(if web element not exist then
+        // as() is printed then then that  output  is converted to  string is matchedot "sumit" txt
+        Assertions.assertThat(text).as("no text").extracting(WebElement :: getText).toString().equals("akash");
+        //Assert is used to abort the program at the particular line if certain condition is not fulfill
+        //if that condition is satified thne code will continiue
+        //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+        // method so the it will pass bydefault
+
 
 
     }

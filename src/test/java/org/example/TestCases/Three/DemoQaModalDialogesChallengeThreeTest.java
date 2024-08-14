@@ -1,6 +1,7 @@
 package org.example.TestCases.Three;
 
 import com.bast_test_control.three.BaseTestControlChromeThree;
+import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -51,12 +52,27 @@ public class DemoQaModalDialogesChallengeThreeTest extends BaseTestControlChrome
 
         WebElement largeModelButtonText=this.controlGetDriver().findElement(By.xpath("//p[contains(text(),'Lorem Ipsum is simply dummy text of the printing a')]"));
         String text=largeModelButtonText.getText();
-        Assert.assertEquals("okay","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",text);
+
+
+        //Testng liberary--> //Testng liberary needs many statements to for checking different condition
+        //Assert.assertEquals("okay","Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",text);
         //Assert is used to abort the program at the particular line if certain condition is not fulfill
         //if that condition is satified thne code will continiue
         //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
         // method so the it will pass bydefault
 
+        //or
+        //AsertJ liberary
+        //assertJ liberary allow the chaining of the assertion  which is easy
+        //as() is used to give message on assertion fail for the method comming after it
+        // this can take any type of object -> String ,map,locadate or anything
+        //webelment is taken check webelemnt exist then text is prited as output(if web element not exist then
+        // as() is printed then then that  output  is converted to  string is matchedot "sumit" txt
+        Assertions.assertThat(largeModelButtonText).as("no text").extracting(WebElement :: getText).toString().equals("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+        //Assert is used to abort the program at the particular line if certain condition is not fulfill
+        //if that condition is satified thne code will continiue
+        //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+        // method so the it will pass bydefault
 
     }
 

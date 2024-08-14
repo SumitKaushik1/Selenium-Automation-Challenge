@@ -126,7 +126,7 @@ public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
 
 
                 //assertion inside the if  block is not applicable
-                //titleFound = true;
+                titleFound = true;
 
                 // no assertion is applied bz
                 // System.out.println("inside if conditions ");

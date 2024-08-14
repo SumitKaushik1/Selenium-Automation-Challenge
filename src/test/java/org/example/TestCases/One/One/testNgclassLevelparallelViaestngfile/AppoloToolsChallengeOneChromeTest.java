@@ -2,6 +2,7 @@ package org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile;
 
 import com.bast_test_control.one.BaseTestControlChromeOne;
 import customExceptions.KeyUrlNotFoundException;
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterSuite;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
@@ -73,11 +74,39 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestControlChromeOne
 
         this.setUpControlChrome();
 
-        Assert.assertEquals(ThreadLocalWebDriver.getDriver().getCurrentUrl(),"https://demo.applitools.com/");
+
+        //Testng liberary--> //Testng liberary needs many statements to for checking different condtion
+        //Assert.assertEquals(ThreadLocalWebDriver.getDriver().getCurrentUrl(),"https://demo.applitools.com/");
         //Assert is used to abort the program at the particular line if certain condition is not fulfill
         //if that condition is satified thne code will continiue
         //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
         // method so the it will pass bydefault
+
+
+
+
+        //or
+        //AsertJ liberary
+        //assertJ liberary allow the chaining of the assertion  which is easy
+        //as() is used to give message on assertion fail for the method comming after it
+        // this can take any type of object -> String ,map,locadate or anything
+       // Assertions.assertThat(ThreadLocalWebDriver.getDriver().getCurrentUrl()).as("string is null").isNotNull().isEqualTo("https://demo.applitools.com/");
+       // Assertions.assertThat(ThreadLocalWebDriver.getDriver().getCurrentUrl()).as("string is null").isNotNull().matches("^https:\/\/demo\.applitools\.com\/$ "));
+        Assertions.assertThat(ThreadLocalWebDriver.getDriver().getCurrentUrl())
+                .as("string is null")
+                .isNotNull()
+                .matches("^https:\\/\\/demo\\.applitools\\.com\\/$");
+/*        Explanation:
+^: Asserts the start of the string.
+        https:\/\/: Matches the literal string https://. The slashes (/) are escaped with backslashes (\/) since they are special characters in regex.
+        demo\.applitools\.com: Matches the domain demo.applitools.com. The dots (.) are escaped (\.) to match a literal dot.
+\/: Matches the literal / at the end of the URL.
+                $: Asserts the end of the string.*/
+//Assert is used to abort the program at the particular line if certain condition is not fulfill
+        //if that condition is satified thne code will continiue
+        //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+        // method so the it will pass bydefault
+
     }
 
 
@@ -86,7 +115,7 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestControlChromeOne
     public void checkUrlOfPage() throws InterruptedException, KeyUrlNotFoundException {
 
 
-       //note when you make the instsnce here the driver insteance reamin
+       //note when you make the instance here the driver instance reamin
        //in memory till it is not removed while runnign of the program
 
        //LoginCredentialsPropertyFileRead class static  method is called when the value is required from its file to get we pass the key
@@ -148,12 +177,31 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestControlChromeOne
       // assertThat(currentUrl.equals("https://demo.applitools.com/app.html"));
 
 
-       Assert.assertEquals(currentUrl, "https://demo.applitools.com/app.html");
+
+       //Testng liberary --> //Testng liberary needs many statements to for checking different condtion
+       //Assert.assertEquals(currentUrl, "https://demo.applitools.com/app.html");
        //Assert is used to abort the program at the particular line if certain condition is not fulfill
        //if that condition is satified thne code will continiue
        //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
        // method so the it will pass bydefault
-    }
+
+
+       //or
+       //AsertJ liberary
+       //assertJ liberary allow the chaining of the assertion  which is easy
+       // as is used to give message on the assertion fail
+       //as() is used to give message on assertion fail for the method comming after it
+       // this can take any type of object -> String ,map,locadate or anything
+       Assertions.assertThat(ThreadLocalWebDriver.getDriver().getCurrentUrl()).as("string is null").isNotNull().isEqualTo("https://demo.applitools.com/app.html");
+       //Assert is used to abort the program at the particular line if certain condition is not fulfill
+       //if that condition is satified thne code will continiue
+       //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+       // method so the it will pass bydefault
+
+
+
+
+   }
 
 
     /*
@@ -209,13 +257,27 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestControlChromeOne
 
         DecimalFormat df = new DecimalFormat("#.##");
 
-        Assert.assertEquals(Double.parseDouble(df.format(calculateEarnedSpent.showEarned()+calculateEarnedSpent.showSpent())),1996.22);
+
+        //Testng liberary needs many statements to for checking different condtion --> //Testng liberary needs many statements to for checking different condtion
+       // Assert.assertEquals(Double.parseDouble(df.format(calculateEarnedSpent.showEarned()+calculateEarnedSpent.showSpent())),1996.22);
         //Assert is used to abort the program at the particular line if certain condition is not fulfill
         //if that condition is satified thne code will continiue
         //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
         // method so the it will pass bydefault
         //at ht elast test driver instance is removerd from memory
 
+
+        //or
+        //AsertJ liberary
+        //assertJ liberary allow the chaining of the assertion  which is easy
+        // as is used to give message on the assertion fail
+        //as() is used to give message on assertion fail for the method comming after it
+        // this can take any type of object -> String ,map,localedate or anything
+        Assertions.assertThat(Double.parseDouble(df.format(calculateEarnedSpent.showEarned()+calculateEarnedSpent.showSpent()))).as("value doesnot exist").isEqualTo(1996.22);
+        //Assert is used to abort the program at the particular line if certain condition is not fulfill
+        //if that condition is satified thne code will continiue
+        //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+        // method so the it will pass bydefault
 
     }
 
