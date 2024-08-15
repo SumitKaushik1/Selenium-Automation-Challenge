@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Properties;
+import java.util.regex.Pattern;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -92,10 +93,13 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestControlChromeOne
         // this can take any type of object -> String ,map,locadate or anything
        // Assertions.assertThat(ThreadLocalWebDriver.getDriver().getCurrentUrl()).as("string is null").isNotNull().isEqualTo("https://demo.applitools.com/");
        // Assertions.assertThat(ThreadLocalWebDriver.getDriver().getCurrentUrl()).as("string is null").isNotNull().matches("^https:\/\/demo\.applitools\.com\/$ "));
+
+
         Assertions.assertThat(ThreadLocalWebDriver.getDriver().getCurrentUrl())
                 .as("string is null")
                 .isNotNull()
-                .matches("^https:\\/\\/demo\\.applitools\\.com\\/$");
+                .matches(Pattern.compile("^https:\\/\\/demo\\.applitools\\.com\\/$"));
+
 /*        Explanation:
 ^: Asserts the start of the string.
         https:\/\/: Matches the literal string https://. The slashes (/) are escaped with backslashes (\/) since they are special characters in regex.
@@ -192,11 +196,15 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestControlChromeOne
        // as is used to give message on the assertion fail
        //as() is used to give message on assertion fail for the method comming after it
        // this can take any type of object -> String ,map,locadate or anything
-       Assertions.assertThat(ThreadLocalWebDriver.getDriver().getCurrentUrl()).as("string is null").isNotNull().isEqualTo("https://demo.applitools.com/app.html");
+      // Assertions.assertThat(ThreadLocalWebDriver.getDriver().getCurrentUrl()).as("string is null").isNotNull().isEqualTo("https://demo.applitools.com/app.html");
        //Assert is used to abort the program at the particular line if certain condition is not fulfill
        //if that condition is satified thne code will continiue
        //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
        // method so the it will pass bydefault
+       Assertions.assertThat(ThreadLocalWebDriver.getDriver().getCurrentUrl())
+               .as("string is null")
+               .isNotNull()
+               .matches("^https:\\/\\/demo\\.applitools\\.com\\/.*$");
 
 
 

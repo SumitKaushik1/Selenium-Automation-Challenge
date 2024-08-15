@@ -3,6 +3,7 @@ package org.example.TestCases.Five;
 import com.basetest.Five.BaseTestChromeFive;
 import com.bast_test_control.five.BasetTestControlChromeFive;
 import dev.failsafe.internal.util.Durations;
+import org.assertj.core.api.Assertions;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.openqa.selenium.By;
@@ -62,7 +63,7 @@ public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
         this.setUpControlChrome();
 
 
-       // String parentHandle=this.controlGetDriver().getWindowHandle();
+        // String parentHandle=this.controlGetDriver().getWindowHandle();
         //System.out.println(parentHandle);
 
 
@@ -71,12 +72,11 @@ public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
 
 
         // Identify the element that triggers visibility
-    /*1.*/   WebElement triggerElement =this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
+        /*1.*/
+        WebElement triggerElement = this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
         //you can use this  trigger element if upper one doesnot work
         // Identify the element that triggers visibility
-      /*2.*/ // WebElement triggerElement =this.controlGetDriver().findElement(By.xpath("//li[1]//div[2]//div[1]//div[3]"));
-
-
+        /*2.*/ // WebElement triggerElement =this.controlGetDriver().findElement(By.xpath("//li[1]//div[2]//div[1]//div[3]"));
 
 
         // Move mouse to the trigger element to make the hidden element visible
@@ -84,23 +84,22 @@ public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
         actions.moveToElement(triggerElement).perform();
 
 
-
-
         // Once the button is visible, identify the button element and click on it
-        /*1.*/   WebElement buttonElement = this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
+        /*1.*/
+        WebElement buttonElement = this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
         //you can use this button of other trigger element if upper one button donot work
         /*2.*/  //WebElement buttonElement = this.controlGetDriver().findElement(By.xpath("//li[1]//div[2]//div[1]//div[3]"));
 
         buttonElement.click();
 
-      //  this.controlGetDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //  this.controlGetDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 
         // Wait for the number of windows to be equal to the expected number
 
         //it is global wait
         wait.until(ExpectedConditions.numberOfWindowsToBe(2));  // Adjust the number based on how many tabs should be open
-       // here is waiting for 2 tabs must be opened
+        // here is waiting for 2 tabs must be opened
 
         // Get all window handles
         Set<String> allWindows = this.controlGetDriver().getWindowHandles();
@@ -110,35 +109,42 @@ public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
         // Wait for each tab to load completely by checking the title
         for (String window : allWindows) {
 
+
+            wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));  //wait untill page is fully loaded
+
             this.controlGetDriver().switchTo().window(window);
 
             // Use WebDriverWait to wait until the page title is present
             new WebDriverWait(this.controlGetDriver(), Duration.ofSeconds(1000)).until(ExpectedConditions.titleIs(this.controlGetDriver().getTitle()));
 
             System.out.println(this.controlGetDriver().getTitle());
-            wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));  // Adjust the number based on how many tabs should be open
 
-            String actualTitleString=this.controlGetDriver().getTitle();
 
-           // Assert.assertEquals(this.controlGetDriver().getTitle(),"Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta");
-            if(actualTitleString.equals("Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta"))
-            {
+            String actualTitleString = this.controlGetDriver().getTitle();
+
+            // Assert.assertEquals(this.controlGetDriver().getTitle(),"Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta");
+            if (actualTitleString.equals("Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta")) {
 
 
                 //assertion inside the if  block is not applicable
                 titleFound = true;
+                //note here Assertion.chaingin is not required bz here we are checking if the title of page exist there we stop and break the loop
+                //we created the flag for it as true and method will bydeafult pass the when no assertion provided
+                // if the tile of the page does not exist thne flag is false in that case we failt that test
+
+
 
                 // no assertion is applied bz
                 // System.out.println("inside if conditions ");
-               // Assert.assertEquals(this.controlGetDriver().getTitle(),"Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta");
+                // Assert.assertEquals(this.controlGetDriver().getTitle(),"Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta");
 
                 //System.out.println(this.controlGetDriver().getTitle());
 
                 //MatcherAssert.assertThat("Page title is not as expected", actualTitleString, Matchers.equalTo("Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta"));
-              // Assert.assertEquals(actualTitleString,"Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta","title of the page is visible ");
+                // Assert.assertEquals(actualTitleString,"Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta","title of the page is visible ");
 
                 //System.out.println("Assertion completed successfully.");
-                Assert.assertTrue(true);
+                //Assert.assertTrue(true);
                 //Assert is used to abort the program at the particular line if certain condition is not fulfill
                 //if that condition is satified thne code will continiue
                 //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
@@ -147,10 +153,10 @@ public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
                 break;
             }
 
-        }
+            //}
 
-        //lot tabs opened then switch to each  tab and check the page source contain this or not
-        //Set<String> windowHandle=this.controlGetDriver().getWindowHandles();
+            //lot tabs opened then switch to each  tab and check the page source contain this or not
+            //Set<String> windowHandle=this.controlGetDriver().getWindowHandles();
 
       /*  for(String handle:windowHandle){
             this.controlGetDriver().switchTo().window(handle);
@@ -163,19 +169,24 @@ public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
         }*/
 
 
+            // Fail the test if the title was not found
+            if (!titleFound) {
+                Assert.fail("Title of the page was not found.");
+                //note here Assertion.chaingin is not required bz here we are checking if the title of page exist there we stop and break the loop
+                //we created the flag for it as true and method will bydeafult pass the when no assertion provided
+                // if the tile of the page does not exist thne flag is false in that case we failt that test
 
-       // Fail the test if the title was not found
-        if (!titleFound) {
-            Assert.fail("Title of the page was not found.");
-            //Assert is used to abort the program at the particular line if certain condition is not fulfill
-            //if that condition is satified thne code will continiue
-            //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
-            // method so the it will pass bydefault
+
+                //Assert is used to abort the program at the particular line if certain condition is not fulfill
+                //if that condition is satified thne code will continiue
+                //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
+                // method so the it will pass bydefault
+
+            }
 
         }
 
     }
-
 
     @AfterSuite
     void closeAllResources() {

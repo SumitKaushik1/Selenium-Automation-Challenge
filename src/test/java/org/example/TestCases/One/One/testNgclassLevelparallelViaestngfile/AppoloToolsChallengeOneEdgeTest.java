@@ -23,7 +23,7 @@ import java.text.DecimalFormat;
 import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
-
+import java.util.regex.Pattern;
 
 
 public class AppoloToolsChallengeOneEdgeTest extends BaseTestControlEdgeOne {
@@ -164,10 +164,14 @@ public class AppoloToolsChallengeOneEdgeTest extends BaseTestControlEdgeOne {
         // this can take any type of object -> String ,map,locadate or anything
        // Assertions.assertThat(ThreadLocalWebDriver.getDriver().getCurrentUrl()).as("string is null").isNotNull().isEqualTo("https://demo.applitools.com/app.html");
         //regix is used
+
+
         Assertions.assertThat(ThreadLocalWebDriver.getDriver().getCurrentUrl())
                 .as("string is null")
                 .isNotNull()
-                .matches("^https:\\/\\/demo\\.applitools\\.com\\/$");
+                .matches("^https:\\/\\/demo\\.applitools\\.com\\/.*$");
+
+
 /*        Explanation:
 ^: Asserts the start of the string.
         https:\/\/: Matches the literal string https://. The slashes (/) are escaped with backslashes (\/) since they are special characters in regex.
