@@ -22,12 +22,16 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 
-public class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
+// class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
+public final class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
 
 
 
+
+    //constructor is private bz this class object is not possible in other class,jvm can make the object inheritly
+    //but not allowed to the class to make object
     //whne jvm make the object then it used this default construcitor
-    AppVWOChallengeFiveTest(){
+   private AppVWOChallengeFiveTest(){
         super();//it will parent class object
     }
 /*

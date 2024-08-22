@@ -14,12 +14,14 @@ import java.io.IOException;
 import java.time.Duration;
 
 
-
-public class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeTwo {
+// class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
+public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeTwo {
 
 
     //jvm make the DemoQAWebsiteChallengeTwoTest  object
-    DemoQAWebsiteChallengeTwoTest(){
+    //constructor is private bz this class object is not possible in other class,jvm can make the object inheritly
+    //but not allowed to the class to make objectt
+   private DemoQAWebsiteChallengeTwoTest(){
         super();
         //i make the BaseTestControlChromeTwo  parente class object
         //then only the object can be used below methods

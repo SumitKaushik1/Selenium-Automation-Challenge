@@ -26,11 +26,15 @@ import java.util.Properties;
 import java.util.regex.Pattern;
 
 
-public class AppoloToolsChallengeOneEdgeTest extends BaseTestControlEdgeOne {
+// class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
+public final class AppoloToolsChallengeOneEdgeTest extends BaseTestControlEdgeOne {
 
 
     //ppoloToolsChallengeOneEdgeTest jvm makes its object
-    AppoloToolsChallengeOneEdgeTest(){
+
+    //constructor is private bz this class object is not possible in other class,jvm can make the object inheritly
+    //but not allowed to the class to make objectt
+   private  AppoloToolsChallengeOneEdgeTest(){
         super();
         //BaseTestControlEdgeOne object is made here
         //then only we cna use hte object of hte parent below

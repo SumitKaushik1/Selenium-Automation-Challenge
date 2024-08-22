@@ -8,11 +8,17 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class DemoQaModalDialogesChallengeThreeTest extends BaseTestControlChromeThree {
+// class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
+public final  class DemoQaModalDialogesChallengeThreeTest extends BaseTestControlChromeThree {
+
+
 
 
     //jvm make the object of hte DemoQaModalDialogesChallengeThreeTest call this construtory
-    DemoQaModalDialogesChallengeThreeTest(){
+
+    //constructor is private bz this class object is not possible in other class,jvm can make the object inheritly
+    //but not allowed to the class to make objectt
+   private DemoQaModalDialogesChallengeThreeTest(){
         super();
         //BaseTestControlChromeThree parent class object is made and tehn the it all method are eligible forcalling
     }

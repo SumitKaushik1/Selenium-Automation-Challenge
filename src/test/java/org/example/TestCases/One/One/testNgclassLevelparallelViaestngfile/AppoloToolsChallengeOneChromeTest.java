@@ -25,7 +25,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Unit test for simple App.
  */
-public class AppoloToolsChallengeOneChromeTest extends BaseTestControlChromeOne
+
+// class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
+public final class AppoloToolsChallengeOneChromeTest extends BaseTestControlChromeOne
 {
 
 
@@ -33,7 +35,10 @@ public class AppoloToolsChallengeOneChromeTest extends BaseTestControlChromeOne
     //what happnes when teh object of the AppoloToolsChallengeOneChromeTest is made in behind by jvm
     //then default constructor of the AppoloToolsChallengeOneChromeTest is called then if we want to make the
     //object of the super() class then we can make here thne only we can use the methods in below
-    AppoloToolsChallengeOneChromeTest(){
+
+    //constructor is private bz this class object is not possible in other class,jvm can make the object inheritly
+    //but not allowed to the class to make objectt
+   private AppoloToolsChallengeOneChromeTest(){
         super();
 
     }

@@ -11,11 +11,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 public class FrameoworksConstantPropertyFileRead {
 
     //private scope within class
     //static can be called by classname and  it is unique per class
+    private static final Logger LOGGER;
+    //scope  within class,unique per  class ,constant
+    //for file load
+
     private static final Properties PROPERTIES;
 
     //private ->scoppe within class
@@ -26,6 +31,7 @@ public class FrameoworksConstantPropertyFileRead {
     static{
         PROPERTIES =new Properties();
         CONFIGMAP= new HashMap<>();
+        LOGGER= Logger.getLogger(LoginCredentialsPropertyFileRead.class.getName());
 
 
     }
@@ -68,7 +74,10 @@ public class FrameoworksConstantPropertyFileRead {
              //   CONFIGMAP.put(String.valueOf(entry.getKey()),String.valueOf(entry.getValue())
             //
 
-            PROPERTIES.forEach((key,value)-> System.out.println("key "+String.valueOf(key)+"value "+String.valueOf(value)));
+           // PROPERTIES.forEach((key,value)-> System.out.println("key "+key+"value "+value))
+            //here the inheritely convert hte key,value which are in integer nature in the string when we do
+            // concatination
+            PROPERTIES.forEach((key,value)-> LOGGER.info("key "+ key +"value "+ value));
 
 
 
@@ -76,8 +85,9 @@ public class FrameoworksConstantPropertyFileRead {
             //that functional interface has one method unimplemented ,by supplying the method implementation directly
             // inside implemented class will be formed which implement the functional interfaace nwo that functional interface
             //implemented class method down below
-            PROPERTIES.forEach((key, value) -> CONFIGMAP.put(String.valueOf(key), String.valueOf(value)));
+            PROPERTIES.forEach((key, value) -> CONFIGMAP.put(String.valueOf(key), String.valueOf(value).trim()));
             //her we put the each key-value or entry of .property file in the hashmap
+            //trim() will remove all the leading and the trailing spaces
 
         } catch (IOException e) {
             throw new FileNotFoundRuntimeExcption(e);

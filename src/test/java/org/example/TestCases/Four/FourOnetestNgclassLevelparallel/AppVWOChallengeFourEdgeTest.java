@@ -21,11 +21,14 @@ import java.util.Properties;
 
 import static threadlocal.ThreadLocalWebDriver.getDriver;
 
-public class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
+// class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
+public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
 
 
+    //constructor is private bz this class object is not possible in other class,jvm can make the object inheritly
+    //but not allowed to the class to make objectt
 //jvm make the object of it behind and
-    AppVWOChallengeFourEdgeTest(){
+  private  AppVWOChallengeFourEdgeTest(){
 
         super();//parent class object is made when it is required
     }

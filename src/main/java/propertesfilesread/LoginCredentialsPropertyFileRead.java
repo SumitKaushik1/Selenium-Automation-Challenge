@@ -64,7 +64,9 @@ public class LoginCredentialsPropertyFileRead {
             throw new FileNotFoundRuntimeExcption(e);
         }
 
-
+       // PROPERTIES.forEach((key,value)-> System.out.println("key "+key+"value "+value))
+        //here the inheritely convert hte key,value which are in integer nature in the string when we do
+        // concatination
         PROPERTIES.forEach((key,value)-> LOGGER.info("key "+ key +"value "+ value));
 
 

@@ -19,11 +19,15 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
-public class AppVWOChallengeFourChromeTest  extends BaseTestControlChromeFour {
+
+// class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
+public final class AppVWOChallengeFourChromeTest  extends BaseTestControlChromeFour {
 
 
+    //constructor is private bz this class object is not possible in other class,jvm can make the object inheritly
+    //but not allowed to the class to make objectt
     //jvm call this constructory when the object is made
-    AppVWOChallengeFourChromeTest() {
+    private AppVWOChallengeFourChromeTest() {
         super();
         //here the parent class object is made by superkeyword bz
     }

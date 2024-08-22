@@ -30,11 +30,11 @@ public final  class DriverFilesPath {
     static{
 
         //it is done to avoid unneccory repetation of path
-        RESOURCE_PATH_DRIVERS=System.getProperty("user.dir")+"\\src\\test\\resources\\drivers\\";
+        RESOURCE_PATH_DRIVERS=System.getProperty("user.dir")+"\\resources\\drivers\\";
         //it is good practice to intialize the static variable in static initializer block
         //bydefault the user.dir point to the current directory
 
-        RESOURCE_PATH_PROPERTIES_FILES=System.getProperty("user.dir")+"\\src\\test\\resources\\configproperties\\";
+        RESOURCE_PATH_PROPERTIES_FILES=System.getProperty("user.dir")+"\\resources\\configproperties\\";
 
 
         CHROME_PATH=RESOURCE_PATH_DRIVERS+"chromedriver.exe";

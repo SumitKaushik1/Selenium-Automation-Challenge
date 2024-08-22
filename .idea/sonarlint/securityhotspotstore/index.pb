@@ -78,3 +78,5 @@ ksrc/test/java/org/example/TestCases/Four/FourTwoThreadLevelParallel/AppVWOChall
 testngthree.xml,6\3\63bb5880d43a990c470c0fa3be8d0498884383d0
 >
 testngfive.xml,1\e\1ee27348268cea347507aa647c25d6cfefae55aa
+=
+testngtwo.xml,3\a\3a6b47b1a16c0127666c939e0176df7efd718e6c
