@@ -1,23 +1,20 @@
 package org.example.TestCases.Four.FourOnetestNgclassLevelparallel;
 
-import com.basetest.Four.BaseTestChromeFour;
-import com.bast_test_control.four.BaseTestControlChromeFour;
+import com.base.bast_test_control.four.BaseTestControlChromeFour;
+import com.page.object.four.VWODashBoardPage;
+import com.page.object.four.VWOLoginPage;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
 
-import java.io.FileReader;
-import java.io.IOException;
 import java.time.Duration;
-import java.util.Properties;
 
 
 // class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
@@ -73,17 +70,20 @@ public final class AppVWOChallengeFourChromeTest  extends BaseTestControlChromeF
        ThreadLocalWebDriver.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(300));
 
 
-        WebElement emailAddress = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='login-username']"));
-        emailAddress.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("emailAddress"));
+       // WebElement emailAddress = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='login-username']"));
+        //emailAddress.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("emailAddress"));
         // emailAddress.sendKeys(p.getProperty("emailAddress"));
         // emailAddress.sendKeys("akash@wuuvo.com");
-        WebElement password = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='login-password']"));
+       // WebElement password = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='login-password']"));
         //  password.sendKeys(p.getProperty("password1"));
-        password.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("password1"));
+        //password.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("password1"));
         //password.sendKeys("Test@1234");
-        WebElement signInButton = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//button[@id='js-login-btn']"));
-        signInButton.click();
-        WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(1000));//in this we set the driver to wait maximum 10 seconds
+        //WebElement signInButton = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//button[@id='js-login-btn']"));
+        //signInButton.click();
+
+       // WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(1000));//in this we set the driver to wait maximum 10 seconds
+
+
         // WebElement firstLine=driver.findElement(By.xpath("//span[@data-qa='lufexuloga']"));
         //span[@class='Fw(semi-bold) ng-binding']
 
@@ -96,10 +96,20 @@ public final class AppVWOChallengeFourChromeTest  extends BaseTestControlChromeF
         System.out.println(jse.executeScript("document.querySelector(\"span[class='Fw(semi-bold) ng-binding']\").textContent").toString());*/
 
         // WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='Fw(semi-bold) ng-binding']")));
-        WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span[class='Fw(semi-bold) ng-binding']")));
+       // WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span[class='Fw(semi-bold) ng-binding']")));
 
-        ((JavascriptExecutor) ThreadLocalWebDriver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", text);
-        System.out.println(text.getText());
+       // ((JavascriptExecutor) ThreadLocalWebDriver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", text);
+        //System.out.println(text.getText());
+
+
+        VWOLoginPage vwoLoginPage=new VWOLoginPage();
+
+        vwoLoginPage.enterUserNameVWOLogin().enterPasswordVWOLogin().clickButtonVWOLogin();
+
+
+        VWODashBoardPage vwoDashBoardPage=new VWODashBoardPage();
+
+        WebElement text= vwoDashBoardPage.vWODashbord();
 
         //Testng liberary--> //Testng liberary needs many statements to for checking different condition
         //Assert.assertEquals(text.getText(), "akash");

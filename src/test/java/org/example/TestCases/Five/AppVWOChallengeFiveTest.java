@@ -1,11 +1,7 @@
 package org.example.TestCases.Five;
 
-import com.basetest.Five.BaseTestChromeFive;
-import com.bast_test_control.five.BasetTestControlChromeFive;
-import dev.failsafe.internal.util.Durations;
-import org.assertj.core.api.Assertions;
-import org.hamcrest.MatcherAssert;
-import org.hamcrest.Matchers;
+import com.base.bast_test_control.five.BasetTestControlChromeFive;
+import com.page.object.five.VWOHeatmap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -15,11 +11,10 @@ import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
 import java.time.Duration;
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 
 // class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
@@ -75,26 +70,33 @@ public final class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
         wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));  // wait till the page is fully loaded
 
 
+
+
+
         // Identify the element that triggers visibility
         /*1.*/
-        WebElement triggerElement = this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
+       // WebElement triggerElement = this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
         //you can use this  trigger element if upper one doesnot work
         // Identify the element that triggers visibility
         /*2.*/ // WebElement triggerElement =this.controlGetDriver().findElement(By.xpath("//li[1]//div[2]//div[1]//div[3]"));
 
 
         // Move mouse to the trigger element to make the hidden element visible
-        Actions actions = new Actions(this.controlGetDriver());
-        actions.moveToElement(triggerElement).perform();
-
-
+        //Actions actions = new Actions(this.controlGetDriver());
+        //actions.moveToElement(triggerElement).perform();
         // Once the button is visible, identify the button element and click on it
         /*1.*/
-        WebElement buttonElement = this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
+       // WebElement buttonElement = this.controlGetDriver().findElement(By.xpath("//li[2]//div[2]//div[1]//div[3]"));
         //you can use this button of other trigger element if upper one button donot work
         /*2.*/  //WebElement buttonElement = this.controlGetDriver().findElement(By.xpath("//li[1]//div[2]//div[1]//div[3]"));
 
-        buttonElement.click();
+        //buttonElement.click();
+
+
+        VWOHeatmap vwoHeatmap=new VWOHeatmap();
+        vwoHeatmap.triggerElementOneVWOHeatmap(this);
+        vwoHeatmap.buttonClickVWOHeatmap(this);
+
 
         //  this.controlGetDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -106,32 +108,38 @@ public final class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
         // here is waiting for 2 tabs must be opened
 
         // Get all window handles
-        Set<String> allWindows = this.controlGetDriver().getWindowHandles();
+        //Set<String> allWindows = this.controlGetDriver().getWindowHandles();
 
+        // Get all window handles
+        List<String> allWindows = new ArrayList<>(this.controlGetDriver().getWindowHandles());
 
-        boolean titleFound = false;
+        // Switch to the new tab (second tab)
+        this.controlGetDriver().switchTo().window(allWindows.get(1));
+        System.out.println(this.controlGetDriver().getTitle());
+        Assert.assertEquals(this.controlGetDriver().getTitle(),"Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta","title of the page is visible ");
+        //boolean titleFound = false;
         // Wait for each tab to load completely by checking the title
-        for (String window : allWindows) {
+        //for (String window : allWindows) {
 
 
-            wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));  //wait untill page is fully loaded
+           // wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));  //wait untill page is fully loaded
 
-            this.controlGetDriver().switchTo().window(window);
+            //this.controlGetDriver().switchTo().window(window);
 
             // Use WebDriverWait to wait until the page title is present
-            new WebDriverWait(this.controlGetDriver(), Duration.ofSeconds(1000)).until(ExpectedConditions.titleIs(this.controlGetDriver().getTitle()));
+            //new WebDriverWait(this.controlGetDriver(), Duration.ofSeconds(1000)).until(ExpectedConditions.titleIs(this.controlGetDriver().getTitle()));
 
-            System.out.println(this.controlGetDriver().getTitle());
+            //System.out.println(this.controlGetDriver().getTitle());
 
 
-            String actualTitleString = this.controlGetDriver().getTitle();
+            //String actualTitleString = this.controlGetDriver().getTitle();
 
             // Assert.assertEquals(this.controlGetDriver().getTitle(),"Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta");
-            if (actualTitleString.equals("Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta")) {
+            //if (actualTitleString.equals("Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta")) {
 
 
                 //assertion inside the if  block is not applicable
-                titleFound = true;
+              //  titleFound = true;
                 //note here Assertion.chaingin is not required bz here we are checking if the title of page exist there we stop and break the loop
                 //we created the flag for it as true and method will bydeafult pass the when no assertion provided
                 // if the tile of the page does not exist thne flag is false in that case we failt that test
@@ -154,8 +162,8 @@ public final class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
                 //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
                 // method so the it will pass bydefault
 
-                break;
-            }
+                //break;
+            //}
 
             //}
 
@@ -174,8 +182,8 @@ public final class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
 
 
             // Fail the test if the title was not found
-            if (!titleFound) {
-                Assert.fail("Title of the page was not found.");
+            //if (!titleFound) {
+              //  Assert.fail("Title of the page was not found.");
                 //note here Assertion.chaingin is not required bz here we are checking if the title of page exist there we stop and break the loop
                 //we created the flag for it as true and method will bydeafult pass the when no assertion provided
                 // if the tile of the page does not exist thne flag is false in that case we failt that test
@@ -186,15 +194,15 @@ public final class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
                 //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
                 // method so the it will pass bydefault
 
-            }
+            //}
 
-        }
+       // }
 
     }
 
     @AfterSuite
     void closeAllResources() {
-        this.tearDownControlChrome();
+           this.tearDownControlChrome();
 
     }
 

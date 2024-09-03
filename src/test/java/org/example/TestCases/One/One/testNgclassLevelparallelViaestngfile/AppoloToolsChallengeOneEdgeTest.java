@@ -1,6 +1,8 @@
 package org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile;
 
-import com.bast_test_control.one.BaseTestControlEdgeOne;
+import com.base.bast_test_control.one.BaseTestControlEdgeOne;
+import com.page.object.one.AppiloToolsWebElementDashBoardPage;
+import com.page.object.one.AppiloToolsWebElementLoginPage;
 import customExceptions.KeyUrlNotFoundException;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterSuite;
@@ -12,18 +14,13 @@ import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-import java.io.FileReader;
-import java.io.IOException;
 import java.text.DecimalFormat;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.Properties;
-import java.util.regex.Pattern;
 
 
 // class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
@@ -108,22 +105,27 @@ public final class AppoloToolsChallengeOneEdgeTest extends BaseTestControlEdgeOn
         //anchor tag we use
         //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
         //  makeAppointmentButton.click();
-        WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(20));
-        WebElement userName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='username']")));
+
+
+      //  WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(20));
+       // WebElement userName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='username']")));
 
 
         // WebElement userName= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='username']"));
         //WebElement userName= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='username']"));
-        userName.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("userName"));
+        //userName.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("userName"));
         // userName.sendKeys(p.getProperty("userName"));
         // userName.sendKeys("Admin");
-        WebElement password =ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='password']"));//input[@id='password']
+       // WebElement password =ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='password']"));//input[@id='password']
 
-        password.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("password"));
+       // password.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("password"));
         // password.sendKeys(p.getProperty("password"));
         // password.sendKeys("Password@123");
-        WebElement signButton=ThreadLocalWebDriver.getDriver().findElement(By.xpath("//a[@id='log-in']"));
-        signButton.click();
+        //WebElement signButton=ThreadLocalWebDriver.getDriver().findElement(By.xpath("//a[@id='log-in']"));
+        //signButton.click();
+
+        AppiloToolsWebElementLoginPage appiloToolsWebElement=new AppiloToolsWebElementLoginPage();
+        appiloToolsWebElement.enterUserNameApplitools().enterPasswordApplitools().clickButtonApplitools().getCurrentUrl();
 
 
 
@@ -211,7 +213,7 @@ public final class AppoloToolsChallengeOneEdgeTest extends BaseTestControlEdgeOn
 
 
     @Test(priority=2)
-    void totalMoneySpentCalculation(){
+    void totalMoneySpentCalculation() throws KeyUrlNotFoundException {
 
         CalculateEarnedSpent calculateEarnedSpent=new CalculateEarnedSpent();
 
@@ -220,24 +222,32 @@ public final class AppoloToolsChallengeOneEdgeTest extends BaseTestControlEdgeOn
         String part2="]/td[";
         String part3="]";
         System.out.println();*/
-        List<WebElement> negativeSpans = ThreadLocalWebDriver.getDriver().findElements(By.xpath("//table[@class='table table-padded']//span[contains(@class, 'text-danger') and contains(text(), '-')]"));
+        //List<WebElement> negativeSpans = ThreadLocalWebDriver.getDriver().findElements(By.xpath("//table[@class='table table-padded']//span[contains(@class, 'text-danger') and contains(text(), '-')]"));
 
         // Iterate over the negative <span> elements and print their text content
-        for (WebElement amountSpent : negativeSpans) {
-            calculateEarnedSpent .amountSpent(Double.parseDouble(amountSpent.getText().replaceAll("USD", "").replaceAll("[^\\d.-]", "").trim()));
+        //for (WebElement amountSpent : negativeSpans) {
+          //  calculateEarnedSpent .amountSpent(Double.parseDouble(amountSpent.getText().replaceAll("USD", "").replaceAll("[^\\d.-]", "").trim()));
 
-        }
+        //}
 /*
         This code snippet replaces all occurrences of "USD" in the originalString with an empty string, effectively removing "USD". The trim() method is used to remove any leading or trailing whitespace that might remain after removing "USD".*/
         /*        originalString.replaceAll("[^\\d.-]", "").trim(); // Removes all characters except digits, minus sign, and dot*/
         // System.out.println(CalculateEarnedSpent.showSpent());
 
-        List<WebElement> positiveSpans = ThreadLocalWebDriver.getDriver().findElements(By.xpath("//table[@class='table table-padded']//span[contains(@class, 'text-success') and not(contains(text(), '-'))]"));
+        //List<WebElement> positiveSpans = ThreadLocalWebDriver.getDriver().findElements(By.xpath("//table[@class='table table-padded']//span[contains(@class, 'text-success') and not(contains(text(), '-'))]"));
         // Iterate over the negative <span> elements and print their text content
-        for (WebElement amountEarned : positiveSpans) {
-            calculateEarnedSpent .amountEarned(Double.parseDouble(amountEarned.getText().replaceAll("USD", "").replaceAll("[^\\d.-]", "").trim()));
+        //for (WebElement amountEarned : positiveSpans) {
+        //    calculateEarnedSpent .amountEarned(Double.parseDouble(amountEarned.getText().replaceAll("USD", "").replaceAll("[^\\d.-]", "").trim()));
 
-        }
+      //  }
+
+        AppiloToolsWebElementDashBoardPage appiloToolsWebElementDashBoardPage=new AppiloToolsWebElementDashBoardPage();
+
+        appiloToolsWebElementDashBoardPage.negativeSpanApplitoolsDashbord(calculateEarnedSpent).positiveSpanApplitoolsDashbord(calculateEarnedSpent);
+
+
+
+
 
         // System.out.println(CalculateEarnedSpent.showEarned());
 

@@ -1,8 +1,8 @@
 package org.example.TestCases.Three;
 
-import com.bast_test_control.three.BaseTestControlChromeThree;
+import com.base.bast_test_control.three.BaseTestControlChromeThree;
+import com.page.object.three.DemoQAModalDialoguePage;
 import org.assertj.core.api.Assertions;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -51,13 +51,27 @@ public final  class DemoQaModalDialogesChallengeThreeTest extends BaseTestContro
 */
         this.setUpControlChrome();
 
-        WebElement largeModelButton = this.controlGetDriver().findElement(By.xpath("//button[@id='showLargeModal']"));
-        ((JavascriptExecutor) this.controlGetDriver()).executeScript("arguments[0].scrollIntoView(true);", largeModelButton );
-        largeModelButton.click();
 
 
-        WebElement largeModelButtonText=this.controlGetDriver().findElement(By.xpath("//p[contains(text(),'Lorem Ipsum is simply dummy text of the printing a')]"));
-        String text=largeModelButtonText.getText();
+       // WebElement largeModelButton = this.controlGetDriver().findElement(By.xpath("//button[@id='showLargeModal']"));
+        //((JavascriptExecutor) this.controlGetDriver()).executeScript("arguments[0].scrollIntoView(true);", largeModelButton );
+        //largeModelButton.click();
+
+
+      //  WebElement largeModelButtonText=this.controlGetDriver().findElement(By.xpath("//p[contains(text(),'Lorem Ipsum is simply dummy text of the printing a')]"));
+        //String text=largeModelButtonText.getText();
+
+
+        DemoQAModalDialoguePage demoQAModalDialoguePage=new DemoQAModalDialoguePage();
+
+
+
+        WebElement largeModelButtonText = demoQAModalDialoguePage
+                .largeModelButtonWebElement(this)
+                .largeModelButtonTextWebElement(this);
+
+       // String text=largeModelButtonText.getText();
+
 
 
         //Testng liberary--> //Testng liberary needs many statements to for checking different condition
