@@ -104,12 +104,12 @@ public final class AppVWOChallengeFourChromeTest  extends BaseTestControlChromeF
 
         VWOLoginPage vwoLoginPage=new VWOLoginPage();
 
-        vwoLoginPage.enterUserNameVWOLogin().enterPasswordVWOLogin().clickButtonVWOLogin();
+        WebElement text= vwoLoginPage.enterUserNameVWOLogin().enterPasswordVWOLogin().clickButtonVWOLogin().vWODashbord();
 
 
-        VWODashBoardPage vwoDashBoardPage=new VWODashBoardPage();
+       // VWODashBoardPage vwoDashBoardPage=new VWODashBoardPage();
 
-        WebElement text= vwoDashBoardPage.vWODashbord();
+       // WebElement text= vwoDashBoardPage.vWODashbord();
 
         //Testng liberary--> //Testng liberary needs many statements to for checking different condition
         //Assert.assertEquals(text.getText(), "akash");

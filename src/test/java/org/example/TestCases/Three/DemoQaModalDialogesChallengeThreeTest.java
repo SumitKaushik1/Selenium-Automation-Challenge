@@ -6,6 +6,7 @@ import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 
 // class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
@@ -94,6 +95,13 @@ public final  class DemoQaModalDialogesChallengeThreeTest extends BaseTestContro
         //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
         // method so the it will pass bydefault
 
+    }
+
+
+    @AfterSuite
+    void tearDown(){
+        this.tearDownControlChrome();
+        //clear native memory
     }
 
 }

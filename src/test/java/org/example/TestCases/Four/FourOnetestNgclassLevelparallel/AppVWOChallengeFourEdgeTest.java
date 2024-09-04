@@ -97,14 +97,14 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
 
         VWOLoginPage vwoLoginPage=new VWOLoginPage();
 
-        vwoLoginPage.enterUserNameVWOLogin();
-        vwoLoginPage.enterPasswordVWOLogin();
-        vwoLoginPage.clickButtonVWOLogin();
+        WebElement text= vwoLoginPage.enterUserNameVWOLogin()
+       .enterPasswordVWOLogin()
+        .clickButtonVWOLogin().vWODashbord();;
 
 
-        VWODashBoardPage vwoDashBoardPage=new VWODashBoardPage();
+        //VWODashBoardPage vwoDashBoardPage=new VWODashBoardPage();
 
-        WebElement text= vwoDashBoardPage.vWODashbord();
+       // WebElement text= vwoDashBoardPage.vWODashbord();
 
 
 

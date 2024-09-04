@@ -28,6 +28,7 @@ public class FrameoworksConstantPropertyFileRead {
     // final constant once initialize cannot  be changed
     //Map to get values of the .propertyfile extension file key value data
     private static final Map<String ,String> CONFIGMAP;
+    
     static{
         PROPERTIES =new Properties();
         CONFIGMAP= new HashMap<>();

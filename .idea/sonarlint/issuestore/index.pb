@@ -70,9 +70,13 @@ d
 4src/test/java/com/page/object/four/VWOLoginPage.java,9\8\98c045511b5dccf886952d842b25b3e200555129
 h
 8src/test/java/com/page/object/four/VWODashBoardPage.java,e\1\e11af267cfc78e7cd7f007d470c9e4f02775a399
-b
-2src/test/java/com/page/object/five/VWOHeatmap.java,7\a\7a2bdab319b9189bb74ca116aa961db954a55eca
 k
 ;resources/configproperties/FrameworkConstantURLs.properties,a\b\ab1c869678660e272060d1e6825944f6d030403b
 g
 7resources/configproperties/LoginCredentitals.properties,e\9\e93710a8c68f51627d1f77990d03a3f75c3baeaf
+l
+<src/test/java/com/base/basetest/Four/BaseTestChromeFour.java,4\c\4c27287f104c7e6ec594e4e2b3cb2fc4c709e379
+f
+6src/test/java/com/page/object/five/VWOHeatmapPage.java,1\7\177985147c4b32f25f5a75588e7d375892f248ee
+b
+2src/test/java/com/page/object/five/VWOTabPage.java,a\2\a2fe8afd33d0dde194db018af2f728f9fcf46b36

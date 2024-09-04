@@ -1,15 +1,12 @@
 package com.page.object.five;
 
-import com.page.object.four.VWOLoginPage;
 import customExceptions.KeyUrlNotFoundException;
 import org.example.TestCases.Five.AppVWOChallengeFiveTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import propertesfilesread.LoginCredentialsPropertyFileRead;
-import threadlocal.ThreadLocalWebDriver;
 
-public class VWOHeatmap {
+public class VWOHeatmapPage {
 
     private final  By triggerElementOneVWOHeatmap=By.xpath("//li[2]//div[2]//div[1]//div[3]");
 
@@ -21,7 +18,7 @@ public class VWOHeatmap {
 
 
 
-    public void   triggerElementOneVWOHeatmap(AppVWOChallengeFiveTest appVWOChallengeFiveTest) throws KeyUrlNotFoundException {
+    public VWOHeatmapPage triggerElementOneVWOHeatmap(AppVWOChallengeFiveTest appVWOChallengeFiveTest) throws KeyUrlNotFoundException {
         WebElement triggerElement = appVWOChallengeFiveTest.controlGetDriver().findElement(triggerElementOneVWOHeatmap);
         //you can use this  trigger element if upper one doesnot work
         // Identify the element that triggers visibility
@@ -32,7 +29,7 @@ public class VWOHeatmap {
         Actions actions = new Actions(appVWOChallengeFiveTest.controlGetDriver());
         actions.moveToElement(triggerElement).perform();
 
-
+        return this ;
     }
 
 

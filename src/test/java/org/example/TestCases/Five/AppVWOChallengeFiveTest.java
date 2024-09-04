@@ -1,10 +1,8 @@
 package org.example.TestCases.Five;
 
 import com.base.bast_test_control.five.BasetTestControlChromeFive;
-import com.page.object.five.VWOHeatmap;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+import com.page.object.five.VWOHeatmapPage;
+import com.page.object.five.VWOTabPage;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -14,7 +12,6 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 
 // class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
@@ -93,9 +90,9 @@ public final class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
         //buttonElement.click();
 
 
-        VWOHeatmap vwoHeatmap=new VWOHeatmap();
-        vwoHeatmap.triggerElementOneVWOHeatmap(this);
-        vwoHeatmap.buttonClickVWOHeatmap(this);
+        VWOHeatmapPage vwoHeatmap=new VWOHeatmapPage();
+        vwoHeatmap.triggerElementOneVWOHeatmap(this)
+                .buttonClickVWOHeatmap(this);
 
 
         //  this.controlGetDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -107,16 +104,22 @@ public final class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
         wait.until(ExpectedConditions.numberOfWindowsToBe(2));  // Adjust the number based on how many tabs should be open
         // here is waiting for 2 tabs must be opened
 
+        VWOTabPage vWOtab =new VWOTabPage();
+        String title =vWOtab.tabTitleVWOPage(this);
+
         // Get all window handles
         //Set<String> allWindows = this.controlGetDriver().getWindowHandles();
 
         // Get all window handles
-        List<String> allWindows = new ArrayList<>(this.controlGetDriver().getWindowHandles());
+       // List<String> allWindows = new ArrayList<>(this.controlGetDriver().getWindowHandles());
+
+
+
 
         // Switch to the new tab (second tab)
-        this.controlGetDriver().switchTo().window(allWindows.get(1));
-        System.out.println(this.controlGetDriver().getTitle());
-        Assert.assertEquals(this.controlGetDriver().getTitle(),"Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta","title of the page is visible ");
+       // this.controlGetDriver().switchTo().window(allWindows.get(1));
+      //  System.out.println(this.controlGetDriver().getTitle());
+        Assert.assertEquals(title,"Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta","title of the page is visible ");
         //boolean titleFound = false;
         // Wait for each tab to load completely by checking the title
         //for (String window : allWindows) {
