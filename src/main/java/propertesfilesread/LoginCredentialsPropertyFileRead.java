@@ -85,8 +85,11 @@ public class LoginCredentialsPropertyFileRead {
 
 
         // passed key to this  method is null or there is on  key in the existing map
-        if(Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key)))
-            throw new KeyUrlNotFoundException(("property name "+key+" not found ,please check config properties"));
+
+        // sicne hashmap has string as the value and the key is only enum constant so
+        // conver the enum to string then you can take value
+        if(Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key.name().toLowerCase())))
+            throw new KeyUrlNotFoundException(("property name "+key.name().toLowerCase()+" not found ,please check config properties"));
 
         return CONFIGMAP.get(key.asLowerCase());
 

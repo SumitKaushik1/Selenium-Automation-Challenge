@@ -2,7 +2,7 @@ package com.pageobject.page.object.one;
 
 import com.pageobject.base.BasePageObjectOne;
 import customExceptions.KeyUrlNotFoundException;
-import org.Utils.CalculateEarnedSpent;
+import org.Utils.onechallengeutil.CalculateEarnedSpent;
 import org.openqa.selenium.By;
 import threadlocal.ThreadLocalWebDriver;
 

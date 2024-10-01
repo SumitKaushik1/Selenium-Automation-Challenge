@@ -1,0 +1,20 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìğúÿÿÿÿ
+e
+java:S2095v"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(ñÎÈ…ùÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(œû¿Ø
+Q	java:S125X"<This block of commented-out lines of code should be removed.(Ù¥¥¾
+Q	java:S125h"<This block of commented-out lines of code should be removed.(Ù¥¥¾
+V	java:S125u"<This block of commented-out lines of code should be removed.(øåÃÑúÿÿÿÿ
+R	java:S125†"<This block of commented-out lines of code should be removed.(¸°€›
+@	java:S106‹"+Replace this use of System.out by a logger.(¨™&
+F	java:S106"+Replace this use of System.out by a logger.(ªéšçùÿÿÿÿ
+Y
+java:S1128"CRemove this unused import 'org.apache.poi.xssf.usermodel.XSSFCell'.(Ñƒöğ
+X
+java:S1128"BRemove this unused import 'org.apache.poi.xssf.usermodel.XSSFRow'.(àœúÜ
+J
+java:S1128
+"4Remove this unused import 'java.io.FileInputStream'.(˜³ÉÓ
+E
+java:S1128"/Remove this unused import 'java.util.Iterator'.(¥ÍòÕ

@@ -1,14 +1,14 @@
-package org.Utils;
+package org.Utils.propertyfile;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class PropertyReader {
+public class PropertyFileReader {
 
     static Properties properties;
 
-    public PropertyReader(){
+    public PropertyFileReader(){
 
         loadAllProperties();
     }

@@ -9,7 +9,7 @@ import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterSuite;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
-import org.Utils.CalculateEarnedSpent;
+import org.Utils.onechallengeutil.CalculateEarnedSpent;
 
 import org.testng.annotations.Test;
 

@@ -107,8 +107,13 @@ public class FrameoworksConstantPropertyFileRead {
            //properties.load(fileInputStream)
 
         // passed key to this  method is null or there is on  key in the existing map
-           if(Objects.isNull(key)||Objects.isNull(CONFIGMAP.get(key)))
-               throw new KeyUrlNotFoundException("property name "+key+" not found ,please check config properties");
+
+        //acctually the key is hte enumconstant and the  configmap has key nature of string
+        // when we pass the enumconstant as the key so in retrun the configmap will returnt the value as null
+        // bz no value corresspong to enum ,so we have ot convert the key to string in lowecase letters which is
+        //present in the file key come as the URLONE as enum constant conver to enum string ,in lower case
+           if(Objects.isNull(key)||Objects.isNull(CONFIGMAP.get(key.name().toLowerCase())))
+               throw new KeyUrlNotFoundException("property name "+key.name().toLowerCase()+" not found ,please check config properties");
           //directly use the class variable scope within class
            return CONFIGMAP.get(key.asLowerCase());
            //it will return teh value regarding to that
