@@ -1,8 +1,8 @@
 package org.example.TestCases.Five;
 
 import com.base.bast_test_control.five.BasetTestControlChromeFive;
-import com.page.object.five.VWOHeatmapPage;
-import com.page.object.five.VWOTabPage;
+import com.pageobject.page.object.five.VWOHeatmapPage;
+import com.pageobject.page.object.five.VWOTabPage;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -10,8 +10,6 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
 
 
 // class is final so it cannot be extended ie inherited again so that its methods cannot be overriden

@@ -1,20 +1,18 @@
 package org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile;
 
 import com.base.bast_test_control.one.BaseTestControlChromeOne;
-import com.page.object.one.AppiloToolsWebElementDashBoardPage;
-import com.page.object.one.AppiloToolsWebElementLoginPage;
+import com.pageobject.page.object.one.AppiloToolsWebElementDashBoardPage;
+import com.pageobject.page.object.one.AppiloToolsWebElementLoginPage;
 import customExceptions.KeyUrlNotFoundException;
+import enumconstants.ReadFileConstants;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterSuite;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
 import org.Utils.CalculateEarnedSpent;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import java.text.DecimalFormat;
-import java.util.List;
 import java.util.regex.Pattern;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -131,8 +129,8 @@ public final class AppoloToolsChallengeOneChromeTest extends BaseTestControlChro
        //p.load(reader);//property file isto read the property file
 
 
-       System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile("userName"));
-       System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile("password"));
+       System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.USERNAME));
+       System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.PASSWORD));
 
 
        //System.out.println(p.getProperty("userName"));

@@ -1,5 +1,6 @@
 package com.base.basetest.Four;
 
+import enumconstants.ReadFileConstants;
 import path.DriverFilesPath;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -35,7 +36,7 @@ public final  class BaseTestChromeFour {
             // ThreadLocalWebDriver.getDriver().get("https://app.vwo.com/#/login");
 
             //FramworkconstantFileRead class static  method is called when the value is required from its file to get we pass the key
-            ThreadLocalWebDriver.getDriver().get(FrameoworksConstantPropertyFileRead.readPropertyFile("urlFour"));
+            ThreadLocalWebDriver.getDriver().get(FrameoworksConstantPropertyFileRead.readPropertyFile(ReadFileConstants.URLFOUR));
         }
 
     }

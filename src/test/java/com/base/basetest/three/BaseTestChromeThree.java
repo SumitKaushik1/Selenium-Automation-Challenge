@@ -1,5 +1,6 @@
 package com.base.basetest.three;
 
+import enumconstants.ReadFileConstants;
 import path.DriverFilesPath;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
@@ -41,7 +42,7 @@ public  final class BaseTestChromeThree {
             //driver.get("https://demoqa.com/modal-dialogs");
 
             //FramworkconstantFileRead class static  method is called when the value is required from its file to get we pass the key
-            driver.get(FrameoworksConstantPropertyFileRead.readPropertyFile("urlThree"));
+            driver.get(FrameoworksConstantPropertyFileRead.readPropertyFile(ReadFileConstants.URLTHREE));
         }
 
 

@@ -1,16 +1,12 @@
 package org.example.TestCases.Two;
 
 import com.base.bast_test_control.two.BaseTestControlChromeTwo;
-import com.page.object.two.DemoQAWebTablePage;
+import com.pageobject.page.object.two.DemoQAWebTablePage;
 import customExceptions.KeyUrlNotFoundException;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
-
-import java.time.Duration;
 
 
 // class is final so it cannot be extended ie inherited again so that its methods cannot be overriden

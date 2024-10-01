@@ -1,26 +1,20 @@
 package org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile;
 
 import com.base.bast_test_control.one.BaseTestControlEdgeOne;
-import com.page.object.one.AppiloToolsWebElementDashBoardPage;
-import com.page.object.one.AppiloToolsWebElementLoginPage;
+import com.pageobject.page.object.one.AppiloToolsWebElementDashBoardPage;
+import com.pageobject.page.object.one.AppiloToolsWebElementLoginPage;
 import customExceptions.KeyUrlNotFoundException;
+import enumconstants.ReadFileConstants;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterSuite;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
 import org.Utils.CalculateEarnedSpent;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 
 import java.text.DecimalFormat;
-
-import java.time.Duration;
-import java.util.List;
 
 
 // class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
@@ -99,8 +93,8 @@ public final class AppoloToolsChallengeOneEdgeTest extends BaseTestControlEdgeOn
 
 
 
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile("userName"));
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile("password"));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.USERNAME));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.PASSWORD));
 
         //anchor tag we use
         //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));

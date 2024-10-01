@@ -2,6 +2,7 @@ package propertesfilesread;
 
 import customExceptions.FileNotFoundRuntimeExcption;
 import customExceptions.KeyUrlNotFoundException;
+import enumconstants.ReadFileConstants;
 import path.DriverFilesPath;
 
 
@@ -95,7 +96,7 @@ public class FrameoworksConstantPropertyFileRead {
         }
     }
 
-    public static String readPropertyFile(String key) throws KeyUrlNotFoundException {
+    public static String readPropertyFile(ReadFileConstants key) throws KeyUrlNotFoundException {
 
         //throws clause means exception will be handled by its caller method
       // basically what happens that if i read the  file here ie it is he lazy initialization ie whne the method is called then it is made instsanc of it
@@ -109,7 +110,7 @@ public class FrameoworksConstantPropertyFileRead {
            if(Objects.isNull(key)||Objects.isNull(CONFIGMAP.get(key)))
                throw new KeyUrlNotFoundException("property name "+key+" not found ,please check config properties");
           //directly use the class variable scope within class
-           return CONFIGMAP.get(key);
+           return CONFIGMAP.get(key.asLowerCase());
            //it will return teh value regarding to that
            //either you can use the fileInputStream .close or the tyr wiht resources to clasoe hte resouerce
        //

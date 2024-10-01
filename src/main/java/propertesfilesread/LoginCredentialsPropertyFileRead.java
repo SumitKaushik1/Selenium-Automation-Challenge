@@ -2,6 +2,7 @@ package propertesfilesread;
 
 import customExceptions.FileNotFoundRuntimeExcption;
 import customExceptions.KeyUrlNotFoundException;
+import enumconstants.ReadFileConstants;
 import path.DriverFilesPath;
 
 
@@ -80,14 +81,14 @@ public class LoginCredentialsPropertyFileRead {
 
 
 
-    public static String readPropertyFile(String key) throws KeyUrlNotFoundException {
+    public static String readPropertyFile(ReadFileConstants key) throws KeyUrlNotFoundException {
 
 
         // passed key to this  method is null or there is on  key in the existing map
         if(Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key)))
             throw new KeyUrlNotFoundException(("property name "+key+" not found ,please check config properties"));
 
-        return CONFIGMAP.get(key);
+        return CONFIGMAP.get(key.asLowerCase());
 
     }
 

@@ -1,14 +1,10 @@
 package org.example.TestCases.Four.FourOnetestNgclassLevelparallel;
 
 import com.base.bast_test_control.four.BaseTestControlChromeFour;
-import com.page.object.four.VWODashBoardPage;
-import com.page.object.four.VWOLoginPage;
+import com.pageobject.page.object.four.VWOLoginPage;
+import enumconstants.ReadFileConstants;
 import org.assertj.core.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
@@ -64,8 +60,8 @@ public final class AppVWOChallengeFourChromeTest  extends BaseTestControlChromeF
 
         //System.out.println(p.getProperty("emailAddress"));
         //  System.out.println(p.getProperty("password1"));
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile("emailAddress"));
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile("password1"));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.EMAILADDRESS));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.PASSWORD1));
 
        ThreadLocalWebDriver.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(300));
 

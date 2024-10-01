@@ -1,5 +1,6 @@
 package com.base.basetest.One;
 
+import enumconstants.ReadFileConstants;
 import propertesfilesread.FrameoworksConstantPropertyFileRead;
 
 import threadlocal.ThreadLocalWebDriver;
@@ -47,7 +48,7 @@ public final class BaseTestEdgeOne {
             // ThreadLocalWebDriver.getDriver().get("https://demo.applitools.com/");
 
             //FramworkconstantFileRead class static  method is called when the value is required from its file to get we pass the key
-            ThreadLocalWebDriver.getDriver().get(FrameoworksConstantPropertyFileRead.readPropertyFile("urlOne"));
+            ThreadLocalWebDriver.getDriver().get(FrameoworksConstantPropertyFileRead.readPropertyFile(ReadFileConstants.URLONE));
 
 
         }

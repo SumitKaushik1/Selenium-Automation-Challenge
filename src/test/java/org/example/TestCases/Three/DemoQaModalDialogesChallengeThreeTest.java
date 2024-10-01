@@ -1,10 +1,8 @@
 package org.example.TestCases.Three;
 
 import com.base.bast_test_control.three.BaseTestControlChromeThree;
-import com.page.object.three.DemoQAModalDialoguePage;
+import com.pageobject.page.object.three.DemoQAModalDialoguePage;
 import org.assertj.core.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
