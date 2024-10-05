@@ -2,15 +2,18 @@ package org.example.TestCases.Four.FourOnetestNgclassLevelparallel;
 
 import com.base.bast_test_control.four.BaseTestControlChromeFour;
 import com.pageobject.page.object.four.VWOLoginPage;
+import dataproviderexcelreal.DataProviderExcel;
 import enumconstants.ReadFileConstants;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
 
 import java.time.Duration;
+import java.util.Map;
 
 
 // class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
@@ -48,10 +51,21 @@ public final class AppVWOChallengeFourChromeTest  extends BaseTestControlChromeF
 
     }
 */
+@DataProvider(name="VWOURLFour")
+Object[][] getDataExcelVWOOne(){
 
 
-    @Test(priority = 0)
-    public void loginCrdentialsInValid1() throws Exception {
+    return DataProviderExcel.getDataVWOFour();
+}
+
+
+
+    // you can take the directly method name also dataProvider = " getDataExcelAppilotoolsOne"
+    //loginCredentials is called for the first time for the value ie obj[0]-> holding the array of one dimensional of objet[0]
+    //loginCredentials is called for the second time for the value ie obj[1]->  holding the array of one dimensional of objet[1]
+    // each one dimensional [][][],login,username ,passwrod goes to respective argument
+    @Test(priority=0,dataProvider = "VWOURLFour")
+    public void loginCredentials(String loginId,String username,String password) throws Exception {
 
         this.setUpControlChrome();
         //FileReader reader=new FileReader("src/test/resources/configproperties/LoginCredentitals.properties");//it is the location of the properites
@@ -60,8 +74,8 @@ public final class AppVWOChallengeFourChromeTest  extends BaseTestControlChromeF
 
         //System.out.println(p.getProperty("emailAddress"));
         //  System.out.println(p.getProperty("password1"));
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.EMAILADDRESS));
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.PASSWORD1));
+       // System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.EMAILADDRESS));
+        //System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.PASSWORD1));
 
        ThreadLocalWebDriver.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(300));
 
@@ -100,7 +114,7 @@ public final class AppVWOChallengeFourChromeTest  extends BaseTestControlChromeF
 
         VWOLoginPage vwoLoginPage=new VWOLoginPage();
 
-        WebElement text= vwoLoginPage.enterUserNameVWOLogin().enterPasswordVWOLogin().clickButtonVWOLogin().vWODashbord();
+        WebElement text= vwoLoginPage.enterUserNameVWOLogin(username).enterPasswordVWOLogin(password).clickButtonVWOLogin().vWODashbord();
 
 
        // VWODashBoardPage vwoDashBoardPage=new VWODashBoardPage();

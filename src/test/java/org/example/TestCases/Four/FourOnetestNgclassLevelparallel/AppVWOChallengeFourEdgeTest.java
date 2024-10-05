@@ -3,10 +3,12 @@ package org.example.TestCases.Four.FourOnetestNgclassLevelparallel;
 
 import com.base.bast_test_control.four.BaseTestControlEdgeFour;
 import com.pageobject.page.object.four.VWOLoginPage;
+import dataproviderexcelreal.DataProviderExcel;
 import enumconstants.ReadFileConstants;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
@@ -42,37 +44,52 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
 
     }*/
 
-    @Test
-    public void loginCrdentialsInValid1() throws Exception {
+    @DataProvider(name="VWOURLFour")
+    Object[][] getDataExcelVWOOne(){
+
+
+        return DataProviderExcel.getDataVWOFour();
+    }
+
+
+
+    // you can take the directly method name also dataProvider = " getDataExcelAppilotoolsOne"
+    //loginCredentials is called for the first time for the value ie obj[0]-> holding the array of one dimensional of objet[0]
+    //loginCredentials is called for the second time for the value ie obj[1]->  holding the array of one dimensional of objet[1]
+    // each one dimensional [][][],login,username ,passwrod goes to respective argument
+    @Test(priority=0,dataProvider = "VWOURLFour")
+    public void loginCredentials(String loginId,String username,String password) throws Exception {
+
 
         this.setUpControlEdge();
+        //FileReader reader=new FileReader("src/test/resources/configproperties/LoginCredentitals.properties");//it is the location of the properites
+        //  Properties p=new Properties();//it is the inbuilt java class
+        // p.load(reader);//property file isto read the property file
 
-       // FileReader reader=new FileReader("src/test/resources/configproperties/LoginCredentitals.properties");//it is the location of the properites
-      //  Properties p=new Properties();//it is the inbuilt java class
-        //p.load(reader);//property file isto read the property file
+        //System.out.println(p.getProperty("emailAddress"));
+        //  System.out.println(p.getProperty("password1"));
+        // System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.EMAILADDRESS));
+        //System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.PASSWORD1));
 
-       // System.out.println(p.getProperty("emailAddress"));
-        //System.out.println(p.getProperty("password1"));
+        ThreadLocalWebDriver.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(300));
 
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.EMAILADDRESS));
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.PASSWORD1));
 
-      ThreadLocalWebDriver.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(1000));
-
-        //WebElement emailAddress= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='login-username']"));
+        // WebElement emailAddress = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='login-username']"));
         //emailAddress.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("emailAddress"));
-        //emailAddress.sendKeys(p.getProperty("emailAddress"));
+        // emailAddress.sendKeys(p.getProperty("emailAddress"));
         // emailAddress.sendKeys("akash@wuuvo.com");
-        //WebElement password = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='login-password']"));
+        // WebElement password = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='login-password']"));
+        //  password.sendKeys(p.getProperty("password1"));
         //password.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("password1"));
-       // password.sendKeys(p.getProperty("password1"));
         //password.sendKeys("Test@1234");
         //WebElement signInButton = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//button[@id='js-login-btn']"));
         //signInButton.click();
-        //WebDriverWait wait =new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(1000));//in this we set the driver to wait maximum 10 seconds
+
+        // WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(1000));//in this we set the driver to wait maximum 10 seconds
+
+
         // WebElement firstLine=driver.findElement(By.xpath("//span[@data-qa='lufexuloga']"));
         //span[@class='Fw(semi-bold) ng-binding']
-
 
 
         //System.out.println(firstLine);
@@ -82,35 +99,28 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
 /*          JavascriptExecutor jse=(JavascriptExecutor)driver;
         System.out.println(jse.executeScript("document.querySelector(\"span[class='Fw(semi-bold) ng-binding']\").textContent").toString());*/
 
-       // WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='Fw(semi-bold) ng-binding']")));
-       // WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span[class='Fw(semi-bold) ng-binding']")));
-        //((JavascriptExecutor) ThreadLocalWebDriver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", text);
+        // WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='Fw(semi-bold) ng-binding']")));
+        // WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span[class='Fw(semi-bold) ng-binding']")));
+
+        // ((JavascriptExecutor) ThreadLocalWebDriver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", text);
         //System.out.println(text.getText());
-
-
-
 
 
         VWOLoginPage vwoLoginPage=new VWOLoginPage();
 
-        WebElement text= vwoLoginPage.enterUserNameVWOLogin()
-       .enterPasswordVWOLogin()
-        .clickButtonVWOLogin().vWODashbord();;
+        WebElement text= vwoLoginPage.enterUserNameVWOLogin(username).enterPasswordVWOLogin(password).clickButtonVWOLogin().vWODashbord();
 
 
-        //VWODashBoardPage vwoDashBoardPage=new VWODashBoardPage();
+        // VWODashBoardPage vwoDashBoardPage=new VWODashBoardPage();
 
-       // WebElement text= vwoDashBoardPage.vWODashbord();
-
-
+        // WebElement text= vwoDashBoardPage.vWODashbord();
 
         //Testng liberary--> //Testng liberary needs many statements to for checking different condition
-       // Assert.assertEquals(text.getText(),"akash");
+        //Assert.assertEquals(text.getText(), "akash");
         //Assert is used to abort the program at the particular line if certain condition is not fulfill
         //if that condition is satified thne code will continiue
         //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
         // method so the it will pass bydefault
-
 
         //or
         //AsertJ liberary
@@ -124,6 +134,7 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
         //if that condition is satified thne code will continiue
         //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
         // method so the it will pass bydefault
+
 
 
 

@@ -17,17 +17,20 @@ public class VWOLoginPage extends BasePageObjectFour {
     private final By signInButtonVWOLoginPage=By.xpath("//button[@id='js-login-btn']");
 
 
-    public VWOLoginPage enterUserNameVWOLogin() throws KeyUrlNotFoundException {
+    public VWOLoginPage enterUserNameVWOLogin(String username) throws KeyUrlNotFoundException {
        // ThreadLocalWebDriver.getDriver().findElement(emailAddressVWOLoginPage).sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("emailAddress"));
-        this.enterCredentials(emailAddressVWOLoginPage,LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.EMAILADDRESS));
-
+       // this.enterCredentials(emailAddressVWOLoginPage,LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.EMAILADDRESS));
+        this.enterCredentials(emailAddressVWOLoginPage,username);
         return this;
     }
 
-    public VWOLoginPage enterPasswordVWOLogin() throws KeyUrlNotFoundException {
+    public VWOLoginPage enterPasswordVWOLogin(String password) throws KeyUrlNotFoundException {
 
        // ThreadLocalWebDriver.getDriver().findElement(passwordVWOLoginPage).sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("password1"));;
-       this.enterCredentials(passwordVWOLoginPage,LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.PASSWORD1));
+      // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.PASSWORD1));
+        this.enterCredentials(passwordVWOLoginPage,password);
+
+
         return this;
     }
 

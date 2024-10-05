@@ -1,0 +1,8 @@
+
+“	java:S1176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Úèõå8Ôæ£É¥2J$1f594c35-f819-4851-b958-fbce4c961541
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¤€Ã©J$47acfd07-6e4d-4004-b1dc-c5746ba78fe2
+g
+java:S2095"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(Ùê±ú8ôœ¥É¥2
+k
+java:S1197"*Move the array designators [] to the type.(¡þÏÖøÿÿÿÿJ$ff25682f-e36e-4b13-8dab-1117509ebacf
+k	java:S106="+Replace this use of System.out by a logger.(Ìþ¤†üÿÿÿÿJ$21bac68b-9e16-4277-829b-02910e255903
