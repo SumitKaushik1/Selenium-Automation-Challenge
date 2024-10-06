@@ -2,7 +2,9 @@ package org.example.TestCases.Four.FourOnetestNgclassLevelparallel;
 
 
 import com.base.bast_test_control.four.BaseTestControlEdgeFour;
+import com.pageobject.page.object.four.VWODashBoardPage;
 import com.pageobject.page.object.four.VWOLoginPage;
+import customExceptions.KeyUrlNotFoundException;
 import dataproviderexcelreal.DataProviderExcel;
 import enumconstants.ReadFileConstants;
 import org.assertj.core.api.Assertions;
@@ -108,9 +110,33 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
 
         VWOLoginPage vwoLoginPage=new VWOLoginPage();
 
-        WebElement text= vwoLoginPage.enterUserNameVWOLogin(username).enterPasswordVWOLogin(password).clickButtonVWOLogin().vWODashbord();
+        System.out.println("entering started");
+        Boolean errorMessageNotVisible= vwoLoginPage.enterUserNameVWOLogin(username).enterPasswordVWOLogin(password).clickButtonVWOLogin();
+
+        //.vWODashbord();
+        System.out.println("entering ended ");
 
 
+        Assertions.assertThat(errorMessageNotVisible).isTrue();//it means it pass ie logged in
+
+
+
+
+
+
+    }
+
+
+
+    @Test(priority = 1)
+    void checkUrlDashboardPage() throws KeyUrlNotFoundException {
+
+
+        WebElement text= new VWODashBoardPage().vWODashbord();
+
+
+
+        //   Assertions.assertThat(text.getText()).isNull();//it means it pass ie logged in
         // VWODashBoardPage vwoDashBoardPage=new VWODashBoardPage();
 
         // WebElement text= vwoDashBoardPage.vWODashbord();
@@ -138,7 +164,10 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
 
 
 
+
     }
+
+
 
     @AfterSuite
     void closeAllResoureces(){

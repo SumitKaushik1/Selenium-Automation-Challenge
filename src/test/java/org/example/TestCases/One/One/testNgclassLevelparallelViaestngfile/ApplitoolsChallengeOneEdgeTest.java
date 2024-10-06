@@ -58,7 +58,7 @@ public final class ApplitoolsChallengeOneEdgeTest extends BaseTestControlEdgeOne
      Object[] getDataExcelAppilotoolsOne(){
 
 
-         return DataProviderExcel.getDataExcelAppilotoolsOneEdge();
+         return DataProviderExcel.getDataExcelAppilotools();
     }
 
 
@@ -68,7 +68,7 @@ public final class ApplitoolsChallengeOneEdgeTest extends BaseTestControlEdgeOne
    //loginCredentials is called for the second time for the value ie obj[1]-> holding one map
     // that map goes ot argument
     @Test(priority=0,dataProvider = "ApplioolsURLOne")
-    public void loginCredentials(Map<String,String> credentials) throws Exception {
+    public void loginWithCredentials(Map<String,String> credentials) throws Exception {
 
 
         this.setUpControlEdge();//note when you make the instsnce here the driver insteance reamin

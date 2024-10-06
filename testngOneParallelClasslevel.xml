@@ -6,7 +6,7 @@
         <classes>
             <class name="org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile.ApplitoolsChallengeOneEdgeTest">
                 <methods>
-                    <include name="loginCredentials"/>
+                    <include name="loginWithCredentials"/>
                     <include name="verifyAppointmentConfirmation"/>
                     <include name="totalMoneySpentCalculation"/>
                 </methods>

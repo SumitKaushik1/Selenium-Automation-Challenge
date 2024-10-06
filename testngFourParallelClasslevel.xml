@@ -8,13 +8,15 @@
         <classes>
             <class name="org.example.TestCases.Four.FourOnetestNgclassLevelparallel.AppVWOChallengeFourChromeTest">
                 <methods>
-                    <include name="loginCrdentialsInValid1"/>
+                    <include name="loginCredentials"/>
+                    <include name="checkUrlDashboardPage"/>
                 </methods>
             </class>
 
             <class name="org.example.TestCases.Four.FourOnetestNgclassLevelparallel.AppVWOChallengeFourEdgeTest">
                 <methods>
-                    <include name="loginCrdentialsInValid1"/>
+                    <include name="loginCredentials"/>
+                    <include name="checkUrlDashboardPage"/>
                 </methods>
             </class>
         </classes>

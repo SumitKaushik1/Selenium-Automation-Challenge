@@ -22,6 +22,8 @@ public class BasePageObjectFour {
 
    protected void enterCredentials( By element,String stringValueFromPropertyFile ) throws KeyUrlNotFoundException {
 
+        this.findElement(element)
+                .clear();
         this.findElement(element).sendKeys(stringValueFromPropertyFile);
 
     }

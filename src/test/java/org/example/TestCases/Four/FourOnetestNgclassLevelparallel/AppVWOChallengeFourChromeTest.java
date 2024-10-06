@@ -1,7 +1,9 @@
 package org.example.TestCases.Four.FourOnetestNgclassLevelparallel;
 
 import com.base.bast_test_control.four.BaseTestControlChromeFour;
+import com.pageobject.page.object.four.VWODashBoardPage;
 import com.pageobject.page.object.four.VWOLoginPage;
+import customExceptions.KeyUrlNotFoundException;
 import dataproviderexcelreal.DataProviderExcel;
 import enumconstants.ReadFileConstants;
 import org.assertj.core.api.Assertions;
@@ -114,12 +116,30 @@ Object[][] getDataExcelVWOOne(){
 
         VWOLoginPage vwoLoginPage=new VWOLoginPage();
 
-        WebElement text= vwoLoginPage.enterUserNameVWOLogin(username).enterPasswordVWOLogin(password).clickButtonVWOLogin().vWODashbord();
+        System.out.println("entering started");
+        Boolean errorMessageNotVisible= vwoLoginPage.enterUserNameVWOLogin(username).enterPasswordVWOLogin(password).clickButtonVWOLogin();
+
+                //.vWODashbord();
+        System.out.println("entering ended ");
 
 
-       // VWODashBoardPage vwoDashBoardPage=new VWODashBoardPage();
+        Assertions.assertThat(errorMessageNotVisible).isTrue();//it means it pass ie logged in
 
-       // WebElement text= vwoDashBoardPage.vWODashbord();
+
+    }
+
+    @Test(priority = 1)
+    void checkUrlDashboardPage() throws KeyUrlNotFoundException {
+
+
+    WebElement text= new VWODashBoardPage().vWODashbord();
+
+
+
+     //   Assertions.assertThat(text.getText()).isNull();//it means it pass ie logged in
+        // VWODashBoardPage vwoDashBoardPage=new VWODashBoardPage();
+
+        // WebElement text= vwoDashBoardPage.vWODashbord();
 
         //Testng liberary--> //Testng liberary needs many statements to for checking different condition
         //Assert.assertEquals(text.getText(), "akash");
@@ -143,7 +163,14 @@ Object[][] getDataExcelVWOOne(){
 
 
 
+
+
     }
+
+
+
+
+
 
     @AfterSuite
     void closeAllResources() {

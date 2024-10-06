@@ -3,9 +3,13 @@ package com.pageobject.page.object.four;
 import com.pageobject.base.BasePageObjectFour;
 import customExceptions.KeyUrlNotFoundException;
 import enumconstants.ReadFileConstants;
+import enumconstants.WaitStrategy;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
+
+import java.util.Objects;
 
 public class VWOLoginPage extends BasePageObjectFour {
 
@@ -16,6 +20,8 @@ public class VWOLoginPage extends BasePageObjectFour {
 
     private final By signInButtonVWOLoginPage=By.xpath("//button[@id='js-login-btn']");
 
+
+    private final By invalidLoginMessageVWOLogin=By.xpath("//div[@id='js-notification-box-msg']");
 
     public VWOLoginPage enterUserNameVWOLogin(String username) throws KeyUrlNotFoundException {
        // ThreadLocalWebDriver.getDriver().findElement(emailAddressVWOLoginPage).sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("emailAddress"));
@@ -35,12 +41,16 @@ public class VWOLoginPage extends BasePageObjectFour {
     }
 
 
-    public VWODashBoardPage clickButtonVWOLogin() throws KeyUrlNotFoundException {
+    public Boolean clickButtonVWOLogin() throws KeyUrlNotFoundException {
 
 
        // ThreadLocalWebDriver.getDriver().findElement(signInButtonVWOLoginPage).click();;
       this.clickLogin(signInButtonVWOLoginPage);
-        return new VWODashBoardPage();
+
+
+      return ! this.findElement(invalidLoginMessageVWOLogin).isDisplayed();
+
+
     }
 
 

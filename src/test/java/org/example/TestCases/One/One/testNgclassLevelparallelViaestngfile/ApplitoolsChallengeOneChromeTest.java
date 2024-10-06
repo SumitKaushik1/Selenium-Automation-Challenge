@@ -74,7 +74,7 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
     Object[] getDataExcelAppilotoolsOne(){
 
 
-        return DataProviderExcel.getDataExcelAppilotoolsOneChrome();
+        return DataProviderExcel.getDataExcelAppilotools();
     }
 
 
@@ -84,7 +84,7 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
     //loginCredentials is called for the second time for the value ie obj[1]-> holding one map
     // that map goes ot argument
     @Test(priority=0,dataProvider = "ApplioolsURLOne")
-    public void loginCredentials(Map<String,String> credentials) throws Exception {
+    public void loginWithCredentials(Map<String,String> credentials) throws Exception {
 
 
 
