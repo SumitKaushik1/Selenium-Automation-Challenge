@@ -1,7 +1,7 @@
 package com.base.basetest.Four;
 
 import enumconstants.ReadFileConstants;
-import path.DriverFilesPath;
+import path.DriverAndFilesPath;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
@@ -24,7 +24,7 @@ public class BaseTestEdgeFour {
     public static void setUpEdge() throws Exception {
 
         if (Objects.isNull(driver)) {
-            System.setProperty("webdriver.edge.driver", DriverFilesPath.edgePath());
+            System.setProperty("webdriver.edge.driver", DriverAndFilesPath.edgePath());
 
             driver = new EdgeDriver();
             //which ever thread useing this method that thread imopliclaty will have its own threadlocal variable

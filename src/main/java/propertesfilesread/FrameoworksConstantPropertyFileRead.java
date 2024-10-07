@@ -3,7 +3,7 @@ package propertesfilesread;
 import customExceptions.FileNotFoundRuntimeExcption;
 import customExceptions.KeyUrlNotFoundException;
 import enumconstants.ReadFileConstants;
-import path.DriverFilesPath;
+import path.DriverAndFilesPath;
 
 
 import java.io.FileReader;
@@ -49,7 +49,7 @@ public class FrameoworksConstantPropertyFileRead {
         //static bliock is used for the early initialization
         try {
             //take file
-            //FileInputStream fileInputStream = new FileInputStream("src/test/resources/configproperties/FrameworkConstantURLs.properties")
+            //FileInputStream fileInputStream = new FileInputStream("src/test/resources/configproperties/URLs.properties")
            //notw the  .property file  is the text file  so fileinputStream(specilaly for bianry file but can be used for text file also)
             // is not needed you can use FileReader  for text file
             // note-> text file(characters) data is standard either utf8 or ascii so any tool know this so
@@ -65,7 +65,7 @@ public class FrameoworksConstantPropertyFileRead {
 
             // PROPERTIES.load(fileInputStream)
            //load the file
-            FileReader fileReader=new FileReader(DriverFilesPath.frameworkConstantsFilePath());
+            FileReader fileReader=new FileReader(DriverAndFilesPath.frameworkConstantsPropertyFilePath());
             PROPERTIES.load(fileReader);
 
 

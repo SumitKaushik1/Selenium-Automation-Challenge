@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+
+
+    <listeners>
+        <listener class-name="com.listener.MethodInterceptorFour"/>
+    </listeners>
+
+
     <!-- paralell=clases meanes classes will be run parallel ,thread count 2 means one class
         is handled by one thread and one thread to  other class -->
     <test verbose="2" preserve-order="true"  parallel="classes"

@@ -7,7 +7,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import path.DriverFilesPath;
+import path.DriverAndFilesPath;
 
 
 import java.io.FileReader;
@@ -62,7 +62,7 @@ public class LoginCredentialsPropertyFileRead {
 
             // text file and binary file store data in bytes only but for text file standard used but binary file
             // no standard
-        FileReader  fileReader=new FileReader(DriverFilesPath.loginCredentialsFilePath());
+        FileReader  fileReader=new FileReader(DriverAndFilesPath.loginCredentialsPropertyFilePath());
 
             PROPERTIES.load(fileReader);
         } catch (IOException e) {

@@ -1,7 +1,7 @@
 package com.base.basetest.Five;
 
 import enumconstants.ReadFileConstants;
-import path.DriverFilesPath;
+import path.DriverAndFilesPath;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import propertesfilesread.FrameoworksConstantPropertyFileRead;
@@ -18,7 +18,7 @@ public class BaseTestChromeFive {
 
     public static void setUpChrome() throws Exception {
         if (Objects.isNull(driver)) {
-            System.setProperty("webdriver.chrome.driver", DriverFilesPath.chromePath());
+            System.setProperty("webdriver.chrome.driver", DriverAndFilesPath.chromePath());
             driver = new ChromeDriver();
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

@@ -1,10 +1,10 @@
 package com.base.basetest.One;
 
 import enumconstants.ReadFileConstants;
+import path.DriverAndFilesPath;
 import propertesfilesread.FrameoworksConstantPropertyFileRead;
 
 import threadlocal.ThreadLocalWebDriver;
-import path.DriverFilesPath;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
@@ -31,8 +31,8 @@ public final class BaseTestEdgeOne {
 
     public static void setUpEdge() throws Exception {
         if (Objects.isNull(driver)) {
-            // System.setProperty("webDriver.edge.driver", DriverFilesPath.edgePath());
-            System.setProperty("webdriver.edge.driver", DriverFilesPath.edgePath());
+            // System.setProperty("webDriver.edge.driver", DriverAndFilesPath.edgePath());
+            System.setProperty("webdriver.edge.driver", DriverAndFilesPath.edgePath());
 
             driver = new EdgeDriver();
             //which ever thread use this method it will have the local threadlocal variale set as below

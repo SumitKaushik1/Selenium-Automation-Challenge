@@ -1,3 +1,12 @@
 
 ƒ
-java:S2259\"AA "NullPointerException" could be thrown; "key" is nullable here.(¯õ©D8Ì‡ƒÏ¤2J$1f5d8047-839a-4ab8-8ecc-3fdc9685e583
+java:S2259`"AA "NullPointerException" could be thrown; "key" is nullable here.(¯õ©D8Ì‡ƒÏ¤2J$7141d4cd-f059-4e52-bb9a-a38a6a54d195
+“
+java:S2095Ï"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(ñÎÈ…ùÿÿÿÿ8®äÿš¦2J$5f90680a-8157-4039-b520-6d979cb64706
+~	java:S125p"<This block of commented-out lines of code should be removed.(œû¿Ø8òæÿš¦2J$2208b3ed-d0da-4b40-8922-b14de355f4d2
+	java:S125±"<This block of commented-out lines of code should be removed.(Ù¥¥¾8ôæÿš¦2J$23c04957-6c27-4029-ab8b-9f64d1261976
+	java:S125Á"<This block of commented-out lines of code should be removed.(Ù¥¥¾8õæÿš¦2J$0ac0545a-70f8-44b5-9045-3330101c1e1e
+„	java:S125Î"<This block of commented-out lines of code should be removed.(øåÃÑúÿÿÿÿ8øæÿš¦2J$b2326217-8f46-4034-aaf4-134b1a4cfd01
+	java:S125ß"<This block of commented-out lines of code should be removed.(¸°€›8äçÿš¦2J$8d8811c4-79b6-4b26-8a0c-a818d348efc3
+m	java:S106ä"+Replace this use of System.out by a logger.(¨™&8ëçÿš¦2J$d6710689-fb88-41dd-9bdd-49f04364dbb8
+s	java:S106æ"+Replace this use of System.out by a logger.(ªéšçùÿÿÿÿ8ïçÿš¦2J$62a647e2-6f0d-4c9b-8a94-bba5d39d1ae0

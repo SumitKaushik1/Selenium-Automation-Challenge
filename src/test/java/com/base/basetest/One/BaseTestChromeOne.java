@@ -1,7 +1,7 @@
 package com.base.basetest.One;
 
 import enumconstants.ReadFileConstants;
-import path.DriverFilesPath;
+import path.DriverAndFilesPath;
 import propertesfilesread.FrameoworksConstantPropertyFileRead;
 
 import threadlocal.ThreadLocalWebDriver;
@@ -33,7 +33,7 @@ public final  class BaseTestChromeOne {
     public static void setUpChrome() throws Exception {
         //  System.setProperty("webdriver.chrome.driver","J:\\3. automation testing\\day41--selenium -UI elements\\AssignmentAnswers\\Appolo-Tools\\src\\test\\resources\\driver\\chromedriver.exe");
         if (Objects.isNull(ThreadLocalWebDriver.getDriver())) {
-            System.setProperty("webdriver.chrome.driver", DriverFilesPath.chromePath());
+            System.setProperty("webdriver.chrome.driver", DriverAndFilesPath.chromePath());
 
 
             //driver=new ChromeDriver();//ChromeDriver class from webdriver famework uses the upper location for the driver

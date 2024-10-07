@@ -76,19 +76,19 @@ Object[][] getDataExcelVWOOne(){
 
         //System.out.println(p.getProperty("emailAddress"));
         //  System.out.println(p.getProperty("password1"));
-       // System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.EMAILADDRESS));
-        //System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.PASSWORD1));
+       // System.out.println(LoginCredentialsJsonFileRead.readPropertyFile(ReadFileConstants.EMAILADDRESS));
+        //System.out.println(LoginCredentialsJsonFileRead.readPropertyFile(ReadFileConstants.PASSWORD1));
 
        ThreadLocalWebDriver.getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(300));
 
 
        // WebElement emailAddress = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='login-username']"));
-        //emailAddress.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("emailAddress"));
+        //emailAddress.sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("emailAddress"));
         // emailAddress.sendKeys(p.getProperty("emailAddress"));
         // emailAddress.sendKeys("akash@wuuvo.com");
        // WebElement password = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='login-password']"));
         //  password.sendKeys(p.getProperty("password1"));
-        //password.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("password1"));
+        //password.sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password1"));
         //password.sendKeys("Test@1234");
         //WebElement signInButton = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//button[@id='js-login-btn']"));
         //signInButton.click();

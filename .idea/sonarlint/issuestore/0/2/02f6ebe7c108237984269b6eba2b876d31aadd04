@@ -1,0 +1,21 @@
+
+`	java:S112C"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112’"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+`
+java:S2095"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(×ÉÆ‡
+`
+java:S2095Y"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(×ÉÆ‡
+U
+java:S1118":Add a private constructor to hide the implicit public one.(—ß¹Àþÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(õ÷Íûÿÿÿÿ
+E	java:S106"+Replace this use of System.out by a logger.(’ØØëýÿÿÿÿ
+E	java:S106"+Replace this use of System.out by a logger.(ÙñÙÈøÿÿÿÿ
+V	java:S1251"<This block of commented-out lines of code should be removed.(´ÿïèÿÿÿÿÿ
+Q	java:S1254"<This block of commented-out lines of code should be removed.(… í×
+V	java:S1256"<This block of commented-out lines of code should be removed.(÷¦†èýÿÿÿÿ
+@	java:S1069"+Replace this use of System.out by a logger.(µˆœÑ
+V	java:S125T"<This block of commented-out lines of code should be removed.(õ÷Íûÿÿÿÿ
+E	java:S106^"+Replace this use of System.out by a logger.(’ØØëýÿÿÿÿ
+E	java:S106b"+Replace this use of System.out by a logger.(ÙñÙÈøÿÿÿÿ
+V	java:S125q"<This block of commented-out lines of code should be removed.(´ÿïèÿÿÿÿÿ
+Q	java:S125~"<This block of commented-out lines of code should be removed.(ªÚ×©

@@ -24,16 +24,16 @@ public class VWOLoginPage extends BasePageObjectFour {
     private final By invalidLoginMessageVWOLogin=By.xpath("//div[@id='js-notification-box-msg']");
 
     public VWOLoginPage enterUserNameVWOLogin(String username) throws KeyUrlNotFoundException {
-       // ThreadLocalWebDriver.getDriver().findElement(emailAddressVWOLoginPage).sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("emailAddress"));
-       // this.enterCredentials(emailAddressVWOLoginPage,LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.EMAILADDRESS));
+       // ThreadLocalWebDriver.getDriver().findElement(emailAddressVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("emailAddress"));
+       // this.enterCredentials(emailAddressVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ReadFileConstants.EMAILADDRESS));
         this.enterCredentials(emailAddressVWOLoginPage,username);
         return this;
     }
 
     public VWOLoginPage enterPasswordVWOLogin(String password) throws KeyUrlNotFoundException {
 
-       // ThreadLocalWebDriver.getDriver().findElement(passwordVWOLoginPage).sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("password1"));;
-      // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.PASSWORD1));
+       // ThreadLocalWebDriver.getDriver().findElement(passwordVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password1"));;
+      // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ReadFileConstants.PASSWORD1));
         this.enterCredentials(passwordVWOLoginPage,password);
 
 

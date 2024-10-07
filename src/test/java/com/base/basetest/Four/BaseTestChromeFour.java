@@ -1,8 +1,7 @@
 package com.base.basetest.Four;
 
 import enumconstants.ReadFileConstants;
-import path.DriverFilesPath;
-import org.openqa.selenium.WebDriver;
+import path.DriverAndFilesPath;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import propertesfilesread.FrameoworksConstantPropertyFileRead;
@@ -24,7 +23,7 @@ public final  class BaseTestChromeFour {
     public static void setUpChrome() throws Exception {
 
         if (Objects.isNull(ThreadLocalWebDriver.getDriver())) {
-            System.setProperty("webdriver.chrome.driver", DriverFilesPath.chromePath());
+            System.setProperty("webdriver.chrome.driver", DriverAndFilesPath.chromePath());
             // System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\drivers\\chromedriver.exe");
             //driver = new ChromeDriver();
             //which ever thread useing this method that thread imopliclaty will have its own threadlocal variable

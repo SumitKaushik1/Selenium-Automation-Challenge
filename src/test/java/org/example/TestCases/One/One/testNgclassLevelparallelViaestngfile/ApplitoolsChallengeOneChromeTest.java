@@ -6,6 +6,7 @@ import com.pageobject.page.object.one.ApplitoolsWebElementLoginPage;
 import customExceptions.KeyUrlNotFoundException;
 import dataproviderexcelreal.DataProviderExcel;
 import enumconstants.ReadFileConstants;
+import jsonfileread.LoginCredentialsJsonFileRead;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.DataProvider;
@@ -70,12 +71,12 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
     }
 */
 
-    @DataProvider(name="ApplioolsURLOne")
-    Object[] getDataExcelAppilotoolsOne(){
+   // @DataProvider(name="ApplioolsURLOne")
+    //Object[] getDataExcelAppilotoolsOne(){
 
 
-        return DataProviderExcel.getDataExcelAppilotools();
-    }
+      //  return DataProviderExcel.getDataExcelAppilotools();
+    //}
 
 
 
@@ -83,8 +84,10 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
     //loginCredentials is called for the first time for the value ie obj[0]-> holding one map
     //loginCredentials is called for the second time for the value ie obj[1]-> holding one map
     // that map goes ot argument
-    @Test(priority=0,dataProvider = "ApplioolsURLOne")
-    public void loginWithCredentials(Map<String,String> credentials) throws Exception {
+   // @Test(priority=0,dataProvider = "ApplioolsURLOne")
+    // public void loginWithCredentials(Map<String,String> credentials) throws Exception {
+    @Test(priority =0)
+    public void loginWithCredentials() throws Exception {
 
 
 
@@ -127,8 +130,8 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
 
 
 
-        //System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.USERNAME));
-        //System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.PASSWORD));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.USERNAME));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.PASSWORD));
 
         //anchor tag we use
         //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
@@ -141,12 +144,12 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
 
         // WebElement userName= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='username']"));
         //WebElement userName= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='username']"));
-        //userName.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("userName"));
+        //userName.sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("userName"));
         // userName.sendKeys(p.getProperty("userName"));
         // userName.sendKeys("Admin");
         // WebElement password =ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='password']"));//input[@id='password']
 
-        // password.sendKeys(LoginCredentialsPropertyFileRead.readPropertyFile("password"));
+        // password.sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password"));
         // password.sendKeys(p.getProperty("password"));
         // password.sendKeys("Password@123");
         //WebElement signButton=ThreadLocalWebDriver.getDriver().findElement(By.xpath("//a[@id='log-in']"));
@@ -154,11 +157,17 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
 
 
 
+       // ApplitoolsWebElementLoginPage appiloToolsWebElement=new ApplitoolsWebElementLoginPage();
+      //  appiloToolsWebElement.enterUserNameApplitools(credentials.get("Username")).enterPasswordApplitools("Password").clickButtonApplitools();
+
+
+
         ApplitoolsWebElementLoginPage appiloToolsWebElement=new ApplitoolsWebElementLoginPage();
-        appiloToolsWebElement.enterUserNameApplitools(credentials.get("Username")).enterPasswordApplitools("Password").clickButtonApplitools();
-
-
-
+        appiloToolsWebElement.
+                enterUserNameApplitools(LoginCredentialsJsonFileRead.
+                        readJsonFile(ReadFileConstants.USERNAME)).enterPasswordApplitools(LoginCredentialsJsonFileRead.
+                        readJsonFile(ReadFileConstants.PASSWORD)).
+                clickButtonApplitools();
 
 
        /* Select facilityDropdown = new Select(driver.findElement(By.xpath("//select[@id='combo_facility']")));
@@ -226,6 +235,7 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
 
 
     }
+
 
 
 
@@ -312,6 +322,24 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
         // method so the it will pass bydefault
 
     }
+
+
+
+
+
+//you have to add the methdo name also in teh testng file
+    @Test(priority =2)
+    void justToTestListenerMethod1(){
+        System.out.println("Method1toTestListener");
+    }
+
+    //you have to add the methdo name also in teh testng file
+    @Test(priority =3)
+    void justToTestListenerMethod2(){
+        System.out.println("Method2toTestListener");
+    }
+
+
 
 
 
