@@ -335,6 +335,14 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
         System.out.println("justToTestListenerMethod2");
     }
 
+    @Test(priority =4)
+    void justToTestRetryListenerOnFailMethod3(){
+        System.out.println("justToTestRetryListenerOnFailMethod3");
+        Assertions.fail("just to check that it will retry on fail or not according to counter");
+    }
+
+
+
 
 
 

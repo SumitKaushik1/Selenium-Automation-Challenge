@@ -3,8 +3,8 @@
 <suite name="All Test Suite">
 
     <listeners>
-       <!-- <listener class-name="com.listener.One.MethodInterceptorOne"/>-->
-        <listener class-name="com.listener.One.AnnotationTransformerOne"/>
+       <!-- <listener class-name="com.listener.One.MethodInterceptorzListenerOne"/>-->
+        <listener class-name="com.listener.One.AnnotationTransformerListenerOne"/>
     </listeners>
 
     <test verbose="2" preserve-order="true" parallel="classes"
@@ -16,7 +16,7 @@
                     <include name="totalMoneySpentCalculation"/>
                     <include name="justToTestListenerMethod1"/>
                     <include name="justToTestListenerMethod2"/>
-
+                    <include name="justToTestRetryListenerOnFailMethod3"/>
                 </methods>
             </class>
 
@@ -27,7 +27,7 @@
                     <include name="totalMoneySpentCalculation"/>
                     <include name="justToTestListenerMethod1"/>
                     <include name="justToTestListenerMethod2"/>
-
+                    <include name="justToTestRetryListenerOnFailMethod3"/>
                 </methods>
             </class>
 

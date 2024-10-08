@@ -316,6 +316,15 @@ public final class ApplitoolsChallengeOneEdgeTest extends BaseTestControlEdgeOne
     }
 
 
+    @Test(priority =4)
+    void justToTestRetryListenerOnFailMethod3(){
+        System.out.println("justToTestRetryListenerOnFailMethod2");
+        Assertions.fail("just to check that it will retry on fail or not according to counter");
+    }
+
+
+
+
     @AfterSuite
     void closeAllResources(){
 

@@ -7,7 +7,7 @@ import org.testng.ITestContext;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MethodInterceptorOne implements IMethodInterceptor {
+public class MethodInterceptorzListenerOne implements IMethodInterceptor {
 
 //it has the seperate listener tag in the test.ng file for find it
 
