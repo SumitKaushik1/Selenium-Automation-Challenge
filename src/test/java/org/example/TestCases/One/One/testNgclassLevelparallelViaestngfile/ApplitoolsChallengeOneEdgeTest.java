@@ -4,22 +4,19 @@ import com.base.bast_test_control.one.BaseTestControlEdgeOne;
 import com.pageobject.page.object.one.ApplitoolsWebElementDashBoardPage;
 import com.pageobject.page.object.one.ApplitoolsWebElementLoginPage;
 import customExceptions.KeyUrlNotFoundException;
-import dataproviderexcelreal.DataProviderExcel;
 import enumconstants.ReadFileConstants;
 import jsonfileread.LoginCredentialsJsonFileRead;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.DataProvider;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
-import org.Utils.onechallengeutil.CalculateEarnedSpent;
+import com.utils.challengeutils.one.CalculateEarnedSpent;
 
 import org.testng.annotations.Test;
 
 
 
 import java.text.DecimalFormat;
-import java.util.Map;
 
 
 // class is final so it cannot be extended ie inherited again so that its methods cannot be overriden

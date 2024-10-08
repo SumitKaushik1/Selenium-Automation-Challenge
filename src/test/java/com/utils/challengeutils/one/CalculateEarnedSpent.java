@@ -1,7 +1,7 @@
-package org.Utils.onechallengeutil;
+package com.utils.challengeutils.one;
 
 
-import Pojo.SpentEarned;
+import com.pojo.Pojo.one.SpentEarned;
 
 public class CalculateEarnedSpent {
 

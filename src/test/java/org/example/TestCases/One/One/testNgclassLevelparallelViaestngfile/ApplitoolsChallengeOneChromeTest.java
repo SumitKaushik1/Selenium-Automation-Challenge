@@ -4,20 +4,16 @@ import com.base.bast_test_control.one.BaseTestControlChromeOne;
 import com.pageobject.page.object.one.ApplitoolsWebElementDashBoardPage;
 import com.pageobject.page.object.one.ApplitoolsWebElementLoginPage;
 import customExceptions.KeyUrlNotFoundException;
-import dataproviderexcelreal.DataProviderExcel;
 import enumconstants.ReadFileConstants;
 import jsonfileread.LoginCredentialsJsonFileRead;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.DataProvider;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
-import org.Utils.onechallengeutil.CalculateEarnedSpent;
+import com.utils.challengeutils.one.CalculateEarnedSpent;
 import org.testng.annotations.Test;
 
 import java.text.DecimalFormat;
-import java.util.Map;
-import java.util.regex.Pattern;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -330,13 +326,13 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
 //you have to add the methdo name also in teh testng file
     @Test(priority =2)
     void justToTestListenerMethod1(){
-        System.out.println("Method1toTestListener");
+        System.out.println("justToTestListenerMethod1");
     }
 
     //you have to add the methdo name also in teh testng file
     @Test(priority =3)
     void justToTestListenerMethod2(){
-        System.out.println("Method2toTestListener");
+        System.out.println("justToTestListenerMethod2");
     }
 
 

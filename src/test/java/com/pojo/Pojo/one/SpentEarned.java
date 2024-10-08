@@ -1,4 +1,4 @@
-package Pojo;
+package com.pojo.Pojo.one;
 
 public class SpentEarned {
 

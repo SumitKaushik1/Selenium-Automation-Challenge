@@ -1,4 +1,4 @@
-package org.Utils.excel.excelpractice;
+package com.utils.excelpractice.one;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -7,9 +7,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.Map;
 public class ExcelFileToWriteUsernameAndPassOfApplitools {
 
 public static void main(String args[]){
@@ -48,7 +48,7 @@ public static void main(String args[]){
 
     try{
 
-        String Excelfilepath=System.getProperty("user.dir")+"/resources/excelfiles/Appollo.xlsx";
+        String Excelfilepath=System.getProperty("user.dir")+"/resources/excelfiles/AppolloLoginCredentialsOne.xlsx";
        // FileOutputStream outputStream=new FileOutputStream(new File("Appollo.xlsx"));//File class which will make the file(excel file ie the TataData is excel file is made ) and FileOutputStream is the node Stream which contains the basic functionality to write in the file ,now the write method uses the node Stream and write int the file
         FileOutputStream outputStream=new FileOutputStream(new File(Excelfilepath));
         workbook.write(outputStream);

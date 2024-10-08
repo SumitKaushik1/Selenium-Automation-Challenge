@@ -3,7 +3,8 @@
 <suite name="All Test Suite">
 
     <listeners>
-        <listener class-name="com.listener.MethodInterceptorOne"/>
+       <!-- <listener class-name="com.listener.One.MethodInterceptorOne"/>-->
+        <listener class-name="com.listener.One.AnnotationTransformerOne"/>
     </listeners>
 
     <test verbose="2" preserve-order="true" parallel="classes"
@@ -12,7 +13,6 @@
             <class name="org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile.ApplitoolsChallengeOneEdgeTest">
                 <methods>
                     <include name="loginWithCredentials"/>
-
                     <include name="totalMoneySpentCalculation"/>
                     <include name="justToTestListenerMethod1"/>
                     <include name="justToTestListenerMethod2"/>
@@ -24,7 +24,6 @@
             <class name="org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile.ApplitoolsChallengeOneChromeTest">
                 <methods>
                     <include name="loginWithCredentials"/>
-
                     <include name="totalMoneySpentCalculation"/>
                     <include name="justToTestListenerMethod1"/>
                     <include name="justToTestListenerMethod2"/>
