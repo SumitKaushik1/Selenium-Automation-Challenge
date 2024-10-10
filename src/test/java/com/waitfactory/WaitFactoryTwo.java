@@ -13,8 +13,8 @@ import java.time.Duration;
 public class WaitFactoryTwo {
 
    // CLICKABLE,VISIBLE,NONE;
-  public static WebElement explicitWaitToBePerform(WaitStrategy waitStrategy, By element,
-                                                   DemoQAWebsiteChallengeTwoTest demoQAWebsiteChallengeTwoTest){
+  public static WebElement explicitWaitToBePerform(WaitStrategy waitStrategy,
+                                                   DemoQAWebsiteChallengeTwoTest demoQAWebsiteChallengeTwoTest, WebElement element){
 
 
       if(waitStrategy==WaitStrategy.CLICKABLE){

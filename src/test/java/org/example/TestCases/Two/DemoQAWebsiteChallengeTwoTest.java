@@ -1,6 +1,8 @@
 package org.example.TestCases.Two;
 
-import com.base.bast_test_control.two.BaseTestControlChromeTwo;
+import com.basedriver.bast_test_control.two.BaseTestControlChromeTwo;
+import com.extendedreport.two.ExtendReportTwo;
+import com.extendedreport.two.ExtentManagerTwo;
 import com.pageobject.page.object.two.DemoQAWebTablePage;
 import customExceptions.KeyUrlNotFoundException;
 import org.assertj.core.api.Assertions;
@@ -53,6 +55,10 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
         this.setUpControlChrome();
 
 
+        // for the logger in the extended report
+        // it is just like a log ie the test is created  here
+        ExtendReportTwo.createTest("clickon third button  and open registration page Test Chrome");
+
        /* WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='ReactTable -striped -highlight']//div[3]//div[1]//div[7]//div[1]//span[1]//*[name()='svg']//*[name()='path' and contains(@d,'M880 836H1')]")));
         element.click();*/
@@ -81,6 +87,17 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
         //if that condition is satified thne code will continiue
         //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
         // method so the it will pass bydefault
+
+
+
+
+//this is done before assertion  line bz if it fails then control flow stops and the code this will be unreachable
+        // for the logger in the extended report
+        if(webElement.getText().contains("Registration Form"))
+            // it is the log if this line is executed ie means test is passed
+            ExtentManagerTwo.getExtentTest().pass("registration form opened ");
+        else
+            ExtentManagerTwo.getExtentTest().fail("registration form is not opened ");
 
 
 
@@ -122,6 +139,9 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
 
 
 
+        // for the logger in the extended report
+        // it is just like a log ie the test is created  here
+        ExtendReportTwo.createTest("add details to registration form ");
 
        // WebElement element1=this.controlGetDriver().findElement(By.xpath("//button[@id='submit']"));
         //((JavascriptExecutor) this.controlGetDriver()).executeScript("arguments[0].scrollIntoView(true);", element1);//for this srolling is not required
@@ -166,7 +186,13 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
        // submitButton.click();
 
 
-
+//this is done before assertion  line bz if it fails then control flow stops and the code this will be unreachable
+        // for the logger in the extended report
+        if(firstNameCheckWebElement.getText().contains("sumit"))
+            // it is the log if this line is executed ie means test is passed
+            ExtentManagerTwo.getExtentTest().pass("details added to form ");
+        else
+            ExtentManagerTwo.getExtentTest().fail("details not added to form");
 
 
 

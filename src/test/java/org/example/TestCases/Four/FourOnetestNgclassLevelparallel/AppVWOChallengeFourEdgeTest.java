@@ -1,18 +1,16 @@
 package org.example.TestCases.Four.FourOnetestNgclassLevelparallel;
 
 
-import com.base.bast_test_control.four.BaseTestControlEdgeFour;
+import com.basedriver.bast_test_control.four.BaseTestControlEdgeFour;
 import com.pageobject.page.object.four.VWODashBoardPage;
 import com.pageobject.page.object.four.VWOLoginPage;
 import customExceptions.KeyUrlNotFoundException;
 import dataproviderexcelreal.DataProviderExcel;
-import enumconstants.ReadFileConstants;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import propertesfilesread.LoginCredentialsPropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
 
 import java.time.Duration;

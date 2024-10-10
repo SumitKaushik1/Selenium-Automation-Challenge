@@ -6,7 +6,7 @@ import enumconstants.WaitStrategy;
 import org.example.TestCases.Two.DemoQAWebsiteChallengeTwoTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
 
 public class DemoQAWebTablePage extends BasePageObjectTwo {
 
@@ -72,9 +72,10 @@ public class DemoQAWebTablePage extends BasePageObjectTwo {
 
 
 
-        this.wait(demoQAWebsiteChallengeTwoTest,10)
-                .until(ExpectedConditions.elementToBeClickable(element1));
+       //this.wait(demoQAWebsiteChallengeTwoTest,10)
+                //.until(ExpectedConditions.elementToBeClickable(element1));
 
+        this.wait(WaitStrategy.CLICKABLE,demoQAWebsiteChallengeTwoTest,element1);
         element1.click();
 
 

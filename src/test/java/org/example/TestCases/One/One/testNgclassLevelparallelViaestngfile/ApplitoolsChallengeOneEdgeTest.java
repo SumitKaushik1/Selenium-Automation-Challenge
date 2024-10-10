@@ -1,11 +1,13 @@
 package org.example.TestCases.One.One.testNgclassLevelparallelViaestngfile;
 
-import com.base.bast_test_control.one.BaseTestControlEdgeOne;
+import com.basedriver.bast_test_control.one.BaseTestControlEdgeOne;
 import com.pageobject.page.object.one.ApplitoolsWebElementDashBoardPage;
 import com.pageobject.page.object.one.ApplitoolsWebElementLoginPage;
 import customExceptions.KeyUrlNotFoundException;
 import enumconstants.ReadFileConstants;
 import jsonfileread.LoginCredentialsJsonFileRead;
+import com.extendedreport.one.ExtendReportOne;
+import com.extendedreport.one.ExtentManagerOne;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterSuite;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
@@ -81,6 +83,11 @@ public final class ApplitoolsChallengeOneEdgeTest extends BaseTestControlEdgeOne
         //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
         // method so the it will pass bydefault
 
+
+
+         // for the logger in the extended report
+        // it is just like a log ie the test is created  here
+        ExtendReportOne.createTest("Login Test Edge");
 
 
 
@@ -181,6 +188,21 @@ public final class ApplitoolsChallengeOneEdgeTest extends BaseTestControlEdgeOne
         // method so the it will pass bydefault
 
 
+
+
+
+        //this is done before assertion  line bz if it fails then control flow stops and the code this will be unreachable
+        // for the logger in the extended report
+        if(ThreadLocalWebDriver.getDriver().getCurrentUrl().equals("https://demo.applitools.com/app.html"))
+            // it is the log if this line is executed ie means test is passed
+            ExtentManagerOne.getExtentTest().pass("logged in ");
+        else
+            ExtentManagerOne.getExtentTest().fail("logged in  fail");
+
+
+
+
+
         //or
         //AsertJ liberary
         //assertJ liberary allow the chaining of the assertion  which is easy
@@ -212,7 +234,6 @@ public final class ApplitoolsChallengeOneEdgeTest extends BaseTestControlEdgeOne
         //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
         // method so the it will pass bydefault
 
-
     }
 
 
@@ -239,6 +260,10 @@ public final class ApplitoolsChallengeOneEdgeTest extends BaseTestControlEdgeOne
 
     @Test(priority=1)
     void totalMoneySpentCalculation() throws KeyUrlNotFoundException {
+
+        // for the logger in the extended report
+        // it is just like a log ie the test is created
+        ExtendReportOne.createTest("Total Money Spent Test Edge");
 
         CalculateEarnedSpent calculateEarnedSpent=new CalculateEarnedSpent();
 
@@ -287,6 +312,17 @@ public final class ApplitoolsChallengeOneEdgeTest extends BaseTestControlEdgeOne
         //at ht elast test driver instance is removerd from memory
 
 
+
+        //this is done before assertion  line bz if it fails then control flow stops and the code this will be unreachable
+        // for the logger in the extended report
+        if(Double.parseDouble(df.format(calculateEarnedSpent.showEarned()+calculateEarnedSpent.showSpent())) == 1996.22)
+            // it is the log if this line is executed ie means test is passed
+            ExtentManagerOne.getExtentTest().pass("calculation correct ");
+        else
+            ExtentManagerOne.getExtentTest().fail("calculation not correct");
+
+
+
         //or
         //AsertJ liberary
         //assertJ liberary allow the chaining of the assertion  which is easy
@@ -298,6 +334,8 @@ public final class ApplitoolsChallengeOneEdgeTest extends BaseTestControlEdgeOne
         //if that condition is satified thne code will continiue
         //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
         // method so the it will pass bydefault
+
+
 
     }
 

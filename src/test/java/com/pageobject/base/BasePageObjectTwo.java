@@ -24,11 +24,11 @@ public class BasePageObjectTwo {
 
 
 
-    protected  WebDriverWait  wait(DemoQAWebsiteChallengeTwoTest demoQAWebsiteChallengeTwoTest, int time){
+    protected  WebDriverWait  wait(WaitStrategy waitStrategy,DemoQAWebsiteChallengeTwoTest demoQAWebsiteChallengeTwoTest,WebElement element ){
 
 
-       return  new WebDriverWait(demoQAWebsiteChallengeTwoTest.controlGetDriver(), Duration.ofSeconds(10));
-
+      // return  new WebDriverWait(demoQAWebsiteChallengeTwoTest.controlGetDriver(), Duration.ofSeconds(10));
+      return (WebDriverWait) WaitFactoryTwo.explicitWaitToBePerform( waitStrategy, demoQAWebsiteChallengeTwoTest, element);
 
     }
 
@@ -46,7 +46,8 @@ public class BasePageObjectTwo {
        // if(waitStrategy==WaitStrategy.CLICKABLE)
          //   explicitlyWaitForClickable(demoQAWebsiteChallengeTwoTest,element);
 
-        WaitFactoryTwo.explicitWaitToBePerform(waitStrategy,element,demoQAWebsiteChallengeTwoTest);
+       WebElement webElement= this.findElement(demoQAWebsiteChallengeTwoTest,element);
+        WaitFactoryTwo.explicitWaitToBePerform(waitStrategy,demoQAWebsiteChallengeTwoTest,webElement);
 
         this.findElement(demoQAWebsiteChallengeTwoTest,element).click();
 
