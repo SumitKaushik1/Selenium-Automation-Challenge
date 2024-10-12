@@ -20,15 +20,15 @@ public class BaseTestControlChromeThree {
     }
 
 
-    @BeforeSuite
-    public void beforesuite(){
-        ExtendReportThree.initReports();
-    }
+  //  @BeforeSuite
+    //public void beforesuite(){
+      //  ExtendReportThree.initReports();
+    //}
 
-    @AfterSuite
-    public void aftersuite() throws IOException {
-        ExtendReportThree.flushReports();
-    }
+    //@AfterSuite
+    //public void aftersuite() throws IOException {
+      //  ExtendReportThree.flushReports();
+    //}
 
     protected void  setUpControlChrome() throws Exception {
         BaseTestChromeThree.setUpChrome();

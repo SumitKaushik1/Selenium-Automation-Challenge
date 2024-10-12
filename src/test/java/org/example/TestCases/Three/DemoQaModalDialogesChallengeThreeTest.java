@@ -3,7 +3,7 @@ package org.example.TestCases.Three;
 import com.basedriver.bast_test_control.three.BaseTestControlChromeThree;
 import com.extendedreport.three.ExtendReportThree;
 import com.extendedreport.three.ExtentManagerThree;
-import com.pageobject.page.object.three.DemoQAModalDialoguePage;
+import com.pageobject.page.objectwithextendreport.three.DemoQAModalDialoguePage;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterSuite;
@@ -54,7 +54,7 @@ public final  class DemoQaModalDialogesChallengeThreeTest extends BaseTestContro
 
         // for the logger in the extended report
         // it is just like a log ie the test is created  here
-        ExtendReportThree.createTest("add details to large modal ");
+        //ExtendReportThree.createTest("add details to large modal ");
 
        // WebElement largeModelButton = this.controlGetDriver().findElement(By.xpath("//button[@id='showLargeModal']"));
         //((JavascriptExecutor) this.controlGetDriver()).executeScript("arguments[0].scrollIntoView(true);", largeModelButton );
@@ -77,11 +77,11 @@ public final  class DemoQaModalDialogesChallengeThreeTest extends BaseTestContro
 
         //this is done before assertion  line bz if it fails then control flow stops and the code this will be unreachable
         // for the logger in the extended report
-        if(largeModelButtonText.getText().equals("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."))
+      //  if(largeModelButtonText.getText().equals("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."))
             // it is the log if this line is executed ie means test is passed
-            ExtentManagerThree.getExtentTest().pass("details added to large modal");
-        else
-            ExtentManagerThree.getExtentTest().fail("details not added to large  modal");
+          //  ExtentManagerThree.getExtentTest().pass("details added to large modal");
+        //else
+          //  ExtentManagerThree.getExtentTest().fail("details not added to large  modal");
 
 
 

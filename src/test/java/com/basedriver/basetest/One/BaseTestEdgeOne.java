@@ -54,6 +54,9 @@ public final class BaseTestEdgeOne {
         }
     }
 
+    public static WebDriver getDriver() {
+        return  ThreadLocalWebDriver.getDriver();
+    }
 
     //method used by clas name only
     public static void tearDownEdge() {

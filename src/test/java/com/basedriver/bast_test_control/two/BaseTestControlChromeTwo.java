@@ -22,16 +22,16 @@ public class BaseTestControlChromeTwo {
     }
 
 
-    @BeforeSuite
-    public void beforesuite(){
-        ExtendReportTwo.initReports();
-    }
+    //@BeforeSuite
+    //public void beforesuite(){
+      //  ExtendReportTwo.initReports();
+    //}
 
 
-    @AfterSuite
-    public void aftersuite() throws IOException {
-        ExtendReportTwo.flushReports();
-    }
+    //@AfterSuite
+    //public void aftersuite() throws IOException {
+      //  ExtendReportTwo.flushReports();
+    //}
 
    protected  void setUpControlChrome() throws Exception {
         BaseTestChromeTwo.setUpChrome();

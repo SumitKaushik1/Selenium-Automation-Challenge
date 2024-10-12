@@ -44,6 +44,12 @@ public class BaseTestEdgeFour {
     }
 
 
+    public static WebDriver getDriver() {
+        return  ThreadLocalWebDriver.getDriver();
+    }
+
+
+
     //it can be called by classname
     public static void tearDown() {
         if (Objects.nonNull(driver))

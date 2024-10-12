@@ -1,8 +1,11 @@
 package com.basedriver.bast_test_control.one;
 
 
+import com.basedriver.basetest.Four.BaseTestChromeFour;
+import com.basedriver.basetest.Four.BaseTestEdgeFour;
 import com.basedriver.basetest.One.BaseTestEdgeOne;
 import com.extendedreport.one.ExtendReportOne;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -19,17 +22,20 @@ public class BaseTestControlEdgeOne {
 
     }
 
-    @BeforeSuite
-    public void beforesuite(){
-        ExtendReportOne.initReports();
+    //@BeforeSuite
+    //public void beforesuite(){
+      //  ExtendReportOne.initReports();
+    //}
+
+
+    //@AfterSuite
+    //public void aftersuite() throws IOException {
+      //  ExtendReportOne.flushReports();
+    //}
+
+    public WebDriver controlGetDriver(){
+        return  BaseTestEdgeOne.getDriver();
     }
-
-
-    @AfterSuite
-    public void aftersuite() throws IOException {
-        ExtendReportOne.flushReports();
-    }
-
 
     protected void  setUpControlEdge() throws Exception {
         BaseTestEdgeOne.setUpEdge();

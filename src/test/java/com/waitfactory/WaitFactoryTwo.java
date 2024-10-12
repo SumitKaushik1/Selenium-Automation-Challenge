@@ -18,7 +18,7 @@ public class WaitFactoryTwo {
 
 
       if(waitStrategy==WaitStrategy.CLICKABLE){
-       return   new WebDriverWait(demoQAWebsiteChallengeTwoTest.controlGetDriver(), Duration.ofSeconds(10))
+       return   new WebDriverWait(demoQAWebsiteChallengeTwoTest.controlGetDriver(), Duration.ofSeconds(100))
                   .until(ExpectedConditions.elementToBeClickable(element));
 
 

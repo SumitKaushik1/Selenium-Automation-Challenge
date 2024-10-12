@@ -1,6 +1,7 @@
 package com.basedriver.basetest.One;
 
 import enumconstants.ReadFileConstants;
+import org.openqa.selenium.WebDriver;
 import path.DriverAndFilesPath;
 import propertesfilesread.FrameoworksConstantPropertyFileRead;
 
@@ -54,6 +55,11 @@ public final  class BaseTestChromeOne {
             ThreadLocalWebDriver.getDriver().get(FrameoworksConstantPropertyFileRead.readPropertyFile(ReadFileConstants.URLONE));
         }
 
+    }
+
+
+    public static WebDriver getDriver() {
+        return  ThreadLocalWebDriver.getDriver();
     }
 
 

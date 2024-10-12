@@ -1,6 +1,7 @@
 package com.basedriver.basetest.Four;
 
 import enumconstants.ReadFileConstants;
+import org.openqa.selenium.WebDriver;
 import path.DriverAndFilesPath;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -40,6 +41,12 @@ public final  class BaseTestChromeFour {
 
     }
 
+    public static WebDriver getDriver() {
+        return  ThreadLocalWebDriver.getDriver();
+    }
+
+
+
 
     //it can be used by classname
     public static void tearDown() {
@@ -51,5 +58,7 @@ public final  class BaseTestChromeFour {
         ThreadLocalWebDriver.unload();
 
     }
+
+
 
 }

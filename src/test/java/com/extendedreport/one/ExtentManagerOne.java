@@ -13,15 +13,17 @@ public class ExtentManagerOne {
     // variable assigned seperatly for thread only local variable is type of the ExtendTest class
     private static ThreadLocal<ExtentTest> extent = new ThreadLocal<>();
 
-    public static  ExtentTest getExtentTest(){
+
+    // i want that these method msut be used withing package
+     static  ExtentTest getExtentTest(){
         return extent.get();
     }
 
-    public  static  void setExtentTest(ExtentTest test){
+      static  void setExtentTest(ExtentTest test){
         extent.set(test);
     }
 
-    public static void unload(){
+     static void unload(){
         extent.remove();
     }
 }

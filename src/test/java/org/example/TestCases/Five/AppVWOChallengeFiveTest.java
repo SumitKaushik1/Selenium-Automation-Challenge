@@ -1,8 +1,10 @@
 package org.example.TestCases.Five;
 
 import com.basedriver.bast_test_control.five.BasetTestControlChromeFive;
-import com.pageobject.page.object.five.VWOHeatmapPage;
-import com.pageobject.page.object.five.VWOTabPage;
+import com.extendedreport.five.ExtendReportFive;
+import com.extendedreport.five.ExtentManagerFive;
+import com.pageobject.page.objectwithextendreport.five.VWOHeatmapPage;
+import com.pageobject.page.objectwithextendreport.five.VWOTabPage;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -57,6 +59,11 @@ public final class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
         this.setUpControlChrome();
 
 
+        // for the logger in the extended report
+        // it is just like a log ie the test is created  here
+      //  ExtendReportFive.createTest("mouse hover ");
+
+
         // String parentHandle=this.controlGetDriver().getWindowHandle();
         //System.out.println(parentHandle);
 
@@ -89,7 +96,7 @@ public final class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
 
 
         VWOHeatmapPage vwoHeatmap=new VWOHeatmapPage();
-        vwoHeatmap.triggerElementOneVWOHeatmap(this)
+        vwoHeatmap.triggerElementFiveVWOHeatmap1(this)
                 .buttonClickVWOHeatmap(this);
 
 
@@ -112,12 +119,21 @@ public final class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
        // List<String> allWindows = new ArrayList<>(this.controlGetDriver().getWindowHandles());
 
 
+        //this is done before assertion  line bz if it fails then control flow stops and the code this will be unreachable
+        // for the logger in the extended report
+     //   if(title.equals("Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta"))
+            // it is the log if this line is executed ie means test is passed
+       //     ExtentManagerFive.getExtentTest().pass("tab opened ");
+        //else
+          //  ExtentManagerFive.getExtentTest().fail("tab not opened");
+
+
 
 
         // Switch to the new tab (second tab)
        // this.controlGetDriver().switchTo().window(allWindows.get(1));
       //  System.out.println(this.controlGetDriver().getTitle());
-        Assert.assertEquals(title,"Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta","title of the page is visible ");
+        Assert.assertEquals(title,"Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta","title of the page is not visible ");
         //boolean titleFound = false;
         // Wait for each tab to load completely by checking the title
         //for (String window : allWindows) {
