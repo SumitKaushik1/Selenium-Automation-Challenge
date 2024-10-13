@@ -35,7 +35,7 @@ public final  class ExtendReportTwo {
         if(Objects.isNull(extent))
         {
             extent=new ExtentReports();
-            ExtentSparkReporter spark=new ExtentSparkReporter(System.getProperty("user.dir")+"/resources/extendedreports/demoQatwo.html");
+            ExtentSparkReporter spark=new ExtentSparkReporter(System.getProperty("user.dir")+"/resources/extended-reports/demoQatwo.html");
             extent.attachReporter(spark);
             spark.config().setTheme(Theme.STANDARD);
             // YOU CAN CHANGE THE THEME OF THE PAGE JUST PRESSING THE l on the page
@@ -54,7 +54,7 @@ public final  class ExtendReportTwo {
             extent.flush();
         }
 
-        Desktop.getDesktop().browse(new File(System.getProperty("user.dir")+"/resources/extendedreports/demoQatwo.html").toURI());
+        Desktop.getDesktop().browse(new File(System.getProperty("user.dir")+"/resources/extended-reports/demoQatwo.html").toURI());
 
     }
 

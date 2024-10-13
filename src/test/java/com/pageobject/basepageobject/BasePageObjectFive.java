@@ -1,7 +1,7 @@
 package com.pageobject.basepageobject;
 
 import com.waitfactory.WaitFactoryFive;
-import enumconstants.WaitStrategy;
+import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Five.AppVWOChallengeFiveTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -30,9 +30,9 @@ public class BasePageObjectFive {
 
 
     //to make robust code so any user cannot change the value in the code bydefault whcih can be done in string
-    protected  void driverWaiting(AppVWOChallengeFiveTest appVWOChallengeFiveTest,By element, WaitStrategy waitStrategy){
+    protected  void driverWaiting(AppVWOChallengeFiveTest appVWOChallengeFiveTest,By element, WaitStrategyConstants waitStrategy){
 
-        //if(waitStrategy== WaitStrategy.VISIBLE)
+        //if(waitStrategy== WaitStrategyConstants.VISIBLE)
         //         explicityWaitForVisibilty(element);
 
         WaitFactoryFive.explicitlyWaitToPerform(appVWOChallengeFiveTest,waitStrategy,element);

@@ -41,7 +41,7 @@ public class VWOLoginChromePage extends BasePageObjectChromeFour {
        // ThreadLocalWebDriver.getDriver().findElement(signInButtonVWOLoginPage).click();;
       this.clickLogin(signInButtonVWOLoginPage,appVWOChallengeFourChromeTest);
 
-     // this.driverWaiting(invalidLoginMessageVWOLogin, WaitStrategy.VISIBLE,appVWOChallengeFourChromeTest);
+     // this.driverWaiting(invalidLoginMessageVWOLogin, WaitStrategyConstants.VISIBLE,appVWOChallengeFourChromeTest);
         System.out.println("errror message is not displayed in chrome"+! this.findElement(invalidLoginMessageVWOLogin,appVWOChallengeFourChromeTest).isDisplayed());
       return ! this.findElement(invalidLoginMessageVWOLogin,appVWOChallengeFourChromeTest).isDisplayed();
 

@@ -2,7 +2,7 @@ package com.pageobject.basepageobject.four;
 
 import com.waitfactory.four.WaitFactoryFourChrome;
 import customExceptions.KeyUrlNotFoundException;
-import enumconstants.WaitStrategy;
+import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Four.FourtestNgclassLevelparallel.AppVWOChallengeFourChromeTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -35,9 +35,9 @@ public class BasePageObjectChromeFour {
 
 
     //to make robust code so any user cannot change the value in the code bydefault whcih can be done in string
-    protected  void driverWaiting(By element, WaitStrategy waitStrategy, AppVWOChallengeFourChromeTest appVWOChallengeFourChromeTest){
+    protected  void driverWaiting(By element, WaitStrategyConstants waitStrategy, AppVWOChallengeFourChromeTest appVWOChallengeFourChromeTest){
 
-       //if(waitStrategy== WaitStrategy.VISIBLE)
+       //if(waitStrategy== WaitStrategyConstants.VISIBLE)
          //         explicityWaitForVisibilty(element);
 
         WaitFactoryFourChrome.explicitlyWaitToPerform(waitStrategy,element,appVWOChallengeFourChromeTest);

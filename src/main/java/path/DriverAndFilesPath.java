@@ -2,6 +2,8 @@ package path;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import enumconstants.MethodPropertiesConstant;
+import propertesfilesread.MethodPropertiesPropertyFileRead;
 
 import java.io.File;
 import java.io.IOException;
@@ -45,6 +47,10 @@ public final  class DriverAndFilesPath {
     private static final String LOGIN_CREDENTIALS_APPILO_JSON_FILE_PATH;
 
 
+    private static final String  METHOD_ACTION_EXTEND_REPORTS_PROPERTY_FILE_PATH;
+
+    private static final String EXTENTREPORTPATH;
+
     static{
 
         USER_DIRECTORY=System.getProperty("user.dir");
@@ -71,6 +77,10 @@ public final  class DriverAndFilesPath {
         URLS_PROPERTY_FILE_PATH=RESOURCE_PATH_PROPERTIES_FILES+"URLs.properties";
 
         LOGIN_CREDENTIALS_APPILO_JSON_FILE_PATH= RESOURCE_PATH_JSON_FILES+"Appilo.json";
+
+        METHOD_ACTION_EXTEND_REPORTS_PROPERTY_FILE_PATH= RESOURCE_PATH_PROPERTIES_FILES+"methodActionExtendReport.properties";
+
+        EXTENTREPORTPATH= USER_DIRECTORY+"\\resources\\extended-reports\\";
     }
 
 
@@ -94,6 +104,19 @@ public final  class DriverAndFilesPath {
 
     public static String appiloJsonFilePath(){return   LOGIN_CREDENTIALS_APPILO_JSON_FILE_PATH;}
 
+
+    public static String methodActionPropertiesExtendedReport(){
+
+        return METHOD_ACTION_EXTEND_REPORTS_PROPERTY_FILE_PATH;
+    }
+
+
+    public static String getExtentReportPathApilloToolsOne() throws Exception{
+        if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.OVERRIDEREPORTS).equalsIgnoreCase("yes"))
+            return EXTENTREPORTPATH+"/"+System.currentTimeMillis()+"DynamicAppiloOne.html";
+        else
+            return EXTENTREPORTPATH+"/"+"AppiloOne.html";
+    }
 
 
     //public static void main (String args[]) throws IOException {

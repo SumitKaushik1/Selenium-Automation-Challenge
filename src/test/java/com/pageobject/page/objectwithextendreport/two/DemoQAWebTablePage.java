@@ -1,9 +1,8 @@
 package com.pageobject.page.objectwithextendreport.two;
 
-import com.extendedreport.two.ExtendLoggerTwo;
 import com.pageobject.basepageobject.BasePageObjectTwo;
 import customExceptions.KeyUrlNotFoundException;
-import enumconstants.WaitStrategy;
+import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Two.DemoQAWebsiteChallengeTwoTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -45,7 +44,7 @@ public class DemoQAWebTablePage extends BasePageObjectTwo {
        // ((JavascriptExecutor) demoQAWebsiteChallengeTwoTest.controlGetDriver()).executeScript("arguments[0].scrollIntoView(true);", editButton );
        this.findByJavscriptCode( demoQAWebsiteChallengeTwoTest,editButton );
 
-        this.clickOnButton(WaitStrategy.CLICKABLE,editButton,demoQAWebsiteChallengeTwoTest,"add button");
+        this.clickOnButton(WaitStrategyConstants.CLICKABLE,editButton,demoQAWebsiteChallengeTwoTest,"add button");
 
        // editButton.click();
      //  ExtendLoggerTwo.pass("add button is clicked");
@@ -114,7 +113,7 @@ public class DemoQAWebTablePage extends BasePageObjectTwo {
         Actions actions = new Actions(demoQAWebsiteChallengeTwoTest.controlGetDriver());
         actions.moveToElement(submitButton).perform();
 
-        this.clickOnButton(WaitStrategy.CLICKABLE, submitButton,demoQAWebsiteChallengeTwoTest,"submit button");
+        this.clickOnButton(WaitStrategyConstants.CLICKABLE, submitButton,demoQAWebsiteChallengeTwoTest,"submit button");
 
       // submitButton.click();
 

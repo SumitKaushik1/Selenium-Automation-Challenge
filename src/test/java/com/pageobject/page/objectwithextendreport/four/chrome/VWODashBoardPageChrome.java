@@ -2,7 +2,7 @@ package com.pageobject.page.objectwithextendreport.four.chrome;
 
 import com.pageobject.basepageobject.four.BasePageObjectChromeFour;
 import customExceptions.KeyUrlNotFoundException;
-import enumconstants.WaitStrategy;
+import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Four.FourtestNgclassLevelparallel.AppVWOChallengeFourChromeTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -16,7 +16,7 @@ public class VWODashBoardPageChrome extends BasePageObjectChromeFour {
 
 
       //  WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(textVWOLoginPage));
-        this.driverWaiting(textVWOLoginPage, WaitStrategy.VISIBLE,appVWOChallengeFourChromeTest);
+        this.driverWaiting(textVWOLoginPage, WaitStrategyConstants.VISIBLE,appVWOChallengeFourChromeTest);
       //  ((JavascriptExecutor) ThreadLocalWebDriver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", text);
 
        WebElement text = this.findElement(textVWOLoginPage,appVWOChallengeFourChromeTest);

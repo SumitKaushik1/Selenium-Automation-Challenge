@@ -2,7 +2,7 @@ package com.pageobject.page.objectwithextendreport.four.edge;
 
 import com.pageobject.basepageobject.four.BasePageObjectEdgeFour;
 import customExceptions.KeyUrlNotFoundException;
-import enumconstants.WaitStrategy;
+import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Four.FourtestNgclassLevelparallel.AppVWOChallengeFourEdgeTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -16,7 +16,7 @@ public class VWODashBoardPageEdge extends BasePageObjectEdgeFour {
 
 
       //  WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(textVWOLoginPage));
-        this.driverWaiting(textVWOLoginPage, WaitStrategy.VISIBLE,appVWOChallengeFourEdgeTest);
+        this.driverWaiting(textVWOLoginPage, WaitStrategyConstants.VISIBLE,appVWOChallengeFourEdgeTest);
       //  ((JavascriptExecutor) ThreadLocalWebDriver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", text);
 
        WebElement text = this.findElement(textVWOLoginPage,appVWOChallengeFourEdgeTest);

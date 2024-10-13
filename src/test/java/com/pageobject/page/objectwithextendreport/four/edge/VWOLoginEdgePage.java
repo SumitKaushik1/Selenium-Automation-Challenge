@@ -41,7 +41,7 @@ public class VWOLoginEdgePage extends BasePageObjectEdgeFour {
        // ThreadLocalWebDriver.getDriver().findElement(signInButtonVWOLoginPage).click();;
       this.clickLogin(signInButtonVWOLoginPage,appVWOChallengeFourEdgeTest );
 
-     // this.driverWaiting(invalidLoginMessageVWOLogin, WaitStrategy.VISIBLE,appVWOChallengeFourEdgeTest);
+     // this.driverWaiting(invalidLoginMessageVWOLogin, WaitStrategyConstants.VISIBLE,appVWOChallengeFourEdgeTest);
         System.out.println("errorMessage is not displayed edge"+! this.findElement(invalidLoginMessageVWOLogin,appVWOChallengeFourEdgeTest).isDisplayed());
 
       return ! this.findElement(invalidLoginMessageVWOLogin,appVWOChallengeFourEdgeTest).isDisplayed();

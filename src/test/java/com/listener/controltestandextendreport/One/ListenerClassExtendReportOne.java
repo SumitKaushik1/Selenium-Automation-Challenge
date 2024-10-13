@@ -13,14 +13,18 @@ public class ListenerClassExtendReportOne implements ITestListener , ISuiteListe
 
     @Override
     public void onStart(ISuite suite){
-        ExtendReportOne.initReports();
+        try {
+            ExtendReportOne.initReports();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public void onFinish(ISuite suite){
         try {
             ExtendReportOne.flushReports();
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }

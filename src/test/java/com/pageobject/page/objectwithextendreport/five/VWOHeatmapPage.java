@@ -2,7 +2,7 @@ package com.pageobject.page.objectwithextendreport.five;
 
 import com.pageobject.basepageobject.BasePageObjectFive;
 import customExceptions.KeyUrlNotFoundException;
-import enumconstants.WaitStrategy;
+import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Five.AppVWOChallengeFiveTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -21,7 +21,7 @@ public class VWOHeatmapPage extends BasePageObjectFive {
 
     public VWOHeatmapPage triggerElementFiveVWOHeatmap1(AppVWOChallengeFiveTest appVWOChallengeFiveTest) throws KeyUrlNotFoundException {
 
-        this.driverWaiting(appVWOChallengeFiveTest,triggerElementFiveVWOHeatmap1,WaitStrategy.VISIBLE);
+        this.driverWaiting(appVWOChallengeFiveTest,triggerElementFiveVWOHeatmap1, WaitStrategyConstants.VISIBLE);
 
         // WebElement triggerElement = appVWOChallengeFiveTest.controlGetDriver().findElement(triggerElementOneVWOHeatmap);
         WebElement triggerElement= this.findElement( triggerElementFiveVWOHeatmap1,appVWOChallengeFiveTest);
@@ -43,10 +43,10 @@ public class VWOHeatmapPage extends BasePageObjectFive {
     public void   triggerElementFiveVWOHeatmap2(AppVWOChallengeFiveTest appVWOChallengeFiveTest) throws KeyUrlNotFoundException {
 
 
-        this.driverWaiting(appVWOChallengeFiveTest,triggerElementFiveVWOHeatmap1,WaitStrategy.CLICKABLE);
+        this.driverWaiting(appVWOChallengeFiveTest,triggerElementFiveVWOHeatmap1, WaitStrategyConstants.CLICKABLE);
 
 
-        // this.driverWaiting(appVWOChallengeFiveTest,triggerElementOneVWOHeatmap,WaitStrategy.VISIBLE);
+        // this.driverWaiting(appVWOChallengeFiveTest,triggerElementOneVWOHeatmap,WaitStrategyConstants.VISIBLE);
       //  WebElement triggerElement = appVWOChallengeFiveTest.controlGetDriver().findElement(triggerElementTwoVWOHeatmap);
 
         WebElement triggerElement= this.findElement(triggerElementFiveVWOHeatmap2,appVWOChallengeFiveTest);
@@ -66,7 +66,7 @@ public class VWOHeatmapPage extends BasePageObjectFive {
 
     public void  buttonClickVWOHeatmap(AppVWOChallengeFiveTest appVWOChallengeFiveTest) throws KeyUrlNotFoundException {
 
-        this.driverWaiting(appVWOChallengeFiveTest,triggerElementFiveVWOHeatmap1,WaitStrategy.CLICKABLE);
+        this.driverWaiting(appVWOChallengeFiveTest,triggerElementFiveVWOHeatmap1, WaitStrategyConstants.CLICKABLE);
         // Once the button is visible, identify the button element and click on it
         /*1.*/
         //WebElement buttonElement = appVWOChallengeFiveTest.controlGetDriver().findElement(buttonElementVWOHeatmap);

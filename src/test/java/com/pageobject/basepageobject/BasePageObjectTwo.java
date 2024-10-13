@@ -1,8 +1,7 @@
 package com.pageobject.basepageobject;
 
-import com.extendedreport.one.ExtendLoggerOne;
 import com.extendedreport.two.ExtendLoggerTwo;
-import enumconstants.WaitStrategy;
+import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Two.DemoQAWebsiteChallengeTwoTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -22,7 +21,7 @@ public class BasePageObjectTwo {
 
 
 
-    protected  WebElement wait(WaitStrategy waitStrategy,DemoQAWebsiteChallengeTwoTest demoQAWebsiteChallengeTwoTest,WebElement element ){
+    protected  WebElement wait(WaitStrategyConstants waitStrategy, DemoQAWebsiteChallengeTwoTest demoQAWebsiteChallengeTwoTest, WebElement element ){
 
 
       // return  new WebDriverWait(demoQAWebsiteChallengeTwoTest.controlGetDriver(), Duration.ofSeconds(10));
@@ -40,8 +39,8 @@ public class BasePageObjectTwo {
 
 
     //to make robust code so any user cannot change the value in the code bydefault whcih can be done in string
-    protected void clickOnButton(WaitStrategy waitStrategy,WebElement element,DemoQAWebsiteChallengeTwoTest demoQAWebsiteChallengeTwoTest,String elementname){
-       // if(waitStrategy==WaitStrategy.CLICKABLE)
+    protected void clickOnButton(WaitStrategyConstants waitStrategy, WebElement element, DemoQAWebsiteChallengeTwoTest demoQAWebsiteChallengeTwoTest, String elementname){
+       // if(waitStrategy==WaitStrategyConstants.CLICKABLE)
          //   explicitlyWaitForClickable(demoQAWebsiteChallengeTwoTest,element);
 
     //   WebElement webElement= this.findElement(demoQAWebsiteChallengeTwoTest,element);

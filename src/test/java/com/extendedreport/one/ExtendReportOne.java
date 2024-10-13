@@ -5,6 +5,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import path.DriverAndFilesPath;
 
 import java.awt.*;
 import java.io.File;
@@ -28,14 +29,14 @@ public final  class ExtendReportOne {
 
     // you have to call this method at the time of driver is made ie is in package com.base.bast_test_control.one;
     // it is done int the before suit of hte package com.base.bast_test_control.one;
-    public static void initReports(){
+    public static void initReports() throws Exception {
 
 
         if(Objects.isNull(extent))
         {
             extent=new ExtentReports();
 
-            ExtentSparkReporter spark=new ExtentSparkReporter(System.getProperty("user.dir")+"/resources/extendedreports/AppiloOne.html");
+            ExtentSparkReporter spark=new ExtentSparkReporter(DriverAndFilesPath.getExtentReportPathApilloToolsOne());
             extent.attachReporter(spark);
             spark.config().setTheme(Theme.STANDARD);
             // YOU CAN CHANGE THE THEME OF THE PAGE JUST PRESSING THE l on the page
@@ -48,12 +49,12 @@ public final  class ExtendReportOne {
 
 
     // it is done in the aftersuit in teh package com.base.bast_test_control.two;
-    public static void flushReports() throws IOException {
+    public static void flushReports() throws Exception {
         if(Objects.nonNull(extent)){
             extent.flush();
         }
 
-        Desktop.getDesktop().browse(new File(System.getProperty("user.dir")+"/resources/extendedreports/AppiloOne.html").toURI());
+        Desktop.getDesktop().browse(new File(DriverAndFilesPath.getExtentReportPathApilloToolsOne()).toURI());
 
     }
 

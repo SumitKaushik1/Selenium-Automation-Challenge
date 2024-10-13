@@ -35,7 +35,7 @@ public final  class ExtendReportFive {
         {
             extent=new ExtentReports();
 
-            ExtentSparkReporter spark=new ExtentSparkReporter(System.getProperty("user.dir")+"/resources/extendedreports/vwoheatmapfive.html");
+            ExtentSparkReporter spark=new ExtentSparkReporter(System.getProperty("user.dir")+"/resources/extended-reports/vwoheatmapfive.html");
             extent.attachReporter(spark);
             spark.config().setTheme(Theme.STANDARD);
             // YOU CAN CHANGE THE THEME OF THE PAGE JUST PRESSING THE l on the page
@@ -53,7 +53,7 @@ public final  class ExtendReportFive {
             extent.flush();
         }
 
-        Desktop.getDesktop().browse(new File(System.getProperty("user.dir")+"/resources/extendedreports/vwoheatmapfive.html").toURI());
+        Desktop.getDesktop().browse(new File(System.getProperty("user.dir")+"/resources/extended-reports/vwoheatmapfive.html").toURI());
 
     }
 

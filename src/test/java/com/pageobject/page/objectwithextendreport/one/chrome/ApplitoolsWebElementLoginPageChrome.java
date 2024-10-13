@@ -12,7 +12,7 @@ public class ApplitoolsWebElementLoginPageChrome extends BasePageObjectOneChrome
 
     private final By buttonApplitools=By.xpath("//a[@id='log-in']");
 
-    public ApplitoolsWebElementLoginPageChrome enterUserNameApplitools(String username, ApplitoolsChallengeOneChromeTest applitoolsChallengeOneChromeTest) throws KeyUrlNotFoundException {
+    public ApplitoolsWebElementLoginPageChrome enterUserNameApplitools(String username, ApplitoolsChallengeOneChromeTest applitoolsChallengeOneChromeTest) throws Exception {
          // ThreadLocalWebDriver.getDriver().findElement(usernameApplitools).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("userName"));
 
       // enusm are made to control all the constants from one place ie from enum class predefined so the constsants of string i snot needed
@@ -21,7 +21,7 @@ public class ApplitoolsWebElementLoginPageChrome extends BasePageObjectOneChrome
         return this;
     }
 
-    public ApplitoolsWebElementLoginPageChrome enterPasswordApplitools(String password, ApplitoolsChallengeOneChromeTest applitoolsChallengeOneChromeTest) throws KeyUrlNotFoundException {
+    public ApplitoolsWebElementLoginPageChrome enterPasswordApplitools(String password, ApplitoolsChallengeOneChromeTest applitoolsChallengeOneChromeTest) throws Exception {
 
          //ThreadLocalWebDriver.getDriver().findElement(passwordApplitools).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password"));;
         //this.sendCredentialsKeys(passwordApplitools,LoginCredentialsJsonFileRead.readPropertyFile(ReadFileConstants.PASSWORD));
@@ -29,7 +29,7 @@ public class ApplitoolsWebElementLoginPageChrome extends BasePageObjectOneChrome
 
         return this;
     }
-    public ApplitoolsWebElementDashBoardPageChrome clickButtonApplitools(ApplitoolsChallengeOneChromeTest applitoolsChallengeOneChromeTest) throws KeyUrlNotFoundException {
+    public ApplitoolsWebElementDashBoardPageChrome clickButtonApplitools(ApplitoolsChallengeOneChromeTest applitoolsChallengeOneChromeTest) throws Exception {
       // ThreadLocalWebDriver.getDriver().findElement(buttonApplitools).click();
        //since you have clicked then you are logged in now you can use  the elements of the dashbaordPage
 
