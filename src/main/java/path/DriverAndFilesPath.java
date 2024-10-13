@@ -51,6 +51,8 @@ public final  class DriverAndFilesPath {
 
     private static final String EXTENTREPORTPATH;
 
+    private static String extentReportFilePath;
+
     static{
 
         USER_DIRECTORY=System.getProperty("user.dir");
@@ -81,6 +83,8 @@ public final  class DriverAndFilesPath {
         METHOD_ACTION_EXTEND_REPORTS_PROPERTY_FILE_PATH= RESOURCE_PATH_PROPERTIES_FILES+"methodActionExtendReport.properties";
 
         EXTENTREPORTPATH= USER_DIRECTORY+"\\resources\\extended-reports\\";
+
+        extentReportFilePath="";
     }
 
 
@@ -111,11 +115,17 @@ public final  class DriverAndFilesPath {
     }
 
 
-    public static String getExtentReportPathApilloToolsOne() throws Exception{
-        if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.OVERRIDEREPORTS).equalsIgnoreCase("yes"))
+    public static String createReportPath() throws Exception{
+        if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.OVERRIDEREPORTS).equalsIgnoreCase("no"))
             return EXTENTREPORTPATH+"/"+System.currentTimeMillis()+"DynamicAppiloOne.html";
         else
             return EXTENTREPORTPATH+"/"+"AppiloOne.html";
+    }
+
+    public static String getExtentReportPathApilloToolsOne() throws Exception{
+         if(extentReportFilePath.isEmpty())
+             extentReportFilePath=createReportPath();
+         return extentReportFilePath;
     }
 
 

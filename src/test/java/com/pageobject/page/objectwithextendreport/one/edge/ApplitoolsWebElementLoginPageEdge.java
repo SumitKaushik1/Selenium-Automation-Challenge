@@ -12,7 +12,7 @@ public class ApplitoolsWebElementLoginPageEdge extends BasePageObjectOneEdge {
 
     private final By buttonApplitools=By.xpath("//a[@id='log-in']");
 
-    public ApplitoolsWebElementLoginPageEdge enterUserNameApplitools(String username, ApplitoolsChallengeOneEdgeTest applitoolsChallengeOneEdgeTest) throws KeyUrlNotFoundException {
+    public ApplitoolsWebElementLoginPageEdge enterUserNameApplitools(String username, ApplitoolsChallengeOneEdgeTest applitoolsChallengeOneEdgeTest) throws Exception {
          // ThreadLocalWebDriver.getDriver().findElement(usernameApplitools).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("userName"));
 
       // enusm are made to control all the constants from one place ie from enum class predefined so the constsants of string i snot needed
@@ -21,7 +21,7 @@ public class ApplitoolsWebElementLoginPageEdge extends BasePageObjectOneEdge {
         return this;
     }
 
-    public ApplitoolsWebElementLoginPageEdge enterPasswordApplitools(String password, ApplitoolsChallengeOneEdgeTest applitoolsChallengeOneEdgeTest) throws KeyUrlNotFoundException {
+    public ApplitoolsWebElementLoginPageEdge enterPasswordApplitools(String password, ApplitoolsChallengeOneEdgeTest applitoolsChallengeOneEdgeTest) throws Exception {
 
          //ThreadLocalWebDriver.getDriver().findElement(passwordApplitools).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password"));;
         //this.sendCredentialsKeys(passwordApplitools,LoginCredentialsJsonFileRead.readPropertyFile(ReadFileConstants.PASSWORD));
@@ -29,7 +29,7 @@ public class ApplitoolsWebElementLoginPageEdge extends BasePageObjectOneEdge {
 
         return this;
     }
-    public ApplitoolsWebElementDashBoardPageEdge clickButtonApplitools(ApplitoolsChallengeOneEdgeTest applitoolsChallengeOneEdgeTest) throws KeyUrlNotFoundException {
+    public ApplitoolsWebElementDashBoardPageEdge clickButtonApplitools(ApplitoolsChallengeOneEdgeTest applitoolsChallengeOneEdgeTest) throws Exception {
       // ThreadLocalWebDriver.getDriver().findElement(buttonApplitools).click();
        //since you have clicked then you are logged in now you can use  the elements of the dashbaordPage
 
@@ -38,7 +38,7 @@ public class ApplitoolsWebElementLoginPageEdge extends BasePageObjectOneEdge {
         this.clickLogin(buttonApplitools,"login in ",applitoolsChallengeOneEdgeTest);
        // jsut adding one test case login button click
 
-       // ExtendLoggerOne.pass("appilo log in button click");
+       // ExtendLoggerToAddLogsInReportOne.pass("appilo log in button click");
 
 
        return new ApplitoolsWebElementDashBoardPageEdge();

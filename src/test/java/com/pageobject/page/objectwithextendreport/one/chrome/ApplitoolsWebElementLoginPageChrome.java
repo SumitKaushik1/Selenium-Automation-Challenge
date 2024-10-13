@@ -38,7 +38,7 @@ public class ApplitoolsWebElementLoginPageChrome extends BasePageObjectOneChrome
         this.clickLogin(buttonApplitools,"login in ",applitoolsChallengeOneChromeTest);
        // jsut adding one test case login button click
 
-       // ExtendLoggerOne.pass("appilo log in button click");
+       // ExtendLoggerToAddLogsInReportOne.pass("appilo log in button click");
 
 
        return new ApplitoolsWebElementDashBoardPageChrome();

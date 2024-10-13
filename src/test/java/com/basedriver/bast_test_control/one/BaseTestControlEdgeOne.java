@@ -1,15 +1,8 @@
 package com.basedriver.bast_test_control.one;
 
 
-import com.basedriver.basetest.Four.BaseTestChromeFour;
-import com.basedriver.basetest.Four.BaseTestEdgeFour;
 import com.basedriver.basetest.One.BaseTestEdgeOne;
-import com.extendedreport.one.ExtendReportOne;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-
-import java.io.IOException;
 
 //we have the ststic driver class for edge but just for controlling we are making this class
 public class BaseTestControlEdgeOne {
@@ -24,13 +17,13 @@ public class BaseTestControlEdgeOne {
 
     //@BeforeSuite
     //public void beforesuite(){
-      //  ExtendReportOne.initReports();
+      //  ExtendReporToInitAndFlushReporttOne.initReports();
     //}
 
 
     //@AfterSuite
     //public void aftersuite() throws IOException {
-      //  ExtendReportOne.flushReports();
+      //  ExtendReporToInitAndFlushReporttOne.flushReports();
     //}
 
     public WebDriver controlGetDriver(){

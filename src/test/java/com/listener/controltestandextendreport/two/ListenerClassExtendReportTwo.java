@@ -1,7 +1,5 @@
 package com.listener.controltestandextendreport.two;
 
-import com.extendedreport.one.ExtendLoggerOne;
-import com.extendedreport.one.ExtendReportOne;
 import com.extendedreport.two.ExtendLoggerTwo;
 import com.extendedreport.two.ExtendReportTwo;
 import org.testng.ISuite;

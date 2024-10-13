@@ -1,11 +1,8 @@
 package com.listener.controltestandextendreport.One;
 
-import com.extendedreport.one.ExtendLoggerOne;
-import com.extendedreport.one.ExtendReportOne;
+import com.extendedreport.one.ExtendLoggerToAddLogsInReportOne;
+import com.extendedreport.one.ExtendReporToInitAndFlushReporttOne;
 import org.testng.*;
-
-import java.io.IOException;
-
 
 
 // you have to add the lisetner in the testng file definitly
@@ -14,7 +11,7 @@ public class ListenerClassExtendReportOne implements ITestListener , ISuiteListe
     @Override
     public void onStart(ISuite suite){
         try {
-            ExtendReportOne.initReports();
+            ExtendReporToInitAndFlushReporttOne.initReports();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -23,7 +20,7 @@ public class ListenerClassExtendReportOne implements ITestListener , ISuiteListe
     @Override
     public void onFinish(ISuite suite){
         try {
-            ExtendReportOne.flushReports();
+            ExtendReporToInitAndFlushReporttOne.flushReports();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -32,24 +29,36 @@ public class ListenerClassExtendReportOne implements ITestListener , ISuiteListe
 
     @Override
     public void onTestStart(ITestResult result){
-        ExtendReportOne.createTest(result.getMethod().getMethodName());
+        ExtendReporToInitAndFlushReporttOne.createTest(result.getMethod().getMethodName());
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult){
-        ExtendLoggerOne.pass(iTestResult.getMethod().getMethodName()+" is passed");
+        try {
+            ExtendLoggerToAddLogsInReportOne.pass(iTestResult.getMethod().getMethodName()+" is passed",true);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
     @Override
     public void onTestFailure(ITestResult result){
-        ExtendLoggerOne.fail(result.getMethod().getMethodName()+"is failed");
+        try {
+            ExtendLoggerToAddLogsInReportOne.fail(result.getMethod().getMethodName()+"is failed",true);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
     @Override
     public void onTestSkipped(ITestResult result){
-        ExtendLoggerOne.skip(result.getMethod().getMethodName()+"is skipped");
+        try {
+            ExtendLoggerToAddLogsInReportOne.skip(result.getMethod().getMethodName()+"is skipped",true);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

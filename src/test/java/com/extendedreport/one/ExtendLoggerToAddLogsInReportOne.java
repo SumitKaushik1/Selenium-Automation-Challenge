@@ -11,19 +11,19 @@ import propertesfilesread.MethodPropertiesPropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
 
 // this class is made to avoid verbosity of the methods manes to hide the names of all methods which are using acctually
-public final class ExtendLoggerOne {
-            private ExtendLoggerOne(){}
+public final class ExtendLoggerToAddLogsInReportOne {
+            private ExtendLoggerToAddLogsInReportOne(){}
 
           public static void pass(String message){
-                ExtentManagerOne.getExtentTest().pass(message);
+                ExtentManagerThreadLocalOne.getExtentTest().pass(message);
 
           }
             public static void fail(String message){
-                ExtentManagerOne.getExtentTest().fail(message);
+                ExtentManagerThreadLocalOne.getExtentTest().fail(message);
 
             }
             public static void skip(String message){
-                ExtentManagerOne.getExtentTest().skip(message);
+                ExtentManagerThreadLocalOne.getExtentTest().skip(message);
 
             }
 
@@ -38,10 +38,10 @@ public final class ExtendLoggerOne {
     public static void pass(String message,boolean isScreenshotNeeded)throws Exception{
                 if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.PASSEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes")&& isScreenshotNeeded){
                     //isScreenshotNeeded is the local variable
-                    ExtentManagerOne.getExtentTest().pass(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ExtendLoggerOne.getBase64Imgage()).build());
+                    ExtentManagerThreadLocalOne.getExtentTest().pass(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ExtendLoggerToAddLogsInReportOne.getBase64Imgage()).build());
                 }
                 else{
-                    ExtendLoggerOne.pass(message);
+                    ExtendLoggerToAddLogsInReportOne.pass(message);
                 }
             }
 
@@ -51,10 +51,10 @@ public final class ExtendLoggerOne {
     public static void fail(String message,boolean isScreenshotNeeded)throws Exception{
         if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.FAILEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes")&& isScreenshotNeeded){
             //isScreenshotNeeded is the local variable
-            ExtentManagerOne.getExtentTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ExtendLoggerOne.getBase64Imgage()).build());
+            ExtentManagerThreadLocalOne.getExtentTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ExtendLoggerToAddLogsInReportOne.getBase64Imgage()).build());
         }
         else{
-            ExtendLoggerOne.fail(message);
+            ExtendLoggerToAddLogsInReportOne.fail(message);
         }
     }
 
@@ -65,9 +65,9 @@ public final class ExtendLoggerOne {
     public static void skip(String message,boolean isScreenshotNeeded)throws Exception {
         if (MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.SKIPPEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes") && isScreenshotNeeded) {
             //isScreenshotNeeded is the local variable
-            ExtentManagerOne.getExtentTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ExtendLoggerOne.getBase64Imgage()).build());
+            ExtentManagerThreadLocalOne.getExtentTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ExtendLoggerToAddLogsInReportOne.getBase64Imgage()).build());
         } else {
-            ExtendLoggerOne.skip(message);
+            ExtendLoggerToAddLogsInReportOne.skip(message);
         }
             }
 

@@ -2,9 +2,9 @@ package com.extendedreport.one;
 
 import com.aventstack.extentreports.ExtentTest;
 
-public class ExtentManagerOne {
+public class ExtentManagerThreadLocalOne {
 
-    private ExtentManagerOne() {
+    private ExtentManagerThreadLocalOne() {
 
     }
 

@@ -205,3 +205,13 @@ k
 ;resources/propertyfiles/methodActionExtendReport.properties,7\7\77dea5fa735739c8b21bab425a74f5a8352be68b
 Y
 )resources/extended-reports/AppiloOne.html,4\4\4494a2e0fcceaf1bae719855ef312351e81c64e2
+m
+=resources/extended-reports/1728841438521DynamicAppiloOne.html,e\f\ef25b6177cb2e82e378ba3e6054c3952c9f54e91
+m
+=resources/extended-reports/1728842053234DynamicAppiloOne.html,d\a\da569c5bda0abd6a312a8dc440c2ecfdd82ed690
+m
+=resources/extended-reports/1728841801964DynamicAppiloOne.html,2\7\27fb904cbbe50c5a23798ab7ee018fdb9e7c05a1
+m
+=resources/extended-reports/1728842809289DynamicAppiloOne.html,a\2\a2bf051ad380d2aaf1b8199078dfe34c0e2533e3
+}
+Msrc/test/java/com/extendedreport/one/ExtendReporToInitAndFlushReporttOne.java,8\a\8ab53a73cd53b4370844573065a876fdcd2267d6

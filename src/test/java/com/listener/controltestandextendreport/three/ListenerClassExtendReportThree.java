@@ -1,10 +1,7 @@
 package com.listener.controltestandextendreport.three;
 
-import com.extendedreport.one.ExtendReportOne;
 import com.extendedreport.three.ExtendLoggerThree;
 import com.extendedreport.three.ExtendReportThree;
-import com.extendedreport.two.ExtendLoggerTwo;
-import com.extendedreport.two.ExtendReportTwo;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestListener;

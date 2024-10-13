@@ -99,7 +99,7 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
 
         // for the logger in the extended report
         // it is just like a log ie the test is created  here
-       // ExtendReportOne.createTest("Login Test Chrome");
+       // ExtendReporToInitAndFlushReporttOne.createTest("Login Test Chrome");
 
 
         //or
@@ -207,9 +207,9 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
         // for the logger in the extended report
        // if(ThreadLocalWebDriver.getDriver().getCurrentUrl().equals("https://demo.applitools.com/app.html"))
             // it is the log if this line is executed ie means test is passed
-         //   ExtendLoggerOne.pass("logged in ");
+         //   ExtendLoggerToAddLogsInReportOne.pass("logged in ");
         //else
-          //  ExtendLoggerOne.fail("logged in  fail");
+          //  ExtendLoggerToAddLogsInReportOne.fail("logged in  fail");
 
 
 
@@ -282,7 +282,7 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
 
 // for the logger in the extended report
         // it is just like a log ie the test is created
-      //  ExtendReportOne.createTest("Total Money Spent Test Chrome");
+      //  ExtendReporToInitAndFlushReporttOne.createTest("Total Money Spent Test Chrome");
 
 
         CalculateEarnedSpent calculateEarnedSpent=new CalculateEarnedSpent();
@@ -335,9 +335,9 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
         // for the logger in the extended report
         //if(Double.parseDouble(df.format(calculateEarnedSpent.showEarned()+calculateEarnedSpent.showSpent())) == 1996.22)
             // it is the log if this line is executed ie means test is passed
-          //  ExtendLoggerOne.pass("calculation correct ");
+          //  ExtendLoggerToAddLogsInReportOne.pass("calculation correct ");
         //else
-          //  ExtendLoggerOne.fail("calculation not correct");
+          //  ExtendLoggerToAddLogsInReportOne.fail("calculation not correct");
 
 
 

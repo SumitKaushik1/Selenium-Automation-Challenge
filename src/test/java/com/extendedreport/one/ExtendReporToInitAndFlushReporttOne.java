@@ -9,14 +9,13 @@ import path.DriverAndFilesPath;
 
 import java.awt.*;
 import java.io.File;
-import java.io.IOException;
 import java.util.Objects;
 
 //final class ie it cannot be inherited ie it cannot be extended
-public final  class ExtendReportOne {
+public final  class ExtendReporToInitAndFlushReporttOne {
 
     //its object outside class cannot be made
- private ExtendReportOne(){}
+ private ExtendReporToInitAndFlushReporttOne(){}
 
 
 
@@ -61,7 +60,7 @@ public final  class ExtendReportOne {
     public static void createTest(String testcasename){
 
 
-        ExtentManagerOne.setExtentTest(extent.createTest(testcasename));
+        ExtentManagerThreadLocalOne.setExtentTest(extent.createTest(testcasename));
     }
 
 
