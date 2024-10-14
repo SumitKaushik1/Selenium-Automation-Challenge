@@ -56,6 +56,7 @@ public  final class BaseTestChromeThree {
             driver.quit();
     }
 
+    // it used to get driver where there is not inheritance of this class directlly call this
     public static WebDriver getDriverChrome() {
 
         return driver;

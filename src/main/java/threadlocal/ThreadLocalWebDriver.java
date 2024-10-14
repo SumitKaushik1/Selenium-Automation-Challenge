@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 
 
+
+
 //no one extend it
 public final class ThreadLocalWebDriver {
 
@@ -62,10 +64,21 @@ public final class ThreadLocalWebDriver {
            //
     //)
 
+
+
+
+
+    // when two or more piece of code has to run in parallel(one by one ) then we use thread  concept
+    // each thread must have the seperate local variable value for that we use  the threadlocal variable
+    // how thread local variabl how ist it made very simple make one class you can assign each thread local value  using this class
+
     public static void setDriver(WebDriver driver){
         webDriverThreadLocal.set(driver);
     }
 
+
+
+    //this method is used whne two or more threads are running i want the local value like driver value for each thread
     public static WebDriver getDriver(){
         return webDriverThreadLocal.get();
     }

@@ -52,6 +52,9 @@ public final class BaseTestChromeTwo {
         driver.quit();
     }
 
+
+
+    // it used to get driver where there is not inheritance of this class directlly call this
     //method call by classname
     public static WebDriver getDriverChrome() {
         if (Objects.nonNull(driver))

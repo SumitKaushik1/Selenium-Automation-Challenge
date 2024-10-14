@@ -28,6 +28,8 @@ public final  class ExtendReporToInitAndFlushReporttOne {
 
     // you have to call this method at the time of driver is made ie is in package com.base.bast_test_control.one;
     // it is done int the before suit of hte package com.base.bast_test_control.one;
+
+
     public static void initReports() throws Exception {
 
 

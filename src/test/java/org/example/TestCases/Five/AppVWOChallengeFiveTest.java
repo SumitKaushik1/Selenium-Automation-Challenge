@@ -1,8 +1,6 @@
 package org.example.TestCases.Five;
 
 import com.basedriver.bast_test_control.five.BasetTestControlChromeFive;
-import com.extendedreport.five.ExtendReportFive;
-import com.extendedreport.five.ExtentManagerFive;
 import com.pageobject.page.objectwithextendreport.five.VWOHeatmapPage;
 import com.pageobject.page.objectwithextendreport.five.VWOTabPage;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -61,7 +59,7 @@ public final class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
 
         // for the logger in the extended report
         // it is just like a log ie the test is created  here
-      //  ExtendReportFive.createTest("mouse hover ");
+      //  ExtendReportToInitAndFlushReportFive.createTest("mouse hover ");
 
 
         // String parentHandle=this.controlGetDriver().getWindowHandle();
@@ -123,9 +121,9 @@ public final class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
         // for the logger in the extended report
      //   if(title.equals("Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta"))
             // it is the log if this line is executed ie means test is passed
-       //     ExtentManagerFive.getExtentTest().pass("tab opened ");
+       //     ExtentManagerThreadLocalFive.getExtentTest().pass("tab opened ");
         //else
-          //  ExtentManagerFive.getExtentTest().fail("tab not opened");
+          //  ExtentManagerThreadLocalFive.getExtentTest().fail("tab not opened");
 
 
 

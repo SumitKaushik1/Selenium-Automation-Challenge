@@ -1,7 +1,7 @@
 package com.listener.controltestandextendreport.two;
 
-import com.extendedreport.two.ExtendLoggerTwo;
-import com.extendedreport.two.ExtendReportTwo;
+import com.extendedreport.two.ExtendLoggerToAddLogInReportTwo;
+import com.extendedreport.two.ExtendReportToInitAndFlushReportTwo;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestListener;
@@ -15,14 +15,18 @@ public class ListenerClassExtendReportTwo implements ITestListener , ISuiteListe
 
     @Override
     public void onStart(ISuite suite){
-        ExtendReportTwo.initReports();
+        try {
+            ExtendReportToInitAndFlushReportTwo.initReports();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public void onFinish(ISuite suite){
         try {
-            ExtendReportTwo.flushReports();
-        } catch (IOException e) {
+            ExtendReportToInitAndFlushReportTwo.flushReports();
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
@@ -30,26 +34,37 @@ public class ListenerClassExtendReportTwo implements ITestListener , ISuiteListe
 
     @Override
     public void onTestStart(ITestResult result){
-        ExtendReportTwo.createTest(result.getMethod().getMethodName());
+        ExtendReportToInitAndFlushReportTwo.createTest(result.getMethod().getMethodName());
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult){
-        ExtendLoggerTwo.pass(iTestResult.getMethod().getMethodName()+" is passed");
-
+        try {
+            ExtendLoggerToAddLogInReportTwo.pass(iTestResult.getMethod().getMethodName()+" is passed",true);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
 
     }
 
     @Override
     public void onTestFailure(ITestResult result){
-        ExtendLoggerTwo.fail(result.getMethod().getMethodName()+"is failed");
+        try {
+            ExtendLoggerToAddLogInReportTwo.fail(result.getMethod().getMethodName()+"is failed",true);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
     @Override
     public void onTestSkipped(ITestResult result){
-        ExtendLoggerTwo.skip(result.getMethod().getMethodName()+"is skipped");
+        try {
+            ExtendLoggerToAddLogInReportTwo.skip(result.getMethod().getMethodName()+"is skipped",true);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

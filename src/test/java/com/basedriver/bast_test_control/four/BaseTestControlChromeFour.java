@@ -1,14 +1,7 @@
 package com.basedriver.bast_test_control.four;
 
-import com.basedriver.basetest.Five.BaseTestChromeFive;
 import com.basedriver.basetest.Four.BaseTestChromeFour;
-import com.extendedreport.four.ExtendReportFour;
-import com.extendedreport.three.ExtendReportThree;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-
-import java.io.IOException;
 
 public class BaseTestControlChromeFour {
 
@@ -26,16 +19,19 @@ public class BaseTestControlChromeFour {
 
    // @BeforeSuite
     //public void beforesuite(){
-      //  ExtendReportFour.initReports();
+      //  ExtendReportToInitAndFlushReportFour.initReports();
    // }
 
     //@AfterSuite
     //public void aftersuite() throws IOException {
-      //  ExtendReportFour.flushReports();
+      //  ExtendReportToInitAndFlushReportFour.flushReports();
     //}
 
 
-    public WebDriver controlGetDriver(){
+
+    // this method is used by child class ie inheried one
+
+    public  WebDriver controlGetDriver(){
         return  BaseTestChromeFour.getDriver();
     }
 

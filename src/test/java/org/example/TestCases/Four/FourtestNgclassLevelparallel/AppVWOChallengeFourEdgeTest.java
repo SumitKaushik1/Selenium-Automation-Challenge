@@ -67,12 +67,12 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
 
         // for the logger in the extended report
         // it is just like a log ie the test is created  here
-       // ExtendReportFour.createTest("logged in ");
+       // ExtendReportToInitAndFlushReportFour.createTest("logged in ");
 
 
         // for the logger in the extended report
         // it is just like a log ie the test is created  here
-     //   ExtendReportFive.createTest("logged in ");
+     //   ExtendReportToInitAndFlushReportFive.createTest("logged in ");
 
 
         //FileReader reader=new FileReader("src/test/resources/configproperties/LoginCredentitals.properties");//it is the location of the properites
@@ -137,9 +137,9 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
         // for the logger in the extended report
        // if(errorMessageNotVisible)
             // it is the log if this line is executed ie means test is passed
-         //   ExtentManagerFive.getExtentTest().pass("logged in ");
+         //   ExtentManagerThreadLocalFive.getExtentTest().pass("logged in ");
         //else
-          //  ExtentManagerFive.getExtentTest().fail("logged in fail");
+          //  ExtentManagerThreadLocalFive.getExtentTest().fail("logged in fail");
 
 
 
@@ -147,9 +147,9 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
         // for the logger in the extended report
      //   if(errorMessageNotVisible)
             // it is the log if this line is executed ie means test is passed
-         //   ExtentManagerFour.getExtentTest().pass("logged in ");
+         //   ExtentManagerThreadLocalFour.getExtentTest().pass("logged in ");
       //  else
-         //   ExtentManagerFour.getExtentTest().fail("logged in fail");
+         //   ExtentManagerThreadLocalFour.getExtentTest().fail("logged in fail");
 
 
 
@@ -170,7 +170,7 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
 
         // for the logger in the extended report
         // it is just like a log ie the test is created  here
-      //  ExtendReportFour.createTest("urlcheck ");
+      //  ExtendReportToInitAndFlushReportFour.createTest("urlcheck ");
 
         WebElement text= new VWODashBoardPageEdge().vWODashbord(this);
 
@@ -193,9 +193,9 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
         // for the logger in the extended report
        // if(text.getText().equals("akash"))
             // it is the log if this line is executed ie means test is passed
-         //   ExtentManagerFour.getExtentTest().pass("logged in ");
+         //   ExtentManagerThreadLocalFour.getExtentTest().pass("logged in ");
         //else
-          //  ExtentManagerFour.getExtentTest().fail("logged in fail");
+          //  ExtentManagerThreadLocalFour.getExtentTest().fail("logged in fail");
 
 
 

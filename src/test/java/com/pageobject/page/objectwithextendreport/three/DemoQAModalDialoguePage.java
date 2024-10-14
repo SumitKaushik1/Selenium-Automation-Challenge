@@ -1,12 +1,12 @@
 package com.pageobject.page.objectwithextendreport.three;
 
-import com.pageobject.basepageobject.BasePageObjectThree;
+import com.pageobject.basepageobject.BasePageObjectChromeThree;
 import customExceptions.KeyUrlNotFoundException;
 import org.example.TestCases.Three.DemoQaModalDialogesChallengeThreeTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class DemoQAModalDialoguePage  extends BasePageObjectThree {
+public class DemoQAModalDialoguePage  extends BasePageObjectChromeThree {
 
     //private wihin th class scope finla once initilaized then cannot be changed
 private final By largeModelButtonDemoQAModalDialoguePage = By.xpath("//button[@id='showLargeModal']");
@@ -15,13 +15,15 @@ private final By largeModelButtonTextDemoQAModalDialoguePage=By.xpath("//p[conta
 
 
 
-    public DemoQAModalDialoguePage largeModelButtonWebElement(DemoQaModalDialogesChallengeThreeTest demoQaModalDialogesChallengeThreeTest) throws KeyUrlNotFoundException {
+    public DemoQAModalDialoguePage largeModelButtonWebElement(DemoQaModalDialogesChallengeThreeTest demoQaModalDialogesChallengeThreeTest) throws Exception {
         //WebElement largeModelButton= demoQaModalDialogesChallengeThreeTest.controlGetDriver().findElement(largeModelButtonDemoQAModalDialoguePage);
        // ((JavascriptExecutor)  demoQaModalDialogesChallengeThreeTest.controlGetDriver()).executeScript("arguments[0].scrollIntoView(true);", largeModelButton );
 
         WebElement largeModelButton= this.findElement(demoQaModalDialogesChallengeThreeTest,largeModelButtonDemoQAModalDialoguePage);
         this.findByJavascriptCode(demoQaModalDialogesChallengeThreeTest,largeModelButton);
-        largeModelButton.click();
+
+       this.clickOnButton(largeModelButton,"largemodelbutton");
+        //largeModelButton.click();
 
         return this;
     }

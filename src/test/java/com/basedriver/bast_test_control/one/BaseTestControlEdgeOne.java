@@ -26,9 +26,14 @@ public class BaseTestControlEdgeOne {
       //  ExtendReporToInitAndFlushReporttOne.flushReports();
     //}
 
-    public WebDriver controlGetDriver(){
+
+
+    // this method is used by child class ie inheried one
+    public  WebDriver controlGetDriver(){
         return  BaseTestEdgeOne.getDriver();
     }
+
+
 
     protected void  setUpControlEdge() throws Exception {
         BaseTestEdgeOne.setUpEdge();

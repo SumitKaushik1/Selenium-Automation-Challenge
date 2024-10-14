@@ -1,5 +1,6 @@
 package com.pageobject.basepageobject.four;
 
+import com.extendedreport.four.ExtendLoggerToAddLogInReportFour;
 import com.waitfactory.four.WaitFactoryFourEdge;
 import customExceptions.KeyUrlNotFoundException;
 import enumconstants.WaitStrategyConstants;
@@ -16,15 +17,17 @@ public class BasePageObjectEdgeFour {
        return appVWOChallengeFourEdgeTest.controlGetDriver().findElement(element);
     }
 
-   protected void enterCredentials( By element,String stringValueFromPropertyFile,AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest  ) throws KeyUrlNotFoundException {
+   protected void enterCredentials( By element,String stringValueFromPropertyFile,AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest ,String elementname ) throws Exception {
 
         this.findElement(element,appVWOChallengeFourEdgeTest)
                 .clear();
         this.findElement(element,appVWOChallengeFourEdgeTest ).sendKeys(stringValueFromPropertyFile);
+       ExtendLoggerToAddLogInReportFour.pass(stringValueFromPropertyFile+"is entered successfully in "+elementname,true);
 
     }
-    protected void clickLogin(By element,AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest ){
+    protected void clickLogin(By element,AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest,String elementname ) throws Exception {
        this.findElement(element,appVWOChallengeFourEdgeTest).click();;
+        ExtendLoggerToAddLogInReportFour.pass(elementname+" is clicked",true);
 
     }
 

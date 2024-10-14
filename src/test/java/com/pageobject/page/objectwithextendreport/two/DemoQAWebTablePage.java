@@ -1,6 +1,6 @@
 package com.pageobject.page.objectwithextendreport.two;
 
-import com.pageobject.basepageobject.BasePageObjectTwo;
+import com.pageobject.basepageobject.BasePageObjectChromeTwo;
 import customExceptions.KeyUrlNotFoundException;
 import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Two.DemoQAWebsiteChallengeTwoTest;
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 
-public class DemoQAWebTablePage extends BasePageObjectTwo {
+public class DemoQAWebTablePage extends BasePageObjectChromeTwo {
 
     //private scope within the class final it cannot be changed once initialsed
     private final By editButtonDemoQAWebTablePage =By.xpath("//div[@class='ReactTable -striped -highlight']//div[3]//div[1]//div[7]//div[1]//span[1]//*[name()='svg']//*[name()='path' and contains(@d,'M880 836H1')]");
@@ -37,7 +37,7 @@ public class DemoQAWebTablePage extends BasePageObjectTwo {
     private final  By addNewRecordButtonPage =By.xpath("//button[@id='addNewRecordButton']");
 
 
-    public  DemoQAWebTablePage editButtonWebElement( DemoQAWebsiteChallengeTwoTest demoQAWebsiteChallengeTwoTest) throws KeyUrlNotFoundException {
+    public  DemoQAWebTablePage editButtonWebElement( DemoQAWebsiteChallengeTwoTest demoQAWebsiteChallengeTwoTest) throws Exception {
        // WebElement editButton =   demoQAWebsiteChallengeTwoTest.controlGetDriver().findElement(editButtonDemoQAWebTablePage);
         WebElement editButton =this.findElement(demoQAWebsiteChallengeTwoTest,editButtonDemoQAWebTablePage);
 
@@ -47,7 +47,7 @@ public class DemoQAWebTablePage extends BasePageObjectTwo {
         this.clickOnButton(WaitStrategyConstants.CLICKABLE,editButton,demoQAWebsiteChallengeTwoTest,"add button");
 
        // editButton.click();
-     //  ExtendLoggerTwo.pass("add button is clicked");
+     //  ExtendLoggerToAddLogInReportTwo.pass("add button is clicked");
 
              return this;
     }
@@ -61,13 +61,13 @@ public class DemoQAWebTablePage extends BasePageObjectTwo {
 
         System.out.println(webElement.getText());
 
-      //  ExtendLoggerTwo.pass("registration form opened");
+      //  ExtendLoggerToAddLogInReportTwo.pass("registration form opened");
         return webElement;
     }
 
 
 
-    public  DemoQAWebTablePage addDetails(DemoQAWebsiteChallengeTwoTest demoQAWebsiteChallengeTwoTest) throws KeyUrlNotFoundException {
+    public  DemoQAWebTablePage addDetails(DemoQAWebsiteChallengeTwoTest demoQAWebsiteChallengeTwoTest) throws Exception {
      // demoQAWebsiteChallengeTwoTest.controlGetDriver().findElement(firsNameDemoQAWebTablePage).sendKeys("sumit");
 
         this.findElement(demoQAWebsiteChallengeTwoTest,firsNameDemoQAWebTablePage).clear();
@@ -118,7 +118,7 @@ public class DemoQAWebTablePage extends BasePageObjectTwo {
       // submitButton.click();
 
 
-     //   ExtendLoggerTwo.pass("submit button clicked");
+     //   ExtendLoggerToAddLogInReportTwo.pass("submit button clicked");
 
         return this;
     }

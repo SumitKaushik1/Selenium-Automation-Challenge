@@ -1,12 +1,7 @@
 package com.basedriver.bast_test_control.three;
 
 import com.basedriver.basetest.three.BaseTestChromeThree;
-import com.extendedreport.three.ExtendReportThree;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-
-import java.io.IOException;
 
 public class BaseTestControlChromeThree {
 
@@ -22,12 +17,12 @@ public class BaseTestControlChromeThree {
 
   //  @BeforeSuite
     //public void beforesuite(){
-      //  ExtendReportThree.initReports();
+      //  ExtendReportToInitAndFlushReportThree.initReports();
     //}
 
     //@AfterSuite
     //public void aftersuite() throws IOException {
-      //  ExtendReportThree.flushReports();
+      //  ExtendReportToInitAndFlushReportThree.flushReports();
     //}
 
     protected void  setUpControlChrome() throws Exception {
@@ -38,7 +33,10 @@ public class BaseTestControlChromeThree {
         BaseTestChromeThree.tearDownChrome();
     }
 
-    public WebDriver controlGetDriver(){
+
+
+    // this method is used by child class ie inheried one
+    public  WebDriver controlGetDriver(){
        return  BaseTestChromeThree.getDriverChrome();
 
     }

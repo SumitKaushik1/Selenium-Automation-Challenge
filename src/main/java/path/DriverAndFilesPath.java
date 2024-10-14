@@ -53,6 +53,12 @@ public final  class DriverAndFilesPath {
 
     private static String extentReportFilePath;
 
+    private static String extentReportFilePath1;
+
+    private static String extentReportFilePath2;
+
+    private static String extentReportFilePath3;
+    private static String extentReportFilePath4;
     static{
 
         USER_DIRECTORY=System.getProperty("user.dir");
@@ -85,6 +91,15 @@ public final  class DriverAndFilesPath {
         EXTENTREPORTPATH= USER_DIRECTORY+"\\resources\\extended-reports\\";
 
         extentReportFilePath="";
+
+        extentReportFilePath1="";
+
+        extentReportFilePath2="";
+
+        extentReportFilePath3="";
+
+
+        extentReportFilePath4="";
     }
 
 
@@ -119,7 +134,7 @@ public final  class DriverAndFilesPath {
         if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.OVERRIDEREPORTS).equalsIgnoreCase("no"))
             return EXTENTREPORTPATH+"/"+System.currentTimeMillis()+"DynamicAppiloOne.html";
         else
-            return EXTENTREPORTPATH+"/"+"AppiloOne.html";
+            return EXTENTREPORTPATH+"AppiloOne.html";
     }
 
     public static String getExtentReportPathApilloToolsOne() throws Exception{
@@ -127,6 +142,65 @@ public final  class DriverAndFilesPath {
              extentReportFilePath=createReportPath();
          return extentReportFilePath;
     }
+
+
+    public static String createReportPath1() throws Exception{
+        if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.OVERRIDEREPORTS).equalsIgnoreCase("no"))
+            return EXTENTREPORTPATH+"/"+System.currentTimeMillis()+"DynamicDemoQaTwo.html";
+        else
+            return EXTENTREPORTPATH+"DemoqaTwo.html";
+    }
+
+    public static String getExtentReportPathDemoQaTwo() throws Exception{
+        if(extentReportFilePath1.isEmpty())
+            extentReportFilePath1=createReportPath1();
+        return extentReportFilePath1;
+    }
+
+    public static String createReportPath2() throws Exception{
+        if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.OVERRIDEREPORTS).equalsIgnoreCase("no"))
+            return EXTENTREPORTPATH+"/"+System.currentTimeMillis()+"DynamicDemoQaThree.html";
+        else
+            return EXTENTREPORTPATH+"DemoqaThree.html";
+    }
+
+    public static String getExtentReportPathDemoQaThree() throws Exception{
+        if(extentReportFilePath2.isEmpty())
+            extentReportFilePath2=createReportPath2();
+        return extentReportFilePath2;
+    }
+
+
+    public static String createReportPath3() throws Exception{
+        if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.OVERRIDEREPORTS).equalsIgnoreCase("no"))
+            return EXTENTREPORTPATH+"/"+System.currentTimeMillis()+"Dynamicvwologinfour.html";
+        else
+            return EXTENTREPORTPATH+"vwologinfour.html";
+    }
+
+    public static String getExtentReporVWOLoginFour() throws Exception{
+        if(extentReportFilePath3.isEmpty())
+            extentReportFilePath3=createReportPath3();
+        return extentReportFilePath3;
+    }
+
+
+    public static String createReportPath4() throws Exception{
+        if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.OVERRIDEREPORTS).equalsIgnoreCase("no"))
+            return EXTENTREPORTPATH+"/"+System.currentTimeMillis()+"Dynamicvwoheapmapfive.html";
+        else
+            return EXTENTREPORTPATH+"vwoheatmapfive.html";
+    }
+
+    public static String getExtentReportPathVWOHeatMapFive() throws Exception{
+        if(extentReportFilePath4.isEmpty())
+            extentReportFilePath4=createReportPath4();
+        return extentReportFilePath4;
+    }
+
+
+
+
 
 
     //public static void main (String args[]) throws IOException {

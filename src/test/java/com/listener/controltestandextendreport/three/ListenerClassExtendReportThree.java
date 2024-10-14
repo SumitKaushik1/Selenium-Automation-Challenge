@@ -1,7 +1,7 @@
 package com.listener.controltestandextendreport.three;
 
-import com.extendedreport.three.ExtendLoggerThree;
-import com.extendedreport.three.ExtendReportThree;
+import com.extendedreport.three.ExtendLoggerToAddLogInReportThree;
+import com.extendedreport.three.ExtendReportToInitAndFlushReportThree;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestListener;
@@ -15,14 +15,19 @@ public class ListenerClassExtendReportThree implements ITestListener , ISuiteLis
 
     @Override
     public void onStart(ISuite suite){
-        ExtendReportThree.initReports();
+        try {
+
+            ExtendReportToInitAndFlushReportThree.initReports();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public void onFinish(ISuite suite){
         try {
-            ExtendReportThree.flushReports();
-        } catch (IOException e) {
+            ExtendReportToInitAndFlushReportThree.flushReports();
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
@@ -30,26 +35,37 @@ public class ListenerClassExtendReportThree implements ITestListener , ISuiteLis
 
     @Override
     public void onTestStart(ITestResult result){
-        ExtendReportThree.createTest(result.getMethod().getMethodName());
+        ExtendReportToInitAndFlushReportThree.createTest(result.getMethod().getMethodName());
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult){
-        ExtendLoggerThree.pass(iTestResult.getMethod().getMethodName()+" is passed");
-
+        try {
+            ExtendLoggerToAddLogInReportThree.pass(iTestResult.getMethod().getMethodName()+" is passed",true);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
 
     }
 
     @Override
     public void onTestFailure(ITestResult result){
-        ExtendLoggerThree.fail(result.getMethod().getMethodName()+"is failed");
+        try {
+            ExtendLoggerToAddLogInReportThree.fail(result.getMethod().getMethodName()+"is failed",true);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
     @Override
     public void onTestSkipped(ITestResult result){
-        ExtendLoggerThree.skip(result.getMethod().getMethodName()+"is skipped");
+        try {
+            ExtendLoggerToAddLogInReportThree.skip(result.getMethod().getMethodName()+"is skipped",true);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

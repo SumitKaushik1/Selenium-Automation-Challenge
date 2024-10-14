@@ -1,12 +1,7 @@
 package com.basedriver.bast_test_control.two;
 
 import com.basedriver.basetest.two.BaseTestChromeTwo;
-import com.extendedreport.two.ExtendReportTwo;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-
-import java.io.IOException;
 
 public class BaseTestControlChromeTwo {
 
@@ -24,13 +19,13 @@ public class BaseTestControlChromeTwo {
 
     //@BeforeSuite
     //public void beforesuite(){
-      //  ExtendReportTwo.initReports();
+      //  ExtendReportToInitAndFlushReportTwo.initReports();
     //}
 
 
     //@AfterSuite
     //public void aftersuite() throws IOException {
-      //  ExtendReportTwo.flushReports();
+      //  ExtendReportToInitAndFlushReportTwo.flushReports();
     //}
 
    protected  void setUpControlChrome() throws Exception {
@@ -43,7 +38,9 @@ public class BaseTestControlChromeTwo {
     }
 
 
-   public WebDriver controlGetDriver(){
+
+    // this method is used by child class ie inheried one
+   public  WebDriver controlGetDriver(){
         return BaseTestChromeTwo.getDriverChrome();
     }
 }

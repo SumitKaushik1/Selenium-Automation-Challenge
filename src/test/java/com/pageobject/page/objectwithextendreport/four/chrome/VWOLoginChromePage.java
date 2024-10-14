@@ -17,29 +17,29 @@ public class VWOLoginChromePage extends BasePageObjectChromeFour {
 
     private final By invalidLoginMessageVWOLogin=By.xpath("//div[@id='js-notification-box-msg']");
 
-    public VWOLoginChromePage enterUserNameVWOLogin(String username, AppVWOChallengeFourChromeTest appVWOChallengeFourChromeTest) throws KeyUrlNotFoundException {
+    public VWOLoginChromePage enterUserNameVWOLogin(String username, AppVWOChallengeFourChromeTest appVWOChallengeFourChromeTest) throws Exception {
        // ThreadLocalWebDriver.getDriver().findElement(emailAddressVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("emailAddress"));
        // this.enterCredentials(emailAddressVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ReadFileConstants.EMAILADDRESS));
-        this.enterCredentials(emailAddressVWOLoginPage,username,appVWOChallengeFourChromeTest);
+        this.enterCredentials(emailAddressVWOLoginPage,username,appVWOChallengeFourChromeTest,"username");
         return this;
     }
 
-    public VWOLoginChromePage enterPasswordVWOLogin(String password, AppVWOChallengeFourChromeTest appVWOChallengeFourChromeTest) throws KeyUrlNotFoundException {
+    public VWOLoginChromePage enterPasswordVWOLogin(String password, AppVWOChallengeFourChromeTest appVWOChallengeFourChromeTest) throws Exception {
 
        // ThreadLocalWebDriver.getDriver().findElement(passwordVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password1"));;
       // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ReadFileConstants.PASSWORD1));
-        this.enterCredentials(passwordVWOLoginPage,password,appVWOChallengeFourChromeTest);
+        this.enterCredentials(passwordVWOLoginPage,password,appVWOChallengeFourChromeTest,"password");
 
 
         return this;
     }
 
 
-    public Boolean clickButtonVWOLogin(AppVWOChallengeFourChromeTest appVWOChallengeFourChromeTest) throws KeyUrlNotFoundException {
+    public Boolean clickButtonVWOLogin(AppVWOChallengeFourChromeTest appVWOChallengeFourChromeTest) throws Exception {
 
 
        // ThreadLocalWebDriver.getDriver().findElement(signInButtonVWOLoginPage).click();;
-      this.clickLogin(signInButtonVWOLoginPage,appVWOChallengeFourChromeTest);
+      this.clickLogin(signInButtonVWOLoginPage,appVWOChallengeFourChromeTest,"signinbutton");
 
      // this.driverWaiting(invalidLoginMessageVWOLogin, WaitStrategyConstants.VISIBLE,appVWOChallengeFourChromeTest);
         System.out.println("errror message is not displayed in chrome"+! this.findElement(invalidLoginMessageVWOLogin,appVWOChallengeFourChromeTest).isDisplayed());

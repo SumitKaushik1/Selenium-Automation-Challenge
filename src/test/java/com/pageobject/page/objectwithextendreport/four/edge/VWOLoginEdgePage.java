@@ -17,29 +17,29 @@ public class VWOLoginEdgePage extends BasePageObjectEdgeFour {
 
     private final By invalidLoginMessageVWOLogin=By.xpath("//div[@id='js-notification-box-msg']");
 
-    public VWOLoginEdgePage enterUserNameVWOLogin(String username, AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest) throws KeyUrlNotFoundException {
+    public VWOLoginEdgePage enterUserNameVWOLogin(String username, AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest) throws Exception {
        // ThreadLocalWebDriver.getDriver().findElement(emailAddressVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("emailAddress"));
        // this.enterCredentials(emailAddressVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ReadFileConstants.EMAILADDRESS));
-        this.enterCredentials(emailAddressVWOLoginPage,username,appVWOChallengeFourEdgeTest);
+        this.enterCredentials(emailAddressVWOLoginPage,username,appVWOChallengeFourEdgeTest,"username");
         return this;
     }
 
-    public VWOLoginEdgePage enterPasswordVWOLogin(String password, AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest) throws KeyUrlNotFoundException {
+    public VWOLoginEdgePage enterPasswordVWOLogin(String password, AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest) throws Exception {
 
        // ThreadLocalWebDriver.getDriver().findElement(passwordVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password1"));;
       // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ReadFileConstants.PASSWORD1));
-        this.enterCredentials(passwordVWOLoginPage,password,appVWOChallengeFourEdgeTest);
+        this.enterCredentials(passwordVWOLoginPage,password,appVWOChallengeFourEdgeTest,"password");
 
 
         return this;
     }
 
 
-    public Boolean clickButtonVWOLogin(AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest) throws KeyUrlNotFoundException {
+    public Boolean clickButtonVWOLogin(AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest) throws Exception {
 
 
        // ThreadLocalWebDriver.getDriver().findElement(signInButtonVWOLoginPage).click();;
-      this.clickLogin(signInButtonVWOLoginPage,appVWOChallengeFourEdgeTest );
+      this.clickLogin(signInButtonVWOLoginPage,appVWOChallengeFourEdgeTest,"signinbutton" );
 
      // this.driverWaiting(invalidLoginMessageVWOLogin, WaitStrategyConstants.VISIBLE,appVWOChallengeFourEdgeTest);
         System.out.println("errorMessage is not displayed edge"+! this.findElement(invalidLoginMessageVWOLogin,appVWOChallengeFourEdgeTest).isDisplayed());

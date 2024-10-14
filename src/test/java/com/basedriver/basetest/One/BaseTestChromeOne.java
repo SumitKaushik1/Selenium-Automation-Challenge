@@ -58,6 +58,8 @@ public final  class BaseTestChromeOne {
     }
 
 
+    // it used to get driver where there is not inheritance of this class directlly call this
+
     public static WebDriver getDriver() {
         return  ThreadLocalWebDriver.getDriver();
     }

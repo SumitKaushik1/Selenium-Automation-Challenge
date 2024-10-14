@@ -28,6 +28,7 @@ public class BaseTestControlChromeOne {
     //}
 
 
+    // this method is used by child class ie inheried one
     public WebDriver controlGetDriver(){
         return  BaseTestChromeOne.getDriver();
     }

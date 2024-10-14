@@ -1,13 +1,13 @@
 package com.pageobject.page.objectwithextendreport.five;
 
-import com.pageobject.basepageobject.BasePageObjectFive;
+import com.pageobject.basepageobject.BasePageObjectChromeFive;
 import customExceptions.KeyUrlNotFoundException;
 import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Five.AppVWOChallengeFiveTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class VWOHeatmapPage extends BasePageObjectFive {
+public class VWOHeatmapPage extends BasePageObjectChromeFive {
 
     private final  By triggerElementFiveVWOHeatmap1=By.xpath("//li[2]//div[2]//div[1]//div[3]");
 
@@ -19,7 +19,7 @@ public class VWOHeatmapPage extends BasePageObjectFive {
 
 
 
-    public VWOHeatmapPage triggerElementFiveVWOHeatmap1(AppVWOChallengeFiveTest appVWOChallengeFiveTest) throws KeyUrlNotFoundException {
+    public VWOHeatmapPage triggerElementFiveVWOHeatmap1(AppVWOChallengeFiveTest appVWOChallengeFiveTest) throws Exception {
 
         this.driverWaiting(appVWOChallengeFiveTest,triggerElementFiveVWOHeatmap1, WaitStrategyConstants.VISIBLE);
 
@@ -34,13 +34,13 @@ public class VWOHeatmapPage extends BasePageObjectFive {
       //  Actions actions = new Actions(appVWOChallengeFiveTest.controlGetDriver());
         //actions.moveToElement(triggerElement).perform();
 
-        this.moveToElement(appVWOChallengeFiveTest,triggerElement);
+        this.moveToElement(appVWOChallengeFiveTest,triggerElement,"frame");
 
         return this ;
     }
 
 
-    public void   triggerElementFiveVWOHeatmap2(AppVWOChallengeFiveTest appVWOChallengeFiveTest) throws KeyUrlNotFoundException {
+    public void   triggerElementFiveVWOHeatmap2(AppVWOChallengeFiveTest appVWOChallengeFiveTest) throws Exception {
 
 
         this.driverWaiting(appVWOChallengeFiveTest,triggerElementFiveVWOHeatmap1, WaitStrategyConstants.CLICKABLE);
@@ -59,12 +59,12 @@ public class VWOHeatmapPage extends BasePageObjectFive {
         //Actions actions = new Actions(appVWOChallengeFiveTest.controlGetDriver());
        // actions.moveToElement(triggerElement).perform();
 
-       this.moveToElement(appVWOChallengeFiveTest,triggerElement);
+       this.moveToElement(appVWOChallengeFiveTest,triggerElement,"frame");
 
     }
 
 
-    public void  buttonClickVWOHeatmap(AppVWOChallengeFiveTest appVWOChallengeFiveTest) throws KeyUrlNotFoundException {
+    public void  buttonClickVWOHeatmap(AppVWOChallengeFiveTest appVWOChallengeFiveTest) throws Exception {
 
         this.driverWaiting(appVWOChallengeFiveTest,triggerElementFiveVWOHeatmap1, WaitStrategyConstants.CLICKABLE);
         // Once the button is visible, identify the button element and click on it
@@ -75,7 +75,8 @@ public class VWOHeatmapPage extends BasePageObjectFive {
 
 
         WebElement buttonElement= this.findElement(buttonElementVWOHeatmap, appVWOChallengeFiveTest);
-        buttonElement.click();
+       this.clickOnButton(buttonElement,"framebutton");
+       // buttonElement.click();
 
 
     }
