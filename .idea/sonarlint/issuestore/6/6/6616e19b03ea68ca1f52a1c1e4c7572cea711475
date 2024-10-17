@@ -1,7 +1,0 @@
-
-†	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(˜™‡ôüÿÿÿÿJ$d4cff20b-c0ef-46b5-ae10-6dc25a536d3f
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÒğéºJ$33d57237-e504-4e72-b570-fd6d31f2a3d7
-‰
-java:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(¸¬¹ûJ$6536849a-195f-491f-9652-0690f40c9661
-w
-java:S2696"6Make the enclosing method "static" or remove this set.(É¼ùÿÿÿÿJ$21a13d60-b518-4260-9b09-4b48034ec9e0

@@ -1,7 +1,7 @@
 package org.example.TestCases.One.OnetestNgThreadLevelparallel;
 
-import com.utils.challengeutils.one.CalculateEarnedSpent;
-import org.Utils.excel.excelpractice.FullExcelMethods;
+import com.utilslikeexcelpojo.challengeutils.one.CalculateEarnedSpent;
+import org.Utils.excelextendedreportpropertyfile.excel.excelpractice.FullExcelMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

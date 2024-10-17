@@ -1,7 +1,7 @@
 package com.pageobject.page.objectwithextendreport.one.edge;
 
 import com.pageobject.basepageobject.one.BasePageObjectOneEdge;
-import com.utils.challengeutils.one.CalculateEarnedSpent;
+import com.utilslikeexcelpojo.challengeutils.one.CalculateEarnedSpent;
 import customExceptions.KeyUrlNotFoundException;
 import org.example.TestCases.One.One.testNgclassLevelparalleltestngfile.ApplitoolsChallengeOneEdgeTest;
 import org.openqa.selenium.By;

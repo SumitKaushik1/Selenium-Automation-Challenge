@@ -10,7 +10,7 @@ import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterSuite;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
 import threadlocal.ThreadLocalWebDriver;
-import com.utils.challengeutils.one.CalculateEarnedSpent;
+import com.utilslikeexcelpojo.challengeutils.one.CalculateEarnedSpent;
 
 import org.testng.annotations.Test;
 

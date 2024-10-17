@@ -4,9 +4,9 @@
 <suite name="All Test Suite">
 
     <listeners>
-        <!-- <listener class-name="One.com.listener.controltestandextendreport.MethodInterceptorzListenerControlTestOne"/>
-        <listener class-name="One.com.listener.controltestandextendreport.AnnotationTransformerListenerControlTestOne"/>-->
-        <listener class-name="com.listener.controltestandextendreport.two.ListenerClassExtendReportTwo"/>
+        <!-- <listener class-name="One.com.listener.controltestandextendreportandexcel.MethodInterceptorzListenerControlTestOne"/>
+        <listener class-name="One.com.listener.controltestandextendreportandexcel.AnnotationTransformerListenerControlTestOne"/>-->
+        <listener class-name="com.listener.controltestandextendreportandexcel.two.ListenerClassExtendReportTwo"/>
     </listeners>
 
 

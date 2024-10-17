@@ -59,6 +59,12 @@ public final  class DriverAndFilesPath {
 
     private static String extentReportFilePath3;
     private static String extentReportFilePath4;
+
+    private static final String  EXCEL_FILE_PATH;
+
+    private static final String  EXCEL_PATH_APPILO_TOOLS_ONE;
+
+
     static{
 
         USER_DIRECTORY=System.getProperty("user.dir");
@@ -100,6 +106,10 @@ public final  class DriverAndFilesPath {
 
 
         extentReportFilePath4="";
+
+        EXCEL_FILE_PATH=USER_DIRECTORY+"\\resources\\excelfiles\\";
+
+        EXCEL_PATH_APPILO_TOOLS_ONE= EXCEL_FILE_PATH +"AppilloTestControl2One.xlsx";
     }
 
 
@@ -198,6 +208,13 @@ public final  class DriverAndFilesPath {
         return extentReportFilePath4;
     }
 
+
+
+
+    public static String getExcelAppiloToolsFilePath(){
+
+        return EXCEL_PATH_APPILO_TOOLS_ONE;
+    }
 
 
 
