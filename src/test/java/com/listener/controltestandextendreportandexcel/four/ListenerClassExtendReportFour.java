@@ -32,8 +32,10 @@ public class ListenerClassExtendReportFour implements ITestListener , ISuiteList
 
     @Override
     public void onTestStart(ITestResult result){
-       // ExtendReportToInitAndFlushReportFour.createTest(result.getMethod().getMethodName());
-        ExtendReportToInitAndFlushReportFour.createTest(result.getMethod().getDescription());
+        ExtendReportToInitAndFlushReportFour.createTest(result.getMethod().getMethodName());
+        // donto provide the getDescription bz test case donto have decripton so if you want to give
+        //either in the property of @TEst or give by excel filel  just like in teh One testcse
+        //  ExtendReportToInitAndFlushReportFour.createTest(result.getMethod().getDescription());
 
     }
 

@@ -64,6 +64,8 @@ public final  class DriverAndFilesPath {
 
     private static final String  EXCEL_PATH_APPILO_TOOLS_ONE;
 
+    private static final String  EXCEL_PATH_VWO_LOGIN_ONE;
+
 
     static{
 
@@ -110,6 +112,8 @@ public final  class DriverAndFilesPath {
         EXCEL_FILE_PATH=USER_DIRECTORY+"\\resources\\excelfiles\\";
 
         EXCEL_PATH_APPILO_TOOLS_ONE= EXCEL_FILE_PATH +"AppilloTestControl2One.xlsx";
+
+        EXCEL_PATH_VWO_LOGIN_ONE= EXCEL_FILE_PATH +"vwousernameandpasswordcontrol.xlsx";
     }
 
 
@@ -215,6 +219,13 @@ public final  class DriverAndFilesPath {
 
         return EXCEL_PATH_APPILO_TOOLS_ONE;
     }
+
+    public static String getExcelVWOLoginControlFilePath(){
+
+        return    EXCEL_PATH_VWO_LOGIN_ONE;
+    }
+
+
 
 
 

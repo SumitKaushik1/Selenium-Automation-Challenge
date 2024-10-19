@@ -2,7 +2,7 @@ package com.pageobject.page.objectwithextendreport.one.chrome;
 
 import com.pageobject.basepageobject.one.BasePageObjectOneChrome;
 import customExceptions.KeyUrlNotFoundException;
-import com.utilslikeexcelpojo.challengeutils.one.CalculateEarnedSpent;
+import com.utilslikeexcelpojodataprovider.challengeutils.one.CalculateEarnedSpent;
 import org.example.TestCases.One.One.testNgclassLevelparalleltestngfile.ApplitoolsChallengeOneChromeTest;
 import org.openqa.selenium.By;
 

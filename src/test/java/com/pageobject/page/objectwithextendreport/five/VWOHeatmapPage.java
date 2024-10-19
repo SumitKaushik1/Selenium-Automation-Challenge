@@ -21,7 +21,7 @@ public class VWOHeatmapPage extends BasePageObjectChromeFive {
 
     public VWOHeatmapPage triggerElementFiveVWOHeatmap1(AppVWOChallengeFiveTest appVWOChallengeFiveTest) throws Exception {
 
-        this.driverWaiting(appVWOChallengeFiveTest,triggerElementFiveVWOHeatmap1, WaitStrategyConstants.VISIBLE);
+       // this.driverWaiting(appVWOChallengeFiveTest,triggerElementFiveVWOHeatmap1, WaitStrategyConstants.VISIBLE);
 
         // WebElement triggerElement = appVWOChallengeFiveTest.controlGetDriver().findElement(triggerElementOneVWOHeatmap);
         WebElement triggerElement= this.findElement( triggerElementFiveVWOHeatmap1,appVWOChallengeFiveTest);
@@ -43,7 +43,7 @@ public class VWOHeatmapPage extends BasePageObjectChromeFive {
     public void   triggerElementFiveVWOHeatmap2(AppVWOChallengeFiveTest appVWOChallengeFiveTest) throws Exception {
 
 
-        this.driverWaiting(appVWOChallengeFiveTest,triggerElementFiveVWOHeatmap1, WaitStrategyConstants.CLICKABLE);
+     //   this.driverWaiting(appVWOChallengeFiveTest,triggerElementFiveVWOHeatmap1, WaitStrategyConstants.CLICKABLE);
 
 
         // this.driverWaiting(appVWOChallengeFiveTest,triggerElementOneVWOHeatmap,WaitStrategyConstants.VISIBLE);

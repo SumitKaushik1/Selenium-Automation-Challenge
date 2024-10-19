@@ -3,8 +3,9 @@ package org.example.TestCases.Four.FourtestNgclassLevelparallel;
 import com.basedriver.bast_test_control.four.BaseTestControlChromeFour;
 import com.pageobject.page.objectwithextendreport.four.chrome.VWODashBoardPageChrome;
 import com.pageobject.page.objectwithextendreport.four.chrome.VWOLoginChromePage;
+import com.utilslikeexcelpojodataprovider.dataprovider.four.DataProviderExcel;
+import com.utilslikeexcelpojodataprovider.dataprovider.four.DataProviderFour;
 import customExceptions.KeyUrlNotFoundException;
-import dataproviderexcelreal.DataProviderExcel;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -64,7 +65,9 @@ Object[][] getDataExcelVWOOne(){
     //loginCredentials is called for the first time for the value ie obj[0]-> holding the array of one dimensional of objet[0]
     //loginCredentials is called for the second time for the value ie obj[1]->  holding the array of one dimensional of objet[1]
     // each one dimensional [][][],login,username ,passwrod goes to respective argument
-    @Test(priority=0,dataProvider = "VWOURLFour")
+
+     @Test(priority=0,dataProvider = "VWOURLFour")
+    //@Test(priority=0,dataProvider = "getData",dataProviderClass = DataProviderFour.class )
     public void loginCredentialsChrome(String loginId,String username,String password) throws Exception {
 
         this.setUpControlChrome();

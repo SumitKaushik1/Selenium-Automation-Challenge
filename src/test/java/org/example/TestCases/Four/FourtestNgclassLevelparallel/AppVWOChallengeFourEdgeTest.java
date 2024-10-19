@@ -4,8 +4,9 @@ package org.example.TestCases.Four.FourtestNgclassLevelparallel;
 import com.basedriver.bast_test_control.four.BaseTestControlEdgeFour;
 import com.pageobject.page.objectwithextendreport.four.edge.VWODashBoardPageEdge;
 import com.pageobject.page.objectwithextendreport.four.edge.VWOLoginEdgePage;
+import com.utilslikeexcelpojodataprovider.dataprovider.four.DataProviderExcel;
+import com.utilslikeexcelpojodataprovider.dataprovider.four.DataProviderFour;
 import customExceptions.KeyUrlNotFoundException;
-import dataproviderexcelreal.DataProviderExcel;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -59,6 +60,7 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
     //loginCredentials is called for the second time for the value ie obj[1]->  holding the array of one dimensional of objet[1]
     // each one dimensional [][][],login,username ,passwrod goes to respective argument
     @Test(priority=0,dataProvider = "VWOURLFour")
+   // @Test(priority=0,dataProvider = "getData",dataProviderClass = DataProviderFour.class )
     public void loginCredentialsEdge(String loginId,String username,String password) throws Exception {
 
 

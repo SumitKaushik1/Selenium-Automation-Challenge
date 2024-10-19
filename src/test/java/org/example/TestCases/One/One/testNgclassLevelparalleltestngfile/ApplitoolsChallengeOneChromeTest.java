@@ -9,7 +9,7 @@ import jsonfileread.LoginCredentialsJsonFileRead;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterSuite;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
-import com.utilslikeexcelpojo.challengeutils.one.CalculateEarnedSpent;
+import com.utilslikeexcelpojodataprovider.challengeutils.one.CalculateEarnedSpent;
 import org.testng.annotations.Test;
 
 import java.text.DecimalFormat;
