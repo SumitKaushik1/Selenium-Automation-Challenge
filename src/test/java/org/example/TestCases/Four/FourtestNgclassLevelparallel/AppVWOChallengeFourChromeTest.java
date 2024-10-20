@@ -3,8 +3,8 @@ package org.example.TestCases.Four.FourtestNgclassLevelparallel;
 import com.basedriver.bast_test_control.four.BaseTestControlChromeFour;
 import com.pageobject.page.objectwithextendreport.four.chrome.VWODashBoardPageChrome;
 import com.pageobject.page.objectwithextendreport.four.chrome.VWOLoginChromePage;
-import com.utilslikeexcelpojodataprovider.dataprovider.four.DataProviderExcel;
-import com.utilslikeexcelpojodataprovider.dataprovider.four.DataProviderFour;
+import com.utilslikeexcelpojodataprovider.dataproviderexcel.four.DataProviderExcelOne;
+import com.utilslikeexcelpojodataprovider.dataproviderexcel.four.DataProviderFour;
 import customExceptions.KeyUrlNotFoundException;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebElement;
@@ -15,6 +15,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.Map;
 
 
 // class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
@@ -53,11 +54,13 @@ public final class AppVWOChallengeFourChromeTest  extends BaseTestControlChromeF
     }
 */
 @DataProvider(name="VWOURLFour")
-Object[][] getDataExcelVWOOne(){
+Object[][] getDataExcelVWOFour(){
 
 
-    return DataProviderExcel.getDataVWOFour();
+    return DataProviderFour.getDataVWOFour();
 }
+
+
 
 
 
@@ -66,10 +69,13 @@ Object[][] getDataExcelVWOOne(){
     //loginCredentials is called for the second time for the value ie obj[1]->  holding the array of one dimensional of objet[1]
     // each one dimensional [][][],login,username ,passwrod goes to respective argument
 
-     @Test(priority=0,dataProvider = "VWOURLFour")
-    //@Test(priority=0,dataProvider = "getData",dataProviderClass = DataProviderFour.class )
-    public void loginCredentialsChrome(String loginId,String username,String password) throws Exception {
+    // @Test(priority=0,dataProvider = "VWOURLFour")
 
+    //public void loginCredentialsChrome(String loginId,String username,String password) throws Exception {
+
+        // @Test(priority=0,dataProvider = "getData",dataProviderClass = DataProviderFour.class )
+     @Test(priority = 0)
+         public void loginCredentialsChrome(Map<String,String>data) throws Exception {
         this.setUpControlChrome();
 
 
@@ -132,7 +138,8 @@ Object[][] getDataExcelVWOOne(){
         VWOLoginChromePage vwoLoginPageChrome=new VWOLoginChromePage();
 
         System.out.println("entering started");
-        Boolean errorMessageNotVisible= vwoLoginPageChrome.enterUserNameVWOLogin(username,this).enterPasswordVWOLogin(password,this).clickButtonVWOLogin(this);
+       // Boolean errorMessageNotVisible= vwoLoginPageChrome.enterUserNameVWOLogin(username,this).enterPasswordVWOLogin(password,this).clickButtonVWOLogin(this);
+             Boolean errorMessageNotVisible= vwoLoginPageChrome.enterUserNameVWOLogin(data.get("Username"),this).enterPasswordVWOLogin(data.get("Password"),this).clickButtonVWOLogin(this);
 
                 //.vWODashbord();
         System.out.println("entering ended ");

@@ -56,7 +56,7 @@ public final class ApplitoolsChallengeOneEdgeTest extends BaseTestControlEdgeOne
    //  Object[] getDataExcelAppilotoolsOne(){
 
 
-        // return DataProviderExcel.getDataExcelAppilotools();
+        // return DataProviderExcelOne.getDataExcelAppilotools();
     //}
 
 

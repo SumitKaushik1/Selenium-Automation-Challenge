@@ -5,6 +5,8 @@
         <!-- <listener class-name="One.com.listener.controltestandextendreportandexcel.MethodInterceptorzListenerControlTestOne"/>-->
       <!--  <listener class-name="com.listener.controltestandextendreportandexcel.One.AnnotationTransformerListenerControlTestOne"/>-->
         <listener class-name="com.listener.controltestandextendreportandexcel.four.ListenerClassExtendReportFour"/>
+        <listener class-name="com.listener.controltestandextendreportandexcel.four.ListenerRetryFour"/>
+        <listener class-name="com.listener.controltestandextendreportandexcel.four.AnnotaionTreansformerListnerForDataProvideAndRetry"/>
     </listeners>
 
 

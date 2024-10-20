@@ -19,10 +19,10 @@ public class ExcelFileToWriteUserAndPassControlSingleTestManyValuesDescriptionFo
 
         Map<String, Object[]> data = new LinkedHashMap<>();
         data.put("1", new Object[]{"TestName", "Execute", "Username", "Password", "fname"});
-        data.put("2", new Object[]{"loginWithCredentialsChrome", "yes", "abcdefghi", "Test@1234", "sumit"});
-        data.put("3", new Object[]{"loginWithCredentialsChrome", "yes", "akas@wuuvo.com", "Tes@1234", "sumit"});
-        data.put("4", new Object[]{"loginWithCredentialsChrome", "yes", "akas@wuuvo.com", "Test@123", "sumit"});
-        data.put("5", new Object[]{"loginWithCredentialsChrome", "no", "akas@wuuo.com", "Test@1235", "sumit"});
+        data.put("2", new Object[]{"loginCredentialsChrome", "yes", "abcdefghi", "Test@1234", "sumit"});
+        data.put("3", new Object[]{"loginCredentialsChrome", "yes", "akas@wuuvo.com", "Tes@1234", "sumit"});
+        data.put("4", new Object[]{"loginCredentialsChrome", "yes", "akash@wuuvo.com", "Test@1234", "sumit"});
+        data.put("5", new Object[]{"loginCredentialsChrome", "no", "akas@wuuo.com", "Test@1235", "sumit"});
 
 
       //  data.put("6", new Object[]{"totalMoneySpentCalculationChrome", "to calculate money chrome", "Yes", "1", "1"});
@@ -32,10 +32,10 @@ public class ExcelFileToWriteUserAndPassControlSingleTestManyValuesDescriptionFo
 
 
         data.put("6", new Object[]{"TestName", "Execute", "Username", "Password", "fname"});
-        data.put("7", new Object[]{"loginWithCredentialsEdge", "yes", "abcdefghi", "Test@1234", "sumit"});
-        data.put("8", new Object[]{"loginWithCredentialsEdge", "yes", "akas@wuuvo.com", "Tes@1234", "sumit"});
-        data.put("9", new Object[]{"loginWithCredentialsEdge", "yes", "akas@wuuvo.com", "Test@123", "sumit"});
-        data.put("10", new Object[]{"loginWithCredentialsEdge", "no", "akas@wuuo.com", "Test@1235", "sumit"});
+        data.put("7", new Object[]{"loginCredentialsEdge", "yes", "abcdefghi", "Test@1234", "sumit"});
+        data.put("8", new Object[]{"loginCredentialsEdge", "yes", "akas@wuuvo.com", "Tes@1234", "sumit"});
+        data.put("9", new Object[]{"loginCredentialsEdge", "yes", "akash@wuuvo.com", "Test@1234", "sumit"});
+        data.put("10", new Object[]{"loginCredentialsEdge", "no", "akas@wuuo.com", "Test@1235", "sumit"});
 
        // data.put("7", new Object[]{"loginWithCredentialsEdge", "to login edge ", "Yes", "0", "1"});
         //data.put("8", new Object[]{"totalMoneySpentCalculationEdge", "to calculate money edge", "Yes", "1", "1"});

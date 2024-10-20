@@ -70,7 +70,7 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
     //Object[] getDataExcelAppilotoolsOne(){
 
 
-      //  return DataProviderExcel.getDataExcelAppilotools();
+      //  return DataProviderExcelOne.getDataExcelAppilotools();
     //}
 
 

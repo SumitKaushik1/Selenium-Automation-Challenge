@@ -4,8 +4,8 @@ package org.example.TestCases.Four.FourtestNgclassLevelparallel;
 import com.basedriver.bast_test_control.four.BaseTestControlEdgeFour;
 import com.pageobject.page.objectwithextendreport.four.edge.VWODashBoardPageEdge;
 import com.pageobject.page.objectwithextendreport.four.edge.VWOLoginEdgePage;
-import com.utilslikeexcelpojodataprovider.dataprovider.four.DataProviderExcel;
-import com.utilslikeexcelpojodataprovider.dataprovider.four.DataProviderFour;
+import com.utilslikeexcelpojodataprovider.dataproviderexcel.four.DataProviderExcelOne;
+import com.utilslikeexcelpojodataprovider.dataproviderexcel.four.DataProviderFour;
 import customExceptions.KeyUrlNotFoundException;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebElement;
@@ -16,6 +16,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.Map;
 
 // class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
 public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
@@ -50,7 +51,7 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
     Object[][] getDataExcelVWOOne(){
 
 
-        return DataProviderExcel.getDataVWOFour();
+        return DataProviderFour.getDataVWOFour();
     }
 
 
@@ -59,9 +60,12 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
     //loginCredentials is called for the first time for the value ie obj[0]-> holding the array of one dimensional of objet[0]
     //loginCredentials is called for the second time for the value ie obj[1]->  holding the array of one dimensional of objet[1]
     // each one dimensional [][][],login,username ,passwrod goes to respective argument
-    @Test(priority=0,dataProvider = "VWOURLFour")
-   // @Test(priority=0,dataProvider = "getData",dataProviderClass = DataProviderFour.class )
-    public void loginCredentialsEdge(String loginId,String username,String password) throws Exception {
+ //   @Test(priority=0,dataProvider = "VWOURLFour")
+   // public void loginCredentialsEdge(String loginId,String username,String password) throws Exception {
+    //@Test(priority=0,dataProvider = "getData",dataProviderClass = DataProviderFour.class )
+   @Test(priority =0 )
+    public void loginCredentialsEdge(Map<String,String> data) throws Exception {
+
 
 
         this.setUpControlEdge();
@@ -128,8 +132,10 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
         VWOLoginEdgePage vwoLoginPageEdge=new VWOLoginEdgePage();
 
         System.out.println("entering started");
-        Boolean errorMessageNotVisible= vwoLoginPageEdge.enterUserNameVWOLogin(username,this).enterPasswordVWOLogin(password,this)
-                .clickButtonVWOLogin(this);
+      //Boolean errorMessageNotVisible= vwoLoginPageEdge.enterUserNameVWOLogin(username,this).enterPasswordVWOLogin(password,this)
+        //        .clickButtonVWOLogin(this);
+         Boolean errorMessageNotVisible= vwoLoginPageEdge.enterUserNameVWOLogin(data.get("Username"),this).enterPasswordVWOLogin(data.get("Password"),this)
+         .clickButtonVWOLogin(this);
 
         //.vWODashbord();
         System.out.println("entering ended ");
