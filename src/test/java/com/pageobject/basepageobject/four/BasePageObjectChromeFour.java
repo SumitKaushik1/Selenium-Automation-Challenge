@@ -47,7 +47,7 @@ public class BasePageObjectChromeFour {
 
    /* private void  explicityWaitForVisibilty(By element){
 
-        WebDriverWait wait =new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(1000));//in this we set the driver to wait maximum 10 seconds
+        WebDriverWait wait =new WebDriverWait(ThreadLocalWebDriverManager.getDriver(), Duration.ofSeconds(1000));//in this we set the driver to wait maximum 10 seconds
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 
     }*/

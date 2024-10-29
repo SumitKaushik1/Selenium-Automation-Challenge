@@ -5,7 +5,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import path.DriverAndFilesPath;
+import path.DriverAndFilesPathConstants;
 
 import java.awt.*;
 import java.io.File;
@@ -35,7 +35,7 @@ public final  class ExtendReportToInitAndFlushReportFour {
         {
             extent=new ExtentReports();
 
-            ExtentSparkReporter spark=new ExtentSparkReporter(DriverAndFilesPath.getExtentReporVWOLoginFour());
+            ExtentSparkReporter spark=new ExtentSparkReporter(DriverAndFilesPathConstants.getExtentReporVWOLoginFour());
             extent.attachReporter(spark);
             spark.config().setTheme(Theme.STANDARD);
             // YOU CAN CHANGE THE THEME OF THE PAGE JUST PRESSING THE l on the page
@@ -52,8 +52,8 @@ public final  class ExtendReportToInitAndFlushReportFour {
         if(Objects.nonNull(extent)){
             extent.flush();
         }
-
-        Desktop.getDesktop().browse(new File(DriverAndFilesPath.getExtentReporVWOLoginFour()).toURI());
+        ExtentManagerThreadLocalFour.unload();
+        Desktop.getDesktop().browse(new File(DriverAndFilesPathConstants.getExtentReporVWOLoginFour()).toURI());
 
     }
 

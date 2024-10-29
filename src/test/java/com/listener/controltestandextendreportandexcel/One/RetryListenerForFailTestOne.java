@@ -1,7 +1,9 @@
 package com.listener.controltestandextendreportandexcel.One;
 
+import enumconstants.MethodPropertiesConstant;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
+import propertesfilesread.MethodPropertiesPropertyFileRead;
 
 public class RetryListenerForFailTestOne implements IRetryAnalyzer {
 
@@ -12,6 +14,7 @@ public class RetryListenerForFailTestOne implements IRetryAnalyzer {
     @Override
     public boolean retry(ITestResult result){
 
+/*
         if(counter<limit){
 // two times it will run taht method whcih use thsi class
 
@@ -20,5 +23,21 @@ public class RetryListenerForFailTestOne implements IRetryAnalyzer {
             return true;
         }
         return false;
+*/
+
+        boolean value =false;
+        try{
+
+            //control by property file
+            if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.RETRYFAILEDTESTS).equalsIgnoreCase("yes"))
+                value =counter<limit;
+            counter++;
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        return value;
+
+
     }
 }

@@ -5,11 +5,10 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import path.DriverAndFilesPath;
+import path.DriverAndFilesPathConstants;
 
 import java.awt.*;
 import java.io.File;
-import java.io.IOException;
 import java.util.Objects;
 
 //final class ie it cannot be inherited ie it cannot be extended
@@ -39,8 +38,8 @@ public final  class ExtendReportToInitAndFlushReportTwo {
         if(Objects.isNull(extent))
         {
             extent=new ExtentReports();
-            System.out.println(DriverAndFilesPath.getExtentReportPathDemoQaTwo());
-            ExtentSparkReporter spark=new ExtentSparkReporter(DriverAndFilesPath.getExtentReportPathDemoQaTwo());
+            System.out.println(DriverAndFilesPathConstants.getExtentReportPathDemoQaTwo());
+            ExtentSparkReporter spark=new ExtentSparkReporter(DriverAndFilesPathConstants.getExtentReportPathDemoQaTwo());
             extent.attachReporter(spark);
             spark.config().setTheme(Theme.STANDARD);
             // YOU CAN CHANGE THE THEME OF THE PAGE JUST PRESSING THE l on the page
@@ -59,7 +58,8 @@ public final  class ExtendReportToInitAndFlushReportTwo {
             extent.flush();
         }
 
-        Desktop.getDesktop().browse(new File(DriverAndFilesPath.getExtentReportPathDemoQaTwo()).toURI());
+        ExtentManagerThreadLocalTwo.unload();
+        Desktop.getDesktop().browse(new File(DriverAndFilesPathConstants.getExtentReportPathDemoQaTwo()).toURI());
 
 
     }

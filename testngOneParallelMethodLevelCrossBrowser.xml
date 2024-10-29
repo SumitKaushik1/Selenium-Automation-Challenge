@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+
+<suite name="All Test Suite">
+
+    <listeners>
+
+        <listener class-name="com.listener.controltestandextendreportandexcel.One.ListenerClassExtendReportOne"/>
+           <listener class-name="com.listener.controltestandextendreportandexcel.One.AnnotaionTreansformerListnerForRetryAndDataProvider"/>
+        <listener class-name="com.listener.controltestandextendreportandexcel.One.MethodInterceptorListenerControlTest2One"/>
+
+    </listeners>
+
+
+    <test verbose="2" preserve-order="true" thread-count="2" parallel="methods"
+          name="J:/3. automation testing testing acadmey/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/One/One/testNgclassLevelparalleltestngfile/ApplitoolsChallengeOneChromeEdgeTest.java">
+        <classes>
+            <class name="org.example.TestCases.One.One.testNgclassLevelparalleltestngfile.ApplitoolsChallengeOneChromeEdgeTest">
+                <methods>
+                    <include name="loginWithCredentials"/>
+        <!--            <include name="totalMoneySpentCalculation"/>
+                    <include name="justToTestListenerMethod1"/>
+                    <include name="justToTestListenerMethod2"/>
+                    <include name="justToTestRetryListenerOnFailMethod3"/>-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,6 +1,6 @@
 package com.pageobject.basepageobject.one;
 
-import com.extendedreport.one.ExtendLoggerToAddLogsInReportOne;
+import com.extendedreport.one.OneExtentLogger;
 import org.example.TestCases.One.One.testNgclassLevelparalleltestngfile.ApplitoolsChallengeOneEdgeTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -15,13 +15,13 @@ public class BasePageObjectOneEdge {
     protected void  sendCredentialsKeys(By usernameApplitools, String stringValueFromPropertyFile, String elementname, ApplitoolsChallengeOneEdgeTest applitoolsChallengeOneEdgeTest) throws Exception {
 
         applitoolsChallengeOneEdgeTest.controlGetDriver().findElement(usernameApplitools).sendKeys(stringValueFromPropertyFile);
-        ExtendLoggerToAddLogsInReportOne.pass(stringValueFromPropertyFile+"is entered successfully in "+elementname,true);
+        OneExtentLogger.pass(stringValueFromPropertyFile+"is entered successfully in "+elementname,true);
     }
 
     protected void clickLogin(By buttonApplitools,String elementname,ApplitoolsChallengeOneEdgeTest applitoolsChallengeOneEdgeTest) throws Exception {
 
         applitoolsChallengeOneEdgeTest.controlGetDriver().findElement(buttonApplitools).click();
-        ExtendLoggerToAddLogsInReportOne.pass(elementname+" is clicked",true);
+        OneExtentLogger.pass(elementname+" is clicked",true);
     }
 
     protected List<WebElement> findMoreElements(By spans,ApplitoolsChallengeOneEdgeTest applitoolsChallengeOneEdgeTest){

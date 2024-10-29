@@ -1,6 +1,6 @@
 package com.listener.controltestandextendreportandexcel.One;
 
-import com.utilslikeexcelpojodataprovider.excelpractice.one.forread.ExcelFileToReadTestControl2lByListenerApplitools;
+import com.exceldataprovider.one.forread.ExcelOneDataProviderUtils;
 import org.testng.IMethodInstance;
 import org.testng.IMethodInterceptor;
 import org.testng.ITestContext;
@@ -17,7 +17,9 @@ public class MethodInterceptorListenerControlTest2One implements IMethodIntercep
     @Override
     public List<IMethodInstance> intercept(List<IMethodInstance>methods, ITestContext context) {
         try {
-            List<Map<String,String>> list= ExcelFileToReadTestControl2lByListenerApplitools.getTestDetails();
+            List<Map<String,String>> list= ExcelOneDataProviderUtils.getTestDetails();
+           // List<Map<String,String>> list= null;
+
             List<IMethodInstance> result= new ArrayList<>();
             List<IMethodInstance> notInresult= new ArrayList<>();
 

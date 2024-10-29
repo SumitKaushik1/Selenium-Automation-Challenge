@@ -2,13 +2,12 @@ package com.pageobject.basepageobject.four;
 
 import com.extendedreport.four.ExtendLoggerToAddLogInReportFour;
 import com.waitfactory.four.WaitFactoryFourEdge;
-import customExceptions.KeyUrlNotFoundException;
 import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Four.FourtestNgclassLevelparallel.AppVWOChallengeFourEdgeTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import threadlocal.ThreadLocalWebDriver;
+import threadlocal.ThreadLocalWebDriverManager;
 
 public class BasePageObjectEdgeFour {
 
@@ -34,7 +33,7 @@ public class BasePageObjectEdgeFour {
 
 
     protected void findByJavascriptCode(WebElement element,AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest ){
-        ((JavascriptExecutor) ThreadLocalWebDriver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) ThreadLocalWebDriverManager.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
 
@@ -49,7 +48,7 @@ public class BasePageObjectEdgeFour {
 
    /* private void  explicityWaitForVisibilty(By element){
 
-        WebDriverWait wait =new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(1000));//in this we set the driver to wait maximum 10 seconds
+        WebDriverWait wait =new WebDriverWait(ThreadLocalWebDriverManager.getDriver(), Duration.ofSeconds(1000));//in this we set the driver to wait maximum 10 seconds
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 
     }*/

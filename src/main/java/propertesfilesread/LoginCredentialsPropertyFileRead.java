@@ -2,12 +2,12 @@ package propertesfilesread;
 
 import customExceptions.FileNotFoundRuntimeExcption;
 import customExceptions.KeyUrlNotFoundException;
-import enumconstants.ReadFileConstants;
+import enumconstants.ConfigProperties;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import path.DriverAndFilesPath;
+import path.DriverAndFilesPathConstants;
 
 
 import java.io.FileReader;
@@ -62,7 +62,7 @@ public class LoginCredentialsPropertyFileRead {
 
             // text file and binary file store data in bytes only but for text file standard used but binary file
             // no standard
-        FileReader  fileReader=new FileReader(DriverAndFilesPath.loginCredentialsPropertyFilePath());
+        FileReader  fileReader=new FileReader(DriverAndFilesPathConstants.loginCredentialsPropertyFilePath());
 
             PROPERTIES.load(fileReader);
         } catch (IOException e) {
@@ -85,7 +85,7 @@ public class LoginCredentialsPropertyFileRead {
 
 
 
-    public static String readPropertyFile(ReadFileConstants key) throws KeyUrlNotFoundException {
+    public static String readPropertyFile(ConfigProperties key) throws KeyUrlNotFoundException {
 
 
         // passed key to this  method is null or there is on  key in the existing map

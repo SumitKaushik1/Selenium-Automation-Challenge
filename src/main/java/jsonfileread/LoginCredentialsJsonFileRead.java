@@ -3,8 +3,8 @@ package jsonfileread;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import customExceptions.KeyUrlNotFoundException;
-import enumconstants.ReadFileConstants;
-import path.DriverAndFilesPath;
+import enumconstants.ConfigProperties;
+import path.DriverAndFilesPathConstants;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,8 +33,8 @@ public class LoginCredentialsJsonFileRead {
         try {
 
             //jspm file is taken it is converted into hashmap
-          //  CONFIGMAP= new ObjectMapper().readValue(new File(DriverAndFilesPath.appiloJsonFilePath()),HashMap.class);
-            CONFIGMAP = new ObjectMapper().readValue(new File(DriverAndFilesPath.appiloJsonFilePath()), new TypeReference<HashMap<String, String>>() {});
+          //  CONFIGMAP= new ObjectMapper().readValue(new File(DriverAndFilesPathConstants.appiloJsonFilePath()),HashMap.class);
+            CONFIGMAP = new ObjectMapper().readValue(new File(DriverAndFilesPathConstants.appiloJsonFilePath()), new TypeReference<HashMap<String, String>>() {});
 
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -69,7 +69,7 @@ public class LoginCredentialsJsonFileRead {
 
             // text file and binary file store data in bytes only but for text file standard used but binary file
             // no standard
-        //FileInputStream fileInputStream=new FileInputStream(DriverAndFilesPath.loginCredentialsJsonFilePath());
+        //FileInputStream fileInputStream=new FileInputStream(DriverAndFilesPathConstants.loginCredentialsJsonFilePath());
 
            // PROPERTIES.load(fileReader);
         //} catch (IOException e) {
@@ -92,7 +92,7 @@ public class LoginCredentialsJsonFileRead {
 
 
 
-    public static String readJsonFile(ReadFileConstants key) throws KeyUrlNotFoundException {
+    public static String readJsonFile(ConfigProperties key) throws KeyUrlNotFoundException {
 
 
         // passed key to this  method is null or there is on  key in the existing map

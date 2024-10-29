@@ -1,11 +1,11 @@
 package com.basedriver.basetest.One;
 
-import enumconstants.ReadFileConstants;
+import enumconstants.ConfigProperties;
 import org.openqa.selenium.WebDriver;
-import path.DriverAndFilesPath;
-import propertesfilesread.FrameoworksConstantPropertyFileRead;
+import path.DriverAndFilesPathConstants;
+import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
 
-import threadlocal.ThreadLocalWebDriver;
+import threadlocal.ThreadLocalWebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -33,8 +33,8 @@ public final  class BaseTestChromeOne {
     //method used by clas name only
     public static void setUpChrome() throws Exception {
         //  System.setProperty("webdriver.chrome.driver","J:\\3. automation testing\\day41--selenium -UI elements\\AssignmentAnswers\\Appolo-Tools\\src\\test\\resources\\driver\\chromedriver.exe");
-        if (Objects.isNull(ThreadLocalWebDriver.getDriver())) {
-            System.setProperty("webdriver.chrome.driver", DriverAndFilesPath.chromePath());
+        if (Objects.isNull(ThreadLocalWebDriverManager.getDriver())) {
+            System.setProperty("webdriver.chrome.driver", DriverAndFilesPathConstants.chromePath());
 
 
             //driver=new ChromeDriver();//ChromeDriver class from webdriver famework uses the upper location for the driver
@@ -46,13 +46,13 @@ public final  class BaseTestChromeOne {
             //it will make its own threadlocal variblae ,static only give the feature to call by classname
 
             // hreadLocalWebDriver.setDriver(driver);
-            ThreadLocalWebDriver.setDriver(new ChromeDriver());
-            ThreadLocalWebDriver.getDriver().manage().window().maximize();
-            ThreadLocalWebDriver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-            // ThreadLocalWebDriver.getDriver().get("https://demo.applitools.com/");
+            ThreadLocalWebDriverManager.setDriver(new ChromeDriver());
+            ThreadLocalWebDriverManager.getDriver().manage().window().maximize();
+            ThreadLocalWebDriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+            // ThreadLocalWebDriverManager.getDriver().get("https://demo.applitools.com/");
 
             //FramworkconstantFileRead class static  method is called when the value is required from its file to get we pass the key
-            ThreadLocalWebDriver.getDriver().get(FrameoworksConstantPropertyFileRead.readPropertyFile(ReadFileConstants.URLONE));
+            ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigProperties.URLONE));
         }
 
     }
@@ -61,7 +61,7 @@ public final  class BaseTestChromeOne {
     // it used to get driver where there is not inheritance of this class directlly call this
 
     public static WebDriver getDriver() {
-        return  ThreadLocalWebDriver.getDriver();
+        return  ThreadLocalWebDriverManager.getDriver();
     }
 
 
@@ -69,9 +69,9 @@ public final  class BaseTestChromeOne {
     public static void tearDownChrome() {
         //all connections to .exe file is gone but driver can hold the refeence of the instance
         //to save native memory
-        if (Objects.nonNull(ThreadLocalWebDriver.getDriver()))
-            ThreadLocalWebDriver.getDriver().quit();//firstly driver is reomved
-        ThreadLocalWebDriver.unload();//then the threadloal variable is removed
+        if (Objects.nonNull(ThreadLocalWebDriverManager.getDriver()))
+            ThreadLocalWebDriverManager.getDriver().quit();//firstly driver is reomved
+        ThreadLocalWebDriverManager.unload();//then the threadloal variable is removed
 //suppsoe thradlocal variable si only reomved that browser reamin open bz driver
         // instaance still holding the refeence of browser
     }

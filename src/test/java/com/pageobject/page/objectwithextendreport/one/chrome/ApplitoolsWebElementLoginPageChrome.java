@@ -13,24 +13,24 @@ public class ApplitoolsWebElementLoginPageChrome extends BasePageObjectOneChrome
     private final By buttonApplitools=By.xpath("//a[@id='log-in']");
 
     public ApplitoolsWebElementLoginPageChrome enterUserNameApplitools(String username, ApplitoolsChallengeOneChromeTest applitoolsChallengeOneChromeTest) throws Exception {
-         // ThreadLocalWebDriver.getDriver().findElement(usernameApplitools).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("userName"));
+         // ThreadLocalWebDriverManager.getDriver().findElement(usernameApplitools).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("userName"));
 
       // enusm are made to control all the constants from one place ie from enum class predefined so the constsants of string i snot needed
-      //  this.sendCredentialsKeys(usernameApplitools,LoginCredentialsJsonFileRead.readPropertyFile(ReadFileConstants.USERNAME));
+      //  this.sendCredentialsKeys(usernameApplitools,LoginCredentialsJsonFileRead.readPropertyFile(ConfigProperties.USERNAME));
         this.sendCredentialsKeys(usernameApplitools,username,"username",applitoolsChallengeOneChromeTest);
         return this;
     }
 
     public ApplitoolsWebElementLoginPageChrome enterPasswordApplitools(String password, ApplitoolsChallengeOneChromeTest applitoolsChallengeOneChromeTest) throws Exception {
 
-         //ThreadLocalWebDriver.getDriver().findElement(passwordApplitools).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password"));;
-        //this.sendCredentialsKeys(passwordApplitools,LoginCredentialsJsonFileRead.readPropertyFile(ReadFileConstants.PASSWORD));
+         //ThreadLocalWebDriverManager.getDriver().findElement(passwordApplitools).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password"));;
+        //this.sendCredentialsKeys(passwordApplitools,LoginCredentialsJsonFileRead.readPropertyFile(ConfigProperties.PASSWORD));
         this.sendCredentialsKeys(passwordApplitools,password,"password",applitoolsChallengeOneChromeTest);
 
         return this;
     }
     public ApplitoolsWebElementDashBoardPageChrome clickButtonApplitools(ApplitoolsChallengeOneChromeTest applitoolsChallengeOneChromeTest) throws Exception {
-      // ThreadLocalWebDriver.getDriver().findElement(buttonApplitools).click();
+      // ThreadLocalWebDriverManager.getDriver().findElement(buttonApplitools).click();
        //since you have clicked then you are logged in now you can use  the elements of the dashbaordPage
 
 
@@ -38,7 +38,7 @@ public class ApplitoolsWebElementLoginPageChrome extends BasePageObjectOneChrome
         this.clickLogin(buttonApplitools,"login in ",applitoolsChallengeOneChromeTest);
        // jsut adding one test case login button click
 
-       // ExtendLoggerToAddLogsInReportOne.pass("appilo log in button click");
+       // OneExtentLogger.pass("appilo log in button click");
 
 
        return new ApplitoolsWebElementDashBoardPageChrome();

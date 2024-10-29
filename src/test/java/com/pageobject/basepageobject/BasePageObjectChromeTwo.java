@@ -1,5 +1,6 @@
 package com.pageobject.basepageobject;
 
+import com.basedriver.basetest.two.BaseTestChromeTwo;
 import com.extendedreport.two.ExtendLoggerToAddLogInReportTwo;
 import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Two.DemoQAWebsiteChallengeTwoTest;
@@ -8,6 +9,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import com.waitfactory.WaitFactoryTwo;
 
+import static com.basedriver.basetest.two.BaseTestChromeTwo.getDriverChrome;
+
 public class BasePageObjectChromeTwo {
 
     //suppose you donot know that what you want ot return
@@ -15,6 +18,13 @@ public class BasePageObjectChromeTwo {
 
 
           return  demoQAWebsiteChallengeTwoTest.controlGetDriver().findElement( elmement);
+
+    }
+
+    protected  WebElement findElement(By elmement){
+
+
+        return getDriverChrome().findElement( elmement);
 
     }
 
@@ -40,8 +50,10 @@ public class BasePageObjectChromeTwo {
 
     //to make robust code so any user cannot change the value in the code bydefault whcih can be done in string
     protected void clickOnButton(WaitStrategyConstants waitStrategy, WebElement element, DemoQAWebsiteChallengeTwoTest demoQAWebsiteChallengeTwoTest, String elementname) throws Exception {
-       // if(waitStrategy==WaitStrategyConstants.CLICKABLE)
-         //   explicitlyWaitForClickable(demoQAWebsiteChallengeTwoTest,element);
+      //  if(waitStrategy==WaitStrategyConstants.CLICKABLE)
+        //    explicitlyWaitForClickable(demoQAWebsiteChallengeTwoTest,element);
+
+
 
     //   WebElement webElement= this.findElement(demoQAWebsiteChallengeTwoTest,element);
         WaitFactoryTwo.explicitWaitToBePerform(waitStrategy,demoQAWebsiteChallengeTwoTest,element);
@@ -54,6 +66,31 @@ public class BasePageObjectChromeTwo {
         ExtendLoggerToAddLogInReportTwo.pass(elementname+" is clicked",true);
 
 
+    }
+
+
+    protected void clickOnButton(WaitStrategyConstants waitStrategy,By element, String elementname) throws Exception {
+        //  if(waitStrategy==WaitStrategyConstants.CLICKABLE)
+        //    explicitlyWaitForClickable(demoQAWebsiteChallengeTwoTest,element);
+
+      WebElement webElement=this.findElement(element);
+
+        //   WebElement webElement= this.findElement(demoQAWebsiteChallengeTwoTest,element);
+        WaitFactoryTwo.explicitWaitToBePerform(waitStrategy,webElement);
+
+        //this.findElement(demoQAWebsiteChallengeTwoTest,element).click();
+
+        webElement.click();
+
+        //  ExtendLoggerToAddLogInReportTwo.pass(elementname+" is clicked");
+        ExtendLoggerToAddLogInReportTwo.pass(elementname+" is clicked",true);
+
+
+    }
+
+
+    protected String getPageTitle(){
+        return BaseTestChromeTwo.getDriverChrome().getTitle();
     }
 
 

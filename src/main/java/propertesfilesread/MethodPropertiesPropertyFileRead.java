@@ -3,12 +3,11 @@ package propertesfilesread;
 import customExceptions.FileNotFoundRuntimeExcption;
 import customExceptions.KeyUrlNotFoundException;
 import enumconstants.MethodPropertiesConstant;
-import enumconstants.ReadFileConstants;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import path.DriverAndFilesPath;
+import path.DriverAndFilesPathConstants;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -62,7 +61,7 @@ public class MethodPropertiesPropertyFileRead {
 
             // text file and binary file store data in bytes only but for text file standard used but binary file
             // no standard
-        FileReader  fileReader=new FileReader(DriverAndFilesPath.methodActionPropertiesExtendedReport());
+        FileReader  fileReader=new FileReader(DriverAndFilesPathConstants.methodActionPropertiesExtendedReport());
 
             PROPERTIES.load(fileReader);
         } catch (IOException e) {

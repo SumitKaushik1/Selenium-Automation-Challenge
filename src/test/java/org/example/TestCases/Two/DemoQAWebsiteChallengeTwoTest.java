@@ -1,12 +1,15 @@
 package org.example.TestCases.Two;
 
 import com.basedriver.bast_test_control.two.BaseTestControlChromeTwo;
+import com.pagefactory.two.DemoQaHomePage;
 import com.pageobject.page.objectwithextendreport.two.DemoQAWebTablePage;
 import customExceptions.KeyUrlNotFoundException;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.*;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
+
+import java.util.Map;
 
 
 // class is final so it cannot be extended ie inherited again so that its methods cannot be overriden
@@ -48,7 +51,7 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
 
 
     @Test(priority=0)
-    void clickThirdEditButton() throws Exception {
+    void clickThirdEditButton(Map<String,String> data) throws Exception {
 
         this.setUpControlChrome();
 
@@ -133,7 +136,7 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
 
 
     @Test(priority=1)
-    void addDetails() throws Exception {
+    void addDetails(Map<String,String> data) throws Exception {
 
 
 
@@ -223,6 +226,15 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
         //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
         // method so the it will pass bydefault
 
+    }
+
+
+    @Test(priority = 2)
+    void clickOnHamburgerbuttonSubList(Map<String,String> data) throws Exception {
+
+
+        String title=new DemoQaHomePage().clickHamburger().clickOnSubMenuItem("Text Box").getTitle();
+        System.out.println(title);
     }
 
     @AfterSuite

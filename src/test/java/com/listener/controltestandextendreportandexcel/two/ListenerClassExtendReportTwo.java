@@ -89,7 +89,7 @@ public class ListenerClassExtendReportTwo implements ITestListener , ISuiteListe
 
 
             // Log the failure message and the stack trace into the Extent Report
-            //   ExtendLoggerToAddLogsInReportOne.fail(result.getMethod().getMethodName() + " is failed. Stack Trace:"+"\\n" + , true);
+            //   OneExtentLogger.fail(result.getMethod().getMethodName() + " is failed. Stack Trace:"+"\\n" + , true);
 
         } catch (Exception e) {
             throw new RuntimeException(e);

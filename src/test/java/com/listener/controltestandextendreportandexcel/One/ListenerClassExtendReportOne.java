@@ -1,6 +1,6 @@
 package com.listener.controltestandextendreportandexcel.One;
 
-import com.extendedreport.one.ExtendLoggerToAddLogsInReportOne;
+import com.extendedreport.one.OneExtentLogger;
 import com.extendedreport.one.ExtendReporToInitAndFlushReporttOne;
 import org.testng.*;
 
@@ -39,7 +39,7 @@ public class ListenerClassExtendReportOne implements ITestListener , ISuiteListe
     @Override
     public void onTestSuccess(ITestResult iTestResult){
         try {
-            ExtendLoggerToAddLogsInReportOne.pass(iTestResult.getMethod().getMethodName()+" is passed",true);
+            OneExtentLogger.pass(iTestResult.getMethod().getMethodName()+" is passed",true);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -57,7 +57,7 @@ public class ListenerClassExtendReportOne implements ITestListener , ISuiteListe
            // PrintWriter pw = new PrintWriter(sw);
             //throwable.printStackTrace(pw);;
             //String stackTrace = sw.toString();
-            //ExtendLoggerToAddLogsInReportOne.fail(result.getMethod().getMethodName() + " is failed. Stack Trace:"+"\\n" + stackTrace, true);
+            //OneExtentLogger.fail(result.getMethod().getMethodName() + " is failed. Stack Trace:"+"\\n" + stackTrace, true);
 
            // throwable.getLocalizedMessage();
 
@@ -69,12 +69,12 @@ public class ListenerClassExtendReportOne implements ITestListener , ISuiteListe
             String exceptionMessage = throwable.toString(); // This will give the type and message of the exception
 
             // Log the failure message and the brief exception message
-            ExtendLoggerToAddLogsInReportOne.fail(result.getMethod().getMethodName() + " is failed. Stack Trace: " + exceptionMessage, true);
+            OneExtentLogger.fail(result.getMethod().getMethodName() + " is failed. Stack Trace: " + exceptionMessage, true);
 
 
-           // ExtendLoggerToAddLogsInReportOne.fail(result.getMethod().getMethodName()+"is failed",true);
-           // ExtendLoggerToAddLogsInReportOne.fail(result.getThrowable().toString());
-           // ExtendLoggerToAddLogsInReportOne.fail(Arrays.toString(result.getThrowable().getStackTrace()));
+           // OneExtentLogger.fail(result.getMethod().getMethodName()+"is failed",true);
+           // OneExtentLogger.fail(result.getThrowable().toString());
+           // OneExtentLogger.fail(Arrays.toString(result.getThrowable().getStackTrace()));
 
 
 
@@ -84,7 +84,7 @@ public class ListenerClassExtendReportOne implements ITestListener , ISuiteListe
 
 
             // Log the failure message and the stack trace into the Extent Report
-         //   ExtendLoggerToAddLogsInReportOne.fail(result.getMethod().getMethodName() + " is failed. Stack Trace:"+"\\n" + , true);
+         //   OneExtentLogger.fail(result.getMethod().getMethodName() + " is failed. Stack Trace:"+"\\n" + , true);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -94,7 +94,7 @@ public class ListenerClassExtendReportOne implements ITestListener , ISuiteListe
     @Override
     public void onTestSkipped(ITestResult result){
         try {
-            ExtendLoggerToAddLogsInReportOne.skip(result.getMethod().getMethodName()+"is skipped",true);
+            OneExtentLogger.skip(result.getMethod().getMethodName()+"is skipped",true);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

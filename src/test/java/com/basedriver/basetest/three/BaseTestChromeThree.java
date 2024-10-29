@@ -1,12 +1,12 @@
 package com.basedriver.basetest.three;
 
-import enumconstants.ReadFileConstants;
-import path.DriverAndFilesPath;
+import enumconstants.ConfigProperties;
+import path.DriverAndFilesPathConstants;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import propertesfilesread.FrameoworksConstantPropertyFileRead;
+import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
 
 
 import java.time.Duration;
@@ -32,7 +32,7 @@ public  final class BaseTestChromeThree {
     public static void setUpChrome() throws Exception {
 
         if (Objects.isNull(driver)) {
-            System.setProperty("webdriver.chrome.driver", DriverAndFilesPath.chromePath());
+            System.setProperty("webdriver.chrome.driver", DriverAndFilesPathConstants.chromePath());
             // System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\drivers\\chromedriver.exe");
             ChromeOptions chromoptions = new ChromeOptions();
             chromoptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
@@ -42,7 +42,7 @@ public  final class BaseTestChromeThree {
             //driver.get("https://demoqa.com/modal-dialogs");
 
             //FramworkconstantFileRead class static  method is called when the value is required from its file to get we pass the key
-            driver.get(FrameoworksConstantPropertyFileRead.readPropertyFile(ReadFileConstants.URLTHREE));
+            driver.get(FrameoworksConstantFileReadPropertyUtils.get(ConfigProperties.URLTHREE));
         }
 
 

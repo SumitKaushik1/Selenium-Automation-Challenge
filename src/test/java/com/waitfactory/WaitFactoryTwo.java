@@ -1,5 +1,6 @@
 package com.waitfactory;
 
+import com.basedriver.basetest.two.BaseTestChromeTwo;
 import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Two.DemoQAWebsiteChallengeTwoTest;
 import org.openqa.selenium.WebElement;
@@ -31,4 +32,27 @@ public class WaitFactoryTwo {
             return null;
 
     }
+
+    public static WebElement explicitWaitToBePerform(WaitStrategyConstants waitStrategy,
+                                                      WebElement element){
+
+
+        if(waitStrategy== WaitStrategyConstants.CLICKABLE){
+            return   new WebDriverWait(BaseTestChromeTwo.getDriverChrome(), Duration.ofSeconds(100))
+                    .until(ExpectedConditions.elementToBeClickable(element));
+
+
+
+        }else if(waitStrategy== WaitStrategyConstants.NONE)
+            return  new WebDriverWait(BaseTestChromeTwo.getDriverChrome(), Duration.ofSeconds(10))
+                    .until(ExpectedConditions.elementToBeClickable(element));
+
+
+        else
+            return null;
+
+    }
+
+
+
 }

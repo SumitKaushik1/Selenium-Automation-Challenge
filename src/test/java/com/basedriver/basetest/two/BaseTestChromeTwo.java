@@ -1,12 +1,12 @@
 package com.basedriver.basetest.two;
 
-import enumconstants.ReadFileConstants;
-import path.DriverAndFilesPath;
+import enumconstants.ConfigProperties;
+import path.DriverAndFilesPathConstants;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import propertesfilesread.FrameoworksConstantPropertyFileRead;
+import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
 
 
 import java.time.Duration;
@@ -29,7 +29,7 @@ public final class BaseTestChromeTwo {
     //method call by class naem
     public static void setUpChrome() throws Exception {
 
-        System.setProperty("webdriver.chrome.driver", DriverAndFilesPath.chromePath());
+        System.setProperty("webdriver.chrome.driver", DriverAndFilesPathConstants.chromePath());
         //  System.setProperty("webdriver.chrome.driver","J:\\3. automation testing\\day41--selenium -UI elements\\AssignmentAnswers\\Appolo-Tools\\src\\test\\resources\\driver\\chromedriver.exe");
         //System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\drivers\\chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
@@ -42,7 +42,7 @@ public final class BaseTestChromeTwo {
 
 
         //FramworkconstantFileRead class static  method is called when the value is required from its file to get we pass the key
-        driver.get(FrameoworksConstantPropertyFileRead.readPropertyFile(ReadFileConstants.URLTWO));
+        driver.get(FrameoworksConstantFileReadPropertyUtils.get(ConfigProperties.URLTWO));
 
     }
 

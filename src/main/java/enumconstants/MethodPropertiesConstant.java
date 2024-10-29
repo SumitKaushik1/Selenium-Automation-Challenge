@@ -25,6 +25,12 @@ OVERRIDEREPORTS{
         public  String asLowerCase() {
             return   SKIPPEDSTEPSSCREENSHOTS.toString().toLowerCase();
         }
+    },
+
+
+    RETRYFAILEDTESTS{
+        @Override
+                public String asLowerCase(){ return RETRYFAILEDTESTS.toString().toLowerCase(); }
     };
 
     public abstract String asLowerCase();

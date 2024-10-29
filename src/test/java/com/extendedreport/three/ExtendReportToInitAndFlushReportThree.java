@@ -5,11 +5,10 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import path.DriverAndFilesPath;
+import path.DriverAndFilesPathConstants;
 
 import java.awt.*;
 import java.io.File;
-import java.io.IOException;
 import java.util.Objects;
 
 //final class ie it cannot be inherited ie it cannot be extended
@@ -39,9 +38,9 @@ public final  class ExtendReportToInitAndFlushReportThree {
         if(Objects.isNull(extent))
         {
             extent=new ExtentReports();
-          //  System.out.println("filepath"+DriverAndFilesPath.getExtentReportPathDemoQaThree());
-          //  ExtentSparkReporter spark=new ExtentSparkReporter(DriverAndFilesPath.getExtentReportPathDemoQaThree());
-            ExtentSparkReporter spark=new ExtentSparkReporter(new File(DriverAndFilesPath.getExtentReportPathDemoQaThree()));
+          //  System.out.println("filepath"+DriverAndFilesPathConstants.getExtentReportPathDemoQaThree());
+          //  ExtentSparkReporter spark=new ExtentSparkReporter(DriverAndFilesPathConstants.getExtentReportPathDemoQaThree());
+            ExtentSparkReporter spark=new ExtentSparkReporter(new File(DriverAndFilesPathConstants.getExtentReportPathDemoQaThree()));
             extent.attachReporter(spark);
 
             spark.config().setTheme(Theme.STANDARD);
@@ -59,8 +58,9 @@ public final  class ExtendReportToInitAndFlushReportThree {
         if(Objects.nonNull(extent)){
             extent.flush();
         }
+        ExtentManagerThreadLocalThree.unload();
 
-        Desktop.getDesktop().browse(new File(DriverAndFilesPath.getExtentReportPathDemoQaThree()).toURI());
+        Desktop.getDesktop().browse(new File(DriverAndFilesPathConstants.getExtentReportPathDemoQaThree()).toURI());
 
     }
 

@@ -1,10 +1,10 @@
 package com.basedriver.basetest.One;
 
-import enumconstants.ReadFileConstants;
-import path.DriverAndFilesPath;
-import propertesfilesread.FrameoworksConstantPropertyFileRead;
+import enumconstants.ConfigProperties;
+import path.DriverAndFilesPathConstants;
+import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
 
-import threadlocal.ThreadLocalWebDriver;
+import threadlocal.ThreadLocalWebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
@@ -31,8 +31,8 @@ public final class BaseTestEdgeOne {
 
     public static void setUpEdge() throws Exception {
         if (Objects.isNull(driver)) {
-            // System.setProperty("webDriver.edge.driver", DriverAndFilesPath.edgePath());
-            System.setProperty("webdriver.edge.driver", DriverAndFilesPath.edgePath());
+            // System.setProperty("webDriver.edge.driver", DriverAndFilesPathConstants.edgePath());
+            System.setProperty("webdriver.edge.driver", DriverAndFilesPathConstants.edgePath());
 
             driver = new EdgeDriver();
             //which ever thread use this method it will have the local threadlocal variale set as below
@@ -42,13 +42,13 @@ public final class BaseTestEdgeOne {
             //which ever thread useing this method that thread imopliclaty will have its own threadlocal variable
             //so the thread local variable is made static even it is static the when thrad comes to it
             //it will make its own threadlocal variblae ,static only give the feature to call by classname
-            ThreadLocalWebDriver.setDriver(driver);
-            ThreadLocalWebDriver.getDriver().manage().window().maximize();
-            ThreadLocalWebDriver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-            // ThreadLocalWebDriver.getDriver().get("https://demo.applitools.com/");
+            ThreadLocalWebDriverManager.setDriver(driver);
+            ThreadLocalWebDriverManager.getDriver().manage().window().maximize();
+            ThreadLocalWebDriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+            // ThreadLocalWebDriverManager.getDriver().get("https://demo.applitools.com/");
 
             //FramworkconstantFileRead class static  method is called when the value is required from its file to get we pass the key
-            ThreadLocalWebDriver.getDriver().get(FrameoworksConstantPropertyFileRead.readPropertyFile(ReadFileConstants.URLONE));
+            ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigProperties.URLONE));
 
 
         }
@@ -57,7 +57,7 @@ public final class BaseTestEdgeOne {
 
     // it used to get driver where there is not inheritance of this class directlly call this
     public static WebDriver getDriver() {
-        return  ThreadLocalWebDriver.getDriver();
+        return  ThreadLocalWebDriverManager.getDriver();
     }
 
     //method used by clas name only
@@ -65,7 +65,7 @@ public final class BaseTestEdgeOne {
         if (Objects.nonNull(driver))
             driver.quit();//firstly driver is reooved so that browser beome close
         //to save native memory
-        ThreadLocalWebDriver.unload();//thne threadlocal variable is removed which ic sholdering
+        ThreadLocalWebDriverManager.unload();//thne threadlocal variable is removed which ic sholdering
         //suppsoe thradlocal variable si only reomved that browser reamin open bz driver
         // instaance still holding the refeence of browser
 

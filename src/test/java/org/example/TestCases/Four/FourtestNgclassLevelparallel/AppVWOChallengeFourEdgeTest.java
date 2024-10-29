@@ -2,10 +2,10 @@ package org.example.TestCases.Four.FourtestNgclassLevelparallel;
 
 
 import com.basedriver.bast_test_control.four.BaseTestControlEdgeFour;
+import com.exceldataprovider.four.forread.ExcelFourDataProviderUtils;
 import com.pageobject.page.objectwithextendreport.four.edge.VWODashBoardPageEdge;
 import com.pageobject.page.objectwithextendreport.four.edge.VWOLoginEdgePage;
-import com.utilslikeexcelpojodataprovider.dataproviderexcel.four.DataProviderExcelOne;
-import com.utilslikeexcelpojodataprovider.dataproviderexcel.four.DataProviderFour;
+
 import customExceptions.KeyUrlNotFoundException;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebElement;
@@ -51,7 +51,7 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
     Object[][] getDataExcelVWOOne(){
 
 
-        return DataProviderFour.getDataVWOFour();
+        return ExcelFourDataProviderUtils.getDataVWOFour();
     }
 
 
@@ -62,7 +62,7 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
     // each one dimensional [][][],login,username ,passwrod goes to respective argument
  //   @Test(priority=0,dataProvider = "VWOURLFour")
    // public void loginCredentialsEdge(String loginId,String username,String password) throws Exception {
-    //@Test(priority=0,dataProvider = "getData",dataProviderClass = DataProviderFour.class )
+    //@Test(priority=0,dataProvider = "getData",dataProviderClass = ExcelFourDataProviderUtils.class )
    @Test(priority =0 )
     public void loginCredentialsEdge(Map<String,String> data) throws Exception {
 
@@ -87,8 +87,8 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
 
         //System.out.println(p.getProperty("emailAddress"));
         //  System.out.println(p.getProperty("password1"));
-        // System.out.println(LoginCredentialsJsonFileRead.readPropertyFile(ReadFileConstants.EMAILADDRESS));
-        //System.out.println(LoginCredentialsJsonFileRead.readPropertyFile(ReadFileConstants.PASSWORD1));
+        // System.out.println(LoginCredentialsJsonFileRead.readPropertyFile(ConfigProperties.EMAILADDRESS));
+        //System.out.println(LoginCredentialsJsonFileRead.readPropertyFile(ConfigProperties.PASSWORD1));
 
 
 
@@ -97,18 +97,18 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
         wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));  // wait till the page is fully loaded
 
 
-        // WebElement emailAddress = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='login-username']"));
+        // WebElement emailAddress = ThreadLocalWebDriverManager.getDriver().findElement(By.xpath("//input[@id='login-username']"));
         //emailAddress.sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("emailAddress"));
         // emailAddress.sendKeys(p.getProperty("emailAddress"));
         // emailAddress.sendKeys("akash@wuuvo.com");
-        // WebElement password = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='login-password']"));
+        // WebElement password = ThreadLocalWebDriverManager.getDriver().findElement(By.xpath("//input[@id='login-password']"));
         //  password.sendKeys(p.getProperty("password1"));
         //password.sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password1"));
         //password.sendKeys("Test@1234");
-        //WebElement signInButton = ThreadLocalWebDriver.getDriver().findElement(By.xpath("//button[@id='js-login-btn']"));
+        //WebElement signInButton = ThreadLocalWebDriverManager.getDriver().findElement(By.xpath("//button[@id='js-login-btn']"));
         //signInButton.click();
 
-        // WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(1000));//in this we set the driver to wait maximum 10 seconds
+        // WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriverManager.getDriver(), Duration.ofSeconds(1000));//in this we set the driver to wait maximum 10 seconds
 
 
         // WebElement firstLine=driver.findElement(By.xpath("//span[@data-qa='lufexuloga']"));
@@ -125,7 +125,7 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
         // WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='Fw(semi-bold) ng-binding']")));
         // WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span[class='Fw(semi-bold) ng-binding']")));
 
-        // ((JavascriptExecutor) ThreadLocalWebDriver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", text);
+        // ((JavascriptExecutor) ThreadLocalWebDriverManager.getDriver()).executeScript("arguments[0].scrollIntoView(true);", text);
         //System.out.println(text.getText());
 
 
@@ -174,7 +174,7 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
 
 
     @Test(priority = 1)
-    void checkUrlDashboardPageEdge() throws KeyUrlNotFoundException {
+    void checkUrlDashboardPageEdge(Map<String,String> data) throws KeyUrlNotFoundException {
 
         // for the logger in the extended report
         // it is just like a log ie the test is created  here

@@ -2,7 +2,7 @@ package com.screenshot;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import threadlocal.ThreadLocalWebDriver;
+import threadlocal.ThreadLocalWebDriverManager;
 
 public class ScreenshotUtilsFour {
 
@@ -11,7 +11,7 @@ public class ScreenshotUtilsFour {
 
         //webdriver is the interface and its  impelemention class has also implemented the TakeScrrenshot interface
         //both
-        return ((TakesScreenshot) ThreadLocalWebDriver.getDriver()).getScreenshotAs(OutputType.BASE64);
+        return ((TakesScreenshot) ThreadLocalWebDriverManager.getDriver()).getScreenshotAs(OutputType.BASE64);
         //directly getdriver() from basetest package
 
     }

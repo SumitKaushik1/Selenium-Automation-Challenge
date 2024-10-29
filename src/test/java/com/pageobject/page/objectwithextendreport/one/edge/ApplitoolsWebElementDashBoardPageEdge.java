@@ -1,11 +1,11 @@
 package com.pageobject.page.objectwithextendreport.one.edge;
 
 import com.pageobject.basepageobject.one.BasePageObjectOneEdge;
-import com.utilslikeexcelpojodataprovider.challengeutils.one.CalculateEarnedSpent;
+import com.pojo.Pojo.one.CalculateEarnedSpent;
 import customExceptions.KeyUrlNotFoundException;
 import org.example.TestCases.One.One.testNgclassLevelparalleltestngfile.ApplitoolsChallengeOneEdgeTest;
 import org.openqa.selenium.By;
-import threadlocal.ThreadLocalWebDriver;
+import threadlocal.ThreadLocalWebDriverManager;
 
 //class is made final so that it cannot be  inherited by any other class
 public final  class ApplitoolsWebElementDashBoardPageEdge extends BasePageObjectOneEdge {
@@ -19,14 +19,14 @@ public final  class ApplitoolsWebElementDashBoardPageEdge extends BasePageObject
 
     public ApplitoolsWebElementDashBoardPageEdge getCurrentUrl() throws KeyUrlNotFoundException {
 
-        String currentUrl=ThreadLocalWebDriver.getDriver().getCurrentUrl();
+        String currentUrl= ThreadLocalWebDriverManager.getDriver().getCurrentUrl();
         return this;
     }
 
     public ApplitoolsWebElementDashBoardPageEdge negativeSpanApplitoolsDashbord(CalculateEarnedSpent calculateEarnedSpent, ApplitoolsChallengeOneEdgeTest applitoolsChallengeOneEdgeTest) throws KeyUrlNotFoundException {
 
         //what we are doing we are finding hte element here and doing the operation on it and retrun this class object back
-        //ThreadLocalWebDriver.getDriver().
+        //ThreadLocalWebDriverManager.getDriver().
           //     findElements(negativeSpansApplitoolsDashBoard)
         //.forEach( amountSpent -> calculateEarnedSpent.amountSpent(Double.parseDouble(amountSpent.getText().replaceAll("USD", "").replaceAll("[^\\d.-]", "").trim())));
 
@@ -39,7 +39,7 @@ public final  class ApplitoolsWebElementDashBoardPageEdge extends BasePageObject
     public ApplitoolsWebElementDashBoardPageEdge positiveSpanApplitoolsDashbord(CalculateEarnedSpent calculateEarnedSpent,ApplitoolsChallengeOneEdgeTest applitoolsChallengeOneEdgeTest) throws KeyUrlNotFoundException {
 
         //what we are doing we are finding hte element here and doing the operation on it and retrun this class object back
-       // ThreadLocalWebDriver.getDriver().
+       // ThreadLocalWebDriverManager.getDriver().
          //       findElements(positiveSpansApplitoolsDashBoard)
            //     .forEach( amountEarned -> calculateEarnedSpent.amountEarned(Double.parseDouble(amountEarned.getText().replaceAll("USD", "").replaceAll("[^\\d.-]", "").trim()))
             //    );

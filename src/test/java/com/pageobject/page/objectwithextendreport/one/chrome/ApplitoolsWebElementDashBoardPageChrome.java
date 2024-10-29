@@ -2,7 +2,7 @@ package com.pageobject.page.objectwithextendreport.one.chrome;
 
 import com.pageobject.basepageobject.one.BasePageObjectOneChrome;
 import customExceptions.KeyUrlNotFoundException;
-import com.utilslikeexcelpojodataprovider.challengeutils.one.CalculateEarnedSpent;
+import com.pojo.Pojo.one.CalculateEarnedSpent;
 import org.example.TestCases.One.One.testNgclassLevelparalleltestngfile.ApplitoolsChallengeOneChromeTest;
 import org.openqa.selenium.By;
 
@@ -25,7 +25,7 @@ public final  class ApplitoolsWebElementDashBoardPageChrome extends BasePageObje
     public ApplitoolsWebElementDashBoardPageChrome negativeSpanApplitoolsDashbord(CalculateEarnedSpent calculateEarnedSpent,ApplitoolsChallengeOneChromeTest applitoolsChallengeOneChromeTest) throws KeyUrlNotFoundException {
 
         //what we are doing we are finding hte element here and doing the operation on it and retrun this class object back
-        //ThreadLocalWebDriver.getDriver().
+        //ThreadLocalWebDriverManager.getDriver().
           //     findElements(negativeSpansApplitoolsDashBoard)
         //.forEach( amountSpent -> calculateEarnedSpent.amountSpent(Double.parseDouble(amountSpent.getText().replaceAll("USD", "").replaceAll("[^\\d.-]", "").trim())));
 
@@ -38,7 +38,7 @@ public final  class ApplitoolsWebElementDashBoardPageChrome extends BasePageObje
     public ApplitoolsWebElementDashBoardPageChrome positiveSpanApplitoolsDashbord(CalculateEarnedSpent calculateEarnedSpent,ApplitoolsChallengeOneChromeTest applitoolsChallengeOneChromeTest) throws KeyUrlNotFoundException {
 
         //what we are doing we are finding hte element here and doing the operation on it and retrun this class object back
-       // ThreadLocalWebDriver.getDriver().
+       // ThreadLocalWebDriverManager.getDriver().
          //       findElements(positiveSpansApplitoolsDashBoard)
            //     .forEach( amountEarned -> calculateEarnedSpent.amountEarned(Double.parseDouble(amountEarned.getText().replaceAll("USD", "").replaceAll("[^\\d.-]", "").trim()))
             //    );

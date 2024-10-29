@@ -12,12 +12,12 @@ public class VWODashBoardPageChrome extends BasePageObjectChromeFour {
 
     public WebElement vWODashbord( AppVWOChallengeFourChromeTest appVWOChallengeFourChromeTest) throws KeyUrlNotFoundException {
 
-       // WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(1000));//in this we set the driver to wait maximum 10 seconds
+       // WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriverManager.getDriver(), Duration.ofSeconds(1000));//in this we set the driver to wait maximum 10 seconds
 
 
       //  WebElement text = wait.until(ExpectedConditions.visibilityOfElementLocated(textVWOLoginPage));
         this.driverWaiting(textVWOLoginPage, WaitStrategyConstants.VISIBLE,appVWOChallengeFourChromeTest);
-      //  ((JavascriptExecutor) ThreadLocalWebDriver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", text);
+      //  ((JavascriptExecutor) ThreadLocalWebDriverManager.getDriver()).executeScript("arguments[0].scrollIntoView(true);", text);
 
        WebElement text = this.findElement(textVWOLoginPage,appVWOChallengeFourChromeTest);
 

@@ -4,12 +4,12 @@ import com.basedriver.bast_test_control.one.BaseTestControlChromeOne;
 import com.pageobject.page.objectwithextendreport.one.chrome.ApplitoolsWebElementDashBoardPageChrome;
 import com.pageobject.page.objectwithextendreport.one.chrome.ApplitoolsWebElementLoginPageChrome;
 import customExceptions.KeyUrlNotFoundException;
-import enumconstants.ReadFileConstants;
+import enumconstants.ConfigProperties;
 import jsonfileread.LoginCredentialsJsonFileRead;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterSuite;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
-import com.utilslikeexcelpojodataprovider.challengeutils.one.CalculateEarnedSpent;
+import com.pojo.Pojo.one.CalculateEarnedSpent;
 import org.testng.annotations.Test;
 
 import java.text.DecimalFormat;
@@ -70,7 +70,7 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
     //Object[] getDataExcelAppilotoolsOne(){
 
 
-      //  return DataProviderExcelOne.getDataExcelAppilotools();
+      //  return ExcelOneDataProviderUtils.getDataExcelAppilotools();
     //}
 
 
@@ -91,7 +91,7 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
 
 
         //Testng liberary--> //Testng liberary needs many statements to for checking different condtion
-        //Assert.assertEquals(ThreadLocalWebDriver.getDriver().getCurrentUrl(),"https://demo.applitools.com/");
+        //Assert.assertEquals(ThreadLocalWebDriverManager.getDriver().getCurrentUrl(),"https://demo.applitools.com/");
         //Assert is used to abort the program at the particular line if certain condition is not fulfill
         //if that condition is satified thne code will continiue
         //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
@@ -127,29 +127,29 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
 
 
 
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.USERNAME));
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ReadFileConstants.PASSWORD));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ConfigProperties.USERNAME));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ConfigProperties.PASSWORD));
 
         //anchor tag we use
         //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
         //  makeAppointmentButton.click();
 
 
-        //  WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriver.getDriver(), Duration.ofSeconds(20));
+        //  WebDriverWait wait = new WebDriverWait(ThreadLocalWebDriverManager.getDriver(), Duration.ofSeconds(20));
         // WebElement userName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='username']")));
 
 
-        // WebElement userName= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='username']"));
-        //WebElement userName= ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='username']"));
+        // WebElement userName= ThreadLocalWebDriverManager.getDriver().findElement(By.xpath("//input[@id='username']"));
+        //WebElement userName= ThreadLocalWebDriverManager.getDriver().findElement(By.xpath("//input[@id='username']"));
         //userName.sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("userName"));
         // userName.sendKeys(p.getProperty("userName"));
         // userName.sendKeys("Admin");
-        // WebElement password =ThreadLocalWebDriver.getDriver().findElement(By.xpath("//input[@id='password']"));//input[@id='password']
+        // WebElement password =ThreadLocalWebDriverManager.getDriver().findElement(By.xpath("//input[@id='password']"));//input[@id='password']
 
         // password.sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password"));
         // password.sendKeys(p.getProperty("password"));
         // password.sendKeys("Password@123");
-        //WebElement signButton=ThreadLocalWebDriver.getDriver().findElement(By.xpath("//a[@id='log-in']"));
+        //WebElement signButton=ThreadLocalWebDriverManager.getDriver().findElement(By.xpath("//a[@id='log-in']"));
         //signButton.click();
 
 
@@ -162,9 +162,9 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
         ApplitoolsWebElementLoginPageChrome appiloToolsWebElement=new ApplitoolsWebElementLoginPageChrome();
         appiloToolsWebElement.
                 enterUserNameApplitools(LoginCredentialsJsonFileRead.
-                        readJsonFile(ReadFileConstants.USERNAME),this)
+                        readJsonFile(ConfigProperties.USERNAME),this)
                 .enterPasswordApplitools(LoginCredentialsJsonFileRead.
-                        readJsonFile(ReadFileConstants.PASSWORD),this).
+                        readJsonFile(ConfigProperties.PASSWORD),this).
                 clickButtonApplitools(this);
 
 
@@ -205,11 +205,11 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
 
         //this is done before assertion  line bz if it fails then control flow stops and the code this will be unreachable
         // for the logger in the extended report
-       // if(ThreadLocalWebDriver.getDriver().getCurrentUrl().equals("https://demo.applitools.com/app.html"))
+       // if(ThreadLocalWebDriverManager.getDriver().getCurrentUrl().equals("https://demo.applitools.com/app.html"))
             // it is the log if this line is executed ie means test is passed
-         //   ExtendLoggerToAddLogsInReportOne.pass("logged in ");
+         //   OneExtentLogger.pass("logged in ");
         //else
-          //  ExtendLoggerToAddLogsInReportOne.fail("logged in  fail");
+          //  OneExtentLogger.fail("logged in  fail");
 
 
 
@@ -219,7 +219,7 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
         // as is used to give message on the assertion fail
         //as() is used to give message on assertion fail for the method comming after it
         // this can take any type of object -> String ,map,locadate or anything
-        // Assertions.assertThat(ThreadLocalWebDriver.getDriver().getCurrentUrl()).as("string is null").isNotNull().isEqualTo("https://demo.applitools.com/app.html");
+        // Assertions.assertThat(ThreadLocalWebDriverManager.getDriver().getCurrentUrl()).as("string is null").isNotNull().isEqualTo("https://demo.applitools.com/app.html");
         //regix is used
 
 
@@ -293,7 +293,7 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
         System.out.println();*/
 
 
-       //List<WebElement> negativeSpans =ThreadLocalWebDriver.getDriver().findElements(By.xpath("//table[@class='table table-padded']//span[contains(@class, 'text-danger') and contains(text(), '-')]"));
+       //List<WebElement> negativeSpans =ThreadLocalWebDriverManager.getDriver().findElements(By.xpath("//table[@class='table table-padded']//span[contains(@class, 'text-danger') and contains(text(), '-')]"));
 
         // Iterate over the negative <span> elements and print their text content
         //for (WebElement amountSpent : negativeSpans) {
@@ -305,7 +305,7 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
 /*        originalString.replaceAll("[^\\d.-]", "").trim(); // Removes all characters except digits, minus sign, and dot*/
        // System.out.println(CalculateEarnedSpent.showSpent());
 
-        //List<WebElement> positiveSpans = ThreadLocalWebDriver.getDriver().findElements(By.xpath("//table[@class='table table-padded']//span[contains(@class, 'text-success') and not(contains(text(), '-'))]"));
+        //List<WebElement> positiveSpans = ThreadLocalWebDriverManager.getDriver().findElements(By.xpath("//table[@class='table table-padded']//span[contains(@class, 'text-success') and not(contains(text(), '-'))]"));
         // Iterate over the negative <span> elements and print their text content
         //for (WebElement amountEarned : positiveSpans) {
         //   calculateEarnedSpent.amountEarned(Double.parseDouble(amountEarned.getText().replaceAll("USD", "").replaceAll("[^\\d.-]", "").trim()));
@@ -335,9 +335,9 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
         // for the logger in the extended report
         //if(Double.parseDouble(df.format(calculateEarnedSpent.showEarned()+calculateEarnedSpent.showSpent())) == 1996.22)
             // it is the log if this line is executed ie means test is passed
-          //  ExtendLoggerToAddLogsInReportOne.pass("calculation correct ");
+          //  OneExtentLogger.pass("calculation correct ");
         //else
-          //  ExtendLoggerToAddLogsInReportOne.fail("calculation not correct");
+          //  OneExtentLogger.fail("calculation not correct");
 
 
 
