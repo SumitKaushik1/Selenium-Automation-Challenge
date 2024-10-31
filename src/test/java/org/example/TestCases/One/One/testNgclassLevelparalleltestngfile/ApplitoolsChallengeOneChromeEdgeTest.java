@@ -1,8 +1,8 @@
 package org.example.TestCases.One.One.testNgclassLevelparalleltestngfile;
 
 import com.basedriver.bast_test_control.one.ChromeEdgeOneBaseTest;
-import com.pageobject.page.objectwithextendreport.one.ApplitoolsWebElementDashBoardPage;
-import com.pageobject.page.objectwithextendreport.one.ApplitoolsWebElementLoginPage;
+import com.pageobjectandextendreport.page.object.one.ApplitoolsWebElementDashBoardPage;
+import com.pageobjectandextendreport.page.object.one.ApplitoolsWebElementLoginPage;
 import com.pojo.Pojo.one.CalculateEarnedSpent;
 import customExceptions.KeyUrlNotFoundException;
 import enumconstants.ConfigProperties;

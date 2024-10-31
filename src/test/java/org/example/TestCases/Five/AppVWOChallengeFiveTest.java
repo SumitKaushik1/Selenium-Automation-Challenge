@@ -1,8 +1,8 @@
 package org.example.TestCases.Five;
 
 import com.basedriver.bast_test_control.five.BasetTestControlChromeFive;
-import com.pageobject.page.objectwithextendreport.five.VWOHeatmapPage;
-import com.pageobject.page.objectwithextendreport.five.VWOTabPage;
+import com.pageobjectandextendreport.page.object.five.VWOHeatmapPage;
+import com.pageobjectandextendreport.page.object.five.VWOTabPage;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;

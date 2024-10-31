@@ -23,7 +23,7 @@ public class ExcelFileToWriteUseControlTestDemoQa {
         data.put("1", new Object[]{"TestName", "TestDescription","Execute","Priority", "count"});
         data.put("2", new Object[]{"clickThirdEditButton", "click on third button ","Yes","0", "1"});
         data.put("3", new Object[]{"addDetails", "add details  in box ","Yes","1", "1"});
-        data.put("4", new Object[]{"clickOnHamburgerbuttonSubList", "checkhamburgerbutton","Yes","2", "1"});
+        data.put("4", new Object[]{"clickOnHamburgerbuttonSubList", "click on the hamburger button ","Yes","2", "1"});
 
 
 

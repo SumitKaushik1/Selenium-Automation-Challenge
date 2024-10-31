@@ -2,8 +2,8 @@ package org.example.TestCases.Four.FourtestNgclassLevelparallel;
 
 import com.basedriver.bast_test_control.four.BaseTestControlChromeFour;
 import com.exceldataprovider.four.forread.ExcelFourDataProviderUtils;
-import com.pageobject.page.objectwithextendreport.four.chrome.VWODashBoardPageChrome;
-import com.pageobject.page.objectwithextendreport.four.chrome.VWOLoginChromePage;
+import com.pageobjectandextendreport.page.object.four.chrome.VWODashBoardPageChrome;
+import com.pageobjectandextendreport.page.object.four.chrome.VWOLoginChromePage;
 
 import customExceptions.KeyUrlNotFoundException;
 import org.assertj.core.api.Assertions;

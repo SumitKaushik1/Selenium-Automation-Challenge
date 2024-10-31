@@ -63,6 +63,7 @@ public final  class DriverAndFilesPathConstants {
     private static final String  EXCEL_PATH_APPILO_TOOLS_TWO;
 
     private static final String  EXCEL_PATH_DEMOQA_TWO;
+   private static final String  EXCEL_PATH_DEMOQA_METHOD_INTERCEPTOR_TWO;
 
 
     static{
@@ -116,6 +117,8 @@ public final  class DriverAndFilesPathConstants {
         EXCEL_PATH_APPILO_TOOLS_TWO= EXCEL_FILE_PATH +"AppilloTestControlAndBrowserOne.xlsx";
 
         EXCEL_PATH_DEMOQA_TWO=EXCEL_FILE_PATH+"DemoQATestControlAndBrowserFour.xlsx";
+
+        EXCEL_PATH_DEMOQA_METHOD_INTERCEPTOR_TWO=EXCEL_FILE_PATH+"DemoQaTestControl2Four.xlsx";
     }
 
 
@@ -238,6 +241,11 @@ public final  class DriverAndFilesPathConstants {
         return   EXCEL_PATH_DEMOQA_TWO;
     }
 
+
+    public static String getExcelIterationDataSheetControlTwo(){
+
+        return EXCEL_PATH_DEMOQA_METHOD_INTERCEPTOR_TWO;
+    }
 
 
 

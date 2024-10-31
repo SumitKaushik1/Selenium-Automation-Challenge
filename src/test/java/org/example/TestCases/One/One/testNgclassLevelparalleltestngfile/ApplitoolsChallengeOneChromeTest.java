@@ -1,8 +1,8 @@
 package org.example.TestCases.One.One.testNgclassLevelparalleltestngfile;
 
 import com.basedriver.bast_test_control.one.BaseTestControlChromeOne;
-import com.pageobject.page.objectwithextendreport.one.chrome.ApplitoolsWebElementDashBoardPageChrome;
-import com.pageobject.page.objectwithextendreport.one.chrome.ApplitoolsWebElementLoginPageChrome;
+import com.pageobjectandextendreport.page.object.one.chrome.ApplitoolsWebElementDashBoardPageChrome;
+import com.pageobjectandextendreport.page.object.one.chrome.ApplitoolsWebElementLoginPageChrome;
 import customExceptions.KeyUrlNotFoundException;
 import enumconstants.ConfigProperties;
 import jsonfileread.LoginCredentialsJsonFileRead;

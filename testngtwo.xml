@@ -4,10 +4,11 @@
 <suite name="All Test Suite">
 
     <listeners>
-        <!-- <listener class-name="One.com.listener.controltestandextendreportandexcel.MethodInterceptorzListenerControlTestOne"/>
-        <listener class-name="One.com.listener.controltestandextendreportandexcel.AnnotationTransformerListenerControlTestOne"/>-->
+         <listener class-name="com.listener.controltestandextendreportandexcel.two.MethodInterceptorListenerControlTest2Two"/>
+
         <listener class-name="com.listener.controltestandextendreportandexcel.two.ListenerClassExtendReportTwo"/>
-        <listener class-name="com.listener.controltestandextendreportandexcel.two.AnnotaionTreansformerListnerForRetryAndDataProvider"/>
+
+          <listener class-name="com.listener.controltestandextendreportandexcel.two.AnnotaionTreansformerListnerForRetryAndDataProvider"/>
     </listeners>
 
 
@@ -18,7 +19,7 @@
                 <methods>
                     <include name="clickThirdEditButton"/>
                     <include name="addDetails"/>
-                    <include name=" clickOnHamburgerbuttonSubList"/>
+                    <include name="clickOnHamburgerbuttonSubList"/>
                 </methods>
             </class>
         </classes>

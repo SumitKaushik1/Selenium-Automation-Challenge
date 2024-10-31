@@ -1,8 +1,8 @@
 package org.example.TestCases.One.One.testNgclassLevelparalleltestngfile;
 
 import com.basedriver.bast_test_control.one.BaseTestControlEdgeOne;
-import com.pageobject.page.objectwithextendreport.one.edge.ApplitoolsWebElementDashBoardPageEdge;
-import com.pageobject.page.objectwithextendreport.one.edge.ApplitoolsWebElementLoginPageEdge;
+import com.pageobjectandextendreport.page.object.one.edge.ApplitoolsWebElementDashBoardPageEdge;
+import com.pageobjectandextendreport.page.object.one.edge.ApplitoolsWebElementLoginPageEdge;
 import customExceptions.KeyUrlNotFoundException;
 import enumconstants.ConfigProperties;
 import jsonfileread.LoginCredentialsJsonFileRead;

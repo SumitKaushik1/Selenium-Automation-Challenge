@@ -1,9 +1,9 @@
 package org.example.TestCases.Two;
 
 import com.basedriver.bast_test_control.two.BaseTestControlChromeTwo;
-import com.pagefactory.two.DemoQaHomePage;
-import com.pageobject.page.objectwithextendreport.two.DemoQAWebTablePage;
-import customExceptions.KeyUrlNotFoundException;
+
+import com.pageobjectandextendreport.page.object.two.DemoQAWebTablePage;
+import com.pageobjectandextendreport.pagefactory.two.DemoQaHomePage;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.*;
 import org.testng.annotations.AfterSuite;
@@ -51,7 +51,8 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
 
 
     @Test(priority=0)
-    void clickThirdEditButton(Map<String,String> data) throws Exception {
+   void clickThirdEditButton(Map<String,String> data) throws Exception {
+      //void clickThirdEditButton() throws Exception {
 
         this.setUpControlChrome();
 
@@ -136,7 +137,8 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
 
 
     @Test(priority=1)
-    void addDetails(Map<String,String> data) throws Exception {
+   void addDetails(Map<String,String>data) throws Exception {
+    //void addDetails() throws Exception {
 
 
 
@@ -230,11 +232,15 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
 
 
     @Test(priority = 2)
-    void clickOnHamburgerbuttonSubList(Map<String,String> data) throws Exception {
+  void clickOnHamburgerbuttonSubList(Map<String,String>data) throws Exception {
+    //   void clickOnHamburgerbuttonSubList() throws Exception {
 
+       // Assert.assertTrue(true, "This test will always pass");
 
-        String title=new DemoQaHomePage().clickHamburger().clickOnSubMenuItem("Text Box").getTitle();
-        System.out.println(title);
+       WebElement title=new DemoQaHomePage().clickHamburger().clickOnSubMenuItem("Text Box").getTitle();
+      //  System.out.println(title);
+        System.out.println(title.getText());
+        Assertions.assertThat(title).as("no text").extracting(WebElement :: getText).toString().equals("Text Box");
     }
 
     @AfterSuite

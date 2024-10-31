@@ -3,8 +3,8 @@ package org.example.TestCases.Four.FourtestNgclassLevelparallel;
 
 import com.basedriver.bast_test_control.four.BaseTestControlEdgeFour;
 import com.exceldataprovider.four.forread.ExcelFourDataProviderUtils;
-import com.pageobject.page.objectwithextendreport.four.edge.VWODashBoardPageEdge;
-import com.pageobject.page.objectwithextendreport.four.edge.VWOLoginEdgePage;
+import com.pageobjectandextendreport.page.object.four.edge.VWODashBoardPageEdge;
+import com.pageobjectandextendreport.page.object.four.edge.VWOLoginEdgePage;
 
 import customExceptions.KeyUrlNotFoundException;
 import org.assertj.core.api.Assertions;

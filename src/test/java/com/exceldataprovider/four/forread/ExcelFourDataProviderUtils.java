@@ -100,8 +100,8 @@ public class ExcelFourDataProviderUtils {
 
 
 
-    // public static void main (String args[]){
-    public static List<Map<String, String>> getTestDetails(String sheetname) {
+   //  public static void main (String args[]){
+   public static List<Map<String, String>> getTestDetails(String sheetname) {
 
 
         File file = new File(DriverAndFilesPathConstants.getExcelVWOLoginControlFilePath());
@@ -121,7 +121,7 @@ public class ExcelFourDataProviderUtils {
         try {
             fs = new FileInputStream(DriverAndFilesPathConstants.getExcelVWOLoginControlFilePath());
             XSSFWorkbook workbook = new XSSFWorkbook(fs);
-            // String sheetname="vwo login user and password";
+           //  String sheetname="vwo login user and password";
             XSSFSheet sheet = workbook.getSheet(sheetname);
 
             // XSSFSheet sheet= workbook.getSheetAt(0);
@@ -158,7 +158,7 @@ public class ExcelFourDataProviderUtils {
             }
         }
 
-        System.out.println(Arrays.toString(list.toArray()));
+        //System.out.println(Arrays.toString(list.toArray()));
         return list;
     }
 
