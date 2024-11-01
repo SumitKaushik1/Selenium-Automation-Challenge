@@ -53,7 +53,7 @@ public final  class ExtendReportToInitAndFlushReportFive {
             extent.flush();
         }
 
-        ExtentManagerThreadLocalFive.unload();
+        ThreadLocalFiveExtentManager.unload();
 
         Desktop.getDesktop().browse(new File(DriverAndFilesPathConstants.getExtentReportPathVWOHeatMapFive()).toURI());
 
@@ -62,7 +62,7 @@ public final  class ExtendReportToInitAndFlushReportFive {
     public static void createTest(String testcasename){
 
 
-        ExtentManagerThreadLocalFive.setExtentTest(extent.createTest(testcasename));
+        ThreadLocalFiveExtentManager.setExtentTest(extent.createTest(testcasename));
     }
 
 

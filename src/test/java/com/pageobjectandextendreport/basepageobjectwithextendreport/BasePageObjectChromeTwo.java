@@ -60,8 +60,8 @@ public class BasePageObjectChromeTwo {
 
         element.click();
 
-       // ExtendLoggerToAddLogInReportTwo.pass(elementname+" is clicked");
-   //  ExtendLoggerToAddLogInReportTwo.pass(elementname+" is clicked",true);
+       // TwoExtentLogger.pass(elementname+" is clicked");
+   //  TwoExtentLogger.pass(elementname+" is clicked",true);
 
 
     }
@@ -80,8 +80,8 @@ public class BasePageObjectChromeTwo {
 
         webElement.click();
 
-        //  ExtendLoggerToAddLogInReportTwo.pass(elementname+" is clicked");
-     //  ExtendLoggerToAddLogInReportTwo.pass(elementname+" is clicked",true);
+        //  TwoExtentLogger.pass(elementname+" is clicked");
+     //  TwoExtentLogger.pass(elementname+" is clicked",true);
 
 
     }
@@ -89,7 +89,7 @@ public class BasePageObjectChromeTwo {
 
     protected WebElement getPageTitle(By titleOfpage,String elementname ) throws Exception {
         WebElement webElement=this.findElement(titleOfpage);
-       // ExtendLoggerToAddLogInReportTwo.pass(elementname+" is clicked",true);
+       // TwoExtentLogger.pass(elementname+" is clicked",true);
          return webElement;
     }
 

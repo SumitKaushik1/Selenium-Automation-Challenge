@@ -1,30 +1,29 @@
-package com.extendedreport.three;
+package com.extendedreport.two;
 
 
 // it cannot be inherited or exend bz final clsss
 
 import com.aventstack.extentreports.MediaEntityBuilder;
-import com.screenshot.ScreenshotUtilsThree;
+import com.screenshot.ScreenshotUtilsTwo;
 import enumconstants.MethodPropertiesConstant;
 import propertesfilesread.MethodPropertiesPropertyFileRead;
 
 // this class is made to avoid verbosity of the methods manes to hide the names of all methods which are using acctually
-public final class ExtendLoggerToAddLogInReportThree {
-    private ExtendLoggerToAddLogInReportThree(){}
+public final class TwoExtentLogger {
+    private TwoExtentLogger(){}
 
   public static void pass(String message){
-        ThreadLocalThreeExtentManager.getExtentTest().pass(message);
+        ThreadLocalTwoExtentManager.getExtentTest().pass(message);
 
   }
     public static void fail(String message){
-        ThreadLocalThreeExtentManager.getExtentTest().fail(message);
+        ThreadLocalTwoExtentManager.getExtentTest().fail(message);
 
     }
     public static void skip(String message){
-        ThreadLocalThreeExtentManager.getExtentTest().skip(message);
+        ThreadLocalTwoExtentManager.getExtentTest().skip(message);
 
     }
-
 
 
 
@@ -34,10 +33,10 @@ public final class ExtendLoggerToAddLogInReportThree {
     public static void pass(String message,boolean isScreenshotNeeded)throws Exception{
         if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.PASSEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes")&& isScreenshotNeeded){
             //isScreenshotNeeded is the local variable
-            ThreadLocalThreeExtentManager.getExtentTest().pass(message, MediaEntityBuilder.createScreenCaptureFromBase64String( ScreenshotUtilsThree.getBase64Imgage()).build());
+            ThreadLocalTwoExtentManager.getExtentTest().pass(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsTwo.getBase64Imgage()).build());
         }
         else{
-            ExtendLoggerToAddLogInReportThree.pass(message);
+            TwoExtentLogger.pass(message);
         }
     }
 
@@ -47,10 +46,10 @@ public final class ExtendLoggerToAddLogInReportThree {
     public static void fail(String message,boolean isScreenshotNeeded)throws Exception{
         if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.FAILEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes")&& isScreenshotNeeded){
             //isScreenshotNeeded is the local variable
-            ThreadLocalThreeExtentManager.getExtentTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsThree.getBase64Imgage()).build());
+            ThreadLocalTwoExtentManager.getExtentTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsTwo.getBase64Imgage()).build());
         }
         else{
-            ExtendLoggerToAddLogInReportThree.fail(message);
+            TwoExtentLogger.fail(message);
         }
     }
 
@@ -61,10 +60,13 @@ public final class ExtendLoggerToAddLogInReportThree {
     public static void skip(String message,boolean isScreenshotNeeded)throws Exception {
         if (MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.SKIPPEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes") && isScreenshotNeeded) {
             //isScreenshotNeeded is the local variable
-            ThreadLocalThreeExtentManager.getExtentTest().skip(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsThree.getBase64Imgage()).build());
+            ThreadLocalTwoExtentManager.getExtentTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsTwo.getBase64Imgage()).build());
         } else {
-            ExtendLoggerToAddLogInReportThree.skip(message);
+            TwoExtentLogger.skip(message);
         }
     }
+
+
+
 
 }

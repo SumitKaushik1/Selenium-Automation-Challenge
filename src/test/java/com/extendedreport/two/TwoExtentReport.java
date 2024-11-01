@@ -1,4 +1,4 @@
-package com.extendedreport.three;
+package com.extendedreport.two;
 
 
 import com.aventstack.extentreports.ExtentReports;
@@ -12,10 +12,10 @@ import java.io.File;
 import java.util.Objects;
 
 //final class ie it cannot be inherited ie it cannot be extended
-public final  class ExtendReportToInitAndFlushReportThree {
+public final  class TwoExtentReport {
 
     //its object outside class cannot be made
- private ExtendReportToInitAndFlushReportThree(){}
+ private TwoExtentReport(){}
 
 
 
@@ -25,24 +25,22 @@ public final  class ExtendReportToInitAndFlushReportThree {
 
     public static ExtentTest test;
 
-
     public static void main (String args[]) throws Exception {
         initReports();
     }
 
-    // you have to call this method at the time of driver is made ie is in package com.base.bast_test_control.three;
-    // it is done int the before suit of hte package com.base.bast_test_control.three;
+
+    // you have to call this method at the time of driver is made ie is in package com.base.bast_test_control.one;
+   // it is odne in teh
+    //   // it is done in the @afteresuite in  package com.base.bast_test_control.two;
+
     public static void initReports() throws Exception {
-
-
         if(Objects.isNull(extent))
         {
             extent=new ExtentReports();
-          //  System.out.println("filepath"+DriverAndFilesPathConstants.getExtentReportPathDemoQaThree());
-          //  ExtentSparkReporter spark=new ExtentSparkReporter(DriverAndFilesPathConstants.getExtentReportPathDemoQaThree());
-            ExtentSparkReporter spark=new ExtentSparkReporter(new File(DriverAndFilesPathConstants.getExtentReportPathDemoQaThree()));
+            System.out.println(DriverAndFilesPathConstants.getExtentReportPathDemoQaTwo());
+            ExtentSparkReporter spark=new ExtentSparkReporter(DriverAndFilesPathConstants.getExtentReportPathDemoQaTwo());
             extent.attachReporter(spark);
-
             spark.config().setTheme(Theme.STANDARD);
             // YOU CAN CHANGE THE THEME OF THE PAGE JUST PRESSING THE l on the page
 
@@ -53,21 +51,23 @@ public final  class ExtendReportToInitAndFlushReportThree {
     }
 
 
-    // it is done in the aftersuit in teh package com.base.bast_test_control.three;
+
+
     public static void flushReports() throws Exception {
         if(Objects.nonNull(extent)){
             extent.flush();
         }
-        ThreadLocalThreeExtentManager.unload();
 
-        Desktop.getDesktop().browse(new File(DriverAndFilesPathConstants.getExtentReportPathDemoQaThree()).toURI());
+        ThreadLocalTwoExtentManager.unload();
+        Desktop.getDesktop().browse(new File(DriverAndFilesPathConstants.getExtentReportPathDemoQaTwo()).toURI());
+
 
     }
 
     public static void createTest(String testcasename){
 
-        System.out.println("extendmanagerthee is set to"+testcasename);
-        ThreadLocalThreeExtentManager.setExtentTest(extent.createTest(testcasename));
+
+        ThreadLocalTwoExtentManager.setExtentTest(extent.createTest(testcasename));
     }
 
 

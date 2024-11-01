@@ -145,9 +145,9 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
         // for the logger in the extended report
        // if(errorMessageNotVisible)
             // it is the log if this line is executed ie means test is passed
-         //   ExtentManagerThreadLocalFive.getExtentTest().pass("logged in ");
+         //   ThreadLocalFiveExtentManager.getExtentTest().pass("logged in ");
         //else
-          //  ExtentManagerThreadLocalFive.getExtentTest().fail("logged in fail");
+          //  ThreadLocalFiveExtentManager.getExtentTest().fail("logged in fail");
 
 
 
@@ -155,9 +155,9 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
         // for the logger in the extended report
      //   if(errorMessageNotVisible)
             // it is the log if this line is executed ie means test is passed
-         //   ExtentManagerThreadLocalFour.getExtentTest().pass("logged in ");
+         //   ThreadLocalFourExtentManager.getExtentTest().pass("logged in ");
       //  else
-         //   ExtentManagerThreadLocalFour.getExtentTest().fail("logged in fail");
+         //   ThreadLocalFourExtentManager.getExtentTest().fail("logged in fail");
 
 
 
@@ -201,9 +201,9 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
         // for the logger in the extended report
        // if(text.getText().equals("akash"))
             // it is the log if this line is executed ie means test is passed
-         //   ExtentManagerThreadLocalFour.getExtentTest().pass("logged in ");
+         //   ThreadLocalFourExtentManager.getExtentTest().pass("logged in ");
         //else
-          //  ExtentManagerThreadLocalFour.getExtentTest().fail("logged in fail");
+          //  ThreadLocalFourExtentManager.getExtentTest().fail("logged in fail");
 
 
 

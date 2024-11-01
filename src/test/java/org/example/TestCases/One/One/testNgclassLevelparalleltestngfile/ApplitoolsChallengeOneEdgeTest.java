@@ -1,6 +1,7 @@
 package org.example.TestCases.One.One.testNgclassLevelparalleltestngfile;
 
 import com.basedriver.bast_test_control.one.BaseTestControlEdgeOne;
+import com.cutomannotation.one.OneFrameworkAnnotation;
 import com.pageobjectandextendreport.page.object.one.edge.ApplitoolsWebElementDashBoardPageEdge;
 import com.pageobjectandextendreport.page.object.one.edge.ApplitoolsWebElementLoginPageEdge;
 import customExceptions.KeyUrlNotFoundException;
@@ -67,6 +68,9 @@ public final class ApplitoolsChallengeOneEdgeTest extends BaseTestControlEdgeOne
     // that map goes ot argument
   //  @Test(priority=0,dataProvider = "ApplioolsURLOne")
     //  public void loginWithCredentials(Map<String,String> credentials) throws Exception {
+
+
+    @OneFrameworkAnnotation(author = {"sumit","pritam"},category = {"smoke","regression"})
     @Test(priority = 0)
     public void loginWithCredentialsEdge() throws Exception {
 
@@ -85,7 +89,7 @@ public final class ApplitoolsChallengeOneEdgeTest extends BaseTestControlEdgeOne
 
          // for the logger in the extended report
         // it is just like a log ie the test is created  here
-       // ExtendReporToInitAndFlushReporttOne.createTest("Login Test Edge");
+       // OneExtentReport.createTest("Login Test Edge");
 
 
 
@@ -255,13 +259,13 @@ public final class ApplitoolsChallengeOneEdgeTest extends BaseTestControlEdgeOne
     }*/
 
 
-
+    @OneFrameworkAnnotation(author = {"sumit","pritam"},category = {"smoke","regression"})
     @Test(priority=1)
     void totalMoneySpentCalculationEdge() throws KeyUrlNotFoundException {
 
         // for the logger in the extended report
         // it is just like a log ie the test is created
-       // ExtendReporToInitAndFlushReporttOne.createTest("Total Money Spent Test Edge");
+       // OneExtentReport.createTest("Total Money Spent Test Edge");
 
         CalculateEarnedSpent calculateEarnedSpent=new CalculateEarnedSpent();
 
@@ -338,6 +342,7 @@ public final class ApplitoolsChallengeOneEdgeTest extends BaseTestControlEdgeOne
     }
 
 
+    @OneFrameworkAnnotation(author = {"sumit","pritam"},category = {"smoke","regression"})
     //you have to add the methdo name also in teh testng file
     @Test(priority =2)
     void justToTestListenerMethod1Edge(){
@@ -346,6 +351,8 @@ public final class ApplitoolsChallengeOneEdgeTest extends BaseTestControlEdgeOne
 
     //you have to add the methdo name also in teh testng file
 
+
+    @OneFrameworkAnnotation(author = {"sumit","pritam"},category = {"smoke","regression"})
     @Test(priority =3)
     void justToTestListenerMethod2Edge(){
         System.out.println("Method2toTestListener");

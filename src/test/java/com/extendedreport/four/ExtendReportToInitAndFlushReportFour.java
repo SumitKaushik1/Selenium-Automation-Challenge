@@ -52,7 +52,7 @@ public final  class ExtendReportToInitAndFlushReportFour {
         if(Objects.nonNull(extent)){
             extent.flush();
         }
-        ExtentManagerThreadLocalFour.unload();
+        ThreadLocalFourExtentManager.unload();
         Desktop.getDesktop().browse(new File(DriverAndFilesPathConstants.getExtentReporVWOLoginFour()).toURI());
 
     }
@@ -60,7 +60,7 @@ public final  class ExtendReportToInitAndFlushReportFour {
     public static void createTest(String testcasename){
 
 
-        ExtentManagerThreadLocalFour.setExtentTest(extent.createTest(testcasename));
+        ThreadLocalFourExtentManager.setExtentTest(extent.createTest(testcasename));
     }
 
 

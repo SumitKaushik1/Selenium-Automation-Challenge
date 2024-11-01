@@ -13,15 +13,15 @@ public final class ExtendLoggerToAddLogInReportFive {
     private ExtendLoggerToAddLogInReportFive(){}
 
   public static void pass(String message){
-        ExtentManagerThreadLocalFive.getExtentTest().pass(message);
+        ThreadLocalFiveExtentManager.getExtentTest().pass(message);
 
   }
     public static void fail(String message){
-        ExtentManagerThreadLocalFive.getExtentTest().fail(message);
+        ThreadLocalFiveExtentManager.getExtentTest().fail(message);
 
     }
     public static void skip(String message){
-        ExtentManagerThreadLocalFive.getExtentTest().skip(message);
+        ThreadLocalFiveExtentManager.getExtentTest().skip(message);
 
     }
 
@@ -31,7 +31,7 @@ public final class ExtendLoggerToAddLogInReportFive {
     public static void pass(String message,boolean isScreenshotNeeded)throws Exception{
         if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.PASSEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes")&& isScreenshotNeeded){
             //isScreenshotNeeded is the local variable
-            ExtentManagerThreadLocalFive.getExtentTest().pass(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsFive.getBase64Imgage()).build());
+            ThreadLocalFiveExtentManager.getExtentTest().pass(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsFive.getBase64Imgage()).build());
         }
         else{
             ExtendLoggerToAddLogInReportFive.pass(message);
@@ -42,7 +42,7 @@ public final class ExtendLoggerToAddLogInReportFive {
     public static void fail(String message,boolean isScreenshotNeeded)throws Exception{
         if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.FAILEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes")&& isScreenshotNeeded){
             //isScreenshotNeeded is the local variable
-            ExtentManagerThreadLocalFive.getExtentTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsFive.getBase64Imgage()).build());
+            ThreadLocalFiveExtentManager.getExtentTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsFive.getBase64Imgage()).build());
         }
         else{
             ExtendLoggerToAddLogInReportFive.fail(message);
@@ -53,7 +53,7 @@ public final class ExtendLoggerToAddLogInReportFive {
     public static void skip(String message,boolean isScreenshotNeeded)throws Exception{
         if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.SKIPPEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes")&& isScreenshotNeeded){
             //isScreenshotNeeded is the local variable
-            ExtentManagerThreadLocalFive.getExtentTest().skip(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsFive.getBase64Imgage()).build());
+            ThreadLocalFiveExtentManager.getExtentTest().skip(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsFive.getBase64Imgage()).build());
         }
         else{
             ExtendLoggerToAddLogInReportFive.skip(message);

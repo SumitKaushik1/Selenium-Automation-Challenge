@@ -45,7 +45,7 @@ public final class ApplitoolsChallengeOneChromeEdgeTest extends ChromeEdgeOneBas
 
         // for the logger in the extended report
         // it is just like a log ie the test is created  here
-        // ExtendReporToInitAndFlushReporttOne.createTest("Login Test Chrome");
+        // OneExtentReport.createTest("Login Test Chrome");
 
 
         //or
@@ -206,7 +206,7 @@ public final class ApplitoolsChallengeOneChromeEdgeTest extends ChromeEdgeOneBas
 
 // for the logger in the extended report
         // it is just like a log ie the test is created
-        //  ExtendReporToInitAndFlushReporttOne.createTest("Total Money Spent Test Chrome");
+        //  OneExtentReport.createTest("Total Money Spent Test Chrome");
 
 
         CalculateEarnedSpent calculateEarnedSpent=new CalculateEarnedSpent();

@@ -17,13 +17,13 @@ public class BaseTestControlEdgeOne {
 
     //@BeforeSuite
     //public void beforesuite(){
-      //  ExtendReporToInitAndFlushReporttOne.initReports();
+      //  OneExtentReport.initReports();
     //}
 
 
     //@AfterSuite
     //public void aftersuite() throws IOException {
-      //  ExtendReporToInitAndFlushReporttOne.flushReports();
+      //  OneExtentReport.flushReports();
     //}
 
 

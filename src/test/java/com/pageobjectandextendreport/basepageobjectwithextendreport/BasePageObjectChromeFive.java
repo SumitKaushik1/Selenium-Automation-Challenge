@@ -56,7 +56,7 @@ public class BasePageObjectChromeFive {
 
         element.click();
 
-        //  ExtendLoggerToAddLogInReportTwo.pass(elementname+" is clicked");
+        //  TwoExtentLogger.pass(elementname+" is clicked");
         ExtendLoggerToAddLogInReportFive.pass(elementname+" is clicked",true);
 
 

@@ -1,4 +1,4 @@
-package com.extendedreport.three;
+package com.extendedreport.one;
 
 
 import com.aventstack.extentreports.ExtentReports;
@@ -12,10 +12,10 @@ import java.io.File;
 import java.util.Objects;
 
 //final class ie it cannot be inherited ie it cannot be extended
-public final  class ExtendReportToInitAndFlushReportThree {
+public final  class OneExtentReport {
 
     //its object outside class cannot be made
- private ExtendReportToInitAndFlushReportThree(){}
+ private OneExtentReport(){}
 
 
 
@@ -26,23 +26,19 @@ public final  class ExtendReportToInitAndFlushReportThree {
     public static ExtentTest test;
 
 
-    public static void main (String args[]) throws Exception {
-        initReports();
-    }
+    // you have to call this method at the time of driver is made ie is in package com.base.bast_test_control.one;
+    // it is done int the before suit of hte package com.base.bast_test_control.one;
 
-    // you have to call this method at the time of driver is made ie is in package com.base.bast_test_control.three;
-    // it is done int the before suit of hte package com.base.bast_test_control.three;
+
     public static void initReports() throws Exception {
 
 
         if(Objects.isNull(extent))
         {
             extent=new ExtentReports();
-          //  System.out.println("filepath"+DriverAndFilesPathConstants.getExtentReportPathDemoQaThree());
-          //  ExtentSparkReporter spark=new ExtentSparkReporter(DriverAndFilesPathConstants.getExtentReportPathDemoQaThree());
-            ExtentSparkReporter spark=new ExtentSparkReporter(new File(DriverAndFilesPathConstants.getExtentReportPathDemoQaThree()));
-            extent.attachReporter(spark);
 
+            ExtentSparkReporter spark=new ExtentSparkReporter(DriverAndFilesPathConstants.getExtentReportPathApilloToolsOne());
+            extent.attachReporter(spark);
             spark.config().setTheme(Theme.STANDARD);
             // YOU CAN CHANGE THE THEME OF THE PAGE JUST PRESSING THE l on the page
 
@@ -53,23 +49,34 @@ public final  class ExtendReportToInitAndFlushReportThree {
     }
 
 
-    // it is done in the aftersuit in teh package com.base.bast_test_control.three;
+    // it is done in the aftersuit in teh package com.base.bast_test_control.two;
     public static void flushReports() throws Exception {
         if(Objects.nonNull(extent)){
             extent.flush();
         }
-        ThreadLocalThreeExtentManager.unload();
 
-        Desktop.getDesktop().browse(new File(DriverAndFilesPathConstants.getExtentReportPathDemoQaThree()).toURI());
+        ThreadLocalOneExtentManager.unload();
+        Desktop.getDesktop().browse(new File(DriverAndFilesPathConstants.getExtentReportPathApilloToolsOne()).toURI());
 
     }
 
     public static void createTest(String testcasename){
 
-        System.out.println("extendmanagerthee is set to"+testcasename);
-        ThreadLocalThreeExtentManager.setExtentTest(extent.createTest(testcasename));
+
+        ThreadLocalOneExtentManager.setExtentTest(extent.createTest(testcasename));
     }
 
+    public static void addAuthors(String []  authors){
+        for(String temp: authors){
+            ThreadLocalOneExtentManager.getExtentTest().assignAuthor(temp);
+        }
+    }
+
+    public static void addCategories(String[] categories){
+        for(String temp:categories){
+            ThreadLocalOneExtentManager.getExtentTest().assignCategory(temp);
+        }
+    }
 
 }
 

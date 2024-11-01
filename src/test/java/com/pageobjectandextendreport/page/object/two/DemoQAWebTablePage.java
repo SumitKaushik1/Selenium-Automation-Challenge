@@ -47,7 +47,7 @@ public class DemoQAWebTablePage extends BasePageObjectChromeTwo {
         this.clickOnButton(WaitStrategyConstants.CLICKABLE,editButton,demoQAWebsiteChallengeTwoTest,"add button");
 
        // editButton.click();
-     //  ExtendLoggerToAddLogInReportTwo.pass("add button is clicked");
+     //  TwoExtentLogger.pass("add button is clicked");
 
              return this;
     }
@@ -61,7 +61,7 @@ public class DemoQAWebTablePage extends BasePageObjectChromeTwo {
 
         System.out.println(webElement.getText());
 
-      //  ExtendLoggerToAddLogInReportTwo.pass("registration form opened");
+      //  TwoExtentLogger.pass("registration form opened");
         return webElement;
     }
 
@@ -133,7 +133,7 @@ public class DemoQAWebTablePage extends BasePageObjectChromeTwo {
       // submitButton.click();
 
 
-     //   ExtendLoggerToAddLogInReportTwo.pass("submit button clicked");
+     //   TwoExtentLogger.pass("submit button clicked");
 
         return this;
     }

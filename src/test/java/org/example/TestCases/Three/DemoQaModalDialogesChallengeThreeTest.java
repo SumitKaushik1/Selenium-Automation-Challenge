@@ -77,9 +77,9 @@ public final  class DemoQaModalDialogesChallengeThreeTest extends BaseTestContro
         // for the logger in the extended report
       //  if(largeModelButtonText.getText().equals("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."))
             // it is the log if this line is executed ie means test is passed
-          //  ExtentManagerThreadLocalThree.getExtentTest().pass("details added to large modal");
+          //  ThreadLocalThreeExtentManager.getExtentTest().pass("details added to large modal");
         //else
-          //  ExtentManagerThreadLocalThree.getExtentTest().fail("details not added to large  modal");
+          //  ThreadLocalThreeExtentManager.getExtentTest().fail("details not added to large  modal");
 
 
 

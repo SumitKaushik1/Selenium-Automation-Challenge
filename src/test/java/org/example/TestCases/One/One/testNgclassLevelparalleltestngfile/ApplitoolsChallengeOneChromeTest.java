@@ -1,6 +1,7 @@
 package org.example.TestCases.One.One.testNgclassLevelparalleltestngfile;
 
 import com.basedriver.bast_test_control.one.BaseTestControlChromeOne;
+import com.cutomannotation.one.OneFrameworkAnnotation;
 import com.pageobjectandextendreport.page.object.one.chrome.ApplitoolsWebElementDashBoardPageChrome;
 import com.pageobjectandextendreport.page.object.one.chrome.ApplitoolsWebElementLoginPageChrome;
 import customExceptions.KeyUrlNotFoundException;
@@ -81,6 +82,8 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
     // that map goes ot argument
    // @Test(priority=0,dataProvider = "ApplioolsURLOne")
     // public void loginWithCredentials(Map<String,String> credentials) throws Exception {
+
+    @OneFrameworkAnnotation(author = {"sumit","pritam"},category = {"smoke","regression"})
     @Test(priority =0)
     public void loginWithCredentialsChrome() throws Exception {
 
@@ -99,7 +102,7 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
 
         // for the logger in the extended report
         // it is just like a log ie the test is created  here
-       // ExtendReporToInitAndFlushReporttOne.createTest("Login Test Chrome");
+       // OneExtentReport.createTest("Login Test Chrome");
 
 
         //or
@@ -243,9 +246,9 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
         https:\/\/: Matches the literal string https://. The slashes (/) are escaped with backslashes (\/) since they are special characters in regex.
         demo\.applitools\.com: Matches the domain demo.applitools.com. The dots (.) are escaped (\.) to match a literal dot.
 \/: Matches the literal / at the end of the URL.
-                $: Asserts the end of the string.*/
         //Assert is used to abort the program at the particular line if certain condition is not fulfill
         //if that condition is satified thne code will continiue
+                $: Asserts the end of the string.*/
         //note bydefault if  there is no error(no assertion you applied like Assert.<method>) in the
         // method so the it will pass bydefault
 
@@ -276,13 +279,13 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
     }*/
 
 
-
+    @OneFrameworkAnnotation(author = {"sumit","pritam"},category = {"smoke","regression"})
     @Test(priority =1)
     void totalMoneySpentCalculationChrome() throws KeyUrlNotFoundException {
 
 // for the logger in the extended report
         // it is just like a log ie the test is created
-      //  ExtendReporToInitAndFlushReporttOne.createTest("Total Money Spent Test Chrome");
+      //  OneExtentReport.createTest("Total Money Spent Test Chrome");
 
 
         CalculateEarnedSpent calculateEarnedSpent=new CalculateEarnedSpent();
@@ -367,17 +370,20 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
 
 
 //you have to add the methdo name also in teh testng file
+@OneFrameworkAnnotation(author = {"sumit","pritam"},category = {"smoke","regression"})
     @Test(priority =2)
     void justToTestListenerMethod1Chrome(){
         System.out.println("justToTestListenerMethod1");
     }
 
     //you have to add the methdo name also in teh testng file
+    @OneFrameworkAnnotation(author = {"sumit","pritam"},category = {"smoke","regression"})
     @Test(priority =3)
     void justToTestListenerMethod2Chrome(){
         System.out.println("justToTestListenerMethod2");
     }
 
+    @OneFrameworkAnnotation(author = {"sumit","pritam"},category = {"smoke","regression"})
     @Test(priority =4)
     void justToTestRetryListenerOnFailMethod3Chrome(){
         System.out.println("justToTestRetryListenerOnFailMethod3");

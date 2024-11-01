@@ -110,7 +110,7 @@ public final  class DriverAndFilesPathConstants {
 
         EXCEL_FILE_PATH=USER_DIRECTORY+"\\resources\\excelfiles\\";
 
-        EXCEL_PATH_APPILO_TOOLS_ONE= EXCEL_FILE_PATH +"AppilloTestControl2One.xlsx";
+        EXCEL_PATH_APPILO_TOOLS_ONE= EXCEL_FILE_PATH +"AppilloTestMethodInterceptor.xlsx";
 
         EXCEL_PATH_VWO_LOGIN_ONE= EXCEL_FILE_PATH +"vwousernameandpasswordcontrol.xlsx";
 

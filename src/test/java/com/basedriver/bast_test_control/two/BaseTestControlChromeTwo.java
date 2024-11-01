@@ -19,13 +19,13 @@ public class BaseTestControlChromeTwo {
 
     //@BeforeSuite
     //public void beforesuite(){
-      //  ExtendReportToInitAndFlushReportTwo.initReports();
+      //  TwoExtentReport.initReports();
     //}
 
 
     //@AfterSuite
     //public void aftersuite() throws IOException {
-      //  ExtendReportToInitAndFlushReportTwo.flushReports();
+      //  TwoExtentReport.flushReports();
     //}
 
    protected  void setUpControlChrome() throws Exception {

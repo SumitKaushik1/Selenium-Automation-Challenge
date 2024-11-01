@@ -59,7 +59,7 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
 
         // for the logger in the extended report
         // it is just like a log ie the test is created  here
-        //ExtendReportToInitAndFlushReportTwo.createTest("clickon third button  and open registration page Test Chrome");
+        //TwoExtentReport.createTest("clickon third button  and open registration page Test Chrome");
 
        /* WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='ReactTable -striped -highlight']//div[3]//div[1]//div[7]//div[1]//span[1]//*[name()='svg']//*[name()='path' and contains(@d,'M880 836H1')]")));
@@ -97,9 +97,9 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
         // for the logger in the extended report
        // if(webElement.getText().contains("Registration Form"))
             // it is the log if this line is executed ie means test is passed
-         //   ExtentManagerThreadLocalTwo.getExtentTest().pass("registration form opened ");
+         //   ThreadLocalTwoExtentManager.getExtentTest().pass("registration form opened ");
        // else
-         //   ExtentManagerThreadLocalTwo.getExtentTest().fail("registration form is not opened ");
+         //   ThreadLocalTwoExtentManager.getExtentTest().fail("registration form is not opened ");
 
 
 
@@ -144,7 +144,7 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
 
         // for the logger in the extended report
         // it is just like a log ie the test is created  here
-        //ExtendReportToInitAndFlushReportTwo.createTest("add details to registration form ");
+        //TwoExtentReport.createTest("add details to registration form ");
 
        // WebElement element1=this.controlGetDriver().findElement(By.xpath("//button[@id='submit']"));
         //((JavascriptExecutor) this.controlGetDriver()).executeScript("arguments[0].scrollIntoView(true);", element1);//for this srolling is not required
@@ -193,9 +193,9 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
         // for the logger in the extended report
        // if(firstNameCheckWebElement.getText().contains("sumit"))
             // it is the log if this line is executed ie means test is passed
-          //  ExtentManagerThreadLocalTwo.getExtentTest().pass("details added to form ");
+          //  ThreadLocalTwoExtentManager.getExtentTest().pass("details added to form ");
        // else
-         //   ExtentManagerThreadLocalTwo.getExtentTest().fail("details not added to form");
+         //   ThreadLocalTwoExtentManager.getExtentTest().fail("details not added to form");
 
 
 

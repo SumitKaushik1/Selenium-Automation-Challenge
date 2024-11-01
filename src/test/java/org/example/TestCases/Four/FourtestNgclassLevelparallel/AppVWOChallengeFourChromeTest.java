@@ -150,9 +150,9 @@ Object[][] getDataExcelVWOFour(){
         // for the logger in the extended report
        // if(errorMessageNotVisible)
             // it is the log if this line is executed ie means test is passed
-          //  ExtentManagerThreadLocalFour.getExtentTest().pass("logged in ");
+          //  ThreadLocalFourExtentManager.getExtentTest().pass("logged in ");
         //else
-          //  ExtentManagerThreadLocalFour.getExtentTest().fail("logged in fail");
+          //  ThreadLocalFourExtentManager.getExtentTest().fail("logged in fail");
 
 
         Assertions.assertThat(errorMessageNotVisible).isTrue();//it means it pass ie logged in
@@ -189,9 +189,9 @@ Object[][] getDataExcelVWOFour(){
         // for the logger in the extended report
        // if(text.getText().equals("akash"))
             // it is the log if this line is executed ie means test is passed
-         //   ExtentManagerThreadLocalFour.getExtentTest().pass("logged in ");
+         //   ThreadLocalFourExtentManager.getExtentTest().pass("logged in ");
         //else
-          //  ExtentManagerThreadLocalFour.getExtentTest().fail("logged in fail");
+          //  ThreadLocalFourExtentManager.getExtentTest().fail("logged in fail");
 
 
 

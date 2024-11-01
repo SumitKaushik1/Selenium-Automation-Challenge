@@ -13,15 +13,15 @@ public final class ExtendLoggerToAddLogInReportFour {
     private ExtendLoggerToAddLogInReportFour(){}
 
   public static void pass(String message){
-        ExtentManagerThreadLocalFour.getExtentTest().pass(message);
+        ThreadLocalFourExtentManager.getExtentTest().pass(message);
 
   }
     public static void fail(String message){
-        ExtentManagerThreadLocalFour.getExtentTest().fail(message);
+        ThreadLocalFourExtentManager.getExtentTest().fail(message);
 
     }
     public static void skip(String message){
-        ExtentManagerThreadLocalFour.getExtentTest().skip(message);
+        ThreadLocalFourExtentManager.getExtentTest().skip(message);
 
     }
 
@@ -32,7 +32,7 @@ public final class ExtendLoggerToAddLogInReportFour {
     public static void pass(String message,boolean isScreenshotNeeded)throws Exception{
         if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.PASSEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes")&& isScreenshotNeeded){
             //isScreenshotNeeded is the local variable
-            ExtentManagerThreadLocalFour.getExtentTest().pass(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsFour.getBase64Imgage()).build());
+            ThreadLocalFourExtentManager.getExtentTest().pass(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsFour.getBase64Imgage()).build());
         }
         else{
             ExtendLoggerToAddLogInReportFour.pass(message);
@@ -45,7 +45,7 @@ public final class ExtendLoggerToAddLogInReportFour {
     public static void fail(String message,boolean isScreenshotNeeded)throws Exception{
         if(MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.FAILEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes")&& isScreenshotNeeded){
             //isScreenshotNeeded is the local variable
-            ExtentManagerThreadLocalFour.getExtentTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsFour.getBase64Imgage()).build());
+            ThreadLocalFourExtentManager.getExtentTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsFour.getBase64Imgage()).build());
         }
         else{
             ExtendLoggerToAddLogInReportFour.fail(message);
@@ -59,7 +59,7 @@ public final class ExtendLoggerToAddLogInReportFour {
     public static void skip(String message,boolean isScreenshotNeeded)throws Exception {
         if (MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.SKIPPEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes") && isScreenshotNeeded) {
             //isScreenshotNeeded is the local variable
-            ExtentManagerThreadLocalFour.getExtentTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsFour.getBase64Imgage()).build());
+            ThreadLocalFourExtentManager.getExtentTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtilsFour.getBase64Imgage()).build());
         } else {
             ExtendLoggerToAddLogInReportFour.skip(message);
         }

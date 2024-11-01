@@ -121,9 +121,9 @@ public final class AppVWOChallengeFiveTest extends BasetTestControlChromeFive {
         // for the logger in the extended report
      //   if(title.equals("Job Ready Automation Tester Blueprint with JAVA By Pramod Dutta"))
             // it is the log if this line is executed ie means test is passed
-       //     ExtentManagerThreadLocalFive.getExtentTest().pass("tab opened ");
+       //     ThreadLocalFiveExtentManager.getExtentTest().pass("tab opened ");
         //else
-          //  ExtentManagerThreadLocalFive.getExtentTest().fail("tab not opened");
+          //  ThreadLocalFiveExtentManager.getExtentTest().fail("tab not opened");
 
 
 

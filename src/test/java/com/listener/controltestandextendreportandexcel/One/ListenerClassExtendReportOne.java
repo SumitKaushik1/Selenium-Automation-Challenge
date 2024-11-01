@@ -1,7 +1,8 @@
 package com.listener.controltestandextendreportandexcel.One;
 
+import com.cutomannotation.one.OneFrameworkAnnotation;
 import com.extendedreport.one.OneExtentLogger;
-import com.extendedreport.one.ExtendReporToInitAndFlushReporttOne;
+import com.extendedreport.one.OneExtentReport;
 import org.testng.*;
 
 
@@ -11,7 +12,7 @@ public class ListenerClassExtendReportOne implements ITestListener , ISuiteListe
     @Override
     public void onStart(ISuite suite){
         try {
-            ExtendReporToInitAndFlushReporttOne.initReports();
+            OneExtentReport.initReports();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -20,7 +21,7 @@ public class ListenerClassExtendReportOne implements ITestListener , ISuiteListe
     @Override
     public void onFinish(ISuite suite){
         try {
-            ExtendReporToInitAndFlushReporttOne.flushReports();
+            OneExtentReport.flushReports();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -32,8 +33,12 @@ public class ListenerClassExtendReportOne implements ITestListener , ISuiteListe
     @Override
     public void onTestStart(ITestResult result){
 
-     //  ExtendReporToInitAndFlushReporttOne.createTest(result.getMethod().getMethodName());
-        ExtendReporToInitAndFlushReporttOne.createTest(result.getMethod().getDescription());
+     //  OneExtentReport.createTest(result.getMethod().getMethodName());
+        OneExtentReport.createTest(result.getMethod().getDescription());
+
+        //note reflection can only use the annotiaon to changees the varibles at teh run time
+        OneExtentReport.addAuthors( result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(OneFrameworkAnnotation.class).author());
+        OneExtentReport.addCategories(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(OneFrameworkAnnotation.class).category());
     }
 
     @Override

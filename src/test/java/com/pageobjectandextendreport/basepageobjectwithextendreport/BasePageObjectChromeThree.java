@@ -36,7 +36,7 @@ public class BasePageObjectChromeThree {
 
         webElement.click();
 
-        //  ExtendLoggerToAddLogInReportTwo.pass(elementname+" is clicked");
+        //  TwoExtentLogger.pass(elementname+" is clicked");
         ExtendLoggerToAddLogInReportThree.pass(elementname+" is clicked",true);
 
 
