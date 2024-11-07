@@ -18,7 +18,7 @@ public class VWOLoginChromePage extends BasePageObjectChromeFour {
 
     public VWOLoginChromePage enterUserNameVWOLogin(String username, AppVWOChallengeFourChromeTest appVWOChallengeFourChromeTest) throws Exception {
        // ThreadLocalWebDriverManager.getDriver().findElement(emailAddressVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("emailAddress"));
-       // this.enterCredentials(emailAddressVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ConfigProperties.EMAILADDRESS));
+       // this.enterCredentials(emailAddressVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.EMAILADDRESS));
         this.enterCredentials(emailAddressVWOLoginPage,username,appVWOChallengeFourChromeTest,"username");
         return this;
     }
@@ -26,7 +26,7 @@ public class VWOLoginChromePage extends BasePageObjectChromeFour {
     public VWOLoginChromePage enterPasswordVWOLogin(String password, AppVWOChallengeFourChromeTest appVWOChallengeFourChromeTest) throws Exception {
 
        // ThreadLocalWebDriverManager.getDriver().findElement(passwordVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password1"));;
-      // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ConfigProperties.PASSWORD1));
+      // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.PASSWORD1));
         this.enterCredentials(passwordVWOLoginPage,password,appVWOChallengeFourChromeTest,"password");
 
 

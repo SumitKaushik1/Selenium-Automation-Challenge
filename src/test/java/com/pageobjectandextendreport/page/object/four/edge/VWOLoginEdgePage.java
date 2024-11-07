@@ -18,7 +18,7 @@ public class VWOLoginEdgePage extends BasePageObjectEdgeFour {
 
     public VWOLoginEdgePage enterUserNameVWOLogin(String username, AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest) throws Exception {
        // ThreadLocalWebDriverManager.getDriver().findElement(emailAddressVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("emailAddress"));
-       // this.enterCredentials(emailAddressVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ConfigProperties.EMAILADDRESS));
+       // this.enterCredentials(emailAddressVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.EMAILADDRESS));
         this.enterCredentials(emailAddressVWOLoginPage,username,appVWOChallengeFourEdgeTest,"username");
         return this;
     }
@@ -26,7 +26,7 @@ public class VWOLoginEdgePage extends BasePageObjectEdgeFour {
     public VWOLoginEdgePage enterPasswordVWOLogin(String password, AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest) throws Exception {
 
        // ThreadLocalWebDriverManager.getDriver().findElement(passwordVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password1"));;
-      // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ConfigProperties.PASSWORD1));
+      // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.PASSWORD1));
         this.enterCredentials(passwordVWOLoginPage,password,appVWOChallengeFourEdgeTest,"password");
 
 

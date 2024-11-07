@@ -91,8 +91,8 @@ Object[][] getDataExcelVWOFour(){
 
         //System.out.println(p.getProperty("emailAddress"));
         //  System.out.println(p.getProperty("password1"));
-       // System.out.println(LoginCredentialsJsonFileRead.readPropertyFile(ConfigProperties.EMAILADDRESS));
-        //System.out.println(LoginCredentialsJsonFileRead.readPropertyFile(ConfigProperties.PASSWORD1));
+       // System.out.println(LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.EMAILADDRESS));
+        //System.out.println(LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.PASSWORD1));
 
 
 

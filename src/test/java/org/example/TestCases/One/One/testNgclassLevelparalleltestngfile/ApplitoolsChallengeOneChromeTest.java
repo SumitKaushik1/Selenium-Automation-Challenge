@@ -5,7 +5,7 @@ import com.cutomannotation.one.OneFrameworkAnnotation;
 import com.pageobjectandextendreport.page.object.one.chrome.ApplitoolsWebElementDashBoardPageChrome;
 import com.pageobjectandextendreport.page.object.one.chrome.ApplitoolsWebElementLoginPageChrome;
 import customExceptions.KeyUrlNotFoundException;
-import enumconstants.ConfigProperties;
+import enumconstants.ConfigPropertiesConstants;
 import jsonfileread.LoginCredentialsJsonFileRead;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterSuite;
@@ -130,8 +130,8 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
 
 
 
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ConfigProperties.USERNAME));
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ConfigProperties.PASSWORD));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ConfigPropertiesConstants.USERNAME));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ConfigPropertiesConstants.PASSWORD));
 
         //anchor tag we use
         //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
@@ -165,9 +165,9 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
         ApplitoolsWebElementLoginPageChrome appiloToolsWebElement=new ApplitoolsWebElementLoginPageChrome();
         appiloToolsWebElement.
                 enterUserNameApplitools(LoginCredentialsJsonFileRead.
-                        readJsonFile(ConfigProperties.USERNAME),this)
+                        readJsonFile(ConfigPropertiesConstants.USERNAME),this)
                 .enterPasswordApplitools(LoginCredentialsJsonFileRead.
-                        readJsonFile(ConfigProperties.PASSWORD),this).
+                        readJsonFile(ConfigPropertiesConstants.PASSWORD),this).
                 clickButtonApplitools(this);
 
 

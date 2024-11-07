@@ -2,7 +2,7 @@ package propertesfilesread;
 
 import customExceptions.FileNotFoundRuntimeExcption;
 import customExceptions.KeyUrlNotFoundException;
-import enumconstants.ConfigProperties;
+import enumconstants.ConfigPropertiesConstants;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -85,7 +85,7 @@ public class LoginCredentialsPropertyFileRead {
 
 
 
-    public static String readPropertyFile(ConfigProperties key) throws KeyUrlNotFoundException {
+    public static String readPropertyFile(ConfigPropertiesConstants key) throws KeyUrlNotFoundException {
 
 
         // passed key to this  method is null or there is on  key in the existing map

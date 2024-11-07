@@ -1,6 +1,6 @@
 package com.basedriver.basetest.Four;
 
-import enumconstants.ConfigProperties;
+import enumconstants.ConfigPropertiesConstants;
 import path.DriverAndFilesPathConstants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -37,7 +37,7 @@ public class BaseTestEdgeFour {
             //ThreadLocalWebDriverManager.getDriver().get("https://app.vwo.com/#/login");
 
             //FramworkconstantFileRead class static  method is called when the value is required from its file to get we pass the key
-            ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigProperties.URLFOUR));
+            ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLFOUR));
         }
 
 

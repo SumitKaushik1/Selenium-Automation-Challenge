@@ -5,6 +5,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import enumconstants.CategoryTypeConstants;
 import path.DriverAndFilesPathConstants;
 
 import java.awt.*;
@@ -68,6 +69,20 @@ public final  class TwoExtentReport {
 
 
         ThreadLocalTwoExtentManager.setExtentTest(extent.createTest(testcasename));
+    }
+
+    public static void addAuthors(String[] authors){
+        for(String temp: authors){
+            ThreadLocalTwoExtentManager.getExtentTest().assignAuthor(temp);
+        }
+    }
+
+    public static void addCategories(CategoryTypeConstants[] categories){
+        for(CategoryTypeConstants temp: categories){
+            ThreadLocalTwoExtentManager.getExtentTest().assignCategory(temp.toString());
+
+        }
+
     }
 
 

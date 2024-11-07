@@ -2,8 +2,10 @@ package org.example.TestCases.Two;
 
 import com.basedriver.bast_test_control.two.BaseTestControlChromeTwo;
 
+import com.cutomannotation.two.TwoFrameworkAnnotation;
 import com.pageobjectandextendreport.page.object.two.DemoQAWebTablePage;
 import com.pageobjectandextendreport.pagefactory.two.DemoQaHomePage;
+import enumconstants.CategoryTypeConstants;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.*;
 import org.testng.annotations.AfterSuite;
@@ -49,6 +51,7 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
 
 
 
+    @TwoFrameworkAnnotation( author={"sumit","pritam"},category={CategoryTypeConstants.REGRESSION,CategoryTypeConstants.MINIREGRESSION})
 
     @Test(priority=0)
    void clickThirdEditButton(Map<String,String> data) throws Exception {
@@ -135,7 +138,7 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
 
 
 
-
+    @TwoFrameworkAnnotation( author={"sumit","pritam"},category={CategoryTypeConstants.REGRESSION,CategoryTypeConstants.MINIREGRESSION})
     @Test(priority=1)
    void addDetails(Map<String,String>data) throws Exception {
     //void addDetails() throws Exception {
@@ -231,6 +234,7 @@ public  final class DemoQAWebsiteChallengeTwoTest extends BaseTestControlChromeT
     }
 
 
+    @TwoFrameworkAnnotation( author={"sumit","pritam"},category={CategoryTypeConstants.REGRESSION,CategoryTypeConstants.MINIREGRESSION})
     @Test(priority = 2)
   void clickOnHamburgerbuttonSubList(Map<String,String>data) throws Exception {
     //   void clickOnHamburgerbuttonSubList() throws Exception {

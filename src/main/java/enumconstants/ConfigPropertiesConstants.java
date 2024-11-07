@@ -1,6 +1,6 @@
 package enumconstants;
 
-public enum ConfigProperties {
+public enum ConfigPropertiesConstants {
 
     URLONE {
         @Override

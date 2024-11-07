@@ -2,7 +2,7 @@ package propertesfilesread;
 
 import customExceptions.FileNotFoundRuntimeExcption;
 import customExceptions.KeyUrlNotFoundException;
-import enumconstants.ConfigProperties;
+import enumconstants.ConfigPropertiesConstants;
 import path.DriverAndFilesPathConstants;
 
 
@@ -96,7 +96,7 @@ public class FrameoworksConstantFileReadPropertyUtils {
         }
     }
 
-    public static String get(ConfigProperties key) throws KeyUrlNotFoundException {
+    public static String get(ConfigPropertiesConstants key) throws KeyUrlNotFoundException {
 
         //throws clause means exception will be handled by its caller method
       // basically what happens that if i read the  file here ie it is he lazy initialization ie whne the method is called then it is made instsanc of it

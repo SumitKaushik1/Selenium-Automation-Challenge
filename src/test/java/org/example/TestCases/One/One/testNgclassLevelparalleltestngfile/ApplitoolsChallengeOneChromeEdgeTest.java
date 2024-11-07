@@ -5,7 +5,7 @@ import com.pageobjectandextendreport.page.object.one.ApplitoolsWebElementDashBoa
 import com.pageobjectandextendreport.page.object.one.ApplitoolsWebElementLoginPage;
 import com.pojo.Pojo.one.CalculateEarnedSpent;
 import customExceptions.KeyUrlNotFoundException;
-import enumconstants.ConfigProperties;
+import enumconstants.ConfigPropertiesConstants;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 import propertesfilesread.LoginCredentialsPropertyFileRead;
@@ -73,8 +73,8 @@ public final class ApplitoolsChallengeOneChromeEdgeTest extends ChromeEdgeOneBas
 
 
 
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ConfigProperties.USERNAME));
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ConfigProperties.PASSWORD));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ConfigPropertiesConstants.USERNAME));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ConfigPropertiesConstants.PASSWORD));
 
         //anchor tag we use
         //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));

@@ -1,6 +1,6 @@
 package com.basedriver.basetest.One;
 
-import enumconstants.ConfigProperties;
+import enumconstants.ConfigPropertiesConstants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -24,7 +24,7 @@ public class ChromeEdgeOneDriver {
             System.setProperty("webdriver.edge.driver", DriverAndFilesPathConstants.edgePath());
             ThreadLocalWebDriverManager.setDriver(new EdgeDriver());
         }
-        ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigProperties.URLONE));
+        ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
 
     }
     }

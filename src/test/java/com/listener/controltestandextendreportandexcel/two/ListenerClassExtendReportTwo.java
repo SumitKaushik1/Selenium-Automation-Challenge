@@ -1,5 +1,8 @@
 package com.listener.controltestandextendreportandexcel.two;
 
+import com.cutomannotation.one.OneFrameworkAnnotation;
+import com.cutomannotation.two.TwoFrameworkAnnotation;
+import com.extendedreport.one.OneExtentReport;
 import com.extendedreport.two.TwoExtentLogger;
 import com.extendedreport.two.TwoExtentReport;
 import org.testng.ISuite;
@@ -36,6 +39,11 @@ public class ListenerClassExtendReportTwo implements ITestListener , ISuiteListe
         // donto provide the getDescription bz test case donto have decripton so if you want to give
         //either in the property of @TEst or give by excel filel  just like in teh One testcse
         //TwoExtentReport.createTest(result.getMethod().getDescription());
+
+
+        //note reflection can only use the annotiaon to changees the varibles at teh run time
+        TwoExtentReport.addAuthors( result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(TwoFrameworkAnnotation.class).author());
+        TwoExtentReport.addCategories(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(TwoFrameworkAnnotation.class).category());
 
     }
 

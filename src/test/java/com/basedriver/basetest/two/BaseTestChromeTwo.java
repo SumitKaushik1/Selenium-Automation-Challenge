@@ -1,6 +1,6 @@
 package com.basedriver.basetest.two;
 
-import enumconstants.ConfigProperties;
+import enumconstants.ConfigPropertiesConstants;
 import path.DriverAndFilesPathConstants;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
@@ -42,7 +42,7 @@ public final class BaseTestChromeTwo {
 
 
         //FramworkconstantFileRead class static  method is called when the value is required from its file to get we pass the key
-        driver.get(FrameoworksConstantFileReadPropertyUtils.get(ConfigProperties.URLTWO));
+        driver.get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLTWO));
 
     }
 

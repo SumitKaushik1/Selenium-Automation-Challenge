@@ -3,7 +3,7 @@ package jsonfileread;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import customExceptions.KeyUrlNotFoundException;
-import enumconstants.ConfigProperties;
+import enumconstants.ConfigPropertiesConstants;
 import path.DriverAndFilesPathConstants;
 
 import java.io.File;
@@ -92,7 +92,7 @@ public class LoginCredentialsJsonFileRead {
 
 
 
-    public static String readJsonFile(ConfigProperties key) throws KeyUrlNotFoundException {
+    public static String readJsonFile(ConfigPropertiesConstants key) throws KeyUrlNotFoundException {
 
 
         // passed key to this  method is null or there is on  key in the existing map

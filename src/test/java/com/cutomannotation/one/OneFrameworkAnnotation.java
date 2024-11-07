@@ -8,7 +8,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 
 //@inteface is the keyword used to make the annoation
-//OneFrameworkAnnotation
+//TwoFrameworkAnnotation
 @Retention(RUNTIME)
 @Target(METHOD)
 public @interface OneFrameworkAnnotation {

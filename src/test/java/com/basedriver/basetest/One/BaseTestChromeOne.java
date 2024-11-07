@@ -1,6 +1,6 @@
 package com.basedriver.basetest.One;
 
-import enumconstants.ConfigProperties;
+import enumconstants.ConfigPropertiesConstants;
 import org.openqa.selenium.WebDriver;
 import path.DriverAndFilesPathConstants;
 import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
@@ -52,7 +52,7 @@ public final  class BaseTestChromeOne {
             // ThreadLocalWebDriverManager.getDriver().get("https://demo.applitools.com/");
 
             //FramworkconstantFileRead class static  method is called when the value is required from its file to get we pass the key
-            ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigProperties.URLONE));
+            ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
         }
 
     }
