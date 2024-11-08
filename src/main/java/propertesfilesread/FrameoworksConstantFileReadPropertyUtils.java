@@ -47,7 +47,7 @@ public class FrameoworksConstantFileReadPropertyUtils {
 
     static {
         //static bliock is used for the early initialization
-        try {
+        try(FileReader fileReader=new FileReader(DriverAndFilesPathConstants.frameworkConstantsPropertyFilePath())) {
             //take file
             //FileInputStream fileInputStream = new FileInputStream("src/test/resources/configproperties/URLs.properties")
            //notw the  .property file  is the text file  so fileinputStream(specilaly for bianry file but can be used for text file also)
@@ -65,7 +65,7 @@ public class FrameoworksConstantFileReadPropertyUtils {
 
             // PROPERTIES.load(fileInputStream)
            //load the file
-            FileReader fileReader=new FileReader(DriverAndFilesPathConstants.frameworkConstantsPropertyFilePath());
+           // FileReader fileReader=new FileReader(DriverAndFilesPathConstants.frameworkConstantsPropertyFilePath());
             PROPERTIES.load(fileReader);
 
 

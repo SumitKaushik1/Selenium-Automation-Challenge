@@ -43,13 +43,13 @@ public class ExcelTwoDataProviderUtils {
 
         List<Map<String,String>> list=null;
 
-        FileInputStream fs=null;
+       // FileInputStream fs=null;
 
-        try{
+        try(FileInputStream fs=new FileInputStream(DriverAndFilesPathConstants.getExcelIterationDataSheetControlTwo())){
 
 
             // fs=new FileInputStream(DriverAndFilesPathConstants.getExcelAppiloToolsFilePath());
-            fs=new FileInputStream(DriverAndFilesPathConstants.getExcelIterationDataSheetControlTwo());
+           // fs=new FileInputStream(DriverAndFilesPathConstants.getExcelIterationDataSheetControlTwo());
 
 
 
@@ -80,14 +80,14 @@ public class ExcelTwoDataProviderUtils {
         catch(IOException e){
             e.printStackTrace();
         }
-        finally{
+       /* finally{
             try{
                 if(Objects.nonNull(fs)){
                     fs.close();
                 }
             }catch(IOException e){e.printStackTrace();}
         }
-
+*/
         System.out.println("in get data"+Arrays.toString(list.toArray()));
 
         return list;
@@ -118,10 +118,11 @@ public class ExcelTwoDataProviderUtils {
          List<Map<String, String>> list = null;
 
          //fileinputtream is needed to read the excel file
-         FileInputStream fs = null;
-         try {
-             fs = new FileInputStream(
-                     DriverAndFilesPathConstants.getExcelIterationDataSheetTwo());
+       //  FileInputStream fs = null;
+         try(  FileInputStream fs=new FileInputStream(
+                 DriverAndFilesPathConstants.getExcelIterationDataSheetTwo());) {
+             //fs = new FileInputStream(
+                   //  DriverAndFilesPathConstants.getExcelIterationDataSheetTwo());
              XSSFWorkbook workbook = new XSSFWorkbook(fs);
              //String sheetname="DemoQa Test Control Data";
              XSSFSheet sheet = workbook.getSheet(sheetname);
@@ -151,7 +152,7 @@ public class ExcelTwoDataProviderUtils {
              e.printStackTrace();
          } catch (IOException e) {
              e.printStackTrace();
-         } finally {
+         } /*finally {
 
              try {
                  if (Objects.nonNull(fs)) {
@@ -160,7 +161,7 @@ public class ExcelTwoDataProviderUtils {
              } catch (IOException e) {
                  throw new RuntimeException(e);
              }
-         }
+         }*/
 
          System.out.println(Arrays.toString(list.toArray()));
          return list;
@@ -222,13 +223,13 @@ public class ExcelTwoDataProviderUtils {
 
         List<Map<String,String>> list=null;
 
-        FileInputStream fs=null;
+       // FileInputStream fs=null;
 
-        try{
+        try( FileInputStream fs=new FileInputStream(DriverAndFilesPathConstants.getExcelIterationDataSheetControlTwo())){
 
 
             // fs=new FileInputStream(DriverAndFilesPathConstants.getExcelAppiloToolsFilePath());
-            fs=new FileInputStream(DriverAndFilesPathConstants.getExcelIterationDataSheetControlTwo());
+          //  fs=new FileInputStream(DriverAndFilesPathConstants.getExcelIterationDataSheetControlTwo());
 
 
 
@@ -259,13 +260,13 @@ public class ExcelTwoDataProviderUtils {
         catch(IOException e){
             e.printStackTrace();
         }
-        finally{
+       /* finally{
             try{
                 if(Objects.nonNull(fs)){
                     fs.close();
                 }
             }catch(IOException e){e.printStackTrace();}
-        }
+        }*/
 
         System.out.println("in get data"+Arrays.toString(list.toArray()));
 

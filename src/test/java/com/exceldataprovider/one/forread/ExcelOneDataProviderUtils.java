@@ -31,8 +31,8 @@ public class ExcelOneDataProviderUtils {
 
    public static Object[] getDataExcelAppilotools() {
 
-        try {
-            FileInputStream fs= new FileInputStream(System.getProperty("user.dir")+"/resources/excelfiles/Appollo.xlsx");
+        try( FileInputStream fs= new FileInputStream(System.getProperty("user.dir")+"/resources/excelfiles/Appollo.xlsx");) {
+
             XSSFWorkbook workbook=new  XSSFWorkbook(fs);
             XSSFSheet sheet=workbook.getSheet("Login Data");
 
@@ -92,7 +92,7 @@ public class ExcelOneDataProviderUtils {
 
     public static List<Map<String,String>>getTestDetails() throws IOException {
 
-        //public static void main (String args[]){
+
         //File file = new File(DriverAndFilesPathConstants.getExcelAppiloToolsFilePath());
         File file = new File(DriverAndFilesPathConstants.getExcelIterationDataSheet());
 
@@ -104,17 +104,17 @@ public class ExcelOneDataProviderUtils {
         }
 
 
+        //public static void main (String args[]){
 
         List<Map<String,String>> list=null;
 
-        FileInputStream fs=null;
-
-        try{
+        //FileInputStream fs=null;
 
 
-            // fs=new FileInputStream(DriverAndFilesPathConstants.getExcelAppiloToolsFilePath());
-            fs=new FileInputStream(DriverAndFilesPathConstants.getExcelAppiloToolsFilePath());
+        // fs=new FileInputStream(DriverAndFilesPathConstants.getExcelAppiloToolsFilePath());
+       // fs=new FileInputStream(DriverAndFilesPathConstants.getExcelAppiloToolsFilePath());
 
+        try(FileInputStream fs=new FileInputStream(DriverAndFilesPathConstants.getExcelAppiloToolsFilePath())){
 
 
 
@@ -144,13 +144,13 @@ public class ExcelOneDataProviderUtils {
         catch(IOException e){
             e.printStackTrace();
         }
-        finally{
+     /*   finally{
             try{
                 if(Objects.nonNull(fs)){
                     fs.close();
                 }
             }catch(IOException e){e.printStackTrace();}
-        }
+        }*/
 
         System.out.println("in get data"+Arrays.toString(list.toArray()));
 
@@ -213,13 +213,13 @@ public class ExcelOneDataProviderUtils {
 
         List<Map<String,String>> list=null;
 
-        FileInputStream fs=null;
+       // FileInputStream fs=null;
 
-        try{
+        try(FileInputStream fs=new FileInputStream(DriverAndFilesPathConstants.getExcelIterationDataSheet())){
 
 
             // fs=new FileInputStream(DriverAndFilesPathConstants.getExcelAppiloToolsFilePath());
-            fs=new FileInputStream(DriverAndFilesPathConstants.getExcelIterationDataSheet());
+          // fs=new FileInputStream(DriverAndFilesPathConstants.getExcelIterationDataSheet());
 
 
 
@@ -250,13 +250,13 @@ public class ExcelOneDataProviderUtils {
         catch(IOException e){
             e.printStackTrace();
         }
-        finally{
+       /* finally{
             try{
                 if(Objects.nonNull(fs)){
                     fs.close();
                 }
             }catch(IOException e){e.printStackTrace();}
-        }
+        }*/
 
         System.out.println("in get data"+Arrays.toString(list.toArray()));
 

@@ -49,7 +49,7 @@ public class LoginCredentialsPropertyFileRead {
 
 
     static{
-        try {
+        try(FileReader  fileReader=new FileReader(DriverAndFilesPathConstants.loginCredentialsPropertyFilePath());) {
 
             //now the  .property file  is the text file  so fileinputStream(specilaly for bianry file but can be used for text file also)
             // is not needed you can use FileReader  for text file
@@ -62,7 +62,7 @@ public class LoginCredentialsPropertyFileRead {
 
             // text file and binary file store data in bytes only but for text file standard used but binary file
             // no standard
-        FileReader  fileReader=new FileReader(DriverAndFilesPathConstants.loginCredentialsPropertyFilePath());
+       // FileReader  fileReader=new FileReader(DriverAndFilesPathConstants.loginCredentialsPropertyFilePath());
 
             PROPERTIES.load(fileReader);
         } catch (IOException e) {

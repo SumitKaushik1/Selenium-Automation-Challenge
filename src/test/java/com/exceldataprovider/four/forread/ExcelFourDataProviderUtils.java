@@ -28,8 +28,8 @@ public class ExcelFourDataProviderUtils {
     // public static void main (String args[]){
     public static Object[][] getDataVWOFour() {
 
-        try {
-            FileInputStream fs= new FileInputStream(System.getProperty("user.dir")+"/resources/excelfiles/Vwo.xlsx");
+        try( FileInputStream fs= new FileInputStream(System.getProperty("user.dir")+"/resources/excelfiles/Vwo.xlsx");) {
+
             XSSFWorkbook workbook=new  XSSFWorkbook(fs);
             XSSFSheet sheet=workbook.getSheet("Login Data");
 
@@ -117,9 +117,9 @@ public class ExcelFourDataProviderUtils {
         List<Map<String, String>> list = null;
 
         //fileinputtream is needed to read the excel file
-        FileInputStream fs = null;
-        try {
-            fs = new FileInputStream(DriverAndFilesPathConstants.getExcelVWOLoginControlFilePath());
+       // FileInputStream fs = null;
+        try(FileInputStream fs= new FileInputStream(DriverAndFilesPathConstants.getExcelVWOLoginControlFilePath())) {
+           // fs = new FileInputStream(DriverAndFilesPathConstants.getExcelVWOLoginControlFilePath());
             XSSFWorkbook workbook = new XSSFWorkbook(fs);
            //  String sheetname="vwo login user and password";
             XSSFSheet sheet = workbook.getSheet(sheetname);
@@ -147,7 +147,7 @@ public class ExcelFourDataProviderUtils {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
+        } /*finally {
 
             try {
                 if (Objects.nonNull(fs)) {
@@ -156,7 +156,7 @@ public class ExcelFourDataProviderUtils {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }
+        }*/
 
         //System.out.println(Arrays.toString(list.toArray()));
         return list;
