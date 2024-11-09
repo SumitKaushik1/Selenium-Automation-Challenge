@@ -2,6 +2,7 @@ package propertesfilesread;
 
 import customExceptions.FileNotFoundRuntimeExcption;
 import customExceptions.KeyUrlNotFoundException;
+import customExceptions.PropertyFileUsageException;
 import enumconstants.ConfigPropertiesConstants;
 import path.DriverAndFilesPathConstants;
 
@@ -113,8 +114,9 @@ public class FrameoworksConstantFileReadPropertyUtils {
         // bz no value corresspong to enum ,so we have ot convert the key to string in lowecase letters which is
         //present in the file key come as the URLONE as enum constant conver to enum string ,in lower case
            if(Objects.isNull(key)||Objects.isNull(CONFIGMAP.get(key.name().toLowerCase())))
-               throw new KeyUrlNotFoundException("property name "+key.name().toLowerCase()+" not found ,please check config properties");
-          //directly use the class variable scope within class
+           //    throw new KeyUrlNotFoundException("property name "+key.name().toLowerCase()+" not found ,please check config properties");
+            throw new PropertyFileUsageException("property name "+key.name().toLowerCase()+" not found ,please check config properties");
+           //directly use the class variable scope within class
            return CONFIGMAP.get(key.asLowerCase());
            //it will return teh value regarding to that
            //either you can use the fileInputStream .close or the tyr wiht resources to clasoe hte resouerce

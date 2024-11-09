@@ -2,6 +2,7 @@ package propertesfilesread;
 
 import customExceptions.FileNotFoundRuntimeExcption;
 import customExceptions.KeyUrlNotFoundException;
+import customExceptions.PropertyFileUsageException;
 import enumconstants.ConfigPropertiesConstants;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -93,7 +94,8 @@ public class LoginCredentialsPropertyFileRead {
         // sicne hashmap has string as the value and the key is only enum constant so
         // conver the enum to string then you can take value
         if(Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key.name().toLowerCase())))
-            throw new KeyUrlNotFoundException(("property name "+key.name().toLowerCase()+" not found ,please check config properties"));
+          //  throw new KeyUrlNotFoundException(("property name "+key.name().toLowerCase()+" not found ,please check config properties"));
+            throw new PropertyFileUsageException("property name "+key.name().toLowerCase()+" not found ,please check config properties");
 
         return CONFIGMAP.get(key.asLowerCase());
 

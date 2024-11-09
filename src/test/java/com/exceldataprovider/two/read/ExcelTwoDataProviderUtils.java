@@ -1,6 +1,8 @@
 package com.exceldataprovider.two.read;
 
 import com.exceldataprovider.four.forread.ExcelFourDataProviderUtils;
+import customExceptions.FrameworkException;
+import customExceptions.InvalidPathExcelException;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.DataProvider;
@@ -76,9 +78,16 @@ public class ExcelTwoDataProviderUtils {
                 list.add(map);
 
             }
-        }catch(FileNotFoundException e){e.printStackTrace();}
+        }catch(FileNotFoundException e){
+
+            //e.printStackTrace();
+            throw new InvalidPathExcelException("Excel File trying to read is not found");
+            // to give hte customized messag we make the custom excpetion
+        }
         catch(IOException e){
-            e.printStackTrace();
+            // e.printStackTrace();
+            //  e.printStackTrace();
+            throw new FrameworkException("some io exception happened while reading excel file ");
         }
        /* finally{
             try{
@@ -148,10 +157,16 @@ public class ExcelTwoDataProviderUtils {
                  list.add(map);
              }
 
-         } catch (FileNotFoundException e) {
-             e.printStackTrace();
-         } catch (IOException e) {
-             e.printStackTrace();
+         } catch(FileNotFoundException e){
+
+             //e.printStackTrace();
+             throw new InvalidPathExcelException("Excel File trying to read is not found");
+             // to give hte customized messag we make the custom excpetion
+         }
+         catch(IOException e){
+             // e.printStackTrace();
+             //  e.printStackTrace();
+             throw new FrameworkException("some io exception happened while reading excel file ");
          } /*finally {
 
              try {
@@ -256,9 +271,16 @@ public class ExcelTwoDataProviderUtils {
                 list.add(map);
 
             }
-        }catch(FileNotFoundException e){e.printStackTrace();}
+        }catch(FileNotFoundException e){
+
+            //e.printStackTrace();
+            throw new InvalidPathExcelException("Excel File trying to read is not found");
+            // to give hte customized messag we make the custom excpetion
+        }
         catch(IOException e){
-            e.printStackTrace();
+            // e.printStackTrace();
+            //  e.printStackTrace();
+            throw new FrameworkException("some io exception happened while reading excel file ");
         }
        /* finally{
             try{

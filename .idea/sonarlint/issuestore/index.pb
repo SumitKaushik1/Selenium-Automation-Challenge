@@ -239,3 +239,11 @@ f
 6src/main/java/enumconstants/CategoryTypeConstants.java,2\1\21b9d84e9d5565f5734ec9f4f75dedafe4cd35d0
 q
 Asrc/test/java/com/cutomannotation/two/TwoFrameworkAnnotation.java,2\b\2b8d2352b5faa6200c2aaad0b15a3463388c7528
+Œ
+\src/main/java/org/Utils/excelextendedreportpropertyfile/propertyfile/PropertyFileReader.java,3\0\30f74a398abd723795e3ee3ea94c08c5680d5802
+f
+6src/main/java/customExceptions/FrameworkException.java,9\6\9651056c8936c131bceb88171a1ef935ed2906e8
+m
+=src/main/java/customExceptions/InvalidPathExcelException.java,b\a\bace385e3299fbe056025d0bcda427e9d83d87a4
+n
+>src/main/java/customExceptions/PropertyFileUsageException.java,8\0\80c3399dbcc6a1ea2a47ca4a1a08e23d7d4d1e40
