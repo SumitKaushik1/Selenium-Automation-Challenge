@@ -108,7 +108,8 @@ public class ExcelFourDataProviderUtils {
    public static List<Map<String, String>> getTestDetails(String sheetname) {
 
 
-        File file = new File(DriverAndFilesPathConstants.getExcelVWOLoginControlFilePath());
+       // File file = new File(DriverAndFilesPathConstants.getExcelVWOLoginControlFilePath());
+       File file = new File(DriverAndFilesPathConstants.getExcelVWOLoginControlFilePathEncoded());
         // Check if the file exists
         if (file.exists()) {
             System.out.println("The file exists.");
@@ -122,7 +123,9 @@ public class ExcelFourDataProviderUtils {
 
         //fileinputtream is needed to read the excel file
        // FileInputStream fs = null;
-        try(FileInputStream fs= new FileInputStream(DriverAndFilesPathConstants.getExcelVWOLoginControlFilePath())) {
+      //  try(FileInputStream fs= new FileInputStream(DriverAndFilesPathConstants.getExcelVWOLoginControlFilePath())) {
+            try(FileInputStream fs= new FileInputStream(DriverAndFilesPathConstants.getExcelVWOLoginControlFilePathEncoded())) {
+
            // fs = new FileInputStream(DriverAndFilesPathConstants.getExcelVWOLoginControlFilePath());
             XSSFWorkbook workbook = new XSSFWorkbook(fs);
            //  String sheetname="vwo login user and password";

@@ -96,7 +96,7 @@ public class MethodPropertiesPropertyFileRead {
 
 
 
-    public static String readPropertyFile(MethodPropertiesConstant key) throws KeyUrlNotFoundException {
+    public static String readPropertyFile(MethodPropertiesConstant key)/* throws KeyUrlNotFoundException*/ {
 
 
         // passed key to this  method is null or there is on  key in the existing map
@@ -104,7 +104,7 @@ public class MethodPropertiesPropertyFileRead {
         // sicne hashmap has string as the value and the key is only enum constant so
         // conver the enum to string then you can take value
         if(Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key.name().toLowerCase())))
-          //  throw new KeyUrlNotFoundException(("property name "+key.name().toLowerCase()+" not found ,please check config properties"));
+            //  throw new KeyUrlNotFoundException(("property name "+key.name().toLowerCase()+" not found ,please check config properties"));
             throw new PropertyFileUsageException("property name "+key.name().toLowerCase()+" not found ,please check config properties");
 
         return CONFIGMAP.get(key.asLowerCase());

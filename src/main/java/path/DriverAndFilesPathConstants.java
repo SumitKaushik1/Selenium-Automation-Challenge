@@ -65,6 +65,8 @@ public final  class DriverAndFilesPathConstants {
     private static final String  EXCEL_PATH_DEMOQA_TWO;
    private static final String  EXCEL_PATH_DEMOQA_METHOD_INTERCEPTOR_TWO;
 
+   private static final String  EXCEL_PATH_VWO_LOGIN_TWO;
+
 
     static{
 
@@ -119,6 +121,9 @@ public final  class DriverAndFilesPathConstants {
         EXCEL_PATH_DEMOQA_TWO=EXCEL_FILE_PATH+"DemoQATestControlAndBrowserFour.xlsx";
 
         EXCEL_PATH_DEMOQA_METHOD_INTERCEPTOR_TWO=EXCEL_FILE_PATH+"DemoQaTestControl2Four.xlsx";
+
+        EXCEL_PATH_VWO_LOGIN_TWO=EXCEL_FILE_PATH+"vwousernameandpasswordcontrolencoded.xlsx";
+
     }
 
 
@@ -247,6 +252,11 @@ public final  class DriverAndFilesPathConstants {
         return EXCEL_PATH_DEMOQA_METHOD_INTERCEPTOR_TWO;
     }
 
+
+    public static String getExcelVWOLoginControlFilePathEncoded(){
+
+        return    EXCEL_PATH_VWO_LOGIN_TWO;
+    }
 
 
 

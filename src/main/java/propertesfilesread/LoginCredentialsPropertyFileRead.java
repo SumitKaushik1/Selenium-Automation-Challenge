@@ -98,7 +98,7 @@ public class LoginCredentialsPropertyFileRead {
 
 
 
-    public static String readPropertyFile(ConfigPropertiesConstants key) throws KeyUrlNotFoundException {
+    public static String readPropertyFile(ConfigPropertiesConstants key)/* throws KeyUrlNotFoundException*/ {
 
 
         // passed key to this  method is null or there is on  key in the existing map

@@ -253,3 +253,13 @@ p
 @src/main/java/customExceptions/InvalidPathForFilesException.java,e\7\e721c250397c99fc5e26f38f9dbf388db29d618a
 p
 @src/main/java/customExceptions/InvalidPathForExcelException.java,f\9\f928768746a83119ee6fd053144c36bc31d7e30e
+“
+csrc/test/java/com/exceldataprovider/four/forwriteyoumade/ExcelFileToWriteUsernameAndPassForVwo.java,e\4\e4d39f2b480c6e94da47233fe545e1905acf6afe
+š
+jsrc/test/java/com/exceldataprovider/four/forwriteyoumade/ExcelFileToWriteUsernameAndPassForVwoEncoded.java,5\a\5a8b3f8d918dc125d9b0fffa612b260c0c8fc113
+‹
+[src/test/java/com/pageobjectandextendreport/page/object/four/chrome/VWOLoginChromePage.java,7\f\7fb79a7c1683e6f10612797ab4446e239bf38be8
+‡
+Wsrc/test/java/com/pageobjectandextendreport/page/object/four/edge/VWOLoginEdgePage.java,5\e\5e14ef7b0aec4c4474eaa033f94e45cebf5059e2
+C
+hs_err_pid18036.log,0\3\035ce090dbab10671efe361ff5d02b19a2af1ce7

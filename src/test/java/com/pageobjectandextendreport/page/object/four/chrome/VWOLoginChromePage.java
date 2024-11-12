@@ -4,6 +4,8 @@ import com.pageobjectandextendreport.basepageobjectwithextendreport.four.BasePag
 import org.example.TestCases.Four.FourtestNgclassLevelparallel.AppVWOChallengeFourChromeTest;
 import org.openqa.selenium.By;
 
+import java.util.Base64;
+
 public class VWOLoginChromePage extends BasePageObjectChromeFour {
 
     //private within scope of  the class,final once intialized cannot be changed
@@ -28,6 +30,17 @@ public class VWOLoginChromePage extends BasePageObjectChromeFour {
        // ThreadLocalWebDriverManager.getDriver().findElement(passwordVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password1"));;
       // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.PASSWORD1));
         this.enterCredentials(passwordVWOLoginPage,password,appVWOChallengeFourChromeTest,"password");
+
+
+        return this;
+    }
+
+    public VWOLoginChromePage enterPasswordVWOLoginDecoded(String password, AppVWOChallengeFourChromeTest appVWOChallengeFourChromeTest) throws Exception {
+
+        // ThreadLocalWebDriverManager.getDriver().findElement(passwordVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password1"));;
+        // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.PASSWORD1));
+       // this.enterCredentials(passwordVWOLoginPage,password,appVWOChallengeFourChromeTest,"password");
+        this.enterCredentials(passwordVWOLoginPage,new String(Base64.getDecoder().decode(password.getBytes())),appVWOChallengeFourChromeTest,"password");
 
 
         return this;

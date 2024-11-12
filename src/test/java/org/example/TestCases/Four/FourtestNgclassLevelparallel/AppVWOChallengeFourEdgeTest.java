@@ -134,9 +134,11 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
         System.out.println("entering started");
       //Boolean errorMessageNotVisible= vwoLoginPageEdge.enterUserNameVWOLogin(username,this).enterPasswordVWOLogin(password,this)
         //        .clickButtonVWOLogin(this);
-         Boolean errorMessageNotVisible= vwoLoginPageEdge.enterUserNameVWOLogin(data.get("Username"),this).enterPasswordVWOLogin(data.get("Password"),this)
-         .clickButtonVWOLogin(this);
+        // Boolean errorMessageNotVisible= vwoLoginPageEdge.enterUserNameVWOLogin(data.get("Username"),this).enterPasswordVWOLogin(data.get("Password"),this)
+       //  .clickButtonVWOLogin(this);
 
+       Boolean errorMessageNotVisible= vwoLoginPageEdge.enterUserNameVWOLogin(data.get("Username"),this).enterPasswordVWOLoginDecoded(data.get("Password"),this)
+               .clickButtonVWOLogin(this);
         //.vWODashbord();
         System.out.println("entering ended ");
 
