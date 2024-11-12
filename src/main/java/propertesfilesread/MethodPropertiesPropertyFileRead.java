@@ -66,7 +66,18 @@ public class MethodPropertiesPropertyFileRead {
 
             PROPERTIES.load(fileReader);
         } catch (IOException e) {
-            throw new FileNotFoundRuntimeExcption(e);
+
+
+            //actually throw will search for the nearest catch block either in same place or
+            // from where it is called ie called stack
+            // if no catch block found then terminate it
+           // throw new FileNotFoundRuntimeExcption(e);
+            // but i want that it must terminate here only so  we  use exit(0);
+
+            e.printStackTrace();
+            System.exit(0);
+
+
         }
 
        // PROPERTIES.forEach((key,value)-> System.out.println("key "+key+"value "+value))

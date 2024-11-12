@@ -247,3 +247,9 @@ m
 =src/main/java/customExceptions/InvalidPathExcelException.java,b\a\bace385e3299fbe056025d0bcda427e9d83d87a4
 n
 >src/main/java/customExceptions/PropertyFileUsageException.java,8\0\80c3399dbcc6a1ea2a47ca4a1a08e23d7d4d1e40
+w
+Gsrc/main/java/customExceptions/InvalidPathForPropertyFileException.java,0\0\00016ccbe7afec613235dcfc544574c0e37c726d
+p
+@src/main/java/customExceptions/InvalidPathForFilesException.java,e\7\e721c250397c99fc5e26f38f9dbf388db29d618a
+p
+@src/main/java/customExceptions/InvalidPathForExcelException.java,f\9\f928768746a83119ee6fd053144c36bc31d7e30e
