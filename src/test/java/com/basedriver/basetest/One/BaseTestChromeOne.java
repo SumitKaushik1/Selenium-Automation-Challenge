@@ -11,6 +11,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 import java.util.Objects;
 
+
+/**
+ *
+ */
+
 //no extending of this class
 public final  class BaseTestChromeOne {
 //BaseTestChromeOne is the class which is used by whole class

@@ -11,6 +11,17 @@ import org.openqa.selenium.edge.EdgeDriver;
 import java.time.Duration;
 import java.util.Objects;
 
+
+/**
+ * Driver class is responsibl for invoking and closing the browser
+ *<p>
+ *     it is responsible for setting the driver variable to DriverManager which handles teh thread safety for the
+ *     webdriver instance <p>
+ *         Jan 20,2021
+ * @author  Amunthan,Sakthevel
+ * @version 1.0
+ * @since  1.0
+ */
 //non one extend that
 
 public final class BaseTestEdgeOne {
