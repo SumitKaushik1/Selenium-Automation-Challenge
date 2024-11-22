@@ -258,6 +258,14 @@
       <version>2.3.31</version> <!-- Ensure the version is at least 2.3.30 or newer -->
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>5.7.0</version>
+    </dependency>
+
+
 
 
   </dependencies>

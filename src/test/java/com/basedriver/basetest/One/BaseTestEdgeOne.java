@@ -1,6 +1,10 @@
+
+
+
 package com.basedriver.basetest.One;
 
 import enumconstants.ConfigPropertiesConstants;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import path.DriverAndFilesPathConstants;
 import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
 
@@ -13,14 +17,17 @@ import java.util.Objects;
 
 
 /**
- * Driver class is responsibl for invoking and closing the browser
+ * Driver class is responsible for invoking and closing the browser
  *<p>
  *     it is responsible for setting the driver variable to DriverManager which handles teh thread safety for the
- *     webdriver instance <p>
+ *     webdriver instance </p>
+ *         <pre>Checking whether it is formatted correctly</pre>
  *         Jan 20,2021
- * @author  Amunthan,Sakthevel
+ * @author  sumit,kaushik
  * @version 1.0
  * @since  1.0
+ * @see com.basedriver.bast_test_control.one.BaseTestControlEdgeOne
+ *
  */
 //non one extend that
 
@@ -34,16 +41,32 @@ public final class BaseTestEdgeOne {
 
     //nonone make the objecct of it
     //no object making of this ,object in this calss possible
+
+
+    /**
+     * private constructor to avoid external instantiation
+     */
     private BaseTestEdgeOne() {
 
     }
+
+    /**
+     * @author  sumit kaushik
+     * Jan 20,2021
+     *
+     */
 
 //method used by clas name only
 
     public static void setUpEdge() throws Exception {
         if (Objects.isNull(driver)) {
             // System.setProperty("webDriver.edge.driver", DriverAndFilesPathConstants.edgePath());
-            System.setProperty("webdriver.edge.driver", DriverAndFilesPathConstants.edgePath());
+          //  System.setProperty("webdriver.edge.driver", DriverAndFilesPathConstants.edgePath());
+
+        //  WebDriverManager.edgedriver().clearDriverCache().setup();
+
+            WebDriverManager.edgedriver().setup();
+           // WebDriverManager.edgedriver().setup();
 
             driver = new EdgeDriver();
             //which ever thread use this method it will have the local threadlocal variale set as below

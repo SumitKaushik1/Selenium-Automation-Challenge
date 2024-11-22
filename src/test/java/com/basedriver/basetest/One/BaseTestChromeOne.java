@@ -1,6 +1,7 @@
 package com.basedriver.basetest.One;
 
 import enumconstants.ConfigPropertiesConstants;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import path.DriverAndFilesPathConstants;
 import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
@@ -39,8 +40,11 @@ public final  class BaseTestChromeOne {
     public static void setUpChrome() throws Exception {
         //  System.setProperty("webdriver.chrome.driver","J:\\3. automation testing\\day41--selenium -UI elements\\AssignmentAnswers\\Appolo-Tools\\src\\test\\resources\\driver\\chromedriver.exe");
         if (Objects.isNull(ThreadLocalWebDriverManager.getDriver())) {
-            System.setProperty("webdriver.chrome.driver", DriverAndFilesPathConstants.chromePath());
+           // System.setProperty("webdriver.chrome.driver", DriverAndFilesPathConstants.chromePath());
 
+            WebDriverManager.chromedriver().clearDriverCache().setup();
+
+          //  WebDriverManager.chromedriver().setup();
 
             //driver=new ChromeDriver();//ChromeDriver class from webdriver famework uses the upper location for the driver
             //which ever thread use this method it will have the local threadlocal variale set as below
