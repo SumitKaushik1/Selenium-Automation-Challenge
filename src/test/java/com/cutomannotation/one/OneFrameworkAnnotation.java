@@ -1,5 +1,6 @@
 package com.cutomannotation.one;
 
+import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
@@ -11,6 +12,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 //TwoFrameworkAnnotation
 @Retention(RUNTIME)
 @Target(METHOD)
+@Documented // it will  add this annotation to the java doc
 public @interface OneFrameworkAnnotation {
 
 

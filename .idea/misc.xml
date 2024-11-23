@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="OTHER_OPTIONS" value="-windowtitle &quot;Testing Mini Bytes&quot; -header &quot;Selenium Automation Framework from Testing Mini Bytes&quot; -bottom &quot;&lt;font size=-1&gt;&lt;a href='https://www.youtube.com'&gt;Link, Share, Subscribe and Support&lt;/a&gt;&lt;br/&gt;Copyright &amp;copy;2021, Testing Mini Bytes. All rights reserved.&lt;br/&gt;Testing Mini Bytes gives users full access to use the framework and modify it according to their needs.&lt;/font&gt;&quot;" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
