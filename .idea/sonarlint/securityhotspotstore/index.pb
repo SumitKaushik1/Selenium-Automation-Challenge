@@ -265,3 +265,13 @@ E
 	search.js,3\3\33b042d1439e2f5f5443619894bdca69aa091bd1
 k
 ;src/test/java/com/basedriver/basetest/One/package-info.java,d\4\d46f6bcbbe842d31d1e80b497afca4e23407e902
+C
+docker-compose.yaml,e\f\ef8def03dc8f162799089e9b5f4321201c8810d5
+ê
+`src/test/java/com/pageobjectandextendreport/pagefactory/two/submenu/DemoQaHamburgerMenuPage.java,5\f\5f8d08314f547b3932e978d4ab109aae0db6f35c
+ä
+Zsrc/test/java/com/pageobjectandextendreport/pagefactory/two/submenu/DemoQaSubMenuPage.java,e\3\e36ab3c046dcf12d4a7ed4e94ad84ade1d98acc0
+Y
+)resources/extended-reports/DemoqaTwo.html,3\9\394510dadc12073bba5aa0c8bdaf2d2fee154a3d
+É
+Ssrc/test/java/com/pageobjectandextendreport/page/object/two/DemoQAWebTablePage.java,9\6\967d4c8486e96df87cda090e9811ef2554ddb034

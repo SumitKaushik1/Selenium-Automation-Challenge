@@ -1,6 +1,9 @@
 package com.basedriver.basetest.two;
 
 import enumconstants.ConfigPropertiesConstants;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import path.DriverAndFilesPathConstants;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +12,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
 
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 import java.util.Objects;
 
@@ -29,13 +34,55 @@ public final class BaseTestChromeTwo {
     //method call by class naem
     public static void setUpChrome() throws Exception {
 
-        System.setProperty("webdriver.chrome.driver", DriverAndFilesPathConstants.chromePath());
-        //  System.setProperty("webdriver.chrome.driver","J:\\3. automation testing\\day41--selenium -UI elements\\AssignmentAnswers\\Appolo-Tools\\src\\test\\resources\\driver\\chromedriver.exe");
-        //System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\drivers\\chromedriver.exe");
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+        String runMode="remote";
 
-        driver = new ChromeDriver(chromeOptions);
+        if(runMode.equalsIgnoreCase("remote")){
+            DesiredCapabilities cap = new DesiredCapabilities();
+            cap.setBrowserName("chrome");
+
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+
+              // Merge ChromeOptions with DesiredCapabilities
+            cap.merge(chromeOptions);
+
+            try {
+                driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        else{
+
+            //  System.setProperty("webdriver.chrome.driver", DriverAndFilesPathConstants.chromePath());
+            //  System.setProperty("webdriver.chrome.driver","J:\\3. automation testing\\day41--selenium -UI elements\\AssignmentAnswers\\Appolo-Tools\\src\\test\\resources\\driver\\chromedriver.exe");
+          //  System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\drivers\\chromedriver.exe");
+            //  DesiredCapabilities cap= new DesiredCapabilities();
+            //cap.setBrowserName("chrome");
+
+
+            System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\resources\\drivers\\chromedriver.exe");
+            // WebDriverManager.chromedriver().clearDriverCache().setup();
+            //liberary will take of it the chrome broser version
+
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+
+
+
+            driver = new ChromeDriver(chromeOptions);
+            // driver= new RemoteWebDriver(new URL("https://localhost:4444/wd/hub"),cap);
+
+
+        }
+
+
+
+
+
+
+
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         // driver.get("https://demoqa.com/webtables");

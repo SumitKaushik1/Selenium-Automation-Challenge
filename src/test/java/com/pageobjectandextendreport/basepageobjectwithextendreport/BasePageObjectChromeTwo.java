@@ -1,5 +1,6 @@
 package com.pageobjectandextendreport.basepageobjectwithextendreport;
 
+import com.extendedreport.two.TwoExtentLogger;
 import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Two.DemoQAWebsiteChallengeTwoTest;
 import org.openqa.selenium.By;
@@ -61,7 +62,7 @@ public class BasePageObjectChromeTwo {
         element.click();
 
        // TwoExtentLogger.pass(elementname+" is clicked");
-   //  TwoExtentLogger.pass(elementname+" is clicked",true);
+     TwoExtentLogger.pass(elementname+" is clicked",true);
 
 
     }
@@ -81,7 +82,7 @@ public class BasePageObjectChromeTwo {
         webElement.click();
 
         //  TwoExtentLogger.pass(elementname+" is clicked");
-     //  TwoExtentLogger.pass(elementname+" is clicked",true);
+       TwoExtentLogger.pass(elementname+" is clicked",true);
 
 
     }
@@ -89,7 +90,7 @@ public class BasePageObjectChromeTwo {
 
     protected WebElement getPageTitle(By titleOfpage,String elementname ) throws Exception {
         WebElement webElement=this.findElement(titleOfpage);
-       // TwoExtentLogger.pass(elementname+" is clicked",true);
+        TwoExtentLogger.pass(elementname+" is clicked",true);
          return webElement;
     }
 

@@ -6,9 +6,11 @@
     <listeners>
          <listener class-name="com.listener.controltestandextendreportandexcel.two.MethodInterceptorListenerControlTest2Two"/>
 
-        <listener class-name="com.listener.controltestandextendreportandexcel.two.ListenerClassExtendReportTwo"/>
+        <listener class-name="com.listener.controltestandextendreportandexcel.two.AnnotaionTreansformerListnerForRetryAndDataProvider"/>
 
-          <listener class-name="com.listener.controltestandextendreportandexcel.two.AnnotaionTreansformerListnerForRetryAndDataProvider"/>
+       <listener class-name="com.listener.controltestandextendreportandexcel.two.ListenerClassExtendReportTwo"/>
+
+
     </listeners>
 
 

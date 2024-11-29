@@ -10,6 +10,8 @@ import path.DriverAndFilesPathConstants;
 
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
+import java.net.URI;
 import java.util.Objects;
 
 //final class ie it cannot be inherited ie it cannot be extended
@@ -60,10 +62,14 @@ public final  class TwoExtentReport {
         }
 
         ThreadLocalTwoExtentManager.unload();
+        //it will open the html file which is  formed
+
         Desktop.getDesktop().browse(new File(DriverAndFilesPathConstants.getExtentReportPathDemoQaTwo()).toURI());
 
 
+
     }
+
 
     public static void createTest(String testcasename){
 
