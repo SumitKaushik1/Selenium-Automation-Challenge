@@ -19,12 +19,12 @@ public class BaseTestControlChromeFour {
 
    // @BeforeSuite
     //public void beforesuite(){
-      //  ExtendReportToInitAndFlushReportFour.initReports();
+      //  FourExtentReport.initReports();
    // }
 
     //@AfterSuite
     //public void aftersuite() throws IOException {
-      //  ExtendReportToInitAndFlushReportFour.flushReports();
+      //  FourExtentReport.flushReports();
     //}
 
 

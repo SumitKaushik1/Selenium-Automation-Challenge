@@ -122,7 +122,7 @@ public final  class DriverAndFilesPathConstants {
 
         EXCEL_PATH_VWO_LOGIN_ONE= EXCEL_FILE_PATH +"vwousernameandpasswordcontrol.xlsx";
 
-        EXCEL_PATH_APPILO_TOOLS_TWO= EXCEL_FILE_PATH +"AppilloTestControlAndBrowserOne.xlsx";
+        EXCEL_PATH_APPILO_TOOLS_TWO= EXCEL_FILE_PATH +"AppilloTestMethodInterceptor.xlsx";
 
         EXCEL_PATH_DEMOQA_TWO=EXCEL_FILE_PATH+"DemoQATestControlAndBrowserFour.xlsx";
 

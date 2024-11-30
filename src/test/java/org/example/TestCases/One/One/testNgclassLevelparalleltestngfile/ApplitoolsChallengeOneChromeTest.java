@@ -84,6 +84,7 @@ public final class ApplitoolsChallengeOneChromeTest extends BaseTestControlChrom
     // public void loginWithCredentials(Map<String,String> credentials) throws Exception {
 
     @OneFrameworkAnnotation(author = {"sumit","pritam"},category = {"smoke","regression"})
+    // it is getting value form the iAnnotationTransformere
     @Test(priority =0)
     public void loginWithCredentialsChrome() throws Exception {
 

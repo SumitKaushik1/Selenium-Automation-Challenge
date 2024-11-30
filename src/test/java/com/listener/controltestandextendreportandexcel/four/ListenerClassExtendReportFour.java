@@ -1,7 +1,7 @@
 package com.listener.controltestandextendreportandexcel.four;
 
-import com.extendedreport.four.ExtendLoggerToAddLogInReportFour;
-import com.extendedreport.four.ExtendReportToInitAndFlushReportFour;
+import com.extendedreport.four.FourExtentLogger;
+import com.extendedreport.four.FourExtentReport;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestListener;
@@ -14,7 +14,7 @@ public class ListenerClassExtendReportFour implements ITestListener , ISuiteList
     @Override
     public void onStart(ISuite suite){
         try {
-            ExtendReportToInitAndFlushReportFour.initReports();
+            FourExtentReport.initReports();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -23,7 +23,7 @@ public class ListenerClassExtendReportFour implements ITestListener , ISuiteList
     @Override
     public void onFinish(ISuite suite){
         try {
-            ExtendReportToInitAndFlushReportFour.flushReports();
+            FourExtentReport.flushReports();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -32,17 +32,17 @@ public class ListenerClassExtendReportFour implements ITestListener , ISuiteList
 
     @Override
     public void onTestStart(ITestResult result){
-        ExtendReportToInitAndFlushReportFour.createTest(result.getMethod().getMethodName());
+        FourExtentReport.createTest(result.getMethod().getMethodName());
         // donto provide the getDescription bz test case donto have decripton so if you want to give
         //either in the property of @TEst or give by excel filel  just like in teh One testcse
-        //  ExtendReportToInitAndFlushReportFour.createTest(result.getMethod().getDescription());
+        //  FourExtentReport.createTest(result.getMethod().getDescription());
 
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult){
         try {
-            ExtendLoggerToAddLogInReportFour.pass(iTestResult.getMethod().getMethodName()+" is passed",true);
+            FourExtentLogger.pass(iTestResult.getMethod().getMethodName()+" is passed",true);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -53,7 +53,7 @@ public class ListenerClassExtendReportFour implements ITestListener , ISuiteList
     @Override
     public void onTestFailure(ITestResult result){
         try {
-          //  ExtendLoggerToAddLogInReportFour.fail(result.getMethod().getMethodName()+"is failed",true);
+          //  FourExtentLogger.fail(result.getMethod().getMethodName()+"is failed",true);
             // Get the exception that caused the test failure
             //   Throwable throwable = result.getThrowable();
 
@@ -62,7 +62,7 @@ public class ListenerClassExtendReportFour implements ITestListener , ISuiteList
             // PrintWriter pw = new PrintWriter(sw);
             //throwable.printStackTrace(pw);;
             //String stackTrace = sw.toString();
-            // ExtendLoggerToAddLogInReportFour.fail(result.getMethod().getMethodName() + " is failed. Stack Trace:"+"\\n" + stackTrace, true);
+            // FourExtentLogger.fail(result.getMethod().getMethodName() + " is failed. Stack Trace:"+"\\n" + stackTrace, true);
 
             // throwable.getLocalizedMessage();
 
@@ -74,12 +74,12 @@ public class ListenerClassExtendReportFour implements ITestListener , ISuiteList
             String exceptionMessage = throwable.toString(); // This will give the type and message of the exception
 
             // Log the failure message and the brief exception message
-            ExtendLoggerToAddLogInReportFour.fail(result.getMethod().getMethodName() + " is failed. Stack Trace: " + exceptionMessage, true);
+            FourExtentLogger.fail(result.getMethod().getMethodName() + " is failed. Stack Trace: " + exceptionMessage, true);
 
 
-            //  ExtendLoggerToAddLogInReportFour.fail(result.getMethod().getMethodName()+"is failed",true);
-            //  ExtendLoggerToAddLogInReportFour.fail(result.getThrowable().toString());
-            //  ExtendLoggerToAddLogInReportFour.fail(Arrays.toString(result.getThrowable().getStackTrace()));
+            //  FourExtentLogger.fail(result.getMethod().getMethodName()+"is failed",true);
+            //  FourExtentLogger.fail(result.getThrowable().toString());
+            //  FourExtentLogger.fail(Arrays.toString(result.getThrowable().getStackTrace()));
 
 
 
@@ -89,7 +89,7 @@ public class ListenerClassExtendReportFour implements ITestListener , ISuiteList
 
 
             // Log the failure message and the stack trace into the Extent Report
-            //   ExtendLoggerToAddLogInReportFour.fail(result.getMethod().getMethodName() + " is failed. Stack Trace:"+"\\n" + , true);
+            //   FourExtentLogger.fail(result.getMethod().getMethodName() + " is failed. Stack Trace:"+"\\n" + , true);
 
 
         } catch (Exception e) {
@@ -101,7 +101,7 @@ public class ListenerClassExtendReportFour implements ITestListener , ISuiteList
     @Override
     public void onTestSkipped(ITestResult result){
         try {
-            ExtendLoggerToAddLogInReportFour.skip(result.getMethod().getMethodName()+"is skipped",true);
+            FourExtentLogger.skip(result.getMethod().getMethodName()+"is skipped",true);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

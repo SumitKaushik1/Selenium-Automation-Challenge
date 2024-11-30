@@ -4,8 +4,11 @@
 <suite name="All Test Suite">
 
     <listeners>
+
+       <!-- can be used for the count priorty and all -->
          <listener class-name="com.listener.controltestandextendreportandexcel.two.MethodInterceptorListenerControlTest2Two"/>
 
+        <!--can be used for the username and teh password and the dataprovider aslo -->
         <listener class-name="com.listener.controltestandextendreportandexcel.two.AnnotaionTreansformerListnerForRetryAndDataProvider"/>
 
        <listener class-name="com.listener.controltestandextendreportandexcel.two.ListenerClassExtendReportTwo"/>

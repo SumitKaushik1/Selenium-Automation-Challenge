@@ -29,3 +29,14 @@ services:
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
     shm_size: "2g"  # Increase shared memory for Firefox stability
+
+  edge:
+    image: selenium/node-edge:4.13.0  # Use the latest version of Edge Node
+    container_name: edge-node
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    shm_size: "2g"  # Increase shared memory for Chrome stability

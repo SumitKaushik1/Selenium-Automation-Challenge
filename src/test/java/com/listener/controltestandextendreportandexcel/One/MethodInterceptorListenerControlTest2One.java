@@ -28,12 +28,23 @@ public class MethodInterceptorListenerControlTest2One implements IMethodIntercep
             for(int i=0;i<methods.size();i++){
                 System.out.println("methods->"+methods.get(i).getMethod().getMethodName());
 
+
+                for(int j=0;j<list.size();j++){
+
+                    if(methods.get(i).getMethod().getMethodName().equalsIgnoreCase(list.get(j).get("TestName"))){
+
+                        System.out.println("list->"+list.get(j).get("TestName"));
+                        System.out.println(methods.get(i).getMethod().getMethodName().equalsIgnoreCase(list.get(j).get("TestName")));
+                    }
+
+
+
+                }
+               // System.out.println(list.get(i).get("TestName").equalsIgnoreCase(methods.get(i).getMethod().getMethodName()));
+
             }
 
-            for(int j=0;j<list.size();j++){
-                System.out.println("list->"+list.get(j).get("TestName"));
 
-            }
 
 
          /*   for(int i=0;i<methods.size();i++){
@@ -50,10 +61,14 @@ public class MethodInterceptorListenerControlTest2One implements IMethodIntercep
 
                 for(int j=0;j<list.size();j++){
                     if(methods.get(i).getMethod().getMethodName().equalsIgnoreCase(list.get(j).get("TestName"))){
-                           System.out.println("matched->"+list.get(j).get("TestName"));
+                          // System.out.println("matched->"+list.get(j).get("TestName"));
                             methods.get(i).getMethod().setDescription(list.get(j).get("TestDescription"));
                             methods.get(i).getMethod().setInvocationCount(Integer.parseInt(list.get(j).get("count")));
                             methods.get(i).getMethod().setPriority(Integer.parseInt(list.get(j).get("Priority")));
+                        System.out.println(
+                              "description:"+methods.get(i).getMethod().getDescription()+ "count:"+ methods.get(i).getMethod().getInvocationCount()+"Priorty:" +methods.get(i).getMethod().getPriority()
+
+                        );
 
                             if("yes".equalsIgnoreCase(list.get(j).get("Execute"))){
                                 System.out.println("Executed Yes->"+list.get(j).get("TestName"));

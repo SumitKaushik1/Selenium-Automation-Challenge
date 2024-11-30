@@ -1,6 +1,7 @@
 package com.basedriver.basetest.One;
 
 import enumconstants.ConfigPropertiesConstants;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -19,17 +20,22 @@ public class ChromeEdgeOneDriver {
 
 
     public static void baseTestChromeEdgeOneInitDriver(String browser) throws Exception {
+
     if(Objects.isNull(ThreadLocalWebDriverManager.getDriver())){
         if(browser.equalsIgnoreCase("chrome")){
-            System.setProperty("webdriver.chrome.driver", DriverAndFilesPathConstants.chromePath());
+          //  System.setProperty("webdriver.chrome.driver", DriverAndFilesPathConstants.chromePath());
+            WebDriverManager.chromedriver().clearDriverCache().setup();
             ThreadLocalWebDriverManager.setDriver(new ChromeDriver());
         }else if(browser.equalsIgnoreCase("edge")){
-            System.setProperty("webdriver.edge.driver", DriverAndFilesPathConstants.edgePath());
+            //System.setProperty("webdriver.edge.driver", DriverAndFilesPathConstants.edgePath());
+            WebDriverManager.edgedriver().setup();
             ThreadLocalWebDriverManager.setDriver(new EdgeDriver());
         }
-        ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
 
     }
+        ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
+
+
     }
 
 

@@ -11,9 +11,8 @@ import java.lang.reflect.Method;
 public class AnnotaionTreansformerListnerForRetryAndDataProvider implements IAnnotationTransformer {
     @Override
     public void transform (ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod){
-        annotation.setDataProvider("getData");
         annotation.setDataProviderClass(ExcelFourDataProviderUtils.class);
-        //annotation.setRetryAnalyzer(RetryListenerForFailTestOne.class);
+        annotation.setDataProvider("getData");
         annotation.setRetryAnalyzer(ListenerRetryFour.class);
 
     }

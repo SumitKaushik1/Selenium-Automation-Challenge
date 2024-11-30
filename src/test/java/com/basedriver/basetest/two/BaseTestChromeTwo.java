@@ -1,6 +1,7 @@
 package com.basedriver.basetest.two;
 
 import enumconstants.ConfigPropertiesConstants;
+import enumconstants.MethodPropertiesConstant;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -10,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
+import propertesfilesread.MethodPropertiesPropertyFileRead;
 
 
 import java.net.MalformedURLException;
@@ -34,7 +36,8 @@ public final class BaseTestChromeTwo {
     //method call by class naem
     public static void setUpChrome() throws Exception {
 
-        String runMode="remote";
+       // String runMode="remote";
+        String runMode= MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.RUNMODE);
 
         if(runMode.equalsIgnoreCase("remote")){
             DesiredCapabilities cap = new DesiredCapabilities();

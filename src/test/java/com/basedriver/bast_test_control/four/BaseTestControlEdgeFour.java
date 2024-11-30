@@ -1,12 +1,10 @@
 package com.basedriver.bast_test_control.four;
 
 import com.basedriver.basetest.Four.BaseTestEdgeFour;
-import com.extendedreport.four.ExtendReportToInitAndFlushReportFour;
+import com.extendedreport.four.FourExtentReport;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-
-import java.io.IOException;
 
 public class BaseTestControlEdgeFour {
 
@@ -20,12 +18,12 @@ public class BaseTestControlEdgeFour {
 
     @BeforeSuite
     public void beforesuite() throws Exception {
-        ExtendReportToInitAndFlushReportFour.initReports();
+        FourExtentReport.initReports();
     }
 
     @AfterSuite
     public void aftersuite() throws Exception {
-        ExtendReportToInitAndFlushReportFour.flushReports();
+        FourExtentReport.flushReports();
     }
     protected void setUpControlEdge() throws Exception {
         BaseTestEdgeFour.setUpEdge();

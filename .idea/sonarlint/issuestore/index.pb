@@ -177,8 +177,6 @@ zsrc/test/java/com/listener/controltestandextendreportandexcel/One/AnnotaionTrea
 Nsrc/test/java/com/exceldataprovider/one/forread/ExcelOneDataProviderUtils.java,0\1\0171f80282d503843a1a4160bfb30c3595f87e29
 Ä
 Psrc/test/java/com/exceldataprovider/four/forread/ExcelFourDataProviderUtils.java,c\a\ca22599c33d000fc352ca6fc973fade7be75ffb4
-ù
-msrc/test/java/com/exceldataprovider/one/forwriteyoumade/ExcelFileToWriteTestControlBrowserTestApplitools.java,5\7\57d4d0288c56d134235f3353580152870b159fce
 u
 Esrc/test/java/com/extendedreport/one/ThreadLocalOneExtentManager.java,e\a\eac646e761e389063f28e1c48f04e9a2a229e34b
 i
@@ -275,3 +273,13 @@ Y
 )resources/extended-reports/DemoqaTwo.html,3\9\394510dadc12073bba5aa0c8bdaf2d2fee154a3d
 É
 Ssrc/test/java/com/pageobjectandextendreport/page/object/two/DemoQAWebTablePage.java,9\6\967d4c8486e96df87cda090e9811ef2554ddb034
+^
+.resources/extended-reports/vwoheatmapfive.html,7\e\7e5bb316b55f665696140cc6cb5830ee431e9166
+[
++resources/extended-reports/DemoqaThree.html,7\7\77a680794289a8cb5223ab10f7d70b127b296a70
+k
+;src/test/java/com/extendedreport/four/FourExtentReport.java,f\d\fdab04034749e8533e40b990c857ff446f287329
+k
+;src/test/java/com/extendedreport/four/FourExtentLogger.java,9\8\98323b9af8239b3707ca3220247c52f2af1dc1f1
+•
+usrc/test/java/com/exceldataprovider/four/forwriteyoumade/ExcelFileToWriteUsernameAndPassForVwoEncodedIAnnotation.java,e\2\e2f4611e0527479d65d409d3f25c1a88be9eadfb

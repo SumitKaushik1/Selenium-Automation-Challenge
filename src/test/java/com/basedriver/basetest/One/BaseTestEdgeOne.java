@@ -65,7 +65,7 @@ public final class BaseTestEdgeOne {
 
         //  WebDriverManager.edgedriver().clearDriverCache().setup();
 
-            WebDriverManager.edgedriver().setup();
+            WebDriverManager.edgedriver().clearDriverCache().setup();
            // WebDriverManager.edgedriver().setup();
 
             driver = new EdgeDriver();

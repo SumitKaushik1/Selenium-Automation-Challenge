@@ -69,19 +69,20 @@ Object[][] getDataExcelVWOFour(){
     //loginCredentials is called for the second time for the value ie obj[1]->  holding the array of one dimensional of objet[1]
     // each one dimensional [][][],login,username ,passwrod goes to respective argument
 
-    // @Test(priority=0,dataProvider = "VWOURLFour")
+    // @Test(priority=0,dataProvider = "VWOURLFour") // for above method
 
     //public void loginCredentialsChrome(String loginId,String username,String password) throws Exception {
 
         // @Test(priority=0,dataProvider = "getData",dataProviderClass = ExcelFourDataProviderUtils.class )
      @Test(priority = 0)
+     // it is getting value form the iAnnotationTransformere
          public void loginCredentialsChrome(Map<String,String>data) throws Exception {
         this.setUpControlChrome();
 
 
         // for the logger in the extended report
         // it is just like a log ie the test is created  here
-      //  ExtendReportToInitAndFlushReportFour.createTest("logged in ");
+      //  FourExtentReport.createTest("logged in ");
 
 
 
@@ -167,7 +168,7 @@ Object[][] getDataExcelVWOFour(){
 
         // for the logger in the extended report
         // it is just like a log ie the test is created  here
-      //  ExtendReportToInitAndFlushReportFour.createTest("urlcheck ");
+      //  FourExtentReport.createTest("urlcheck ");
 
     WebElement text= new VWODashBoardPageChrome().vWODashbord(this);
 

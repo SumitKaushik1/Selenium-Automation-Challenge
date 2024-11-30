@@ -27,7 +27,9 @@ public final class ApplitoolsChallengeOneChromeEdgeTest extends ChromeEdgeOneBas
 
 
 
+    // int the map data is provided by the IAnnoatioatni transefer listener
     @Test(priority =0)
+    // // it is getting value form the iAnnotationTransformere
     public void loginWithCredentials(Map<String,String> data) throws Exception {
 
 
@@ -200,7 +202,7 @@ public final class ApplitoolsChallengeOneChromeEdgeTest extends ChromeEdgeOneBas
 
 
 
-
+    // int the map data is provided by the IAnnoatioatni transefer listener
     @Test(priority =1)
     void totalMoneySpentCalculation(Map<String,String> data) throws KeyUrlNotFoundException {
 
@@ -289,19 +291,23 @@ public final class ApplitoolsChallengeOneChromeEdgeTest extends ChromeEdgeOneBas
 
 
 
-
+    // int the map data is provided by the IAnnoatioatni transefer listener
     //you have to add the methdo name also in teh testng file
     @Test(priority =2)
     void justToTestListenerMethod1(Map<String,String> data){
         System.out.println("justToTestListenerMethod1");
     }
 
+
+    // int the map data is provided by the IAnnoatioatni transefer listener
     //you have to add the methdo name also in teh testng file
     @Test(priority =3)
     void justToTestListenerMethod2(Map<String,String> data){
         System.out.println("justToTestListenerMethod2");
     }
 
+
+    // int the map data is provided by the IAnnoatioatni transefer listener
     @Test(priority =4)
     void justToTestRetryListenerOnFailMethod3(Map<String,String> data){
         System.out.println("justToTestRetryListenerOnFailMethod3");

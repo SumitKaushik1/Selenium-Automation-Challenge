@@ -18,19 +18,19 @@ public class ExcelFileToWriteMethodInterceptior {
 
         Map<String, Object[]> data = new LinkedHashMap<>();
         data.put("1", new Object[]{"TestName", "TestDescription", "Execute", "Priority", "count"});
-        data.put("2", new Object[]{"loginWithCredentialsChrome", "to login chrome ", "Yes", "0", "1"});
-        data.put("3", new Object[]{"totalMoneySpentCalculationChrome", "to calculate money chrome", "Yes", "1", "1"});
-       // data.put("4", new Object[]{"justToTestListenerMethod1Chrome", "to test listener count control on method chrome", "Yes", "2", "1"});
-       // data.put("5", new Object[]{"justToTestListenerMethod2Chrome", "to test listener count control on method chrome", "yes", "3", "1"});
-       // data.put("6", new Object[]{"justToTestRetryListenerOnFailMethod3Chrome", "to test listener count control on method chrome", "No", "4", "1"});
+        data.put("2", new Object[]{"loginWithCredentialsChrome", "to login chrome ", "yes", "0", "1"});
+        data.put("3", new Object[]{"totalMoneySpentCalculationChrome", "to calculate money chrome", "yes", "1", "1"});
+        data.put("4", new Object[]{"justToTestListenerMethod1Chrome", "to test listener 1 count control on method chrome", "yes", "2", "1"});
+        data.put("5", new Object[]{"justToTestListenerMethod2Chrome", "to test listener 2 count control on method chrome", "yes", "3", "1"});
+        data.put("6", new Object[]{"justToTestRetryListenerOnFailMethod3Chrome", "to test retry listener  control on method chrome", "no", "4", "1"});
 
 
        // data.put("7", new Object[]{"TestName", "TestDescription", "Execute", "Priority", "count"});
-        data.put("4", new Object[]{"loginWithCredentialsEdge", "to login edge ", "Yes", "0", "1"});
-        data.put("5", new Object[]{"totalMoneySpentCalculationEdge", "to calculate money edge", "Yes", "1", "1"});
-        //data.put("9", new Object[]{"justToTestListenerMethod1Edge", "to test listener count control on method edge", "Yes", "2", "1"});
-        //data.put("10", new Object[]{"justToTestListenerMethod2Edge", "to test listener count control on method edge", "yes", "3", "1"});
-        //data.put("11", new Object[]{"justToTestRetryListenerOnFailMethod3Edge", "to test listener count control on method edge", "No", "4", "1"});
+        data.put("7", new Object[]{"loginWithCredentialsEdge", "to login edge ", "yes", "0", "1"});
+        data.put("8", new Object[]{"totalMoneySpentCalculationEdge", "to calculate money edge", "yes", "1", "1"});
+        data.put("9", new Object[]{"justToTestListenerMethod1Edge", "to test listener 1 control on method edge", "yes", "2", "1"});
+        data.put("10", new Object[]{"justToTestListenerMethod2Edge", "to test listener 2 control on method edge", "yes", "3", "1"});
+        data.put("11", new Object[]{"justToTestRetryListenerOnFailMethod3Edge", "to test retry listener  control on method edge", "no", "4", "1"});
 
         Set<String> keySet = data.keySet();
 

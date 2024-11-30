@@ -2,11 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <listeners>
-        <!-- <listener class-name="One.com.listener.controltestandextendreportandexcel.MethodInterceptorzListenerControlTestOne"/>-->
-      <!--  <listener class-name="com.listener.controltestandextendreportandexcel.One.AnnotationTransformerListenerControlTestOne"/>-->
-        <listener class-name="com.listener.controltestandextendreportandexcel.four.ListenerClassExtendReportFour"/>
-        <listener class-name="com.listener.controltestandextendreportandexcel.four.ListenerRetryFour"/>
+        <!-- Iannoatationtransformer can be used  is used to execute test case yes or no and username and the password,retry ,fname and first name -->
         <listener class-name="com.listener.controltestandextendreportandexcel.four.AnnotaionTreansformerListnerForRetryAndDataProvider"/>
+        <listener class-name="com.listener.controltestandextendreportandexcel.four.ListenerRetryFour"/>
+        <listener class-name="com.listener.controltestandextendreportandexcel.four.ListenerClassExtendReportFour"/>
+
+
+
     </listeners>
 
 

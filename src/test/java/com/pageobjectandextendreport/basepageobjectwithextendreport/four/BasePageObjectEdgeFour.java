@@ -1,6 +1,6 @@
 package com.pageobjectandextendreport.basepageobjectwithextendreport.four;
 
-import com.extendedreport.four.ExtendLoggerToAddLogInReportFour;
+import com.extendedreport.four.FourExtentLogger;
 import com.waitfactory.four.WaitFactoryFourEdge;
 import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Four.FourtestNgclassLevelparallel.AppVWOChallengeFourEdgeTest;
@@ -21,12 +21,12 @@ public class BasePageObjectEdgeFour {
         this.findElement(element,appVWOChallengeFourEdgeTest)
                 .clear();
         this.findElement(element,appVWOChallengeFourEdgeTest ).sendKeys(stringValueFromPropertyFile);
-       ExtendLoggerToAddLogInReportFour.pass(stringValueFromPropertyFile+"is entered successfully in "+elementname,true);
+       FourExtentLogger.pass(stringValueFromPropertyFile+"is entered successfully in "+elementname,true);
 
     }
     protected void clickLogin(By element,AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest,String elementname ) throws Exception {
        this.findElement(element,appVWOChallengeFourEdgeTest).click();;
-        ExtendLoggerToAddLogInReportFour.pass(elementname+" is clicked",true);
+        FourExtentLogger.pass(elementname+" is clicked",true);
 
     }
 

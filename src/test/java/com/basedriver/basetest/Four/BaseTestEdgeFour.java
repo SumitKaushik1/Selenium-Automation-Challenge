@@ -1,6 +1,7 @@
 package com.basedriver.basetest.Four;
 
 import enumconstants.ConfigPropertiesConstants;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import path.DriverAndFilesPathConstants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -24,8 +25,9 @@ public class BaseTestEdgeFour {
     public static void setUpEdge() throws Exception {
 
         if (Objects.isNull(driver)) {
-            System.setProperty("webdriver.edge.driver", DriverAndFilesPathConstants.edgePath());
+           // System.setProperty("webdriver.edge.driver", DriverAndFilesPathConstants.edgePath());
 
+            WebDriverManager.edgedriver().clearDriverCache().setup();
             driver = new EdgeDriver();
             //which ever thread useing this method that thread imopliclaty will have its own threadlocal variable
             //so the thread local variable is made static even it is static the when thrad comes to it

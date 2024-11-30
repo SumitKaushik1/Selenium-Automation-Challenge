@@ -31,7 +31,14 @@ OVERRIDEREPORTS{
     RETRYFAILEDTESTS{
         @Override
                 public String asLowerCase(){ return RETRYFAILEDTESTS.toString().toLowerCase(); }
+    },
+
+
+    RUNMODE{
+        @Override
+        public String asLowerCase(){ return RUNMODE.toString().toLowerCase(); }
     };
+
 
     public abstract String asLowerCase();
 }
