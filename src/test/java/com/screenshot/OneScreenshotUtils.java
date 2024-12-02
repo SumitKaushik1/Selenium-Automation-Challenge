@@ -8,7 +8,7 @@ public class OneScreenshotUtils {
 
 
    /* public static void main (String args[]) throws Exception {
-        BaseTestChromeOne.setUpChrome();
+        ChromeOneDriver.setUpChrome();
         System.out.println(getBase64Imgage());
     }*/
 

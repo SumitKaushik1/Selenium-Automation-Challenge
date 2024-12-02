@@ -193,6 +193,27 @@ public class ExcelOneDataProviderUtils {
     }
 
 
+    @DataProvider(parallel = true)
+    public static   Object[] getData1(Method m) throws IOException {
+        //public static void main(String args[]){
+        String testname=m.getName();
+        //  list=new ArrayList<>();
+        if(list.isEmpty()){
+            list= ExcelOneDataProviderUtils.getTestDetails();
+        }
+
+        //    System.out.println(Arrays.toString(list.toArray()));
+        List<Map<String,String>> smalllist=new  ArrayList<>();
+        for(int i=0;i<list.size();i++){
+            if(list.get(i).get("TestName").equalsIgnoreCase(testname)){
+                if(list.get(i).get("Execute").equalsIgnoreCase("yes")){
+                    smalllist.add(list.get(i));
+                }
+            }
+        }
+
+        return smalllist.toArray();
+    }
 
 
 

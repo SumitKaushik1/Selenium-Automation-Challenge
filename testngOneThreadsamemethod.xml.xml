@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="J:/3. automation testing testing acadmey/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/One/One/testNgclassLevelparalleltestngfile/samemethodforchromeedge">
+        <classes>
+            <class name="org.example.TestCases.One.One.testNgclassLevelparalleltestngfile.samemethodforchromeedge.ApplitoolsChallengeOneChromeEdgeTest">
+                <methods>
+                    <include name="loginWithCredentials"/>
+                    <include name="verifyAppointmentConfirmation"/>
+                    <include name="totalMoneySpentCalculation"/>
+                    <include name="justToTestListenerMethod1"/>
+                    <include name="justToTestListenerMethod2"/>
+                    <include name="justToTestRetryListenerOnFailMethod3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

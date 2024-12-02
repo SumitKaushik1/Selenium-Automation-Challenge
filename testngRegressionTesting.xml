@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="J:/3. automation testing testing acadmey/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/Five">
+        <classes>
+            <class name="org.example.TestCases.Five.AppVWOChallengeFiveTest">
+                <methods>
+                    <include name="mouseHoverButton"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="J:/3. automation testing testing acadmey/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/Four">
+        <classes>
+            <class name="org.example.TestCases.Four.FourTwoThreadLevelParallel.AppVWOChallengeFourNotSynchronisedTest">
+                <methods>
+                    <include name="testingWithThread"/>
+                </methods>
+            </class>
+            <class name="org.example.TestCases.Four.FourTwoThreadLevelParallel.AppVWOChallengeFourSychronisedTest">
+                <methods>
+                    <include name="testingWithThread"/>
+                </methods>
+            </class>
+            <class name="org.example.TestCases.Four.FourtestNgclassLevelparallel.AppVWOChallengeFourChromeTest">
+                <methods>
+                    <include name="loginCredentialsChrome"/>
+                    <include name="checkUrlDashboardPageChrome"/>
+                </methods>
+            </class>
+            <class name="org.example.TestCases.Four.FourtestNgclassLevelparallel.AppVWOChallengeFourEdgeTest">
+                <methods>
+                    <include name="loginCredentialsEdge"/>
+                    <include name="checkUrlDashboardPageEdge"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="J:/3. automation testing testing acadmey/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/One">
+        <classes>
+            <class name="org.example.TestCases.One.One.testNgclassLevelparalleltestngfile.classlevel.ApplitoolsChallengeOneChromeTest">
+                <methods>
+                    <include name="loginWithCredentialsChrome"/>
+                    <include name="verifyAppointmentConfirmation"/>
+                    <include name="totalMoneySpentCalculationChrome"/>
+                    <include name="justToTestListenerMethod1Chrome"/>
+                    <include name="justToTestListenerMethod2Chrome"/>
+                    <include name="justToTestRetryListenerOnFailMethod3Chrome"/>
+                </methods>
+            </class>
+            <class name="org.example.TestCases.One.One.testNgclassLevelparalleltestngfile.classlevel.ApplitoolsChallengeOneEdgeTest">
+                <methods>
+                    <include name="loginWithCredentialsEdge"/>
+                    <include name="verifyAppointmentConfirmation"/>
+                    <include name="totalMoneySpentCalculationEdge"/>
+                    <include name="justToTestListenerMethod1Edge"/>
+                    <include name="justToTestListenerMethod2Edge"/>
+                    <include name="justToTestRetryListenerOnFailMethod3Edge"/>
+                </methods>
+            </class>
+            <class name="org.example.TestCases.One.One.testNgclassLevelparalleltestngfile.methodlevel.ApplitoolsChallengeOneChromeEdgeTest">
+                <methods>
+                    <include name="verifyAppointmentConfirmation"/>
+                    <include name="verifyAppointmentConfirmation"/>
+                </methods>
+            </class>
+            <class name="org.example.TestCases.One.One.testNgclassLevelparalleltestngfile.samemethodforchromeedge.ApplitoolsChallengeOneChromeEdgeTest">
+                <methods>
+                    <include name="loginWithCredentials"/>
+                    <include name="verifyAppointmentConfirmation"/>
+                    <include name="totalMoneySpentCalculation"/>
+                    <include name="justToTestListenerMethod1"/>
+                    <include name="justToTestListenerMethod2"/>
+                    <include name="justToTestRetryListenerOnFailMethod3"/>
+                </methods>
+            </class>
+            <class name="org.example.TestCases.One.OnetestNgThreadLevelparallel.AppoloToolsChallengeOneSynchronisedTest">
+                <methods>
+                    <include name="testingWithThread"/>
+                    <include name="verifyAppointmentConfirmation"/>
+                    <include name="verifyAppointmentConfirmation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="J:/3. automation testing testing acadmey/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/Three">
+        <classes>
+            <class name="org.example.TestCases.Three.DemoQaModalDialogesChallengeThreeTest">
+                <methods>
+                    <include name="clickOnLargeModalAndVerifyContent"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="J:/3. automation testing testing acadmey/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/Two">
+        <classes>
+            <class name="org.example.TestCases.Two.DemoQAWebsiteChallengeTwoTest">
+                <methods>
+                    <include name="clickThirdEditButton"/>
+                    <include name="addDetails"/>
+                    <include name="clickOnHamburgerbuttonSubList"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

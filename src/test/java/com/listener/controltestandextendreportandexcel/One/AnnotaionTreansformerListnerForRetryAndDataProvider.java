@@ -11,7 +11,7 @@ public class AnnotaionTreansformerListnerForRetryAndDataProvider implements IAnn
 
     @Override
     public void transform (ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod){
-        annotation.setDataProvider("getData");
+        annotation.setDataProvider("getData1");
         annotation.setDataProviderClass(ExcelOneDataProviderUtils.class);
         //annotation.setRetryAnalyzer(RetryListenerForFailTestOne.class);
       //  annotation.setRetryAnalyzer(RetryListenerForFailTestOne.class);

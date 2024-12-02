@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+
+    <listeners>
+        <!-- Iannoatationtransformer we can do the count enable retry and som more you can see  -->
+           <listener class-name="com.listener.controltestandextendreportandexcel.One.AnnotationTransformerListenerControlTestOne"/>
+
+      <!--  test description,count ,priorty some more you can see -->
+        <listener class-name="com.listener.controltestandextendreportandexcel.One.MethodInterceptorListenerControlTest2One"/>
+
+        <listener class-name="com.listener.controltestandextendreportandexcel.One.ListenerClassExtendReportOne"/>
+
+
+ </listeners>
+
+
+ <test verbose="2" preserve-order="true"  parallel="classes" thread-count="2"
+       name="J:/3. automation testing testing acadmey/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/One/One/testNgclassLevelparalleltestngfile/ApplitoolsChallengeOneChromeTest.java">
+     <classes>
+         <class name="org.example.TestCases.One.One.testNgclassLevelparalleltestngfile.classlevel.ApplitoolsChallengeOneChromeTest">
+             <methods>
+                 <include name="loginWithCredentialsChrome"/>
+                 <include name="totalMoneySpentCalculationChrome"/>
+                 <include name="justToTestListenerMethod1Chrome"/>
+                 <include name="justToTestListenerMethod2Chrome"/>
+                 <include name="justToTestRetryListenerOnFailMethod3Chrome"/>
+             </methods>
+         </class>
+
+         <class name="org.example.TestCases.One.One.testNgclassLevelparalleltestngfile.classlevel.ApplitoolsChallengeOneEdgeTest">
+             <methods>
+                 <include name="loginWithCredentialsEdge"/>
+                 <include name="totalMoneySpentCalculationEdge"/>
+                 <include name="justToTestListenerMethod1Edge"/>
+                 <include name="justToTestListenerMethod2Edge"/>
+                 <include name="justToTestRetryListenerOnFailMethod3Edge"/>
+             </methods>
+         </class>
+     </classes>
+ </test>
+</suite>
