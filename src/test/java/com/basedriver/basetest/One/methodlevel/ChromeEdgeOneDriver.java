@@ -1,5 +1,6 @@
 package com.basedriver.basetest.One.methodlevel;
 
+import com.driverfactory.one.OneDriverFactory;
 import enumconstants.ConfigPropertiesConstants;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +19,7 @@ public class ChromeEdgeOneDriver {
     private ChromeEdgeOneDriver(){}
 
 
-    public static void baseTestChromeEdgeOneInitDriver(String browser) throws Exception {
+   /* public static void baseTestChromeEdgeOneInitDriver(String browser) throws Exception {
 
 
         // since the thread count is  2 in test ng and it is at the method level ie first 4 method  of chrome divied into the
@@ -46,6 +47,65 @@ public class ChromeEdgeOneDriver {
 
 
     }
+*/
+
+
+    public static void baseTestChromeEdgeOneInitDriver(String browser) throws Exception {
+
+        WebDriver webDriver=null;
+        // since the thread count is  2 in test ng and it is at the method level ie first 4 method  of chrome divied into the
+        // ino the one thread and  4 of  edge divided into other thread
+        // when the first thread  come
+    if(Objects.isNull(ThreadLocalWebDriverManager.getDriver())){
+
+
+        // since the thread count is  2 in test ng and it is at the method level ie first 4 method  of chrome divied into the
+        // ino the one thread and  4 of  edge divided into other thread
+        // when the first thread  come
+        if(Objects.isNull(ThreadLocalWebDriverManager.getDriver())){
+
+            webDriver= OneDriverFactory.getDriver(browser);
+
+            ThreadLocalWebDriverManager.setDriver(webDriver);
+
+
+            //  if(browser.equalsIgnoreCase("chrome")){
+            //  System.setProperty("webdriver.chrome.driver", DriverAndFilesPathConstants.chromePath());
+            // WebDriverManager.chromedriver().clearDriverCache().setup();
+
+
+            //chrome driver is set or its scope to that particulat thread
+            //ThreadLocalWebDriverManager.setDriver(new ChromeDriver());
+            // webDriver=new ChromeDriver();
+
+            // }else if(browser.equalsIgnoreCase("edge")){
+            //System.setProperty("webdriver.edge.driver", DriverAndFilesPathConstants.edgePath());
+            //  WebDriverManager.edgedriver().clearDriverCache().setup();
+
+
+            //edge driver is set or scope to the particualar thread
+            //ThreadLocalWebDriverManager.setDriver(new EdgeDriver());
+
+            //webDriver=new EdgeDriver();
+            // }
+
+        }
+        // ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
+
+
+
+      //  return webDriver;
+
+    }
+       // webDriver.get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
+
+        ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
+
+
+    }
+
+
+
 
 
     // it used to get driver where there is not inheritance of this class directlly call this

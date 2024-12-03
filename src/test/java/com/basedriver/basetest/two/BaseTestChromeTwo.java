@@ -50,6 +50,7 @@ public final class BaseTestChromeTwo {
             cap.merge(chromeOptions);
 
             try {
+                //it is for the  docker
                 driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
