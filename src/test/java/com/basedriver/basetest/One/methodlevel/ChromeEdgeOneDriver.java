@@ -62,7 +62,7 @@ public class ChromeEdgeOneDriver {
         // since the thread count is  2 in test ng and it is at the method level ie first 4 method  of chrome divied into the
         // ino the one thread and  4 of  edge divided into other thread
         // when the first thread  come
-        if(Objects.isNull(ThreadLocalWebDriverManager.getDriver())){
+        //if(Objects.isNull(ThreadLocalWebDriverManager.getDriver())){
 
             webDriver= OneDriverFactory.getDriver(browser);
 
@@ -89,7 +89,7 @@ public class ChromeEdgeOneDriver {
             //webDriver=new EdgeDriver();
             // }
 
-        }
+      //  }
         // ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
 
 

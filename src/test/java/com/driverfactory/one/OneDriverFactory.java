@@ -31,6 +31,7 @@ public class OneDriverFactory {
                  DesiredCapabilities  cap=new DesiredCapabilities();
                  cap.setBrowserName("chrome");
                  driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),cap);
+                // driver=new RemoteWebDriver(new URL("https://192.168.0.8:4444/wd/hub"),cap);
 
              }
              else {
@@ -46,6 +47,8 @@ public class OneDriverFactory {
                 DesiredCapabilities cap= new DesiredCapabilities();
                 cap.setBrowserName("edge");
                 driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),cap);
+               // driver=new RemoteWebDriver(new URL("https://192.168.0.8:4444/wd/hub"),cap);
+
 
             }else {
                 System.out.println("inside local ");

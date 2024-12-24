@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <!-- <listener class-name="One.com.listener.controltestandextendreportandexcel.MethodInterceptorzListenerControlTestOne"/>-->
+        <!--  <listener class-name="com.listener.controltestandextendreportandexcel.One.AnnotationTransformerListenerControlTestOne"/>-->
+        <listener class-name="com.listener.controltestandextendreportandexcel.five.ListenerClassExtendReportFive"/>
+    </listeners>
+<!--    what happnes it sees the class nwo the threads will be formed main thread run the AppVWOChallengeFiveTest
+    two child threads will run the mthdos  inside that class parallel and uses same docker container make the two sessions of same chrome-->
+    <test verbose="2" preserve-order="true" thread-count="2" parallel="methods"
+          name="J:/3. automation testing testing acadmey/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/Five/AppVWOChallengeFiveTest.java">
+        <classes>
+            <class name="org.example.TestCases.Five.sameonebrowser.AppVWOChallengeFiveTest">
+            </class>
+        </classes>
+    </test>
+</suite>
