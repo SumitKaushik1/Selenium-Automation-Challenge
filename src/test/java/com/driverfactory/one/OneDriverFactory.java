@@ -6,6 +6,7 @@ import org.apache.http.auth.MalformedChallengeException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import propertesfilesread.MethodPropertiesPropertyFileRead;
@@ -29,7 +30,7 @@ public class OneDriverFactory {
              if(runmode.equalsIgnoreCase("remote")){
                  System.out.println("inside remote ");
                  DesiredCapabilities  cap=new DesiredCapabilities();
-                 cap.setBrowserName("chrome");
+                 cap.setBrowserName(Browser.CHROME.browserName());
                  driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),cap);
                 // driver=new RemoteWebDriver(new URL("https://192.168.0.8:4444/wd/hub"),cap);
 
@@ -45,7 +46,7 @@ public class OneDriverFactory {
             if(runmode.equalsIgnoreCase("remote")){
                 System.out.println("inside remote ");
                 DesiredCapabilities cap= new DesiredCapabilities();
-                cap.setBrowserName("edge");
+                cap.setBrowserName(Browser.EDGE.browserName());
                 driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),cap);
                // driver=new RemoteWebDriver(new URL("https://192.168.0.8:4444/wd/hub"),cap);
 

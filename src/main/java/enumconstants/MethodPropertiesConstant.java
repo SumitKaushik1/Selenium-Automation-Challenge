@@ -37,6 +37,11 @@ OVERRIDEREPORTS{
     RUNMODE{
         @Override
         public String asLowerCase(){ return RUNMODE.toString().toLowerCase(); }
+    },
+
+    GRIDMODE{
+        @Override
+        public String asLowerCase(){ return GRIDMODE.toString().toLowerCase(); }
     };
 
 

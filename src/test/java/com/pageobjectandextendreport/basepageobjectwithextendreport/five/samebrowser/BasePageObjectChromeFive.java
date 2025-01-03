@@ -1,5 +1,6 @@
 package com.pageobjectandextendreport.basepageobjectwithextendreport.five.samebrowser;
 
+import com.extendedreport.five.ExtendLoggerToAddLogInReportFive;
 import com.waitfactory.five.samebrowser.WaitFactoryFive;
 import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Five.sameonebrowser.AppVWOChallengeFiveTest;
@@ -21,13 +22,13 @@ public class BasePageObjectChromeFive {
         Actions actions = new Actions(appVWOChallengeFiveTest.controlGetDriver());
         actions.moveToElement(element).perform();
 
-        //ExtendLoggerToAddLogInReportFive.pass(" move to element"+elementname,true);
+        ExtendLoggerToAddLogInReportFive.pass(" move to element"+elementname,true);
     }
 
     protected void switchWindow(String window, AppVWOChallengeFiveTest  appVWOChallengeFiveTest,String elementname) throws Exception {
         appVWOChallengeFiveTest.controlGetDriver().switchTo().window(window);
 
-      //  ExtendLoggerToAddLogInReportFive.pass(" switch to "+elementname,true);
+        ExtendLoggerToAddLogInReportFive.pass(" switch to "+elementname,true);
 
 
     }

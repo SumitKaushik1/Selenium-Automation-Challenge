@@ -25,6 +25,12 @@ public class ChromeEdgeOneDriver {
         // ino the one thread and  4 of  edge divided into other thread
         // when the first thread  come
     if(Objects.isNull(ThreadLocalWebDriverManager.getDriver())){
+
+
+
+
+
+
         if(browser.equalsIgnoreCase("chrome")){
           //  System.setProperty("webdriver.chrome.driver", DriverAndFilesPathConstants.chromePath());
             WebDriverManager.chromedriver().clearDriverCache().setup();

@@ -15,13 +15,13 @@ public class BasePageObjectOneEdge {
     protected void  sendCredentialsKeys(By usernameApplitools, String stringValueFromPropertyFile, String elementname, ApplitoolsChallengeOneEdgeTest applitoolsChallengeOneEdgeTest) throws Exception {
 
         applitoolsChallengeOneEdgeTest.controlGetDriver().findElement(usernameApplitools).sendKeys(stringValueFromPropertyFile);
-        OneExtentLogger.pass(stringValueFromPropertyFile+"is entered successfully in "+elementname,true);
+       // OneExtentLogger.pass(stringValueFromPropertyFile+"is entered successfully in "+elementname,true);
     }
 
     protected void clickLogin(By buttonApplitools,String elementname,ApplitoolsChallengeOneEdgeTest applitoolsChallengeOneEdgeTest) throws Exception {
 
         applitoolsChallengeOneEdgeTest.controlGetDriver().findElement(buttonApplitools).click();
-        OneExtentLogger.pass(elementname+" is clicked",true);
+        //OneExtentLogger.pass(elementname+" is clicked",true);
     }
 
     protected List<WebElement> findMoreElements(By spans,ApplitoolsChallengeOneEdgeTest applitoolsChallengeOneEdgeTest){

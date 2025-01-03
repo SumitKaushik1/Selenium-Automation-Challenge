@@ -68,7 +68,7 @@ public final class EdgeOneDriver {
 
         //  WebDriverManager.edgedriver().clearDriverCache().setup();
 
-            WebDriverManager.edgedriver().clearDriverCache().setup();
+            WebDriverManager.edgedriver().setup();
            // WebDriverManager.edgedriver().setup();
 
             driver = new EdgeDriver();

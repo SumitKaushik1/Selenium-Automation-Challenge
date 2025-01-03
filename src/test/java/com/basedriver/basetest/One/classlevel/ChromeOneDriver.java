@@ -45,9 +45,9 @@ public final  class ChromeOneDriver {
         if (Objects.isNull(ThreadLocalWebDriverManager.getDriver())) {
            // System.setProperty("webdriver.chrome.driver", DriverAndFilesPathConstants.chromePath());
 
-            WebDriverManager.chromedriver().clearDriverCache().setup();
+        //    WebDriverManager.chromedriver().clearDriverCache().setup();
 
-          //  WebDriverManager.chromedriver().setup();
+           WebDriverManager.chromedriver().setup();
 
             //driver=new ChromeDriver();//ChromeDriver class from webdriver famework uses the upper location for the driver
             //which ever thread use this method it will have the local threadlocal variale set as below

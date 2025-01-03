@@ -1,5 +1,4 @@
-version: "3.9"
-
+version: "3"
 services:
   selenium-hub:
     image: selenium/hub:4.15.0  # Use the latest version of Selenium Grid Hub
@@ -18,4 +17,43 @@ services:
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_MAX_SESSION=2
       - SE_NODE_MAX_INSTANCES=2
-    shm_size: "2g"
+    shm_size: "1g"
+
+  chrome2:
+    image: selenium/node-chrome:4.15.0  # Second Chrome node
+    container_name: chrome-node-2
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSION=2
+      - SE_NODE_MAX_INSTANCES=2
+    shm_size: "1g"
+
+  firefox:
+    image: selenium/node-firefox:4.15.0  # Update Firefox node image version
+    container_name: firefox-node
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSION=2
+      - SE_NODE_MAX_INSTANCES=2
+    shm_size: "1g"
+
+  edge:
+    image: selenium/node-edge:4.15.0  # Update Edge node image version
+    container_name: edge-node
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSION=2
+      - SE_NODE_MAX_INSTANCES=2
+    shm_size: "1g"

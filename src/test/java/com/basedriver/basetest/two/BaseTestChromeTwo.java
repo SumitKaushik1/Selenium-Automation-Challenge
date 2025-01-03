@@ -41,6 +41,7 @@ public final class BaseTestChromeTwo {
 
         if(runMode.equalsIgnoreCase("remote")){
             DesiredCapabilities cap = new DesiredCapabilities();
+
             cap.setBrowserName("chrome");
 
             ChromeOptions chromeOptions = new ChromeOptions();

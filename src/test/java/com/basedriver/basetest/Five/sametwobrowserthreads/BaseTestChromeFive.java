@@ -9,6 +9,7 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import path.DriverAndFilesPathConstants;
@@ -70,8 +71,9 @@ public class BaseTestChromeFive {
             if (runMode.equalsIgnoreCase("remote")) {
 
                 DesiredCapabilities cap = new DesiredCapabilities();
-                cap.setBrowserName("chrome");
-                cap.setPlatform(Platform.WIN11);
+                cap.setBrowserName(Browser.CHROME.browserName());
+
+                cap.setPlatform(Platform.WIN10);
 
 
                 ChromeOptions chromeOptions = new ChromeOptions();
@@ -83,7 +85,7 @@ public class BaseTestChromeFive {
                 // Merge ChromeOptions with DesiredCapabilities
                 cap.merge(chromeOptions);
 
-                cap.setCapability("maxInstances", 2);
+                //cap.setCapability("maxInstances", 2);
 
                 //  WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444"), options);
 
@@ -111,12 +113,15 @@ public class BaseTestChromeFive {
 
                 // hreadLocalWebDriver.setDriver(driver);
                 ThreadLocalWebDriverManager.setDriver(new ChromeDriver());
-                ThreadLocalWebDriverManager.getDriver().manage().window().maximize();
-                ThreadLocalWebDriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
                 // ThreadLocalWebDriverManager.getDriver().get("https://demo.applitools.com/");
 
 
             }
+
+
+            ThreadLocalWebDriverManager.getDriver().manage().window().maximize();
+            ThreadLocalWebDriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 
         }
