@@ -1,0 +1,59 @@
+version: "3"
+
+services:
+  selenium-hub:
+    image: selenium/hub:4.15.0  # Selenium Grid Hub
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"  # Hub's Web Interface
+    environment:
+      - GRID_BROWSER_TIMEOUT=300000
+      - GRID_TIMEOUT=300000
+
+  chrome-node:
+    image: selenium/node-chrome:4.15.0  # Chrome Node Image
+    container_name: chrome-node
+    depends_on:
+      - selenium-hub
+    shm_size: "1g"  # Reduced shared memory for low RAM systems
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=2  # Limit concurrent sessions
+      - SE_NODE_MAX_INSTANCES=2  # Limit instances per browser
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+    volumes:
+      - /dev/shm:/dev/shm  # Shared memory volume
+
+  chrome-node-2:
+    image: selenium/node-chrome:4.15.0  # Second Chrome Node Image
+    container_name: chrome-node-2
+    depends_on:
+      - selenium-hub
+    shm_size: "1g"  # Reduced shared memory for low RAM systems
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=2  # Limit concurrent sessions
+      - SE_NODE_MAX_INSTANCES=2  # Limit instances per browser
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+    volumes:
+      - /dev/shm:/dev/shm
+
+  chrome-node-custom:
+    image: selenium/node-chrome:4.15.0  # Custom Chrome Node
+    container_name: chrome-node-custom
+    depends_on:
+      - selenium-hub
+    shm_size: "1g"  # Reduced shared memory for low RAM systems
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=1  # Lower session limits for stability
+      - SE_NODE_MAX_INSTANCES=1
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+    volumes:
+      - /dev/shm:/dev/shm

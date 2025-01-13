@@ -69,28 +69,28 @@ public class BaseTestChromeFive {
 
         if(Objects.isNull(ThreadLocalWebDriverManager.getDriver())){
             if (runMode.equalsIgnoreCase("remote")) {
-
-                DesiredCapabilities cap = new DesiredCapabilities();
-                cap.setBrowserName(Browser.CHROME.browserName());
-
-                cap.setPlatform(Platform.WIN10);
-
-
+                // Configure ChromeOptions
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+                chromeOptions.addArguments("--remote-allow-origins=*");
+                chromeOptions.addArguments("--disable-gpu");
+                chromeOptions.addArguments("--no-sandbox"); // Useful for Docker environments
+                chromeOptions.addArguments("--disable-dev-shm-usage");
 
+                // Configure DesiredCapabilities
+                DesiredCapabilities cap = new DesiredCapabilities();
+                cap.setBrowserName("chrome");
+                cap.setPlatform(Platform.WINDOWS); // Adjust as needed, e.g., Platform.ANY
 
+                // Merge ChromeOptions into DesiredCapabilities (Deprecated but still supported)
+                chromeOptions.merge(cap);
 
-
-                // Merge ChromeOptions with DesiredCapabilities
-                cap.merge(chromeOptions);
-
-                //cap.setCapability("maxInstances", 2);
-
-                //  WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444"), options);
+                // Set up RemoteWebDriver
+                WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
 
                 //it is for the  docker
-                ThreadLocalWebDriverManager.setDriver(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),cap));
+                ThreadLocalWebDriverManager.setDriver(driver);
+                //ThreadLocalWebDriverManager.setDriver(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),cap));
                 // driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
 
 

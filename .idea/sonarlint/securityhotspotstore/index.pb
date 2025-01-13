@@ -341,3 +341,11 @@ p
 @src/test/java/com/basedriver/basetest/Four/BaseTestEdgeFour.java,b\c\bc0a27e2a4722116ecd372980a25a25ff09abdb7
 ~
 Nsrc/test/java/org/example/TestCases/totestonlythread/DiffernetChromeNodes.java,9\8\98f0a9d8c7752ebde6c775eddfd1bf72aa28a2b2
+M
+testngOneThreadsamemethod.xml,e\5\e567647a7f852117966afce1eb2dc205e23f99eb
+¦
+vsrc/test/java/com/pageobjectandextendreport/basepageobjectwithextendreport/one/classlevel/BasePageObjectOneChrome.java,7\7\7729de28ef50fa393281a5b9876e19af122218d4
+­
+}src/test/java/org/example/TestCases/One/One/testNgclassLevelparalleltestngfile/classlevel/ApplitoolsChallengeOneEdgeTest.java,b\c\bc11f4f0c79465f05e370954f91524f9cc2d5568
+H
+docker-compose-file.yaml,a\1\a1828dbdb37a6c340057e18d78e24f779d2a8ed1
