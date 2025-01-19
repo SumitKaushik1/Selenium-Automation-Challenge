@@ -1,0 +1,95 @@
+version: "3"
+services:
+  selenium-hub:
+    image: selenium/hub:4.12.1  # Correct version
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+    environment:
+      - GRID_BROWSER_TIMEOUT=300000
+      - GRID_TIMEOUT=300000
+    restart: always
+
+  chrome:
+    image: selenium/node-chrome:4.12.1  # Correct version
+    container_name: chrome-node-latest
+    depends_on:
+      - selenium-hub
+    shm_size: "1g"
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=2
+      - SE_NODE_MAX_INSTANCES=2
+    volumes:
+      - /dev/shm:/dev/shm
+    restart: on-failure:3
+
+  chrome_2:
+    image: selenium/node-chrome:4.11  # Older version for compatibility
+    container_name: chrome-node-2
+    depends_on:
+      - selenium-hub
+    shm_size: "1g"  # Reduced shared memory for low RAM systems
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=2  # Limit concurrent sessions
+      - SE_NODE_MAX_INSTANCES=2  # Limit instances per browser
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=true
+    volumes:
+      - /dev/shm:/dev/shm
+    restart: on-failure:3
+
+  firefox:
+    image: selenium/node-firefox:4.15.0  # Updated Firefox node image version
+    container_name: firefox-node
+    depends_on:
+      - selenium-hub
+    shm_size: "1g"
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=2
+      - SE_NODE_MAX_INSTANCES=2
+    volumes:
+      - /dev/shm:/dev/shm
+    restart: on-failure:3
+
+  edge:
+    image: selenium/node-edge:4.15.0  # Updated Edge node image version
+    container_name: edge-node
+    depends_on:
+      - selenium-hub
+    shm_size: "1g"
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_NODE_MAX_SESSIONS=2
+      - SE_NODE_MAX_INSTANCES=2
+    volumes:
+      - /dev/shm:/dev/shm
+    restart: on-failure:3
+
+  elasticsearch:
+    image: elasticsearch:7.8.0
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    restart: always
+
+  kibana:
+    image: kibana:7.8.0
+    container_name: kibana
+    depends_on:
+      - elasticsearch
+    ports:
+      - "5601:5601"
+    restart: always
