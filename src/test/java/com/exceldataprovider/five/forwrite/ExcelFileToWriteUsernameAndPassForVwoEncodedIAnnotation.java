@@ -20,7 +20,7 @@ public class ExcelFileToWriteUsernameAndPassForVwoEncodedIAnnotation {
 
         public static void main(String args[]) {
             XSSFWorkbook workbook = new XSSFWorkbook();
-            XSSFSheet sheet = workbook.createSheet("Appilotools Test Control Data");
+            XSSFSheet sheet = workbook.createSheet("vwo Test Control Data");
 
             Map<String, Object[]> data = new LinkedHashMap<>();
             data.put("1", new Object[]{"TestName", "Execute","browser","version" ,"Username", "Password", "fname"});
@@ -169,7 +169,7 @@ public class ExcelFileToWriteUsernameAndPassForVwoEncodedIAnnotation {
             }
 
             try {
-                String excelFilePath = System.getProperty("user.dir") + "/resources/excelfiles/appilousernameandpasswordcontrolencodedfive.xlsx";
+                String excelFilePath = System.getProperty("user.dir") + "/resources/excelfiles/vwoannotationfive.xlsx";
                 FileOutputStream outputStream = new FileOutputStream(new File(excelFilePath));
                 workbook.write(outputStream);
                 outputStream.close();

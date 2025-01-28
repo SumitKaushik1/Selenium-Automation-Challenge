@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.*;
 
-public class ExcelOneDataProviderUtils {
+public class ExcelFiveDataProviderUtils {
 
 
     private static List<Map<String,String>> list;
@@ -98,7 +98,9 @@ public class ExcelOneDataProviderUtils {
 
 
         //File file = new File(DriverAndFilesPathConstants.getExcelAppiloToolsFilePath());
-        File file = new File(DriverAndFilesPathConstants.getExcelAppiloToolsFilePath());
+       // File file = new File(DriverAndFilesPathConstants.getExcelAppiloToolsFilePath());
+        File file = new File(DriverAndFilesPathConstants.getExcelVWOLoginControlFilePathEncodedFive());
+
 
         // Check if the file exists
         if (file.exists()) {
@@ -176,7 +178,7 @@ public class ExcelOneDataProviderUtils {
         String testname=m.getName();
         //  list=new ArrayList<>();
         if(list.isEmpty()){
-            list= ExcelOneDataProviderUtils.getTestDetails();
+            list= ExcelFiveDataProviderUtils.getTestDetails();
         }
 
         //    System.out.println(Arrays.toString(list.toArray()));
@@ -199,7 +201,7 @@ public class ExcelOneDataProviderUtils {
         String testname=m.getName();
         //  list=new ArrayList<>();
         if(list.isEmpty()){
-            list= ExcelOneDataProviderUtils.getTestDetails();
+            list= ExcelFiveDataProviderUtils.getTestDetails();
         }
 
         //    System.out.println(Arrays.toString(list.toArray()));
@@ -232,8 +234,8 @@ public class ExcelOneDataProviderUtils {
 
     public static void main (String args[]){
         //File file = new File(DriverAndFilesPathConstants.getExcelAppiloToolsFilePath());
-        File file = new File(DriverAndFilesPathConstants.getExcelIterationDataSheet());
-
+       // File file = new File(DriverAndFilesPathConstants.getExcelIterationDataSheet());
+        File file = new File(DriverAndFilesPathConstants.getExcelVWOLoginControlFilePathEncodedFive());
         // Check if the file exists
         if (file.exists()) {
             System.out.println("The file exists.");
@@ -247,7 +249,7 @@ public class ExcelOneDataProviderUtils {
 
        // FileInputStream fs=null;
 
-        try(FileInputStream fs=new FileInputStream(DriverAndFilesPathConstants.getExcelIterationDataSheet())){
+        try(FileInputStream fs=new FileInputStream(DriverAndFilesPathConstants.getExcelVWOLoginControlFilePathEncodedFive())){
 
 
             // fs=new FileInputStream(DriverAndFilesPathConstants.getExcelAppiloToolsFilePath());

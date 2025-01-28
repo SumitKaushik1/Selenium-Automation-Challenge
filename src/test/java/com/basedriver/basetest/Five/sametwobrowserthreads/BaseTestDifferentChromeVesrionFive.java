@@ -1,6 +1,5 @@
 package com.basedriver.basetest.Five.sametwobrowserthreads;
 
-import com.driverfactory.one.OneDriverFactory;
 import enumconstants.ConfigPropertiesConstants;
 import enumconstants.MethodPropertiesConstant;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -9,20 +8,17 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import path.DriverAndFilesPathConstants;
 import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
 import propertesfilesread.MethodPropertiesPropertyFileRead;
 import threadlocal.ThreadLocalWebDriverManager;
 
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.Objects;
 
-public class BaseTestChromeFive {
+public class BaseTestDifferentChromeVesrionFive {
 
     // BasetTestControlChromeFive is the parent class of  the AppVWOChallengeFiveTest
     // so it comes under the main thread and BasetTestControlChromeFive is using hte
@@ -80,7 +76,6 @@ public class BaseTestChromeFive {
                 // Configure DesiredCapabilities
                 DesiredCapabilities cap = new DesiredCapabilities();
                 cap.setBrowserName("chrome");
-
                 cap.setPlatform(Platform.WINDOWS); // Adjust as needed, e.g., Platform.ANY
 
                 // Merge ChromeOptions into DesiredCapabilities (Deprecated but still supported)
@@ -97,7 +92,6 @@ public class BaseTestChromeFive {
 
             }
             else {
-
 
                 // System.setProperty("webdriver.chrome.driver", DriverAndFilesPathConstants.chromePath());
 
@@ -145,8 +139,8 @@ public class BaseTestChromeFive {
 
     // it used to get driver where there is not inheritance of this class directlly call this
     //public static void  setDriver(WebDriver driver) {
-        //ThreadLocalWebDriverManager.setDriver(driver);
-        //  }
+    //ThreadLocalWebDriverManager.setDriver(driver);
+    //  }
 
     //method used by clas name only
     /* suppose the a thread is executing the ChromeEdgeOneDriver class  is using hte chrome then thread insance then we can assign the sepearte value of to thread limited ot thid thread*/
@@ -167,26 +161,27 @@ public class BaseTestChromeFive {
 
     //public static void tearDown() {
 
-        // System.out.println("threadname in teardown:"+Thread.currentThread().getName());
-        //all connections to .exe file is gone but driver can hold the refeence of the instance
-        //to save native memory
-        //if (Objects.nonNull(ThreadLocalWebDriverManager.getDriver()))
-        //   ThreadLocalWebDriverManager.getDriver().quit();//firstly webdriver variable is reomved
-      //  ThreadLocalWebDriverManager.unload();//then the threadloal variable is removed
-        //suppsoe thradlocal variable si only reomved that browser reamin open bz driver
-        // instaance still holding the refeence of browser
+    // System.out.println("threadname in teardown:"+Thread.currentThread().getName());
+    //all connections to .exe file is gone but driver can hold the refeence of the instance
+    //to save native memory
+    //if (Objects.nonNull(ThreadLocalWebDriverManager.getDriver()))
+    //   ThreadLocalWebDriverManager.getDriver().quit();//firstly webdriver variable is reomved
+    //  ThreadLocalWebDriverManager.unload();//then the threadloal variable is removed
+    //suppsoe thradlocal variable si only reomved that browser reamin open bz driver
+    // instaance still holding the refeence of browser
     //}
 
     //public static void tearDownWebDriver(WebDriver driver) {
 
-        // System.out.println("threadname in teardown:"+Thread.currentThread().getName());
-        //all connections to .exe file is gone but driver can hold the refeence of the instance
-        //to save native memory
-      //  if (Objects.nonNull(driver))
-        //    driver.quit();//firstly webdriver variable is reomved
-        // ThreadLocalWebDriverManager.unload();//then the threadloal variable is removed
-        //suppsoe thradlocal variable si only reomved that browser reamin open bz driver
-        // instaance still holding the refeence of browser
+    // System.out.println("threadname in teardown:"+Thread.currentThread().getName());
+    //all connections to .exe file is gone but driver can hold the refeence of the instance
+    //to save native memory
+    //  if (Objects.nonNull(driver))
+    //    driver.quit();//firstly webdriver variable is reomved
+    // ThreadLocalWebDriverManager.unload();//then the threadloal variable is removed
+    //suppsoe thradlocal variable si only reomved that browser reamin open bz driver
+    // instaance still holding the refeence of browser
     //}
+
 
 }

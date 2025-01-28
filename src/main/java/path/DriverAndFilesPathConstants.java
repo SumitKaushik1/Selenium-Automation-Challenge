@@ -73,7 +73,7 @@ public final  class DriverAndFilesPathConstants {
 
    private static final String  EXCEL_PATH_VWO_LOGIN_TWO;
 
-
+ private static final String EXCEL_PATH_METHOD_PROPERTIES_FIVE;
     static{
 
         USER_DIRECTORY=System.getProperty("user.dir");
@@ -129,6 +129,8 @@ public final  class DriverAndFilesPathConstants {
         EXCEL_PATH_DEMOQA_METHOD_INTERCEPTOR_TWO=EXCEL_FILE_PATH+"DemoQaTestControl2Four.xlsx";
 
         EXCEL_PATH_VWO_LOGIN_TWO=EXCEL_FILE_PATH+"vwousernameandpasswordcontrolencoded.xlsx";
+
+        EXCEL_PATH_METHOD_PROPERTIES_FIVE=EXCEL_FILE_PATH+"appilousernameandpasswordcontrolencodedfive.xlsx";
 
     }
 
@@ -259,10 +261,16 @@ public final  class DriverAndFilesPathConstants {
     }
 
 
-    public static String getExcelVWOLoginControlFilePathEncoded(){
+       public static String getExcelVWOLoginControlFilePathEncoded(){
 
         return    EXCEL_PATH_VWO_LOGIN_TWO;
     }
+
+    public static String getExcelVWOLoginControlFilePathEncodedFive(){
+
+        return     EXCEL_PATH_METHOD_PROPERTIES_FIVE;
+    }
+
 
 
 
