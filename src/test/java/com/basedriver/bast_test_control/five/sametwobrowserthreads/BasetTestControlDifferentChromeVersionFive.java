@@ -19,8 +19,8 @@ public class BasetTestControlDifferentChromeVersionFive {
     //public void aftersuite() throws IOException {
       //  ExtendReportToInitAndFlushReportFive.flushReports();
     //}
-    protected void setUpControlChrome() throws Exception {
-        BaseTestDifferentChromeVesrionFive.setUpChrome();
+    protected void setUpControlChrome(String version) throws Exception {
+        BaseTestDifferentChromeVesrionFive.setUpChrome(version);
     }
 
     protected void tearDownControlChrome(){

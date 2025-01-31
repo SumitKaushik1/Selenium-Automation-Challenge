@@ -58,7 +58,7 @@ public class BaseTestDifferentChromeVesrionFive {
 */
 
 
-    public static void setUpChrome() throws Exception {
+    public static void setUpChrome(String version) throws Exception {
         // String runMode="remote";
         String runMode = MethodPropertiesPropertyFileRead.readPropertyFile(MethodPropertiesConstant.RUNMODE);
 
@@ -76,6 +76,7 @@ public class BaseTestDifferentChromeVesrionFive {
                 // Configure DesiredCapabilities
                 DesiredCapabilities cap = new DesiredCapabilities();
                 cap.setBrowserName("chrome");
+                cap.setVersion(version);
                 cap.setPlatform(Platform.WINDOWS); // Adjust as needed, e.g., Platform.ANY
 
                 // Merge ChromeOptions into DesiredCapabilities (Deprecated but still supported)

@@ -12,6 +12,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.Map;
 
 public class DiffernetVersionAppVWOChallengeFiveTest extends BasetTestControlDifferentChromeVersionFive {
 
@@ -52,12 +53,12 @@ public class DiffernetVersionAppVWOChallengeFiveTest extends BasetTestControlDif
 
 
 
-
+    // it is getting value form the iAnnotationTransformere thats why map is used
     @Test(priority=0)
-    public void mouseHoverButton() throws Exception {
+    public void mouseHoverButton(Map<String,String> data) throws Exception {
 
         System.out.println("mousehoverbutton"+Thread.currentThread().getName());
-        this.setUpControlChrome();
+        this.setUpControlChrome(data.get("version"));
 
 
         // for the logger in the extended report
@@ -220,11 +221,11 @@ public class DiffernetVersionAppVWOChallengeFiveTest extends BasetTestControlDif
 
 
 
-
+    // it is getting value form the iAnnotationTransformere thats why map is used
     @Test(priority=0)
-    public void mouseHoverButtonThreadTest() throws Exception {
+    public void mouseHoverButtonThreadTest(Map<String,String> data) throws Exception {
         System.out.println("mousehovebuttonthread"+Thread.currentThread().getName());
-        this.setUpControlChrome();
+        this.setUpControlChrome(data.get("version"));
 
 
         // for the logger in the extended report
