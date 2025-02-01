@@ -1,11 +1,11 @@
 package com.driver.One.samemethod;
 
-import enumconstants.ConfigPropertiesConstants;
+import enumconstants.URLPropertiesConstants;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
+import propertesfilesread.URLConstantFileReadPropertyUtils;
 import threadlocal.ThreadLocalWebDriverManager;
 
 import java.util.Objects;
@@ -54,9 +54,9 @@ public class ChromeEdgeOneDriver {
         }
 
     }
-       // ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
+       // ThreadLocalWebDriverManager.getDriver().get(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.URLONE));
 
-       webDriver.get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
+       webDriver.get(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.URLONE));
 
        return webDriver;
     }

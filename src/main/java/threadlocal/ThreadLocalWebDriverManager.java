@@ -3,8 +3,7 @@ package threadlocal;
 
 import org.openqa.selenium.WebDriver;
 
-
-
+import java.util.Objects;
 
 
 //no one extend it
@@ -73,6 +72,8 @@ public final class ThreadLocalWebDriverManager {
     // how thread local variabl how ist it made very simple make one class you can assign each thread local value  using this class
 
     public static void setDriver(WebDriver driver){
+
+        if(Objects.nonNull(driver))
         webDriverThreadLocal.set(driver);
     }
 

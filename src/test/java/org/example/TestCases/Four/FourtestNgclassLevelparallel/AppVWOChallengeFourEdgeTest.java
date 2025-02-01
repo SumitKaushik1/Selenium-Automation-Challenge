@@ -88,8 +88,8 @@ public final class AppVWOChallengeFourEdgeTest extends BaseTestControlEdgeFour {
 
         //System.out.println(p.getProperty("emailAddress"));
         //  System.out.println(p.getProperty("password1"));
-        // System.out.println(LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.EMAILADDRESS));
-        //System.out.println(LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.PASSWORD1));
+        // System.out.println(LoginCredentialsJsonFileRead.readPropertyFile(URLPropertiesConstants.EMAILADDRESS));
+        //System.out.println(LoginCredentialsJsonFileRead.readPropertyFile(URLPropertiesConstants.PASSWORD1));
 
 
 

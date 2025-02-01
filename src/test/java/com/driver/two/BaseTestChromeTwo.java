@@ -1,6 +1,6 @@
 package com.driver.two;
 
-import enumconstants.ConfigPropertiesConstants;
+import enumconstants.URLPropertiesConstants;
 import enumconstants.MethodPropertiesConstant;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -8,7 +8,7 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
+import propertesfilesread.URLConstantFileReadPropertyUtils;
 import propertesfilesread.MethodPropertiesPropertyFileRead;
 
 
@@ -52,7 +52,7 @@ public final class BaseTestChromeTwo {
 
             try {
                 //it is for the  docker
-                driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
+                driver = new RemoteWebDriver(new URL(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.SELENIUMGRIDURL)), cap);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
@@ -94,13 +94,13 @@ public final class BaseTestChromeTwo {
 
 
         //FramworkconstantFileRead class static  method is called when the value is required from its file to get we pass the key
-        driver.get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLTWO));
+        driver.get(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.URLTWO));
 
     }
 
 
     //mehod call by class anme
-    public static void tearDownChrome() {
+     static void tearDownChrome() {
         driver.quit();
     }
 
@@ -108,7 +108,7 @@ public final class BaseTestChromeTwo {
 
     // it used to get driver where there is not inheritance of this class directlly call this
     //method call by classname
-    public static WebDriver getDriverChrome() {
+    public  static WebDriver getDriverChrome() {
         if (Objects.nonNull(driver))
             return driver;
         else

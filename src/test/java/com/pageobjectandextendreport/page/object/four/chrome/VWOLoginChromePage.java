@@ -20,7 +20,7 @@ public class VWOLoginChromePage extends BasePageObjectChromeFour {
 
     public VWOLoginChromePage enterUserNameVWOLogin(String username, AppVWOChallengeFourChromeTest appVWOChallengeFourChromeTest) throws Exception {
        // ThreadLocalWebDriverManager.getDriver().findElement(emailAddressVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("emailAddress"));
-       // this.enterCredentials(emailAddressVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.EMAILADDRESS));
+       // this.enterCredentials(emailAddressVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(URLPropertiesConstants.EMAILADDRESS));
         this.enterCredentials(emailAddressVWOLoginPage,username,appVWOChallengeFourChromeTest,"username");
         return this;
     }
@@ -28,7 +28,7 @@ public class VWOLoginChromePage extends BasePageObjectChromeFour {
     public VWOLoginChromePage enterPasswordVWOLogin(String password, AppVWOChallengeFourChromeTest appVWOChallengeFourChromeTest) throws Exception {
 
        // ThreadLocalWebDriverManager.getDriver().findElement(passwordVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password1"));;
-      // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.PASSWORD1));
+      // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(URLPropertiesConstants.PASSWORD1));
         this.enterCredentials(passwordVWOLoginPage,password,appVWOChallengeFourChromeTest,"password");
 
 
@@ -38,7 +38,7 @@ public class VWOLoginChromePage extends BasePageObjectChromeFour {
     public VWOLoginChromePage enterPasswordVWOLoginDecoded(String password, AppVWOChallengeFourChromeTest appVWOChallengeFourChromeTest) throws Exception {
 
         // ThreadLocalWebDriverManager.getDriver().findElement(passwordVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password1"));;
-        // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.PASSWORD1));
+        // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(URLPropertiesConstants.PASSWORD1));
        // this.enterCredentials(passwordVWOLoginPage,password,appVWOChallengeFourChromeTest,"password");
         this.enterCredentials(passwordVWOLoginPage,new String(Base64.getDecoder().decode(password.getBytes())),appVWOChallengeFourChromeTest,"password");
 

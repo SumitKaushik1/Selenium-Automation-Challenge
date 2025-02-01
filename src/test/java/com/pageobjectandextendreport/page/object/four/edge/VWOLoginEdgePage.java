@@ -20,7 +20,7 @@ public class VWOLoginEdgePage extends BasePageObjectEdgeFour {
 
     public VWOLoginEdgePage enterUserNameVWOLogin(String username, AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest) throws Exception {
        // ThreadLocalWebDriverManager.getDriver().findElement(emailAddressVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("emailAddress"));
-       // this.enterCredentials(emailAddressVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.EMAILADDRESS));
+       // this.enterCredentials(emailAddressVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(URLPropertiesConstants.EMAILADDRESS));
         this.enterCredentials(emailAddressVWOLoginPage,username,appVWOChallengeFourEdgeTest,"username");
         return this;
     }
@@ -28,7 +28,7 @@ public class VWOLoginEdgePage extends BasePageObjectEdgeFour {
     public VWOLoginEdgePage enterPasswordVWOLogin(String password, AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest) throws Exception {
 
        // ThreadLocalWebDriverManager.getDriver().findElement(passwordVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password1"));;
-      // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.PASSWORD1));
+      // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(URLPropertiesConstants.PASSWORD1));
         this.enterCredentials(passwordVWOLoginPage,password,appVWOChallengeFourEdgeTest,"password");
 
 
@@ -38,7 +38,7 @@ public class VWOLoginEdgePage extends BasePageObjectEdgeFour {
     public VWOLoginEdgePage enterPasswordVWOLoginDecoded(String password, AppVWOChallengeFourEdgeTest appVWOChallengeFourEdgeTest) throws Exception {
 
         // ThreadLocalWebDriverManager.getDriver().findElement(passwordVWOLoginPage).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password1"));;
-        // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.PASSWORD1));
+        // this.enterCredentials(passwordVWOLoginPage,LoginCredentialsJsonFileRead.readPropertyFile(URLPropertiesConstants.PASSWORD1));
        // this.enterCredentials(passwordVWOLoginPage,password,appVWOChallengeFourEdgeTest,"password");
         this.enterCredentials(passwordVWOLoginPage,new String(Base64.getDecoder().decode(password.getBytes())),appVWOChallengeFourEdgeTest,"password");
 

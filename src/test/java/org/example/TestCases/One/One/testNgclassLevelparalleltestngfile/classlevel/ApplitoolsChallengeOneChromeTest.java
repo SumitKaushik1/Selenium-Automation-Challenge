@@ -1,11 +1,12 @@
 package org.example.TestCases.One.One.testNgclassLevelparalleltestngfile.classlevel;
 
-import com.basedriver.bast_test_control.one.classlevel.ControlChromeOneBaseTest;
+
 import com.cutomannotation.one.OneFrameworkAnnotation;
+import com.driver.One.classlevel.ControlChromeOneBaseTest;
 import com.pageobjectandextendreport.page.object.one.classlevel.edge.chrome.ApplitoolsWebElementDashBoardPageChrome;
 import com.pageobjectandextendreport.page.object.one.classlevel.edge.chrome.ApplitoolsWebElementLoginPageChrome;
 import customExceptions.KeyUrlNotFoundException;
-import enumconstants.ConfigPropertiesConstants;
+import enumconstants.LoginCredentialsPropertiesConstants;
 import jsonfileread.LoginCredentialsJsonFileRead;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterSuite;
@@ -131,8 +132,8 @@ public final class ApplitoolsChallengeOneChromeTest extends ControlChromeOneBase
 
 
 
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ConfigPropertiesConstants.USERNAME));
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(ConfigPropertiesConstants.PASSWORD));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(LoginCredentialsPropertiesConstants.USERNAME));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(LoginCredentialsPropertiesConstants.PASSWORD));
 
         //anchor tag we use
         //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
@@ -166,9 +167,9 @@ public final class ApplitoolsChallengeOneChromeTest extends ControlChromeOneBase
         ApplitoolsWebElementLoginPageChrome appiloToolsWebElement=new ApplitoolsWebElementLoginPageChrome();
         appiloToolsWebElement.
                 enterUserNameApplitools(LoginCredentialsJsonFileRead.
-                        readJsonFile(ConfigPropertiesConstants.USERNAME),this)
+                        readJsonFile(LoginCredentialsPropertiesConstants.USERNAME),this)
                 .enterPasswordApplitools(LoginCredentialsJsonFileRead.
-                        readJsonFile(ConfigPropertiesConstants.PASSWORD),this).
+                        readJsonFile(LoginCredentialsPropertiesConstants.PASSWORD),this).
                 clickButtonApplitools(this);
 
 

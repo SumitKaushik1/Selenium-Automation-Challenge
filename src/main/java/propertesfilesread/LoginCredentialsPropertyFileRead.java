@@ -1,9 +1,8 @@
 package propertesfilesread;
 
-import customExceptions.FileNotFoundRuntimeExcption;
-import customExceptions.KeyUrlNotFoundException;
 import customExceptions.PropertyFileUsageException;
-import enumconstants.ConfigPropertiesConstants;
+import enumconstants.URLPropertiesConstants;
+import enumconstants.LoginCredentialsPropertiesConstants;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -98,7 +97,7 @@ public class LoginCredentialsPropertyFileRead {
 
 
 
-    public static String readPropertyFile(ConfigPropertiesConstants key)/* throws KeyUrlNotFoundException*/ {
+    public static String readPropertyFile(URLPropertiesConstants key)/* throws KeyUrlNotFoundException*/ {
 
 
         // passed key to this  method is null or there is on  key in the existing map
@@ -112,6 +111,25 @@ public class LoginCredentialsPropertyFileRead {
         return CONFIGMAP.get(key.asLowerCase());
 
     }
+
+    public static String readPropertyFile(LoginCredentialsPropertiesConstants key)/* throws KeyUrlNotFoundException*/ {
+
+
+        // passed key to this  method is null or there is on  key in the existing map
+
+        // sicne hashmap has string as the value and the key is only enum constant so
+        // conver the enum to string then you can take value
+        if(Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key.name().toLowerCase())))
+            //  throw new KeyUrlNotFoundException(("property name "+key.name().toLowerCase()+" not found ,please check config properties"));
+            throw new PropertyFileUsageException("property name "+key.name().toLowerCase()+" not found ,please check config properties");
+
+        return CONFIGMAP.get(key.asLowerCase());
+
+    }
+
+
+
+
 
 
     public static class ExcelReadingFileTest {

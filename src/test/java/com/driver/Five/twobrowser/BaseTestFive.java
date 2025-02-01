@@ -1,6 +1,6 @@
 package com.driver.Five.twobrowser;
 
-import enumconstants.ConfigPropertiesConstants;
+import enumconstants.URLPropertiesConstants;
 import enumconstants.MethodPropertiesConstant;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.PageLoadStrategy;
@@ -12,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
+import propertesfilesread.URLConstantFileReadPropertyUtils;
 import propertesfilesread.MethodPropertiesPropertyFileRead;
 import threadlocal.ThreadLocalWebDriverManager;
 
@@ -53,7 +53,7 @@ public class BaseTestFive {
         }
 
     }
-        ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
+        ThreadLocalWebDriverManager.getDriver().get(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.URLONE));
 
 
     }
@@ -98,14 +98,14 @@ public class BaseTestFive {
                     //it is for the  docker
 
                     if(browser.equalsIgnoreCase("chrome"))
-                        ThreadLocalWebDriverManager.setDriver(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),cap));
+                        ThreadLocalWebDriverManager.setDriver(new RemoteWebDriver(new URL(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.SELENIUMGRIDURL)),cap));
                         // driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
                     else if(browser.equalsIgnoreCase(
                             "firefox"))
-                        ThreadLocalWebDriverManager.setDriver(new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"),cap));
+                        ThreadLocalWebDriverManager.setDriver(new RemoteWebDriver(new URL(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.SELENIUMGRIDURL)),cap));
                         // driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
                     else
-                        ThreadLocalWebDriverManager.setDriver(new RemoteWebDriver(new URL("http://localhost:4446/wd/hub"),cap));
+                        ThreadLocalWebDriverManager.setDriver(new RemoteWebDriver(new URL(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.SELENIUMGRIDURL)),cap));
                     // driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
 
 
@@ -128,7 +128,7 @@ public class BaseTestFive {
                     //it is for the  docker
 
 
-                        ThreadLocalWebDriverManager.setDriver(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),cap));
+                        ThreadLocalWebDriverManager.setDriver(new RemoteWebDriver(new URL(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.SELENIUMGRIDURL)),cap));
                     // driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), cap);
 
 
@@ -190,7 +190,7 @@ public class BaseTestFive {
         }
 
         //FramworkconstantFileRead class static  method is called when the value is required from its file to get we pass the key
-        ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLFIVE));
+        ThreadLocalWebDriverManager.getDriver().get(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.URLFIVE));
     }
 
 
@@ -198,7 +198,7 @@ public class BaseTestFive {
 
 
     // it used to get driver where there is not inheritance of this class directlly call this
-    public static WebDriver getDriver() {
+     static WebDriver getDriver() {
         return  ThreadLocalWebDriverManager.getDriver();
     }
 
@@ -213,7 +213,7 @@ public class BaseTestFive {
     /* suppose the a thread is executing the ChromeEdgeOneDriver class  is using hte chrome then thread insance then we can assign the sepearte value of to thread limited ot thid thread*/
 
 
-    public static void tearDown() {
+    static void tearDown() {
 
         // System.out.println("threadname in teardown:"+Thread.currentThread().getName());
         //all connections to .exe file is gone but driver can hold the refeence of the instance

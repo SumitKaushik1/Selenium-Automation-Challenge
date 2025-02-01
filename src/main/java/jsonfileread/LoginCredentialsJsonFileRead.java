@@ -3,7 +3,8 @@ package jsonfileread;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import customExceptions.KeyUrlNotFoundException;
-import enumconstants.ConfigPropertiesConstants;
+import enumconstants.URLPropertiesConstants;
+import enumconstants.LoginCredentialsPropertiesConstants;
 import path.DriverAndFilesPathConstants;
 
 import java.io.File;
@@ -92,7 +93,21 @@ public class LoginCredentialsJsonFileRead {
 
 
 
-    public static String readJsonFile(ConfigPropertiesConstants key) throws KeyUrlNotFoundException {
+    public static String readJsonFile(URLPropertiesConstants key) throws KeyUrlNotFoundException {
+
+
+        // passed key to this  method is null or there is on  key in the existing map
+
+        // sicne hashmap has string as the value and the key is only enum constant so
+        // conver the enum to string then you can take value
+        if(Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key.name().toLowerCase())))
+            throw new KeyUrlNotFoundException(("property name "+key.name().toLowerCase()+" not found ,please check config properties"));
+
+        return CONFIGMAP.get(key.asLowerCase());
+
+    }
+
+    public static String readJsonFile(LoginCredentialsPropertiesConstants key) throws KeyUrlNotFoundException {
 
 
         // passed key to this  method is null or there is on  key in the existing map

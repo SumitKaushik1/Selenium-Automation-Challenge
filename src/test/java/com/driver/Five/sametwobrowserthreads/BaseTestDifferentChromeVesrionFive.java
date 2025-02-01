@@ -1,6 +1,6 @@
 package com.driver.Five.sametwobrowserthreads;
 
-import enumconstants.ConfigPropertiesConstants;
+import enumconstants.URLPropertiesConstants;
 import enumconstants.MethodPropertiesConstant;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.PageLoadStrategy;
@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
+import propertesfilesread.URLConstantFileReadPropertyUtils;
 import propertesfilesread.MethodPropertiesPropertyFileRead;
 import threadlocal.ThreadLocalWebDriverManager;
 
@@ -51,7 +51,7 @@ public class BaseTestDifferentChromeVesrionFive {
         }
 
     }
-        ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
+        ThreadLocalWebDriverManager.getDriver().get(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.URLONE));
 
 
     }
@@ -84,7 +84,7 @@ public class BaseTestDifferentChromeVesrionFive {
                 chromeOptions.merge(cap);
 
                 // Set up RemoteWebDriver
-                WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
+                WebDriver driver = new RemoteWebDriver(new URL(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.SELENIUMGRIDURL)), chromeOptions);
 
                 //it is for the  docker
                 ThreadLocalWebDriverManager.setDriver(driver);
@@ -125,7 +125,7 @@ public class BaseTestDifferentChromeVesrionFive {
         }
 
         //FramworkconstantFileRead class static  method is called when the value is required from its file to get we pass the key
-        ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLFIVE));
+        ThreadLocalWebDriverManager.getDriver().get(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.URLFIVE));
     }
 
 
@@ -133,7 +133,7 @@ public class BaseTestDifferentChromeVesrionFive {
 
 
     // it used to get driver where there is not inheritance of this class directlly call this
-    public static WebDriver getDriver() {
+    static WebDriver getDriver() {
         return  ThreadLocalWebDriverManager.getDriver();
     }
 
@@ -148,7 +148,7 @@ public class BaseTestDifferentChromeVesrionFive {
     /* suppose the a thread is executing the ChromeEdgeOneDriver class  is using hte chrome then thread insance then we can assign the sepearte value of to thread limited ot thid thread*/
 
 
-    public static void tearDown() {
+    static void tearDown() {
 
         // System.out.println("threadname in teardown:"+Thread.currentThread().getName());
         //all connections to .exe file is gone but driver can hold the refeence of the instance

@@ -4,9 +4,9 @@
 package com.driver.One.classlevel;
 
 
-import enumconstants.ConfigPropertiesConstants;
+import enumconstants.URLPropertiesConstants;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
+import propertesfilesread.URLConstantFileReadPropertyUtils;
 
 import threadlocal.ThreadLocalWebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -87,7 +87,7 @@ public final class EdgeOneDriver {
             // ThreadLocalWebDriverManager.getDriver().get("https://demo.applitools.com/");
 
             //FramworkconstantFileRead class static  method is called when the value is required from its file to get we pass the key
-            ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
+            ThreadLocalWebDriverManager.getDriver().get(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.URLONE));
 
 
         }

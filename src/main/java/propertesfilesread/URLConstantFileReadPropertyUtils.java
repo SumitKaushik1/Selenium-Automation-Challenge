@@ -1,9 +1,7 @@
 package propertesfilesread;
 
-import customExceptions.FileNotFoundRuntimeExcption;
-import customExceptions.KeyUrlNotFoundException;
 import customExceptions.PropertyFileUsageException;
-import enumconstants.ConfigPropertiesConstants;
+import enumconstants.URLPropertiesConstants;
 import path.DriverAndFilesPathConstants;
 
 
@@ -15,7 +13,7 @@ import java.util.Objects;
 import java.util.Properties;
 import java.util.logging.Logger;
 
-public class FrameoworksConstantFileReadPropertyUtils {
+public class URLConstantFileReadPropertyUtils {
 
     //private scope within class
     //static can be called by classname and  it is unique per class
@@ -40,7 +38,7 @@ public class FrameoworksConstantFileReadPropertyUtils {
     }
 
     //no object of this class allowed
-    private FrameoworksConstantFileReadPropertyUtils(){
+    private URLConstantFileReadPropertyUtils(){
 
     }
 
@@ -108,7 +106,7 @@ public class FrameoworksConstantFileReadPropertyUtils {
         }
     }
 
-    public static String get(ConfigPropertiesConstants key) /*throws KeyUrlNotFoundException*/ {
+    public static String get(URLPropertiesConstants key) /*throws KeyUrlNotFoundException*/ {
 
         //throws clause means exception will be handled by its caller method
       // basically what happens that if i read the  file here ie it is he lazy initialization ie whne the method is called then it is made instsanc of it

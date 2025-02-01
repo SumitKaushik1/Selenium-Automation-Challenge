@@ -2,6 +2,8 @@ package com.extendedreport.five;
 
 import com.aventstack.extentreports.ExtentTest;
 
+import java.util.Objects;
+
 public class ThreadLocalFiveExtentManager {
 
     private ThreadLocalFiveExtentManager() {
@@ -13,15 +15,17 @@ public class ThreadLocalFiveExtentManager {
     // variable assigned seperatly for thread only local variable is type of the ExtendTest class
     private static ThreadLocal<ExtentTest> extent = new ThreadLocal<>();
 
-    public static  ExtentTest getExtentTest(){
+     static  ExtentTest getExtentTest(){
         return extent.get();
     }
 
-    public  static  void setExtentTest(ExtentTest test){
-        extent.set(test);
+    static  void setExtentTest(ExtentTest test){
+
+         if(Objects.nonNull(test))
+         extent.set(test);
     }
 
-    public static void unload(){
+     static void unload(){
         extent.remove();
     }
 }

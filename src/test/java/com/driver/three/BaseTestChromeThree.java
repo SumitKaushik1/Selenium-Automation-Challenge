@@ -1,12 +1,12 @@
 package com.driver.three;
 
-import enumconstants.ConfigPropertiesConstants;
+import enumconstants.URLPropertiesConstants;
 import path.DriverAndFilesPathConstants;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
+import propertesfilesread.URLConstantFileReadPropertyUtils;
 
 
 import java.time.Duration;
@@ -43,7 +43,7 @@ public  final class BaseTestChromeThree {
             //driver.get("https://demoqa.com/modal-dialogs");
 
             //FramworkconstantFileRead class static  method is called when the value is required from its file to get we pass the key
-            driver.get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLTHREE));
+            driver.get(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.URLTHREE));
         }
 
 

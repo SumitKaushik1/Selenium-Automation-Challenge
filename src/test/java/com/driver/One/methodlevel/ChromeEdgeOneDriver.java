@@ -1,9 +1,9 @@
 package com.driver.One.methodlevel;
 
 import com.driverfactory.one.OneDriverFactory;
-import enumconstants.ConfigPropertiesConstants;
+import enumconstants.URLPropertiesConstants;
 import org.openqa.selenium.WebDriver;
-import propertesfilesread.FrameoworksConstantFileReadPropertyUtils;
+import propertesfilesread.URLConstantFileReadPropertyUtils;
 import threadlocal.ThreadLocalWebDriverManager;
 
 import java.util.Objects;
@@ -40,7 +40,7 @@ public class ChromeEdgeOneDriver {
         }
 
     }
-        ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
+        ThreadLocalWebDriverManager.getDriver().get(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.URLONE));
 
 
     }
@@ -90,16 +90,16 @@ public class ChromeEdgeOneDriver {
             // }
 
       //  }
-        // ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
+        // ThreadLocalWebDriverManager.getDriver().get(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.URLONE));
 
 
 
       //  return webDriver;
 
     }
-       // webDriver.get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
+       // webDriver.get(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.URLONE));
 
-        ThreadLocalWebDriverManager.getDriver().get(FrameoworksConstantFileReadPropertyUtils.get(ConfigPropertiesConstants.URLONE));
+        ThreadLocalWebDriverManager.getDriver().get(URLConstantFileReadPropertyUtils.get(URLPropertiesConstants.URLONE));
 
 
     }

@@ -1,6 +1,6 @@
 package enumconstants;
 
-public enum ConfigPropertiesConstants {
+public enum URLPropertiesConstants {
 
     URLONE {
         @Override
@@ -31,32 +31,16 @@ public enum ConfigPropertiesConstants {
         public String asLowerCase() {
             return URLFIVE.toString().toLowerCase();
         }
-    },
-    USERNAME {
+    }
+ ,SELENIUMGRIDURL {
         @Override
-        public  String asLowerCase() {
-            return USERNAME.toString().toLowerCase();
-        }
-    },PASSWORD {
-        @Override
-        public  String asLowerCase() {
-            return PASSWORD.toString().toLowerCase();
-        }
-    },PASSWORD1 {
-        @Override
-     public    String asLowerCase() {
-            return PASSWORD1.toString().toLowerCase();
-        }
-    },EMAILADDRESS {
-        @Override
-        public String asLowerCase() {
-            return EMAILADDRESS.toString().toLowerCase();
-        }
-    };
+        public String asLowerCase(){return SELENIUMGRIDURL.toString().toLowerCase();}
+    }
+    ;
 
 
 
-    //abstracct its impleentation gien abovee
+    //abstract its impleentation given above
   public  abstract  String asLowerCase();
 
 

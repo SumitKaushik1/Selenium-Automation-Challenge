@@ -8,7 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import com.waitfactory.WaitFactoryTwo;
 
-import static com.driver.two.BaseTestChromeTwo.getDriverChrome;
+
 
 public class BasePageObjectChromeTwo {
 
@@ -23,7 +23,7 @@ public class BasePageObjectChromeTwo {
     protected  WebElement findElement(By elmement){
 
 
-        return getDriverChrome().findElement( elmement);
+        return controlGetDriver().findElement( elmement);
 
     }
 

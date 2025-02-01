@@ -18,7 +18,7 @@ public class ApplitoolsWebElementLoginPage extends BasePageObjectOne {
         // ThreadLocalWebDriverManager.getDriver().findElement(usernameApplitools).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("userName"));
 
         // enusm are made to control all the constants from one place ie from enum class predefined so the constsants of string i snot needed
-        //  this.sendCredentialsKeys(usernameApplitools,LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.USERNAME));
+        //  this.sendCredentialsKeys(usernameApplitools,LoginCredentialsJsonFileRead.readPropertyFile(URLPropertiesConstants.USERNAME));
         this.sendCredentialsKeys(usernameApplitools,username,"username",applitoolsChallengeOneChromeEdgeTest);
         return this;
     }
@@ -26,7 +26,7 @@ public class ApplitoolsWebElementLoginPage extends BasePageObjectOne {
     public ApplitoolsWebElementLoginPage enterPasswordApplitools(String password, ApplitoolsChallengeOneChromeEdgeTest applitoolsChallengeOneChromeEdgeTest) throws Exception {
 
         //ThreadLocalWebDriverManager.getDriver().findElement(passwordApplitools).sendKeys(LoginCredentialsJsonFileRead.readPropertyFile("password"));;
-        //this.sendCredentialsKeys(passwordApplitools,LoginCredentialsJsonFileRead.readPropertyFile(ConfigPropertiesConstants.PASSWORD));
+        //this.sendCredentialsKeys(passwordApplitools,LoginCredentialsJsonFileRead.readPropertyFile(URLPropertiesConstants.PASSWORD));
         this.sendCredentialsKeys(passwordApplitools,password,"password",applitoolsChallengeOneChromeEdgeTest);
 
         return this;

@@ -2,6 +2,8 @@ package com.extendedreport.one;
 
 import com.aventstack.extentreports.ExtentTest;
 
+import java.util.Objects;
+
 public class ThreadLocalOneExtentManager {
 
     private ThreadLocalOneExtentManager() {
@@ -20,6 +22,8 @@ public class ThreadLocalOneExtentManager {
     }
 
       static  void setExtentTest(ExtentTest test){
+
+          if(Objects.nonNull(test))
         extent.set(test);
     }
 
