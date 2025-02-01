@@ -1,6 +1,6 @@
 package com.screenshot;
 
-import com.basedriver.basetest.Five.onebrowser.BaseTestChromeFive;
+import com.driver.Five.onebrowser.BaseTestChromeFive;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 

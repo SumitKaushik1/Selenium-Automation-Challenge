@@ -2,7 +2,7 @@ package org.example.TestCases.Five.twobrowser;
 
 
 
-import com.basedriver.bast_test_control.five.twobrowser.BasetTestControlFive;
+import com.driver.Five.twobrowser.BasetTestControlFive;
 
 
 import com.pageobjectandextendreport.page.object.five.twobrowser.VWOHeatmapPage;

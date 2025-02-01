@@ -1,7 +1,7 @@
 package org.example.TestCases.totestonlythread;
 
 
-import com.basedriver.bast_test_control.five.twobrowser.BasetTestControlFive;
+import com.driver.Five.twobrowser.BasetTestControlFive;
 import com.google.common.util.concurrent.Uninterruptibles;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;

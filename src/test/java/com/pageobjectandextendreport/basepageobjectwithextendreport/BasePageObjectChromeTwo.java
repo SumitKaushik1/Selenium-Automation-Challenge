@@ -8,7 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import com.waitfactory.WaitFactoryTwo;
 
-import static com.basedriver.basetest.two.BaseTestChromeTwo.getDriverChrome;
+import static com.driver.two.BaseTestChromeTwo.getDriverChrome;
 
 public class BasePageObjectChromeTwo {
 

@@ -1,8 +1,8 @@
-com.basedriver.basetest.Five
-com.basedriver.basetest.Four
-com.basedriver.basetest.One
-com.basedriver.basetest.three
-com.basedriver.basetest.two
+com.basedriver.driver.Five
+com.basedriver.driver.Four
+com.basedriver.driver.One
+com.basedriver.driver.three
+com.basedriver.driver.two
 com.basedriver.bast_test_control.five
 com.basedriver.bast_test_control.four
 com.basedriver.bast_test_control.one

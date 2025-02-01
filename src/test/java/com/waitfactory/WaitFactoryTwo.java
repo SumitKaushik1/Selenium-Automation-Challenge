@@ -1,6 +1,6 @@
 package com.waitfactory;
 
-import com.basedriver.basetest.two.BaseTestChromeTwo;
+import com.driver.two.BaseTestChromeTwo;
 import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Two.DemoQAWebsiteChallengeTwoTest;
 import org.openqa.selenium.WebElement;

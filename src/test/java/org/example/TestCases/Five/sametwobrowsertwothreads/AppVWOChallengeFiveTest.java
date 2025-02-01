@@ -1,7 +1,7 @@
 package org.example.TestCases.Five.sametwobrowsertwothreads;
 
 
-import com.basedriver.bast_test_control.five.sametwobrowserthreads.BasetTestControlChromeFive;
+import com.driver.Five.sametwobrowserthreads.BasetTestControlChromeFive;
 
 
 import com.pageobjectandextendreport.page.object.five.twosamebrowserthrad.VWOHeatmapPage;

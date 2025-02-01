@@ -1,6 +1,6 @@
 package com.screenshot;
 
-import com.basedriver.basetest.two.BaseTestChromeTwo;
+import com.driver.two.BaseTestChromeTwo;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 

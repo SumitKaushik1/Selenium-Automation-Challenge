@@ -1,6 +1,6 @@
 package com.pageobjectandextendreport.pagefactory.two;
 
-import com.basedriver.basetest.two.BaseTestChromeTwo;
+import com.driver.two.BaseTestChromeTwo;
 
 
 import com.pageobjectandextendreport.basepageobjectwithextendreport.BasePageObjectChromeTwo;

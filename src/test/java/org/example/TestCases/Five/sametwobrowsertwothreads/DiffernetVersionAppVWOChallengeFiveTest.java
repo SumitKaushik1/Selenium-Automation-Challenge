@@ -1,10 +1,8 @@
 package org.example.TestCases.Five.sametwobrowsertwothreads;
 
-import com.basedriver.bast_test_control.five.sametwobrowserthreads.BasetTestControlDifferentChromeVersionFive;
+import com.driver.Five.sametwobrowserthreads.BasetTestControlDifferentChromeVersionFive;
 import com.pageobjectandextendreport.page.object.five.twosamebrowserthrad.VWOHeatmapDifferentVersionChromePage;
-import com.pageobjectandextendreport.page.object.five.twosamebrowserthrad.VWOHeatmapPage;
 import com.pageobjectandextendreport.page.object.five.twosamebrowserthrad.VWOTabDifferentVersionPage;
-import com.pageobjectandextendreport.page.object.five.twosamebrowserthrad.VWOTabPage;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;

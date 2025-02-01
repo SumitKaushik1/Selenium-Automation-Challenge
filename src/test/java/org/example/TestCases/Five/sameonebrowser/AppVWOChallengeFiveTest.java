@@ -1,6 +1,6 @@
 package org.example.TestCases.Five.sameonebrowser;
 
-import com.basedriver.bast_test_control.five.onebrowser.BasetTestControlChromeFive;
+import com.driver.Five.onebrowser.BasetTestControlChromeFive;
 import com.pageobjectandextendreport.page.object.five.samebrowser.VWOHeatmapPage;
 import com.pageobjectandextendreport.page.object.five.samebrowser.VWOTabPage;
 import org.openqa.selenium.support.ui.ExpectedConditions;
