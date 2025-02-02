@@ -30,4 +30,9 @@ public class BasetTestControlChromeFive {
     public  WebDriver controlGetDriver(){
         return  BaseTestChromeFive.getDriver();
     }
+
+    public static WebDriver controlgetDriver(){
+        return  BaseTestChromeFive.getDriver();
+    }
+
 }

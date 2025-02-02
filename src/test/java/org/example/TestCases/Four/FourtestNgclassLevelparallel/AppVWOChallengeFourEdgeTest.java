@@ -1,7 +1,8 @@
 package org.example.TestCases.Four.FourtestNgclassLevelparallel;
 
 
-import com.basedriver.bast_test_control.four.BaseTestControlEdgeFour;
+
+import com.driver.Four.BaseTestControlEdgeFour;
 import com.exceldataprovider.four.forread.ExcelFourDataProviderUtils;
 import com.pageobjectandextendreport.page.object.four.edge.VWODashBoardPageEdge;
 import com.pageobjectandextendreport.page.object.four.edge.VWOLoginEdgePage;

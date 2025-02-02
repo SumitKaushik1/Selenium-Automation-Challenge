@@ -1,11 +1,12 @@
 package org.example.TestCases.One.One.testNgclassLevelparalleltestngfile.methodlevel;
 
-import com.basedriver.bast_test_control.one.methodlevel.ControlChromeEdgeOneBaseTest;
+import com.driver.One.methodlevel.ControlChromeEdgeOneBaseTest;
 import com.cutomannotation.one.OneFrameworkAnnotation;
 import com.pageobjectandextendreport.page.object.one.methodlevel.ApplitoolsWebElementDashBoardPage;
 import com.pageobjectandextendreport.page.object.one.methodlevel.ApplitoolsWebElementLoginPage;
 import com.pojo.Pojo.one.CalculateEarnedSpent;
 import customExceptions.KeyUrlNotFoundException;
+import enumconstants.LoginCredentialsPropertiesConstants;
 import enumconstants.URLPropertiesConstants;
 import jsonfileread.LoginCredentialsJsonFileRead;
 import org.assertj.core.api.Assertions;
@@ -79,8 +80,8 @@ public final class ApplitoolsChallengeOneChromeEdgeTest extends ControlChromeEdg
 
 
 
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(URLPropertiesConstants.USERNAME));
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(URLPropertiesConstants.PASSWORD));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(LoginCredentialsPropertiesConstants.USERNAME));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(LoginCredentialsPropertiesConstants.PASSWORD));
 
         //anchor tag we use
         //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
@@ -114,9 +115,9 @@ public final class ApplitoolsChallengeOneChromeEdgeTest extends ControlChromeEdg
         ApplitoolsWebElementLoginPage applitoolsWebElementLoginPage=new  ApplitoolsWebElementLoginPage();
         applitoolsWebElementLoginPage.
                 enterUserNameApplitools(LoginCredentialsJsonFileRead.
-                        readJsonFile(URLPropertiesConstants.USERNAME),this)
+                        readJsonFile(LoginCredentialsPropertiesConstants.USERNAME),this)
                 .enterPasswordApplitools(LoginCredentialsJsonFileRead.
-                        readJsonFile(URLPropertiesConstants.PASSWORD),this).
+                        readJsonFile(LoginCredentialsPropertiesConstants.PASSWORD),this).
                 clickButtonApplitools(this);
 
 
@@ -394,8 +395,8 @@ public final class ApplitoolsChallengeOneChromeEdgeTest extends ControlChromeEdg
 
 
 
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(URLPropertiesConstants.USERNAME));
-        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(URLPropertiesConstants.PASSWORD));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(LoginCredentialsPropertiesConstants.USERNAME));
+        System.out.println(LoginCredentialsPropertyFileRead.readPropertyFile(LoginCredentialsPropertiesConstants.PASSWORD));
 
         //anchor tag we use
         //WebElement makeAppointmentButton = driver.findElement(By.xpath("//a[@id='btn-make-appointment']"));
@@ -429,8 +430,8 @@ public final class ApplitoolsChallengeOneChromeEdgeTest extends ControlChromeEdg
         ApplitoolsWebElementLoginPage applitoolsWebElementLoginPage=new  ApplitoolsWebElementLoginPage();
         applitoolsWebElementLoginPage.
                 enterUserNameApplitools(LoginCredentialsJsonFileRead.
-                        readJsonFile(URLPropertiesConstants.USERNAME),this).enterPasswordApplitools(LoginCredentialsJsonFileRead.
-                        readJsonFile(URLPropertiesConstants.PASSWORD),this).
+                        readJsonFile(LoginCredentialsPropertiesConstants.USERNAME),this).enterPasswordApplitools(LoginCredentialsJsonFileRead.
+                        readJsonFile(LoginCredentialsPropertiesConstants.PASSWORD),this).
                 clickButtonApplitools(this);
 
 

@@ -1,6 +1,6 @@
 package org.example.TestCases.Four.FourtestNgclassLevelparallel;
 
-import com.basedriver.bast_test_control.four.BaseTestControlChromeFour;
+import com.driver.Four.BaseTestControlChromeFour;
 import com.exceldataprovider.four.forread.ExcelFourDataProviderUtils;
 import com.pageobjectandextendreport.page.object.four.chrome.VWODashBoardPageChrome;
 import com.pageobjectandextendreport.page.object.four.chrome.VWOLoginChromePage;

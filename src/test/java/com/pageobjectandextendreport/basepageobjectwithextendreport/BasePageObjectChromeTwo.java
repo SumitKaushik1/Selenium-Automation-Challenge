@@ -1,5 +1,6 @@
 package com.pageobjectandextendreport.basepageobjectwithextendreport;
 
+import com.driver.two.BaseTestControlChromeTwo;
 import com.extendedreport.two.TwoExtentLogger;
 import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Two.DemoQAWebsiteChallengeTwoTest;
@@ -10,7 +11,7 @@ import com.waitfactory.WaitFactoryTwo;
 
 
 
-public class BasePageObjectChromeTwo {
+public class BasePageObjectChromeTwo extends BaseTestControlChromeTwo {
 
     //suppose you donot know that what you want ot return
     protected  WebElement findElement(DemoQAWebsiteChallengeTwoTest demoQAWebsiteChallengeTwoTest,By elmement){

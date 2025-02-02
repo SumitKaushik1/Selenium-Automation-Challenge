@@ -1,6 +1,7 @@
 package org.example.TestCases.Three;
 
-import com.basedriver.bast_test_control.three.BaseTestControlChromeThree;
+
+import com.driver.three.BaseTestControlChromeThree;
 import com.pageobjectandextendreport.page.object.three.DemoQAModalDialoguePage;
 import org.assertj.core.api.Assertions;
 import org.openqa.selenium.WebElement;
