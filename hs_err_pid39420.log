@@ -1,0 +1,193 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./open/src/hotspot/share/memory/allocation.cpp:46), pid=39420, tid=34028
+#
+# JRE version:  (11.0.14+8) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (11.0.14+8-LTS-263, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -ea -javaagent:C:\Users\amit\.m2\repository/org/aspectj/aspectjweaver/1.9.20.1/aspectjweaver-1.9.20.1.jar -Didea.test.cyclic.buffer.size=1048576 -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.3.1.1\lib\idea_rt.jar=6864:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.3.1.1\bin -javaagent:C:\Users\amit\AppData\Local\JetBrains\IdeaIC2024.3\captureAgent\debugger-agent.jar -Dkotlinx.coroutines.debug.enable.creation.stack.trace=false -Ddebugger.agent.enable.coroutines=true -Dkotlinx.coroutines.debug.enable.flows.stack.trace=true -Dkotlinx.coroutines.debug.enable.mutable.state.flows.stack.trace=true -Dfile.encoding=UTF-8 com.intellij.rt.testng.RemoteTestNGStarter -usedefaultlisteners false -socket6863 @w@C:\Users\amit\AppData\Local\Temp\idea_working_dirs_testng8.tmp -temp C:\Users\amit\AppData\Local\Temp\idea_testng4.tmp
+
+Host: Intel(R) Core(TM) i3-4005U CPU @ 1.70GHz, 4 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.5198)
+Time: Thu Feb 13 21:07:26 2025 India Standard Time elapsed time: 1.350329 seconds (0d 0h 0m 1s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000019121f35000):  JavaThread "Unknown thread" [_thread_in_vm, id=34028, stack(0x000000825e100000,0x000000825e200000)]
+
+Stack: [0x000000825e100000,0x000000825e200000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6296da]
+V  [jvm.dll+0x76323f]
+V  [jvm.dll+0x7648e9]
+V  [jvm.dll+0x764f73]
+V  [jvm.dll+0x23d7c8]
+V  [jvm.dll+0xb13f4]
+V  [jvm.dll+0x2d6b22]
+V  [jvm.dll+0x2d0d79]
+V  [jvm.dll+0x73d857]
+V  [jvm.dll+0x73f0ef]
+V  [jvm.dll+0x346909]
+V  [jvm.dll+0x723160]
+V  [jvm.dll+0x3b551f]
+V  [jvm.dll+0x3b7631]
+C  [jli.dll+0x5207]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17374]
+C  [ntdll.dll+0x4cc91]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000001911fcc34f0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x0000019121f4c000 GCTaskThread "GC Thread#0" [stack: 0x000000825e200000,0x000000825e300000] [id=41372]
+  0x6562614c24656c62 
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffaa76b8010]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000019121f2f3e0] Heap_lock - owner thread: 0x0000019121f35000
+
+Heap address: 0x0000000081800000, size: 2024 MB, Compressed Oops mode: Non-zero based: 0x0000000081800000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff79ebf0000 - 0x00007ff79ebff000 	C:\Program Files\Java\jdk-11.0.14\bin\java.exe
+0x00007ffae6990000 - 0x00007ffae6b88000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffae5c70000 - 0x00007ffae5d32000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffae42f0000 - 0x00007ffae45ef000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffae45f0000 - 0x00007ffae46f0000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffad39e0000 - 0x00007ffad39f5000 	C:\Program Files\Java\jdk-11.0.14\bin\VCRUNTIME140.dll
+0x00007ffad0f00000 - 0x00007ffad0f18000 	C:\Program Files\Java\jdk-11.0.14\bin\jli.dll
+0x00007ffae4b50000 - 0x00007ffae4c01000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffae5410000 - 0x00007ffae54ae000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffae6420000 - 0x00007ffae64bf000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffae55a0000 - 0x00007ffae56c3000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffae4970000 - 0x00007ffae4997000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ffae64d0000 - 0x00007ffae666d000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffae42c0000 - 0x00007ffae42e2000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffae53e0000 - 0x00007ffae540b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffae46f0000 - 0x00007ffae4807000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffae4120000 - 0x00007ffae41bd000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffad9e60000 - 0x00007ffada0fa000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.4355_none_60b8b9eb71f62e16\COMCTL32.dll
+0x00007ffae3aa0000 - 0x00007ffae3aaa000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffae5540000 - 0x00007ffae556f000 	C:\WINDOWS\System32\IMM32.DLL
+0x0000000058180000 - 0x000000005818c000 	C:\Program Files (x86)\360\Total Security\safemon\SafeWrapper.dll
+0x00007ffabb200000 - 0x00007ffabb2ac000 	C:\Program Files (x86)\360\Total Security\safemon\libzdtp64.dll
+0x00007ffae4c10000 - 0x00007ffae537e000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ffae5380000 - 0x00007ffae53d5000 	C:\WINDOWS\System32\SHLWAPI.dll
+0x00007ffad0e60000 - 0x00007ffad0efb000 	C:\Program Files\Java\jdk-11.0.14\bin\msvcp140.dll
+0x00007ffaa6f90000 - 0x00007ffaa7aa6000 	C:\Program Files\Java\jdk-11.0.14\bin\server\jvm.dll
+0x00007ffae64c0000 - 0x00007ffae64c8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffad8600000 - 0x00007ffad8609000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffad9b80000 - 0x00007ffad9ba7000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffae66f0000 - 0x00007ffae675b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffae1df0000 - 0x00007ffae1e02000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffadfbc0000 - 0x00007ffadfbd0000 	C:\Program Files\Java\jdk-11.0.14\bin\verify.dll
+0x00007ffac64b0000 - 0x00007ffac6694000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffac6470000 - 0x00007ffac64a4000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffae4020000 - 0x00007ffae40a2000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffad0e30000 - 0x00007ffad0e58000 	C:\Program Files\Java\jdk-11.0.14\bin\java.dll
+0x00007ffad3b20000 - 0x00007ffad3b2a000 	C:\Program Files\Java\jdk-11.0.14\bin\jimage.dll
+0x00007ffad2140000 - 0x00007ffad214e000 	C:\Program Files\Java\jdk-11.0.14\bin\instrument.dll
+0x00007ffad0e10000 - 0x00007ffad0e26000 	C:\Program Files\Java\jdk-11.0.14\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-11.0.14\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.4355_none_60b8b9eb71f62e16;C:\Program Files (x86)\360\Total Security\safemon;C:\Program Files\Java\jdk-11.0.14\bin\server
+
+VM Arguments:
+jvm_args: -ea -javaagent:C:\Users\amit\.m2\repository/org/aspectj/aspectjweaver/1.9.20.1/aspectjweaver-1.9.20.1.jar -Didea.test.cyclic.buffer.size=1048576 -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.3.1.1\lib\idea_rt.jar=6864:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.3.1.1\bin -javaagent:C:\Users\amit\AppData\Local\JetBrains\IdeaIC2024.3\captureAgent\debugger-agent.jar -Dkotlinx.coroutines.debug.enable.creation.stack.trace=false -Ddebugger.agent.enable.coroutines=true -Dkotlinx.coroutines.debug.enable.flows.stack.trace=true -Dkotlinx.coroutines.debug.enable.mutable.state.flows.stack.trace=true -Dfile.encoding=UTF-8 
+java_command: com.intellij.rt.testng.RemoteTestNGStarter -usedefaultlisteners false -socket6863 @w@C:\Users\amit\AppData\Local\Temp\idea_working_dirs_testng8.tmp -temp C:\Users\amit\AppData\Local\Temp\idea_testng4.tmp
+java_class_path (initial): C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.3.1.1\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.3.1.1\plugins\testng\lib\testng-rt.jar;J:\3. automation testing testing acadmey\day41--selenium -UI elements\AssignmentAnswers\Appolo-Tools\target\test-classes;J:\3. automation testing testing acadmey\day41--selenium -UI elements\AssignmentAnswers\Appolo-Tools\target\classes;C:\Users\amit\.m2\repository\org\seleniumhq\selenium\selenium-java\4.9.1\selenium-java-4.9.1.jar;C:\Users\amit\.m2\repository\org\seleniumhq\selenium\selenium-api\4.9.1\selenium-api-4.9.1.jar;C:\Users\amit\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v111\4.9.1\selenium-devtools-v111-4.9.1.jar;C:\Users\amit\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v112\4.9.1\selenium-devtools-v112-4.9.1.jar;C:\Users\amit\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v113\4.9.1\selenium-devtools-v113-4.9.1.jar;C:\Users\amit\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.9.1\selenium-devtools-v85-4.9.1.jar;C:\Users\amit\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.9.1\selenium-edge-driver-4.9.1.jar;C:\Users\amit\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.9.1\selenium-firefox-driver-4.9.1.jar;C:\Users\amit\.m2\repository\org\seleniumhq\selenium\selenium-http\4.9.1\selenium-http-4.9.1.jar;C:\Users\amit\.m2\repository\dev\failsafe\failsafe\3.3.1\failsafe-3.3.1.jar;C:\Users\amit\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.9.1\selenium-ie-driver-4.9.1.jar;C:\Users\amit\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.9.1\selenium-remote-driver-4.9.1.jar;C:\Users\amit\.m2\repository\io\netty\netty-buffer\4.1.91.Final\netty-buffer-4.1.91.Final.jar;C:\Users\amit\.m2\repository\io\netty\netty-codec-http\4.1.91.Final\netty-codec-http-4.1.91.Final.jar;C:\Users\amit\.m2\repository\io\netty\netty-codec\4.1.91.Final\netty-codec-4
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 134217728                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2122317824                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5830732                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122913754                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122913754                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-11.0.14
+CLASSPATH=E:\cdac pune\6.core java\day2\assignment 2\bin;E:\cdac pune\6.core java\day1\day1 (assignment)\q4\bin
+PATH=C:\Program Files\Java\jdk-11.0.14\bin;C:\Users\amit\AppData\Local\Android\Sdk\platform-tools;C:\Users\amit\AppData\Local\Android\Sdk\tools;C:\TDM-GCC-64\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\PROGRAMDATA\ORACLE\JAVA\JAVAPATH;C:\PROGRAM FILES (X86)\INTEL\ICLS CLIENT\;C:\PROGRAM FILES\INTEL\ICLS CLIENT\;C:\WINDOWS\SYSTEM32;C:\WINDOWS;C:\WINDOWS\SYSTEM32\WBEM;C:\WINDOWS\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;C:\PROGRAM FILES\INTEL\INTEL(R) MANAGEMENT ENGINE COMPONENTS\DAL;C:\PROGRAM FILES\INTEL\INTEL(R) MANAGEMENT ENGINE COMPONENTS\IPT;C:\PROGRAM FILES (X86)\INTEL\INTEL(R) MANAGEMENT ENGINE COMPONENTS\DAL;C:\PROGRAM FILES (X86)\INTEL\INTEL(R) MANAGEMENT ENGINE COMPONENTS\IPT;C:\PROGRAM FILES (X86)\COMMON FILES\LENOVO\EASYPLUSSDK\BIN;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\WINDOWS\system32;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\amit\AppData\Local\Microsoft\WindowsApps;C:\Users\amit\AppData\Roaming\Dashl;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\nodejs\;C:\Users\amit\Desktop\curl-8.0.1_7-win64-mingw;C:\apache-maven-3.9.3\bin;C:\allure-2.10.0\bin;C:\Windows\System32\wsl.exe;C:\Program Files\Go\bin;C:\sqlite-tools-win32-x86-3430100;C:\Program Files\PuTTY\;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\Git\cmd;C:\Program Files\Git LFS;C:\Users\amit\AppData\Local\Android\Sdk\tools\bin;C:\Users\amit\AppData\Local\Android\Sdk\build-tools\35.0.0-rc4;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ngrok;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\amit\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\amit\A
+USERNAME=sumit
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 69 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.5198)
+Hyper-V role detected
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1 microcode 0x25, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, fma
+
+Memory: 4k page, system-wide physical 8095M (495M free)
+TotalPageFile size 11538M (AvailPageFile size 3M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 49M, peak: 50M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (11.0.14+8-LTS-263) for windows-amd64 JRE (11.0.14+8-LTS-263), built on Dec  7 2021 21:53:57 by "mach5one" with MS VC++ 15.9 (VS2017)
+
+END.

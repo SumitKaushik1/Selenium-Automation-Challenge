@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class DiffernetChromeNodes extends BasetTestControlFive {
+public class DiffernetBrowserNodes extends BasetTestControlFive {
 
 
     @Test(dataProvider="getData")
@@ -35,7 +35,7 @@ public class DiffernetChromeNodes extends BasetTestControlFive {
     @DataProvider(parallel=true)
     public Object[][] getData(){
         //return new Object[][]{{"chrome"},{"chrome"},{"edge"},{"edge"}};
-        return new Object[][]{{"chrome"},{"chrome"},{"edge"}};
+        return new Object[][]{{"chrome"},{"chrome"},{"firefox"},{"firefox"},{"edge"},{"edge"}};
     }
 
 
