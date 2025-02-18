@@ -403,3 +403,5 @@ D
 config/browsers.json,2\a\2a683a7e940d9e678e8bfc3bac3825cb7448d8ae
 |
 Lsrc/test/java/org/example/TestCases/totestselenoid/RunTestInSelenoidTwo.java,9\e\9e494a3c25348683988531c61b73206bc576184b
+
+Osrc/test/java/org/example/TestCases/standalonetwobrowser/Standalonebrowser.java,9\9\999c461e70280fa9df7a27fcbc9fa7d6317afeda
