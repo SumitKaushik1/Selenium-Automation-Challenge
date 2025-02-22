@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" thread-count="2" parallel="methods"
+          name="J:/3. automation testing testing acadmey/day41--selenium -UI elements/AssignmentAnswers/Appolo-Tools/src/test/java/org/example/TestCases/standaalonesamebrowser/ExecuteTestsInDocker.java">
+        <classes>
+            <class name="org.example.TestCases.standaalonesamebrowser.ExecuteTestsInDocker">
+
+            </class>
+        </classes>
+    </test>
+</suite>
