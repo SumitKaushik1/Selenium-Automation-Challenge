@@ -2,6 +2,7 @@ package com.driver.two;
 
 import enumconstants.URLPropertiesConstants;
 import enumconstants.MethodPropertiesConstant;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.PageLoadStrategy;
@@ -67,8 +68,8 @@ public final class BaseTestChromeTwo {
             //cap.setBrowserName("chrome");
 
 
-            System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\resources\\drivers\\chromedriver.exe");
-            // WebDriverManager.chromedriver().clearDriverCache().setup();
+          //  System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\resources\\drivers\\chromedriver.exe");
+             WebDriverManager.chromedriver().clearDriverCache().setup();
             //liberary will take of it the chrome broser version
 
             ChromeOptions chromeOptions = new ChromeOptions();

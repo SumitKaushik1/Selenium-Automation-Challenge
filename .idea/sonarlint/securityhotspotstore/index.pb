@@ -409,6 +409,13 @@ P
  testngtwodifferentstandalone.xml,4\6\46a17e735969066f80d469bc9d664c6624016fd3
 „
 Tsrc/test/java/org/example/TestCases/standaalonesamebrowser/ExecuteTestsInDocker.java,d\4\d46849163fe7f689f0063ca5dcad4746ffc1eba5
-:
-
-testng.xml,5\2\522a7a4e21649af06297e31a9e33f13bb4fd3022
+H
+testngtwosamebrowser.xml,0\9\094b58cde28b4aaa98806170e9f797722e4dfa52
+b
+2src/test/java/com/extendedreport/two/Loggable.java,7\1\7193a0aefd78ff259f83022ae027055887506824
+j
+:src/test/java/com/extendedreport/two/ExtentLoggerImpl.java,9\2\926ccffb6e12ece6bb01a1b4ae521ef884439dd7
+k
+;src/test/java/com/extendedreport/two/ConsoleLoggerImpl.java,2\8\28788c94b982310e9b0f083319ff41601756241b
+™
+isrc/test/java/com/pageobjectandextendreport/basepageobjectwithextendreport/BasePageObjectChromeThree.java,2\4\24fc59b385a2e67ef0bdff4105fde4c85d7d703e

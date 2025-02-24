@@ -1,6 +1,8 @@
 package com.pageobjectandextendreport.basepageobjectwithextendreport;
 
 import com.driver.two.BaseTestControlChromeTwo;
+import com.extendedreport.two.ConsoleLoggerImpl;
+import com.extendedreport.two.ExtentLoggerImpl;
 import com.extendedreport.two.TwoExtentLogger;
 import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Two.DemoQAWebsiteChallengeTwoTest;
@@ -64,7 +66,8 @@ public class BasePageObjectChromeTwo extends BaseTestControlChromeTwo {
 
        // TwoExtentLogger.pass(elementname+" is clicked");
      TwoExtentLogger.pass(elementname+" is clicked",true);
-
+        new ExtentLoggerImpl().log("pass",(elementname+"is clicked"));
+        new ConsoleLoggerImpl().log("pass",(elementname+"is clicked"));
 
     }
 
@@ -84,7 +87,8 @@ public class BasePageObjectChromeTwo extends BaseTestControlChromeTwo {
 
         //  TwoExtentLogger.pass(elementname+" is clicked");
        TwoExtentLogger.pass(elementname+" is clicked",true);
-
+        new ExtentLoggerImpl().log("pass",(elementname+"is clicked"));
+        new ConsoleLoggerImpl().log("pass",(elementname+"is clicked"));
 
     }
 
@@ -92,7 +96,9 @@ public class BasePageObjectChromeTwo extends BaseTestControlChromeTwo {
     protected WebElement getPageTitle(By titleOfpage,String elementname ) throws Exception {
         WebElement webElement=this.findElement(titleOfpage);
         TwoExtentLogger.pass(elementname+" is clicked",true);
-         return webElement;
+        new ExtentLoggerImpl().log("pass",(elementname+"is clicked"));
+        new ConsoleLoggerImpl().log("pass",(elementname+"is clicked"));
+        return webElement;
     }
 
 
