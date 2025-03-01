@@ -419,3 +419,7 @@ k
 ;src/test/java/com/extendedreport/two/ConsoleLoggerImpl.java,2\8\28788c94b982310e9b0f083319ff41601756241b
 ™
 isrc/test/java/com/pageobjectandextendreport/basepageobjectwithextendreport/BasePageObjectChromeThree.java,2\4\24fc59b385a2e67ef0bdff4105fde4c85d7d703e
+i
+9src/test/java/com/extendedreport/two/FrameworkLogger.java,b\2\b20f7e12a626a80c76dedadd8e021c85edf81104
+X
+(src/main/java/enumconstants/LogType.java,2\c\2cb104be50b88f1bece2e577299272e10edb7e5b

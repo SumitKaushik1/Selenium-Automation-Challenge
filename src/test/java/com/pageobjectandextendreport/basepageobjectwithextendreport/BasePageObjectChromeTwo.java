@@ -3,7 +3,9 @@ package com.pageobjectandextendreport.basepageobjectwithextendreport;
 import com.driver.two.BaseTestControlChromeTwo;
 import com.extendedreport.two.ConsoleLoggerImpl;
 import com.extendedreport.two.ExtentLoggerImpl;
+import com.extendedreport.two.FrameworkLogger;
 import com.extendedreport.two.TwoExtentLogger;
+import enumconstants.LogType;
 import enumconstants.WaitStrategyConstants;
 import org.example.TestCases.Two.DemoQAWebsiteChallengeTwoTest;
 import org.openqa.selenium.By;
@@ -68,7 +70,8 @@ public class BasePageObjectChromeTwo extends BaseTestControlChromeTwo {
      TwoExtentLogger.pass(elementname+" is clicked",true);
         new ExtentLoggerImpl().log("pass",(elementname+"is clicked"));
         new ConsoleLoggerImpl().log("pass",(elementname+"is clicked"));
-
+       //ENUM CONTANTS BZ USER HAS TO CHOOSE FROM TEH USER DEFINED CONSTANTS ONLY NOT RANDOM IN CODE
+        FrameworkLogger.log(LogType.EXTENTANDCONSOLE,elementname+" is clicked ----> java 8");
     }
 
 
